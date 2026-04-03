@@ -27,19 +27,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
                 return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Refresh.Item.WithSegment_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_mc_segments_20_v3.v3.marketing.segments.TwoZero.refresh.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Refresh.Item.WithSegment_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Refresh.Item.WithSegment_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("segment_id", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Refresh.Item.WithSegment_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Refresh.RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
