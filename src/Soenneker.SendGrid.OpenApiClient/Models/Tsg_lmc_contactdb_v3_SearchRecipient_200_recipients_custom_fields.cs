@@ -35,10 +35,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_SearchRecipient_200_recipients_custom_fields_value? Value { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.UnionBranch? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_SearchRecipient_200_recipients_custom_fields_value Value { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.UnionBranch Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_SearchRecipient_200_recipients_custom_fields"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_SearchRecipient_200_recipients_custom_fields_value>(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_SearchRecipient_200_recipients_custom_fields_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.UnionBranch>(global::Soenneker.SendGrid.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_SearchRecipient_200_recipients_custom_fields_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.UnionBranch>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
