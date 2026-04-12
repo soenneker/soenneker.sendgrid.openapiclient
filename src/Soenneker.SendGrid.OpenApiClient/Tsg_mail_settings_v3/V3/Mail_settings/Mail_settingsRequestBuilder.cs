@@ -72,33 +72,33 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings
         /// <summary>
         /// **This endpoint allows you to retrieve a paginated list of all mail settings.**Each setting will be returned with an `enabled` status set to `true` or `false` and a short description that explains what the setting does.You can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests. Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200400Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200401Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mail_settings_v3_ListMailSetting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a paginated list of all mail settings.**Each setting will be returned with an `enabled` status set to `true` or `false` and a short description that explains what the setting does.You can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests. Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.

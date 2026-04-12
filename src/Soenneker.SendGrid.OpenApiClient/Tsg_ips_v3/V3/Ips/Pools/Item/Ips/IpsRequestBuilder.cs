@@ -49,27 +49,27 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.Ips
         /// <summary>
         /// **This endpoint allows you to add an IP address to an IP pool.**You can add the same IP address to multiple pools. It may take up to 60 seconds for your IP address to be added to a pool after your request is made.Before you can add an IP to a pool, you need to activate it in your SendGrid account:1. Log into your SendGrid account.  1. Navigate to **Settings** and then select **IP Addresses**.  1. Find the IP address you want to activate and then click **Edit**.  1. Check **Allow my account to send mail using this IP address**.1. Click **Save**.You can retrieve all of your available IP addresses from the &quot;Retrieve all IP addresses&quot; endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_201?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool201?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_201> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool201> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_201>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool201>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to add an IP address to an IP pool.**You can add the same IP address to multiple pools. It may take up to 60 seconds for your IP address to be added to a pool after your request is made.Before you can add an IP to a pool, you need to activate it in your SendGrid account:1. Log into your SendGrid account.  1. Navigate to **Settings** and then select **IP Addresses**.  1. Find the IP address you want to activate and then click **Edit**.  1. Check **Allow my account to send mail using this IP address**.1. Click **Save**.You can retrieve all of your available IP addresses from the &quot;Retrieve all IP addresses&quot; endpoint.
@@ -79,11 +79,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.Ips
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ips_v3_AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpToIpPool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

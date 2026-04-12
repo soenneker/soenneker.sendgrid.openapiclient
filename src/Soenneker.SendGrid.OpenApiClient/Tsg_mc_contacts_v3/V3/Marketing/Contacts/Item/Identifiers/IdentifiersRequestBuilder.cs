@@ -36,35 +36,35 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <summary>
         /// **This endpoint can be used to delete one identifier from a contact.**Deletion jobs are processed asynchronously.Note this is different from deleting a contact. If the contact has only one identifier, the asynchronous request will fail. All contacts are required to have at least one identifier.The request body field `identifier_type` must have a valid value of &quot;EMAIL&quot;, &quot;PHONENUMBERID&quot;, &quot;EXTERNALID&quot;, or &quot;ANONYMOUSID&quot;.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202?> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202?> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier_202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint can be used to delete one identifier from a contact.**Deletion jobs are processed asynchronously.Note this is different from deleting a contact. If the contact has only one identifier, the asynchronous request will fail. All contacts are required to have at least one identifier.The request body field `identifier_type` must have a valid value of &quot;EMAIL&quot;, &quot;PHONENUMBERID&quot;, &quot;EXTERNALID&quot;, or &quot;ANONYMOUSID&quot;.
@@ -74,11 +74,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3DeleteContactIdentifier body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

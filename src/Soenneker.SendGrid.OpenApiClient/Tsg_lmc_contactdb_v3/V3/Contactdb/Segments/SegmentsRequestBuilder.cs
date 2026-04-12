@@ -49,25 +49,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Seg
         /// <summary>
         /// **This endpoint allows you to retrieve all of your segments.**
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ListSegment_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ListSegment200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ListSegment_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ListSegment200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ListSegment_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ListSegment200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ListSegment_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ListSegment_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ListSegment200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ListSegment200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to create a new segment.**  Valid operators for create and update depend on the type of the field for which you are searching.**Dates**- &quot;eq&quot;, &quot;ne&quot;, &quot;lt&quot; (before), &quot;gt&quot; (after)    - You may use MM/DD/YYYY for day granularity or an epoch for second granularity.- &quot;empty&quot;, &quot;not_empty&quot;- &quot;is within&quot;    - You may use an [ISO 8601 date format](https://en.wikipedia.org/wiki/ISO_8601) or the # of days.**Text**- &quot;contains&quot;- &quot;eq&quot; (is/equals - matches the full field)- &quot;ne&quot; (is not/not equals - matches any field where the entire field is not the condition value)- &quot;empty&quot;- &quot;not_empty&quot;**Numbers**- &quot;eq&quot; (is/equals)- &quot;lt&quot; (is less than)- &quot;gt&quot; (is greater than)- &quot;empty&quot;- &quot;not_empty&quot;**Email Clicks and Opens**- &quot;eq&quot; (opened)- &quot;ne&quot; (not opened)All field values must be a string.Conditions using &quot;eq&quot; or &quot;ne&quot; for email clicks and opens should provide a &quot;field&quot; of either `clicks.campaign_identifier` or `opens.campaign_identifier`.The condition value should be a string containing the id of a completed campaign.The conditions list may contain multiple conditions, joined by an &quot;and&quot; or &quot;or&quot; in the &quot;and_or&quot; field.The first condition in the conditions list must have an empty &quot;and_or&quot;, and subsequent conditions must all specify an &quot;and_or&quot;.
@@ -76,8 +76,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Seg
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsId200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegments body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -91,8 +91,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Seg
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsId200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsId200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

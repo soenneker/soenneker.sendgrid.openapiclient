@@ -49,10 +49,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_from? From { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestFrom? From { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_from From { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestFrom From { get; set; }
 #endif
         /// <summary>A nickname for the Sender. Not used for sending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The reply_to property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_reply_to? ReplyTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestReplyTo? ReplyTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_reply_to ReplyTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestReplyTo ReplyTo { get; set; }
 #endif
         /// <summary>The state of the Sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,9 +115,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "address_2", n => { Address2 = n.GetStringValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
-                { "from", n => { From = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_from>(global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_from.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestFrom>(global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestFrom.CreateFromDiscriminatorValue); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "reply_to", n => { ReplyTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_reply_to>(global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_reply_to.CreateFromDiscriminatorValue); } },
+                { "reply_to", n => { ReplyTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestReplyTo>(global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestReplyTo.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "zip", n => { Zip = n.GetStringValue(); } },
             };
@@ -133,9 +133,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("address_2", Address2);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_from>("from", From);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestFrom>("from", From);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequest_reply_to>("reply_to", ReplyTo);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderRequestReplyTo>("reply_to", ReplyTo);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("zip", Zip);
             writer.WriteAdditionalData(AdditionalData);

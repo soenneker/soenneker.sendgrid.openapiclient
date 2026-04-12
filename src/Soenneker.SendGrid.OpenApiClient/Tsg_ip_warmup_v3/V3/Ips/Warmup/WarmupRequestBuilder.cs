@@ -49,46 +49,46 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_warmup_v3.V3.Ips.Warmup
         /// <summary>
         /// **This endpoint allows you to retrieve all of your IP addresses that are currently warming up.**
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// **This endpoint allows you to put an IP address into warmup mode.**
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_warmup_v3_WarmUpIp_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3WarmUpIp404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item>?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_warmup_v3_WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item>> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_warmup_v3_WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_warmup_v3_WarmUpIp_404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3WarmUpIp404.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200_item.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -118,11 +118,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_warmup_v3.V3.Ips.Warmup
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_warmup_v3_WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_warmup_v3_WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3WarmUpIp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

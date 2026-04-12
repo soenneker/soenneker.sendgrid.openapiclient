@@ -39,11 +39,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSg_message_ItemRequestBuilder.WithSg_message_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,11 +56,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "XXX", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

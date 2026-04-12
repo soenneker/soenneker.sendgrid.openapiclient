@@ -18,10 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_provisioning_v3_ErrorResponse>? Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ErrorResponse>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_provisioning_v3_ErrorResponse> Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ErrorResponse> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_provisioning_v3_ErrorResponse>(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_provisioning_v3_ErrorResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ErrorResponse>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ErrorResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
@@ -69,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_ip_provisioning_v3_ErrorResponse>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ErrorResponse>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteAdditionalData(AdditionalData);
         }

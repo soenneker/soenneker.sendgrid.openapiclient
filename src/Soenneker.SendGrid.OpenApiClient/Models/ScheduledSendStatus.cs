@@ -23,7 +23,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string BatchId { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_scheduled_sends_v3_Status2? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3Status2? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "batch_id", n => { BatchId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_scheduled_sends_v3_Status2>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3Status2>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("batch_id", BatchId);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_scheduled_sends_v3_Status2>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3Status2>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

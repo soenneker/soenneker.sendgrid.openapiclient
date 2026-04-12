@@ -49,20 +49,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns
         /// <summary>
         /// **This endpoint allows you to retrieve a paginated list of all of your campaigns.**Returns campaigns in reverse order they were created (newest first).Returns an empty array if no campaigns exist.You can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests. Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ListCampaign_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ListCampaign200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ListCampaign_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.CampaignsRequestBuilder.CampaignsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ListCampaign200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.CampaignsRequestBuilder.CampaignsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ListCampaign_200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.CampaignsRequestBuilder.CampaignsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ListCampaign200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.CampaignsRequestBuilder.CampaignsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ListCampaign_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ListCampaign_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ListCampaign200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ListCampaign200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to create a campaign.**In order to send or schedule the campaign, you will be required to provide a subject, sender ID, content (we suggest both html and plain text), and at least one list or segment ID. This information is not required when you create a campaign.
@@ -71,7 +71,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Campaigns2xx401Error">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +86,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_campaigns_v3_ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Campaigns2xx401Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2xx>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2xx.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

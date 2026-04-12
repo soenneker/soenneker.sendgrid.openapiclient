@@ -45,8 +45,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteSingleSend_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteSingleSend_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,8 +59,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteSingleSend_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteSingleSend_500.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -70,8 +70,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_GetSingleSend_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_GetSingleSend_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3GetSingleSend404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3GetSingleSend500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,8 +84,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_GetSingleSend_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_GetSingleSend_500.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3GetSingleSend404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3GetSingleSend500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,9 +96,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_UpdateSingleSend_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_UpdateSingleSend_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_UpdateSingleSend_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3UpdateSingleSend400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3UpdateSingleSend404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3UpdateSingleSend500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,9 +112,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_UpdateSingleSend_400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_UpdateSingleSend_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_UpdateSingleSend_500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3UpdateSingleSend400.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3UpdateSingleSend404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3UpdateSingleSend500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -125,23 +125,23 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend_500.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -213,11 +213,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DuplicateSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

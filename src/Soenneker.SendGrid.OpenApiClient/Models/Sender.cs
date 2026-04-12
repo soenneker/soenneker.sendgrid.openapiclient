@@ -51,10 +51,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Sender_from? From { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderFrom? From { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Sender_from From { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderFrom From { get; set; }
 #endif
         /// <summary>The unique identifier of the Sender.</summary>
         public int? Id { get; set; }
@@ -71,10 +71,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The reply_to property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Sender_reply_to? ReplyTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderReplyTo? ReplyTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Sender_reply_to ReplyTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SenderReplyTo ReplyTo { get; set; }
 #endif
         /// <summary>The state of the Sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,11 +126,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
-                { "from", n => { From = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Sender_from>(global::Soenneker.SendGrid.OpenApiClient.Models.Sender_from.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderFrom>(global::Soenneker.SendGrid.OpenApiClient.Models.SenderFrom.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "reply_to", n => { ReplyTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Sender_reply_to>(global::Soenneker.SendGrid.OpenApiClient.Models.Sender_reply_to.CreateFromDiscriminatorValue); } },
+                { "reply_to", n => { ReplyTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderReplyTo>(global::Soenneker.SendGrid.OpenApiClient.Models.SenderReplyTo.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetIntValue(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
@@ -149,11 +149,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
             writer.WriteIntValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Sender_from>("from", From);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderFrom>("from", From);
             writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("locked", Locked);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Sender_reply_to>("reply_to", ReplyTo);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SenderReplyTo>("reply_to", ReplyTo);
             writer.WriteStringValue("state", State);
             writer.WriteIntValue("updated_at", UpdatedAt);
             writer.WriteBoolValue("verified", Verified);

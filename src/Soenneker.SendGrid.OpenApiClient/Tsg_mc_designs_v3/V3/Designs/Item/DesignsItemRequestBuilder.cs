@@ -94,11 +94,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ApiErrors">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -183,11 +183,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3UpdateDesign body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

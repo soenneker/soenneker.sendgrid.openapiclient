@@ -33,10 +33,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>current status of the Single Send</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Items?>? Status { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Items?>? Status { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Items?> Status { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Items?> Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSearch"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Items>()?.AsList(); } },
+                { "status", n => { Status = n.GetCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Items>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Items>("status", Status);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Items>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

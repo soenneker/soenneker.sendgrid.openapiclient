@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The a_record property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_a_record? ARecord { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsARecord? ARecord { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_a_record ARecord { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsARecord ARecord { get; set; }
 #endif
         /// <summary>The root, or sending, domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "a_record", n => { ARecord = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_a_record>(global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_a_record.CreateFromDiscriminatorValue); } },
+                { "a_record", n => { ARecord = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsARecord>(global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsARecord.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
@@ -114,7 +114,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_a_record>("a_record", ARecord);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsARecord>("a_record", ARecord);
             writer.WriteStringValue("domain", Domain);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("ip", Ip);

@@ -19,7 +19,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Total number of credits to which the Subuser is to be reset. If `type` is `nonrecurring` then the Subuser&apos;s credits will be reset to `total` on a one-time basis. If `type` is `recurring` then the Subuser&apos;s credits will be reset to `total` every time a reset is scheduled in accordance with the `reset_frequency`. Do _not_ include `total` if you choose a reset `type` value of `unlimited`.</summary>
         public int? Total { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Type1? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type1? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequest"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency1>(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Type1>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type1>(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency1>("reset_frequency", ResetFrequency);
             writer.WriteIntValue("total", Total);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Type1>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type1>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

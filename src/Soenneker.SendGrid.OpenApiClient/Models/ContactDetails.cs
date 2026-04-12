@@ -133,10 +133,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata? Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata Metadata { get; set; }
 #endif
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -237,7 +237,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "line", n => { Line = n.GetStringValue(); } },
                 { "list_ids", n => { ListIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata.CreateFromDiscriminatorValue); } },
+                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "postal_code", n => { PostalCode = n.GetStringValue(); } },
@@ -271,7 +271,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("line", Line);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("list_ids", ListIds);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata>("_metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata>("_metadata", Metadata);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
             writer.WriteStringValue("postal_code", PostalCode);

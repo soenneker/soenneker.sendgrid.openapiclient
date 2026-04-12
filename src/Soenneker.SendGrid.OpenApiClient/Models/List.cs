@@ -27,10 +27,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata? Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata Metadata { get; set; }
 #endif
         /// <summary>The name you gave your list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "contact_count", n => { ContactCount = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata.CreateFromDiscriminatorValue); } },
+                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("contact_count", ContactCount);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_SelfMetadata>("_metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3SelfMetadata>("_metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

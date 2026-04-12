@@ -17,7 +17,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The ISO 8601 time at which to send the Single Send. This must be in future or the string `now`. SendGrid [Mail Send](https://docs.sendgrid.com/api-reference/mail-send/mail-send) emails can be scheduled up to 72 hours in advance. However, this scheduling constraint does not apply to emails sent via [Marketing Campaigns](https://docs.sendgrid.com/ui/sending-email/how-to-send-email-with-marketing-campaigns/).</summary>
         public DateTimeOffset? SendAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status1? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status1? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSchedule"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "send_at", n => { SendAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status1>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status1>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("send_at", SendAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status1>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status1>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

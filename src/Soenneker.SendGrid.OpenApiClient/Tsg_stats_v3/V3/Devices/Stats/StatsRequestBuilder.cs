@@ -36,20 +36,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats
         /// <summary>
         /// **This endpoint allows you to retrieve your email statistics segmented by the device type.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.## Available Device Types| **Device** | **Description** | **Example** ||---|---|---|| Desktop | Email software on desktop computer. | I.E., Outlook, Sparrow, or Apple Mail. || Webmail |A web-based email client. | I.E., Yahoo, Google, AOL, or Outlook.com. || Phone | A smart phone. | iPhone, Android, Blackberry, etc.| Tablet | A tablet computer. | iPad, android based tablet, etc. || Other | An unrecognized device. |Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_stats_v3_ListDeviceStat_200&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListDeviceStat200&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_stats_v3_ListDeviceStat_200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListDeviceStat200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_stats_v3_ListDeviceStat_200>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListDeviceStat200>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_stats_v3_ListDeviceStat_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_stats_v3_ListDeviceStat_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListDeviceStat200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListDeviceStat200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

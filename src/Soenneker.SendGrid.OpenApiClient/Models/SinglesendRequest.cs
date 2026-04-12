@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The email_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_email_config? EmailConfig { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig? EmailConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_email_config EmailConfig { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig EmailConfig { get; set; }
 #endif
         /// <summary>The name of the Single Send.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The send_to property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_send_to? SendTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestSendTo? SendTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_send_to SendTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestSendTo SendTo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest"/> and sets the default values.
@@ -74,10 +74,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "email_config", n => { EmailConfig = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_email_config>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_email_config.CreateFromDiscriminatorValue); } },
+                { "email_config", n => { EmailConfig = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "send_at", n => { SendAt = n.GetDateTimeOffsetValue(); } },
-                { "send_to", n => { SendTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_send_to>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_send_to.CreateFromDiscriminatorValue); } },
+                { "send_to", n => { SendTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestSendTo>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestSendTo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,10 +88,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_email_config>("email_config", EmailConfig);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig>("email_config", EmailConfig);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("send_at", SendAt);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequest_send_to>("send_to", SendTo);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestSendTo>("send_to", SendTo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

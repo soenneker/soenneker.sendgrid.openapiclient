@@ -25,7 +25,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_Type? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3Type? Type { get; set; }
         /// <summary>The value of this recipient&apos;s custom field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3Type>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3Type>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

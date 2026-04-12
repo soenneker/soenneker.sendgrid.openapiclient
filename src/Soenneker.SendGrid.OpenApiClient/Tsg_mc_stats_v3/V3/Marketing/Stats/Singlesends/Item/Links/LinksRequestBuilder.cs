@@ -39,7 +39,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_stats_v3_ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Singlesends.Item.Links.SinglesendsLinkStatsResponse404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_stats_v3_ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Singlesends.Item.Links.SinglesendsLinkStatsResponse404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -100,11 +100,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_stats_v3_Items2[]? GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items2[]? GroupBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_stats_v3_Items2[] GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items2[] GroupBy { get; set; }
 #endif
             /// <summary>The number of elements you want returned on each page.</summary>
             [QueryParameter("page_size")]

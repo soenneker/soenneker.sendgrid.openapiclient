@@ -42,27 +42,27 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.It
         /// <summary>
         /// **This endpoint allows you to remove contacts from a given list.**The contacts will not be deleted. Only their list membership will be changed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_DeleteContact_202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3DeleteContact202"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.Tsg_mc_lists_v3_DeleteContact_202404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.TsgMcListsV3DeleteContact202404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_DeleteContact_202?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3DeleteContact202?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_DeleteContact_202> DeleteAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3DeleteContact202> DeleteAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.Tsg_mc_lists_v3_DeleteContact_202404Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.TsgMcListsV3DeleteContact202404Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_DeleteContact_202>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_lists_v3_DeleteContact_202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3DeleteContact202>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3DeleteContact202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to remove contacts from a given list.**The contacts will not be deleted. Only their list membership will be changed.

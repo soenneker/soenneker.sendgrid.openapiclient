@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The credit_allocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPost_credit_allocation? CreditAllocation { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation? CreditAllocation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPost_credit_allocation CreditAllocation { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation CreditAllocation { get; set; }
 #endif
         /// <summary>The email address for this subuser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The region property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Region3? Region { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region3? Region { get; set; }
         /// <summary>The user ID for this subuser.</summary>
         public double? UserId { get; set; }
         /// <summary>The username of the subuser.</summary>
@@ -67,9 +67,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credit_allocation", n => { CreditAllocation = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPost_credit_allocation>(global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPost_credit_allocation.CreateFromDiscriminatorValue); } },
+                { "credit_allocation", n => { CreditAllocation = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation>(global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Region3>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region3>(); } },
                 { "user_id", n => { UserId = n.GetDoubleValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -81,9 +81,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPost_credit_allocation>("credit_allocation", CreditAllocation);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation>("credit_allocation", CreditAllocation);
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Region3>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region3>("region", Region);
             writer.WriteDoubleValue("user_id", UserId);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

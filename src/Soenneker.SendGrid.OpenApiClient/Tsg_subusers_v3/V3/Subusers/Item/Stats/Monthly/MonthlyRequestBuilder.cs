@@ -103,7 +103,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Stat
             public int? Offset { get; set; }
             /// <summary>The direction you want to sort.</summary>
             [QueryParameter("sort_by_direction")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_SortByDirection? SortByDirection { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3SortByDirection? SortByDirection { get; set; }
             /// <summary>&quot;The metric that you want to sort by. Metrics that you can sort by are: `blocks`, `bounces`, `clicks`, `delivered`, `opens`, `requests`, `unique_clicks`, `unique_opens`, and `unsubscribes`.&apos;&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -65,7 +65,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The total number of exported recipients.</summary>
         public int? RecipientCount { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_Status? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3Status? Status { get; set; }
         /// <summary>The ISO8601 timestamp when the export was updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +114,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.Metadata.CreateFromDiscriminatorValue); } },
                 { "recipient_count", n => { RecipientCount = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3Status>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -133,7 +133,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Metadata>("_metadata", Metadata);
             writer.WriteIntValue("recipient_count", RecipientCount);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_lmc_contactdb_v3_Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3Status>("status", Status);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);

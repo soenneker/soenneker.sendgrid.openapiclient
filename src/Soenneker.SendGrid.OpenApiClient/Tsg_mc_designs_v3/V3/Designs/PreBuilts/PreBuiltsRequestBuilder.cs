@@ -49,20 +49,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.PreBuilt
         /// <summary>
         /// **This endpoint allows you to retrieve a list of pre-built designs provided by Twilio SendGrid**.Unlike the `/designs` endpoint where *your* designs are stored, a GET request made to `designs/pre-builts` will retrieve a list of the pre-built Twilio SendGrid designs. This endpoint will not return the designs stored in your Design Library.By default, you will receive 100 results per request; however, you can modify the number of results returned by passing an integer to the `page_size` query parameter.This endpoint is useful for retrieving the IDs of Twilio SendGrid designs that you want to duplicate and modify.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_ListPreBuiltDesign_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3ListPreBuiltDesign200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_ListPreBuiltDesign_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.PreBuilts.PreBuiltsRequestBuilder.PreBuiltsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3ListPreBuiltDesign200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.PreBuilts.PreBuiltsRequestBuilder.PreBuiltsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_ListPreBuiltDesign_200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.PreBuilts.PreBuiltsRequestBuilder.PreBuiltsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3ListPreBuiltDesign200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.PreBuilts.PreBuiltsRequestBuilder.PreBuiltsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_ListPreBuiltDesign_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_ListPreBuiltDesign_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3ListPreBuiltDesign200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3ListPreBuiltDesign200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a list of pre-built designs provided by Twilio SendGrid**.Unlike the `/designs` endpoint where *your* designs are stored, a GET request made to `designs/pre-builts` will retrieve a list of the pre-built Twilio SendGrid designs. This endpoint will not return the designs stored in your Design Library.By default, you will receive 100 results per request; however, you can modify the number of results returned by passing an integer to the `page_size` query parameter.This endpoint is useful for retrieving the IDs of Twilio SendGrid designs that you want to duplicate and modify.

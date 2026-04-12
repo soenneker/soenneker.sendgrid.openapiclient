@@ -39,7 +39,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_DeleteFieldDefinition_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3DeleteFieldDefinition404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,36 +52,36 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_DeleteFieldDefinition_404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3DeleteFieldDefinition404.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to update a defined Custom Field.**Only your Custom fields can be modified; Reserved Fields cannot be updated.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_200?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_200> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition400.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint deletes a defined Custom Field.**You can delete only Custom Fields; Reserved Fields cannot be deleted.
@@ -110,11 +110,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_custom_fields_v3_UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

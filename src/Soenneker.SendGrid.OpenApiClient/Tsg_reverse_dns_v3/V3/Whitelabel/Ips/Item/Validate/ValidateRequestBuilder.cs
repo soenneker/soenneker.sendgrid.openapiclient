@@ -36,27 +36,27 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_reverse_dns_v3.V3.Whitelabel.Ips.
         /// <summary>
         /// **This endpoint allows you to validate a reverse DNS record.**Always check the `valid` property of the response’s `validation_results.a_record` object. This field will indicate whether it was possible to validate the reverse DNS record. If the `validation_results.a_record.valid` is `false`, this indicates only that Twilio SendGrid could not determine the validity your reverse DNS record — it may still be valid.If validity couldn’t be determined, you can check the value of `validation_results.a_record.reason` to find out why.You can retrieve the IDs associated with all your reverse DNS records using the &quot;Retrieve all reverse DNS records&quot; endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_500.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_reverse_dns_v3_ValidateReverseDns_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgReverseDnsV3ValidateReverseDns200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to validate a reverse DNS record.**Always check the `valid` property of the response’s `validation_results.a_record` object. This field will indicate whether it was possible to validate the reverse DNS record. If the `validation_results.a_record.valid` is `false`, this indicates only that Twilio SendGrid could not determine the validity your reverse DNS record — it may still be valid.If validity couldn’t be determined, you can check the value of `validation_results.a_record.reason` to find out why.You can retrieve the IDs associated with all your reverse DNS records using the &quot;Retrieve all reverse DNS records&quot; endpoint.

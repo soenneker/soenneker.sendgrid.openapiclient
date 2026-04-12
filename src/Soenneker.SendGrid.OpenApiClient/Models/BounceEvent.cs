@@ -99,7 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Indicates whether TLS was used (1). This field will only be present if TLS was used.</summary>
         public int? Tls { get; set; }
         /// <summary>The type of bounce that occurred.- `bounce` typically means that the message is permanently undeliverable (hard bounce).- `blocked` indicates that the message was temporarily undeliverable (soft bounce).</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_BounceType? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3BounceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.BounceEvent"/> and sets the default values.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
                 { "tls", n => { Tls = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_BounceType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3BounceType>(); } },
             };
         }
         /// <summary>
@@ -165,7 +165,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("timestamp", Timestamp);
             writer.WriteIntValue("tls", Tls);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_logs_v3_BounceType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3BounceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

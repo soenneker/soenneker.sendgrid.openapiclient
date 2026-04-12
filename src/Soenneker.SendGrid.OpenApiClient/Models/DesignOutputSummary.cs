@@ -23,7 +23,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string CreatedAt { get; set; }
 #endif
         /// <summary>The editor property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_Editor? Editor { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3Editor? Editor { get; set; }
         /// <summary>ID of the Design.</summary>
         public Guid? Id { get; set; }
         /// <summary>The name of the new design.</summary>
@@ -77,7 +77,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_Editor>(); } },
+                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3Editor>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "thumbnail_url", n => { ThumbnailUrl = n.GetStringValue(); } },
@@ -92,7 +92,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_Editor>("editor", Editor);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3Editor>("editor", Editor);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("thumbnail_url", ThumbnailUrl);

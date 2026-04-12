@@ -21,7 +21,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Total number of allowable credits. `total` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited` or `nonrecurring`.</summary>
         public int? Total { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Type? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type? Type { get; set; }
         /// <summary>Total number of used credits. `used` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited` or `nonrecurring`.</summary>
         public int? Used { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "remain", n => { Remain = n.GetIntValue(); } },
                 { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency>(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type>(); } },
                 { "used", n => { Used = n.GetIntValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("remain", Remain);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency>("reset_frequency", ResetFrequency);
             writer.WriteIntValue("total", Total);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_subusers_v3_Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type>("type", Type);
             writer.WriteIntValue("used", Used);
             writer.WriteAdditionalData(AdditionalData);
         }

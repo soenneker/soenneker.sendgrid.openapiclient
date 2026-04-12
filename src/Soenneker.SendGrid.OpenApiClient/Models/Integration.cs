@@ -19,10 +19,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The configurable filters for SendGrid to destination email event forwarding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Integration_filters? Filters { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Integration_filters Filters { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters Filters { get; set; }
 #endif
         /// <summary>The unique ID of an Integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The properties of an Integration required to send events to a specific third-party application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Integration_properties? Properties { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Integration_properties Properties { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationProperties Properties { get; set; }
 #endif
         /// <summary>Your Twilio SendGrid account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,10 +83,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination3>(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Integration_filters>(global::Soenneker.SendGrid.OpenApiClient.Models.Integration_filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters.CreateFromDiscriminatorValue); } },
                 { "integration_id", n => { IntegrationId = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Integration_properties>(global::Soenneker.SendGrid.OpenApiClient.Models.Integration_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationProperties>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationProperties.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -98,10 +98,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination3>("destination", Destination);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Integration_filters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters>("filters", Filters);
             writer.WriteStringValue("integration_id", IntegrationId);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Integration_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationProperties>("properties", Properties);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

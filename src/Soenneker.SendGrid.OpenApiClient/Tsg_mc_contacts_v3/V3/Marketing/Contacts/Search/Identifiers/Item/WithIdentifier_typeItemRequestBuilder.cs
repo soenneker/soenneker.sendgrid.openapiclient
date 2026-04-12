@@ -36,22 +36,22 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <summary>
         /// &quot;Use this endpoint to retrieve up to 100 contacts that match the requested identifier values for a single identifier type.`identifier_type` must be a valid identifier type: `email`, `phone_number_id`, `external_id`, or `anonymous_id`.Use this endpoint instead of the [Search Contacts endpoint](https://www.twilio.com/docs/sendgrid/api-reference/contacts/search-contacts) when you can provide exact identifiers and do not need to include other [Segmentation Query Language (SGQL)](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/segmentation-query-language/) filters when searching.This endpoint returns a `200` status code when any contacts match the identifiers you supplied. When searching multiple identifier values in a single request, it is possible that some will match a contact while others will not. When a partially successful search like this is made, the matching contacts are returned in an object and an error message is returned for the identifier values that are not found.This endpoint returns a `404` status code when no contacts are found for the provided identifiers.This endpoint returns a `400` status code if any searched addresses are invalid.Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ContactsError">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ContactsError">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -59,12 +59,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.ContactsError.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.ContactsError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_500.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Use this endpoint to retrieve up to 100 contacts that match the requested identifier values for a single identifier type.`identifier_type` must be a valid identifier type: `email`, `phone_number_id`, `external_id`, or `anonymous_id`.Use this endpoint instead of the [Search Contacts endpoint](https://www.twilio.com/docs/sendgrid/api-reference/contacts/search-contacts) when you can provide exact identifiers and do not need to include other [Segmentation Query Language (SGQL)](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/segmentation-query-language/) filters when searching.This endpoint returns a `200` status code when any contacts match the identifiers you supplied. When searching multiple identifier values in a single request, it is possible that some will match a contact while others will not. When a partially successful search like this is made, the matching contacts are returned in an object and an error message is returned for the identifier values that are not found.This endpoint returns a `404` status code when no contacts are found for the provided identifiers.This endpoint returns a `400` status code if any searched addresses are invalid.Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.&quot;
@@ -74,11 +74,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3GetContactByIdentifiers body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

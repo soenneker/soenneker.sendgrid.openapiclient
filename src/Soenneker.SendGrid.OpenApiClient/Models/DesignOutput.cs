@@ -15,7 +15,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The editor property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_Editor? Editor { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3Editor? Editor { get; set; }
         /// <summary>The HTML content of the Design.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_Editor>(); } },
+                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3Editor>(); } },
                 { "html_content", n => { HtmlContent = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "plain_content", n => { PlainContent = n.GetStringValue(); } },
@@ -80,7 +80,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_designs_v3_Editor>("editor", Editor);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcDesignsV3Editor>("editor", Editor);
             writer.WriteStringValue("html_content", HtmlContent);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("plain_content", PlainContent);

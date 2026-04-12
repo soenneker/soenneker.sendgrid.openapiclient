@@ -27,7 +27,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The ISO8601 timestamp when the Job was created. This is the time at which the upload request was sent to the `upload_uri`.</summary>
         public double? StartedAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_validation_v3_Status? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3Status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobs200Response_result"/> and sets the default values.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "finished_at", n => { FinishedAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "started_at", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_validation_v3_Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3Status>(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteDoubleValue("finished_at", FinishedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("started_at", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_validation_v3_Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

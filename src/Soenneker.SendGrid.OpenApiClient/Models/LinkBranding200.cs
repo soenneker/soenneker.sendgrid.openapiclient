@@ -19,10 +19,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The DNS records generated for this link branding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200_dns? Dns { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200Dns? Dns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200_dns Dns { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200Dns Dns { get; set; }
 #endif
         /// <summary>The root domain of the branded link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "default", n => { Default = n.GetBoolValue(); } },
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200_dns>(global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200_dns.CreateFromDiscriminatorValue); } },
+                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200Dns>(global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200Dns.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "legacy", n => { Legacy = n.GetBoolValue(); } },
@@ -100,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("default", Default);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200_dns>("dns", Dns);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200Dns>("dns", Dns);
             writer.WriteStringValue("domain", Domain);
             writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("legacy", Legacy);

@@ -39,8 +39,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteScheduledSingleSend_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteScheduledSingleSend_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteScheduledSingleSend404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteScheduledSingleSend500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSchedule?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,37 +53,37 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteScheduledSingleSend_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_DeleteScheduledSingleSend_500.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteScheduledSingleSend404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteScheduledSingleSend500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSchedule>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to send a Single Send immediately or schedule it to be sent at a later time.**To send your message immediately, set the `send_at` property value to the string `now`. To schedule the Single Send for future delivery, set the `send_at` value to your desired send time in [ISO 8601 date time format](https://www.iso.org/iso-8601-date-and-time-format.html) (`yyyy-MM-ddTHH:mm:ssZ`).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_201?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend201?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_201> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend201> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_500.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_201>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend201>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to cancel a scheduled Single Send using a Single Send ID.**Making a DELETE request to this endpoint will cancel the scheduled sending of a Single Send. The request will not delete the Single Send itself. Deleting a Single Send can be done by passing a DELETE request to `/marketing/singlesends/{id}`.
@@ -112,11 +112,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3ScheduleSingleSend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

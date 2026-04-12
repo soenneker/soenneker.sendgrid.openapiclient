@@ -17,7 +17,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The editor property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_templates_v3_Editor1? Editor { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3Editor1? Editor { get; set; }
         /// <summary>If true, plain_content is always generated from html_content. If false, plain_content is not altered.</summary>
         public bool? GeneratePlainContent { get; set; }
         /// <summary>The HTML content of the Design.</summary>
@@ -120,7 +120,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetIntValue(); } },
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_templates_v3_Editor1>(); } },
+                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3Editor1>(); } },
                 { "generate_plain_content", n => { GeneratePlainContent = n.GetBoolValue(); } },
                 { "html_content", n => { HtmlContent = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -142,7 +142,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("active", Active);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_templates_v3_Editor1>("editor", Editor);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3Editor1>("editor", Editor);
             writer.WriteBoolValue("generate_plain_content", GeneratePlainContent);
             writer.WriteStringValue("html_content", HtmlContent);
             writer.WriteGuidValue("id", Id);

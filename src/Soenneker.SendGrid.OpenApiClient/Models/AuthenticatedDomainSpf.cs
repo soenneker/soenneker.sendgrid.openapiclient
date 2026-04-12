@@ -23,10 +23,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The DNS records for this authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_dns? Dns { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns? Dns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_dns Dns { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns Dns { get; set; }
 #endif
         /// <summary>The domain authenticated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "automatic_security", n => { AutomaticSecurity = n.GetBoolValue(); } },
                 { "custom_spf", n => { CustomSpf = n.GetBoolValue(); } },
                 { "default", n => { Default = n.GetBoolValue(); } },
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_dns>(global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_dns.CreateFromDiscriminatorValue); } },
+                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns>(global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips>(global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("automatic_security", AutomaticSecurity);
             writer.WriteBoolValue("custom_spf", CustomSpf);
             writer.WriteBoolValue("default", Default);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_dns>("dns", Dns);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns>("dns", Dns);
             writer.WriteStringValue("domain", Domain);
             writer.WriteIntValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips>("ips", Ips);

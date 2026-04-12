@@ -36,27 +36,27 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <summary>
         /// &quot;**This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are \&quot;drafts\&quot; or \&quot;scheduled\&quot; and also associated with the category \&quot;shoes,\&quot; your request body may look like the example below.```javascript{  \&quot;status\&quot;: [    \&quot;draft\&quot;,    \&quot;scheduled\&quot;  ],  \&quot;categories\&quot;: [    \&quot;shoes\&quot;  ],}```&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSearch body, Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.Search.SearchRequestBuilder.SearchRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSearch body, Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.Search.SearchRequestBuilder.SearchRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSearch body, Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.Search.SearchRequestBuilder.SearchRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendSearch body, Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.Search.SearchRequestBuilder.SearchRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_SearchSingleSend_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are \&quot;drafts\&quot; or \&quot;scheduled\&quot; and also associated with the category \&quot;shoes,\&quot; your request body may look like the example below.```javascript{  \&quot;status\&quot;: [    \&quot;draft\&quot;,    \&quot;scheduled\&quot;  ],  \&quot;categories\&quot;: [    \&quot;shoes\&quot;  ],}```&quot;

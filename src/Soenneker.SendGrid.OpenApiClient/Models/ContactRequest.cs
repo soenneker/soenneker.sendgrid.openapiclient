@@ -65,10 +65,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>An object of custom field IDs and the values you want to associate with those custom fields. You can retrieve the IDs of your custom fields from the [Get All Field Definitions endpoint](https://docs.sendgrid.com/api-reference/custom-fields/get-all-field-definitions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest_custom_fields? CustomFields { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequestCustomFields? CustomFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest_custom_fields CustomFields { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequestCustomFields CustomFields { get; set; }
 #endif
         /// <summary>The contact&apos;s primary email. This is required to be a valid email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,7 +157,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "anonymous_id", n => { AnonymousId = n.GetStringValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
-                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest_custom_fields>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest_custom_fields.CreateFromDiscriminatorValue); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequestCustomFields>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequestCustomFields.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("anonymous_id", AnonymousId);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest_custom_fields>("custom_fields", CustomFields);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequestCustomFields>("custom_fields", CustomFields);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("first_name", FirstName);

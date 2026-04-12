@@ -49,35 +49,35 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <summary>
         /// &quot;**This endpoint allows a CSV upload containing up to one million contacts or 5GB of data, whichever is smaller. At least one identifier is required for a successful import.**Imports take place asynchronously: the endpoint returns a URL (`upload_uri`) and HTTP headers (`upload_headers`) which can subsequently be used to `PUT` a file of contacts to be imported into our system.Uploaded CSV files may also be [gzip-compressed](https://en.wikipedia.org/wiki/Gzip).In either case, you must include the field `file_type` with the value `csv` in your request body.The `field_mappings` parameter is a respective list of field definition IDs to map the uploaded CSV columns to. It allows you to use CSVs where one or more columns are skipped (`null`) or remapped to the contact field.For example, if `field_mappings` is set to `[null, \&quot;w1\&quot;, \&quot;_rf1\&quot;]`, this means skip column 0, map column 1 to the custom field with the ID `w1`, and map column 2 to the reserved field with the ID `_rf1`. See the \&quot;Get All Field Definitions\&quot; endpoint to fetch your custom and reserved field IDs to use with `field_mappings`.Once you receive the response body you can then initiate a **second** API call where you use the supplied URL and HTTP header to upload your file. For example:`curl --upload-file \&quot;file/path.csv\&quot; \&quot;URL_GIVEN\&quot; -H \&quot;HEADER_GIVEN\&quot;`If you would like to monitor the status of your import job, use the `job_id` and the \&quot;Import Contacts Status\&quot; endpoint.Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**This endpoint allows a CSV upload containing up to one million contacts or 5GB of data, whichever is smaller. At least one identifier is required for a successful import.**Imports take place asynchronously: the endpoint returns a URL (`upload_uri`) and HTTP headers (`upload_headers`) which can subsequently be used to `PUT` a file of contacts to be imported into our system.Uploaded CSV files may also be [gzip-compressed](https://en.wikipedia.org/wiki/Gzip).In either case, you must include the field `file_type` with the value `csv` in your request body.The `field_mappings` parameter is a respective list of field definition IDs to map the uploaded CSV columns to. It allows you to use CSVs where one or more columns are skipped (`null`) or remapped to the contact field.For example, if `field_mappings` is set to `[null, \&quot;w1\&quot;, \&quot;_rf1\&quot;]`, this means skip column 0, map column 1 to the custom field with the ID `w1`, and map column 2 to the reserved field with the ID `_rf1`. See the \&quot;Get All Field Definitions\&quot; endpoint to fetch your custom and reserved field IDs to use with `field_mappings`.Once you receive the response body you can then initiate a **second** API call where you use the supplied URL and HTTP header to upload your file. For example:`curl --upload-file \&quot;file/path.csv\&quot; \&quot;URL_GIVEN\&quot; -H \&quot;HEADER_GIVEN\&quot;`If you would like to monitor the status of your import job, use the `job_id` and the \&quot;Import Contacts Status\&quot; endpoint.Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.&quot;
@@ -87,11 +87,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ImportContact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

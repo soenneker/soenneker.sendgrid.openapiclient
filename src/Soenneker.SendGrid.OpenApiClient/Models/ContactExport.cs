@@ -59,13 +59,13 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Metadata? Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Metadata Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata Metadata { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Status? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Status? Status { get; set; }
         /// <summary>The ISO8601 timestamp when the export was updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,8 +113,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Metadata.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Status>(); } },
+                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Status>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -132,8 +132,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Metadata>("_metadata", Metadata);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_contacts_v3_Status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata>("_metadata", Metadata);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Status>("status", Status);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);

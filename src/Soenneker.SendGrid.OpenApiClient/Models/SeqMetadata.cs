@@ -18,10 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The next_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata_next_params? NextParams { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadataNextParams? NextParams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata_next_params NextParams { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadataNextParams NextParams { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next_params", n => { NextParams = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata_next_params>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata_next_params.CreateFromDiscriminatorValue); } },
+                { "next_params", n => { NextParams = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadataNextParams>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadataNextParams.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata_next_params>("next_params", NextParams);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadataNextParams>("next_params", NextParams);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

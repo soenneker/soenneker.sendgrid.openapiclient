@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The ISO 8601 time at which to send the Single Send. This must be in future or the string `now`. SendGrid [Mail Send](https://docs.sendgrid.com/api-reference/mail-send/mail-send) emails can be scheduled up to 72 hours in advance. However, this scheduling constraint does not apply to emails sent via [Marketing Campaigns](https://docs.sendgrid.com/ui/sending-email/how-to-send-email-with-marketing-campaigns/).</summary>
         public DateTimeOffset? SendAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status3? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status3? Status { get; set; }
         /// <summary>the ISO 8601 time at which the Single Send was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "is_abtest", n => { IsAbtest = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "send_at", n => { SendAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status3>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status3>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -100,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("is_abtest", IsAbtest);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("send_at", SendAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status3>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status3>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

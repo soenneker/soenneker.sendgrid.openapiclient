@@ -19,10 +19,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The configurable filters for SendGrid to destination email event forwarding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_filters? Filters { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_filters Filters { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters Filters { get; set; }
 #endif
         /// <summary>The nickname for the Integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,10 +35,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The properties of an Integration required to send events to a specific third-party application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_properties? Properties { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_properties Properties { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties Properties { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput"/> and sets the default values.
@@ -67,9 +67,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination2>(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_filters>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_properties>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,9 +80,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination2>("destination", Destination);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_filters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters>("filters", Filters);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInput_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties>("properties", Properties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

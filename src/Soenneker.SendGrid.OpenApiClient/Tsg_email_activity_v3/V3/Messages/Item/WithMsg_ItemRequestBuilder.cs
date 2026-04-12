@@ -36,29 +36,29 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Ite
         /// <summary>
         /// Get all of the details about the specified message.For Regional (EU) subusers, no data will be generated for this service.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_429">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage429">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_404.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_429.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage400.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage404.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage429.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_email_activity_v3_GetMessage_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all of the details about the specified message.For Regional (EU) subusers, no data will be generated for this service.

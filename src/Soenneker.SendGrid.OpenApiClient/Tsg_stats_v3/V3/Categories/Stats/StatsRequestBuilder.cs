@@ -94,7 +94,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Categories.Stats
         {
             /// <summary>How to group the statistics. Must be either &quot;day&quot;, &quot;week&quot;, or &quot;month&quot;.</summary>
             [QueryParameter("aggregated_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_stats_v3_AggregatedBy? AggregatedBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3AggregatedBy? AggregatedBy { get; set; }
             /// <summary>The individual categories that you want to retrieve statistics for. You may include up to 10 different categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

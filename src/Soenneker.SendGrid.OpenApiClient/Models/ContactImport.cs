@@ -41,10 +41,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Result map of the import job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactImport_results? Results { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults? Results { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactImport_results Results { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults Results { get; set; }
 #endif
         /// <summary>The ISO8601 timestamp when the job was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "finished_at", n => { FinishedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job_type", n => { JobType = n.GetStringValue(); } },
-                { "results", n => { Results = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactImport_results>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactImport_results.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults.CreateFromDiscriminatorValue); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -105,7 +105,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("finished_at", FinishedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("job_type", JobType);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactImport_results>("results", Results);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults>("results", Results);
             writer.WriteStringValue("started_at", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

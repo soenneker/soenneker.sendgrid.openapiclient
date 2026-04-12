@@ -29,10 +29,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_segments_2_0_v3_Metadata? Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegments20V3Metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_segments_2_0_v3_Metadata Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegments20V3Metadata Metadata { get; set; }
 #endif
         /// <summary>Name of the segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "contacts_count", n => { ContactsCount = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_segments_2_0_v3_Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_segments_2_0_v3_Metadata.CreateFromDiscriminatorValue); } },
+                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegments20V3Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegments20V3Metadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "next_sample_update", n => { NextSampleUpdate = n.GetStringValue(); } },
                 { "parent_list_ids", n => { ParentListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -138,7 +138,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("contacts_count", ContactsCount);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_segments_2_0_v3_Metadata>("_metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegments20V3Metadata>("_metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("next_sample_update", NextSampleUpdate);
             writer.WriteCollectionOfPrimitiveValues<string>("parent_list_ids", ParentListIds);

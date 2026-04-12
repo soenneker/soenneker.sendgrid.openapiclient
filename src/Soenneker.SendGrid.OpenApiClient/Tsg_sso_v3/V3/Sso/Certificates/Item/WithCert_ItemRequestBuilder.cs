@@ -39,11 +39,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 400 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 401 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 403 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 429 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 500 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 400 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 401 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 403 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 429 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,11 +56,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -70,11 +70,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 400 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 401 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 403 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 429 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 500 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 400 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 401 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 403 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 429 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,11 +87,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,29 +102,29 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 400 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 401 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 403 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 429 status code</exception>
-        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item>">When receiving a 500 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 400 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 401 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 403 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 429 status code</exception>
+        /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_sso_v3_UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_sso_v3_UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponse_item.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -174,11 +174,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_sso_v3_UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_sso_v3_UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

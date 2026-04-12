@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200Response_result? Result { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200Response_result Result { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult Result { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200Response"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200Response_result>(global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200Response_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult>(global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200Response_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

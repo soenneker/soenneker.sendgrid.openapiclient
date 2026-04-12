@@ -27,10 +27,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The email_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_email_config? EmailConfig { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfig? EmailConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_email_config EmailConfig { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfig EmailConfig { get; set; }
 #endif
         /// <summary>The unique ID for the Single Send.</summary>
         public Guid? Id { get; set; }
@@ -47,13 +47,13 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The send_to property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_send_to? SendTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo? SendTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_send_to SendTo { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo SendTo { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status2? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2? Status { get; set; }
         /// <summary>the ISO 8601 time at which the Single Send was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The warnings property</summary>
@@ -91,12 +91,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "email_config", n => { EmailConfig = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_email_config>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_email_config.CreateFromDiscriminatorValue); } },
+                { "email_config", n => { EmailConfig = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfig>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "send_at", n => { SendAt = n.GetDateTimeOffsetValue(); } },
-                { "send_to", n => { SendTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_send_to>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_send_to.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status2>(); } },
+                { "send_to", n => { SendTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -110,12 +110,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_email_config>("email_config", EmailConfig);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfig>("email_config", EmailConfig);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("send_at", SendAt);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_send_to>("send_to", SendTo);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Status2>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo>("send_to", SendTo);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);

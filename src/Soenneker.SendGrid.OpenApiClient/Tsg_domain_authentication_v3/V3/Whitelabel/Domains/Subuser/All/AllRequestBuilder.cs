@@ -36,20 +36,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// <summary>
         /// &quot;**This endpoint allows you to retrieve all of the authenticated domains that have been assigned to a specific subuser.**This functionality allows subusers to send mail using their parent&apos;s domain. Authenticated domains can be associated with (i.e. assigned to) subusers from a parent account, and a subuser can have up to five associated domains. To associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.When selecting a domain to send email from, SendGrid checks for domains in the following order and chooses the first one that appears in the hierarchy: 1. Domain assigned by the subuser that matches the email&apos;s `From` address domain. 2. The subuser&apos;s default domain. 3. Domain assigned by the parent user that matches the `From` address domain. 4. Parent user&apos;s default domain. 5. sendgrid.net&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_domain_authentication_v3_ListAllAuthenticatedDomainWithUser_200&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_domain_authentication_v3_ListAllAuthenticatedDomainWithUser_200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.Subuser.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.Subuser.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_domain_authentication_v3_ListAllAuthenticatedDomainWithUser_200>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.Subuser.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.Subuser.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_domain_authentication_v3_ListAllAuthenticatedDomainWithUser_200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_domain_authentication_v3_ListAllAuthenticatedDomainWithUser_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

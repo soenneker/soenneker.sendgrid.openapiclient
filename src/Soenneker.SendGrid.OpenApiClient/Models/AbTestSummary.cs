@@ -33,7 +33,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>What percentage of your recipient will be included in your A/B testing</summary>
         public int? TestPercentage { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Type? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Type? Type { get; set; }
         /// <summary>The winner_criteria property</summary>
         public global::Soenneker.SendGrid.OpenApiClient.Models.WinnerCriteria? WinnerCriteria { get; set; }
         /// <summary>When the winner was selected</summary>
@@ -80,7 +80,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "duration", n => { Duration = n.GetStringValue(); } },
                 { "expiration_date", n => { ExpirationDate = n.GetStringValue(); } },
                 { "test_percentage", n => { TestPercentage = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Type>(); } },
                 { "winner_criteria", n => { WinnerCriteria = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.WinnerCriteria>(); } },
                 { "winner_selected_at", n => { WinnerSelectedAt = n.GetStringValue(); } },
                 { "winning_template_id", n => { WinningTemplateId = n.GetStringValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("duration", Duration);
             writer.WriteStringValue("expiration_date", ExpirationDate);
             writer.WriteIntValue("test_percentage", TestPercentage);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Tsg_mc_singlesends_v3_Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.WinnerCriteria>("winner_criteria", WinnerCriteria);
             writer.WriteStringValue("winner_selected_at", WinnerSelectedAt);
             writer.WriteStringValue("winning_template_id", WinningTemplateId);
