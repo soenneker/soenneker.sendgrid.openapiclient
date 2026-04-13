@@ -37,7 +37,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgAccountProvisioningV3ListAccount200"
+                  "$ref": "#/components/schemas/AccountList"
                 },
                 "example": {
                   "accounts": [
@@ -618,7 +618,43 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgAlertsV3GetAlert200"
+                  "required": [
+                    "created_at",
+                    "email_to",
+                    "id",
+                    "type",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "created_at": {
+                      "type": "integer",
+                      "description": "A Unix timestamp indicating when the alert was created."
+                    },
+                    "email_to": {
+                      "type": "string",
+                      "description": "The email address that the alert will be sent to."
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "\"If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \\\"daily\\\", \\\"weekly\\\", or \\\"monthly\\\".\""
+                    },
+                    "id": {
+                      "type": "integer",
+                      "description": "The ID of the alert."
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/Type2"
+                    },
+                    "updated_at": {
+                      "type": "integer",
+                      "description": "A Unix timestamp indicating when the alert was last modified."
+                    },
+                    "percentage": {
+                      "type": "integer",
+                      "description": "If the alert is of type usage_limit, this indicates the percentage of email usage that must be reached before the alert will be sent."
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -691,7 +727,43 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgAlertsV3UpdateAlert200"
+                  "required": [
+                    "created_at",
+                    "email_to",
+                    "id",
+                    "type",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "created_at": {
+                      "type": "integer",
+                      "description": "A Unix timestamp indicating when the alert was created."
+                    },
+                    "email_to": {
+                      "type": "string",
+                      "description": "The email address that the alert will be sent to."
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "\"If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \\\"daily\\\", \\\"weekly\\\", or \\\"monthly\\\".\""
+                    },
+                    "id": {
+                      "type": "integer",
+                      "description": "The ID of the alert."
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/Type3"
+                    },
+                    "updated_at": {
+                      "type": "integer",
+                      "description": "A Unix timestamp indicating when the alert was last modified."
+                    },
+                    "percentage": {
+                      "type": "integer",
+                      "description": "If the alert is of type usage_limit, this indicates the percentage of email usage that must be reached before the alert will be sent."
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -811,7 +883,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgApiKeysV3ListApiKey200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ApiKeyResponse"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -866,7 +946,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgApiKeysV3GetApiKey200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ApiKeyScopesResponse"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -2209,7 +2297,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgEmailActivityV3GetMessage200"
+                  "$ref": "#/components/schemas/Message"
                 },
                 "examples": {
                   "response": {
@@ -2360,7 +2448,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgEmailActivityV3RequestCsv202"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "$ref": "#/components/schemas/Status2"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -2934,7 +3030,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIntegrationsV3GetIntegrationsByUser200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Integration"
+                      }
+                    }
+                  }
                 },
                 "example": {
                   "result": [
@@ -3581,7 +3685,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpsV3ListAssignedIp200"
+                  "$ref": "#/components/schemas/ListAllAssignedIPsResponse"
                 },
                 "examples": {
                   "response": {
@@ -4506,7 +4610,31 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpAddressManagementV3AddIp201"
+                  "type": "object",
+                  "properties": {
+                    "ip": {
+                      "type": "string",
+                      "description": "The IP address that was added to your account."
+                    },
+                    "is_auto_warmup": {
+                      "type": "boolean",
+                      "description": "Indicates if the IP address is set to automatically [warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address).  This parameter is returned only if the IP address is set to automatically warm up."
+                    },
+                    "is_parent_assigned": {
+                      "type": "boolean",
+                      "description": "Indicates if a parent on the account is able to send email from the IP address."
+                    },
+                    "subusers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "An array of Subuser IDs the IP address was assigned to."
+                    },
+                    "region": {
+                      "$ref": "#/components/schemas/Region2"
+                    }
+                  }
                 },
                 "examples": {
                   "201": {
@@ -5681,7 +5809,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpProvisioningV3ListAccountIps200"
+                  "title": "AccountIPsResponse",
+                  "required": [
+                    "result",
+                    "pages"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "ip",
+                          "region"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "ip": {
+                            "type": "string",
+                            "description": "IP address",
+                            "format": "ipv4"
+                          },
+                          "region": {
+                            "$ref": "#/components/schemas/TsgIpProvisioningV3Region"
+                          }
+                        }
+                      }
+                    },
+                    "pages": {
+                      "$ref": "#/components/schemas/IpProvisioningPagination"
+                    }
+                  }
                 },
                 "example": {
                   "result": [
@@ -5753,7 +5911,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpProvisioningV3AddAccountIps201"
+                  "title": "AddAccountIPsResponse",
+                  "required": [
+                    "ips",
+                    "region"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "ips": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "description": "IP address that was added",
+                        "format": "ipv4"
+                      }
+                    },
+                    "region": {
+                      "$ref": "#/components/schemas/TsgIpProvisioningV3Region2"
+                    }
+                  }
                 },
                 "example": {
                   "ips": [
@@ -6822,7 +6998,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3ListCampaign200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Campaigns2xx"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -7260,7 +7444,26 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3ScheduleCampaign201"
+                  "title": "Schedule a Campaign response",
+                  "required": [
+                    "id",
+                    "send_at",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "The campaign ID."
+                    },
+                    "send_at": {
+                      "type": "integer",
+                      "description": "The date time you scheduled your campaign to be sent."
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/TsgLmcCampaignsV3Status"
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -7415,7 +7618,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3UpdateScheduledCampaign200"
+                  "$ref": "#/components/schemas/UpdateAScheduledCampaignResponse"
                 }
               }
             }
@@ -7514,7 +7717,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3GetScheduledCampaign200"
+                  "$ref": "#/components/schemas/ViewScheduledTimeOfACampaignResponse"
                 },
                 "examples": {
                   "response": {
@@ -7651,7 +7854,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3SendCampaign201"
+                  "$ref": "#/components/schemas/SendACampaignResponse"
                 },
                 "examples": {
                   "response": {
@@ -7817,7 +8020,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3SendTestCampaign201"
+                  "$ref": "#/components/schemas/SendATestCampaignRequest"
                 }
               }
             }
@@ -7979,7 +8182,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListCustomField200"
+                  "title": "List All Custom Fields response",
+                  "required": [
+                    "custom_fields"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "custom_fields": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbCustomFieldId2xx"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -8371,7 +8586,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListContactDbList200"
+                  "title": "List All Lists response",
+                  "required": [
+                    "lists"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "lists": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbList2xx"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -8793,7 +9020,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientsFromContactDbList200"
+                  "type": "object",
+                  "properties": {
+                    "recipients": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbRecipient200"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -9541,7 +9776,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipient200"
+                  "$ref": "#/components/schemas/ListRecipientsResponse"
                 }
               }
             }
@@ -9761,7 +9996,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3GetRecipientList200"
+                  "type": "object",
+                  "properties": {
+                    "lists": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbList2xx"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -9997,7 +10240,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListSearchRecipient200"
+                  "type": "object",
+                  "properties": {
+                    "recipients": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbRecipient200"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -10432,7 +10683,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListSegment200"
+                  "title": "List All Segments response",
+                  "required": [
+                    "segments"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "segments": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbSegments"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -10877,7 +11140,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientForSegment200"
+                  "title": "List Recipients On a Segment response",
+                  "required": [
+                    "recipients"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "recipients": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactdbRecipient200"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -11031,7 +11306,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ExportRecipient202"
+                  "required": [
+                    "_metadata"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "_metadata": {
+                      "$ref": "#/components/schemas/Metadata"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "The ID of the export job."
+                    }
+                  }
                 }
               }
             }
@@ -11041,7 +11328,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ExportRecipient400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/RecipientsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -11127,7 +11426,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3GetExportRecipient400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/RecipientsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -11302,7 +11613,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcSendersV3ListSender200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SenderId"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -12805,7 +13124,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3UpdateContact400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -12907,7 +13238,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ListContact400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -12998,7 +13341,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ListBatchedContact200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactDetails3"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -13146,7 +13497,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ExportContact202"
+                  "required": [
+                    "_metadata"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "_metadata": {
+                      "$ref": "#/components/schemas/TsgMcContactsV3Metadata"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "The ID of the export job."
+                    }
+                  }
                 }
               }
             }
@@ -13156,7 +13519,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ExportContact400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -13242,7 +13617,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3GetExportContact400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -13305,7 +13692,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ImportContact400"
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -13321,7 +13724,24 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ImportContact404"
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  },
+                  "description": "If any of the specified lists do not exist."
                 }
               }
             }
@@ -13356,7 +13776,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3GetImportContact400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "$ref": "#/components/schemas/ContactsError"
+                    }
+                  }
                 }
               }
             }
@@ -13705,7 +14130,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcCustomFieldsV3CreateFieldDefinition400"
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CustomFieldsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -13930,7 +14371,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcCustomFieldsV3UpdateFieldDefinition400"
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CustomFieldsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -13940,7 +14397,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcCustomFieldsV3UpdateFieldDefinition404"
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CustomFieldsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -13960,7 +14433,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcCustomFieldsV3DeleteFieldDefinition404"
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CustomFieldsError"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -14633,7 +15122,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3CreateMarketingList400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TsgMcListsV3Error"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -14806,7 +15307,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3UpdateMarketingList400"
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TsgMcListsV3Error"
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The primary error message."
+                    }
+                  }
                 }
               }
             }
@@ -15388,7 +15901,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcSendersV3ListSender200"
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Sender"
+                      },
+                      "description": "An array of Sender objects."
+                    }
+                  }
                 }
               }
             }
@@ -15907,7 +16429,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcSinglesendsV3ScheduleSingleSend201"
+                  "type": "object",
+                  "properties": {
+                    "send_at": {
+                      "type": "string",
+                      "description": "The ISO 8601 time at which to send the Single Send. This must be in future or the string `now`. SendGrid [Mail Send](https://docs.sendgrid.com/api-reference/mail-send/mail-send) emails can be scheduled up to 72 hours in advance. However, this scheduling constraint does not apply to emails sent via [Marketing Campaigns](https://docs.sendgrid.com/ui/sending-email/how-to-send-email-with-marketing-campaigns/).",
+                      "format": "date-time"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/TsgMcSinglesendsV3Status"
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -17172,7 +17704,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgScheduledSendsV3GetScheduledSend200"
+                  "$ref": "#/components/schemas/RetrieveScheduledSendResponse"
                 },
                 "examples": {
                   "response": {
@@ -24022,7 +24554,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3GetGlobalSuppression200"
+                  "$ref": "#/components/schemas/RetrieveAGlobalSuppressionResponse"
                 },
                 "examples": {
                   "response": {
@@ -24812,7 +25344,71 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgTeammatesV3GetTeammate200"
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "description": "Teammate's username"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "Teammate's first name"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "Teammate's last name"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "Teammate's email"
+                    },
+                    "scopes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Scopes associated to teammate"
+                    },
+                    "user_type": {
+                      "$ref": "#/components/schemas/UserType1"
+                    },
+                    "is_admin": {
+                      "type": "boolean",
+                      "description": "Set to true if teammate has admin privileges"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "description": "(optional) Teammate's phone number"
+                    },
+                    "website": {
+                      "type": "string",
+                      "description": "(optional) Teammate's website"
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "(optional) Teammate's address"
+                    },
+                    "address2": {
+                      "type": "string",
+                      "description": "(optional) Teammate's address"
+                    },
+                    "city": {
+                      "type": "string",
+                      "description": "(optional) Teammate's city"
+                    },
+                    "state": {
+                      "type": "string",
+                      "description": "(optional) Teammate's state"
+                    },
+                    "zip": {
+                      "type": "string",
+                      "description": "(optional) Teammate's zip"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "(optional) Teammate's country"
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -24872,7 +25468,71 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgTeammatesV3UpdateTeammate200"
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "description": "Teammate's username"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "Teammate's first name"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "Teammate's last name"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "Teammate's email address"
+                    },
+                    "scopes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Scopes given to teammate"
+                    },
+                    "user_type": {
+                      "$ref": "#/components/schemas/UserType2"
+                    },
+                    "is_admin": {
+                      "type": "boolean",
+                      "description": "Set to true if teammate has admin priveleges"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "description": "(optional) Teammate's phone number"
+                    },
+                    "website": {
+                      "type": "string",
+                      "description": "(optional) Teammate's website"
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "(optional) Teammate's address"
+                    },
+                    "address2": {
+                      "type": "string",
+                      "description": "(optional) Teammate's address"
+                    },
+                    "city": {
+                      "type": "string",
+                      "description": "(optional) Teammate's city"
+                    },
+                    "state": {
+                      "type": "string",
+                      "description": "(optional) Teammate's state"
+                    },
+                    "zip": {
+                      "type": "string",
+                      "description": "(optional) Teammate's zip"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "(optional) Teammate's country"
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -26093,7 +26753,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgUserV3ListAccount200"
+                  "title": "GET User Account response",
+                  "required": [
+                    "type",
+                    "reputation"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$ref": "#/components/schemas/TsgUserV3Type"
+                    },
+                    "reputation": {
+                      "type": "number",
+                      "description": "The sender reputation for this user."
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -26279,7 +26953,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgUserV3ListProfile200"
+                  "$ref": "#/components/schemas/GETUserProfileResponse"
                 },
                 "examples": {
                   "response": {
@@ -26558,7 +27232,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgVerifiedSendersV3ListVerifiedSender200"
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/VerifiedSenderResponse"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -27625,7 +28307,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgWebhooksV3ListParseSetting200"
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ParseSetting"
+                      },
+                      "description": "The list of your current inbound parse settings."
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -38975,9 +39666,6 @@
         },
         "description": "Result map of the import job."
       },
-      "ContactDetails3CustomFields": {
-        "type": "object"
-      },
       "ContactRequestCustomFields": {
         "type": "object",
         "properties": {
@@ -38992,9 +39680,6 @@
           "w33": "42",
           "e2": "blue"
         }
-      },
-      "ContactDetailsCustomFields": {
-        "type": "object"
       },
       "ContactResponseCustomFields": {
         "minProperties": 0,
@@ -39510,7 +40195,7 @@
         },
         "description": "The DNS record generated to verify who created the link branding."
       },
-      "TsgAccountProvisioningV3ListAccount200": {
+      "AccountList": {
         "title": "AccountList",
         "type": "object",
         "properties": {
@@ -39675,45 +40360,6 @@
         },
         "description": "The list of alerts."
       },
-      "TsgAlertsV3GetAlert200": {
-        "required": [
-          "created_at",
-          "email_to",
-          "id",
-          "type",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "created_at": {
-            "type": "integer",
-            "description": "A Unix timestamp indicating when the alert was created."
-          },
-          "email_to": {
-            "type": "string",
-            "description": "The email address that the alert will be sent to."
-          },
-          "frequency": {
-            "type": "string",
-            "description": "\"If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \\\"daily\\\", \\\"weekly\\\", or \\\"monthly\\\".\""
-          },
-          "id": {
-            "type": "integer",
-            "description": "The ID of the alert."
-          },
-          "type": {
-            "$ref": "#/components/schemas/Type2"
-          },
-          "updated_at": {
-            "type": "integer",
-            "description": "A Unix timestamp indicating when the alert was last modified."
-          },
-          "percentage": {
-            "type": "integer",
-            "description": "If the alert is of type usage_limit, this indicates the percentage of email usage that must be reached before the alert will be sent."
-          }
-        }
-      },
       "TsgAlertsV3UpdateAlert": {
         "type": "object",
         "properties": {
@@ -39732,45 +40378,6 @@
         },
         "example": {
           "email_to": "example@example.com"
-        }
-      },
-      "TsgAlertsV3UpdateAlert200": {
-        "required": [
-          "created_at",
-          "email_to",
-          "id",
-          "type",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "created_at": {
-            "type": "integer",
-            "description": "A Unix timestamp indicating when the alert was created."
-          },
-          "email_to": {
-            "type": "string",
-            "description": "The email address that the alert will be sent to."
-          },
-          "frequency": {
-            "type": "string",
-            "description": "\"If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \\\"daily\\\", \\\"weekly\\\", or \\\"monthly\\\".\""
-          },
-          "id": {
-            "type": "integer",
-            "description": "The ID of the alert."
-          },
-          "type": {
-            "$ref": "#/components/schemas/Type3"
-          },
-          "updated_at": {
-            "type": "integer",
-            "description": "A Unix timestamp indicating when the alert was last modified."
-          },
-          "percentage": {
-            "type": "integer",
-            "description": "If the alert is of type usage_limit, this indicates the percentage of email usage that must be reached before the alert will be sent."
-          }
         }
       },
       "TsgApiKeysV3CreateApiKey": {
@@ -39816,28 +40423,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          }
-        }
-      },
-      "TsgApiKeysV3ListApiKey200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ApiKeyResponse"
-            }
-          }
-        }
-      },
-      "TsgApiKeysV3GetApiKey200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ApiKeyScopesResponse"
             }
           }
         }
@@ -40424,7 +41009,7 @@
           }
         }
       },
-      "TsgEmailActivityV3GetMessage200": {
+      "Message": {
         "title": "Message",
         "required": [
           "api_key_id",
@@ -40662,17 +41247,6 @@
           "message": {
             "type": "string",
             "description": "The primary error message."
-          }
-        }
-      },
-      "TsgEmailActivityV3RequestCsv202": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/Status2"
-          },
-          "message": {
-            "type": "string"
           }
         }
       },
@@ -40941,17 +41515,6 @@
         },
         "example": {
           "file_type": "csv"
-        }
-      },
-      "TsgIntegrationsV3GetIntegrationsByUser200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Integration"
-            }
-          }
         }
       },
       "TsgIntegrationsV3GetIntegrationsByUser403": {
@@ -41372,7 +41935,7 @@
           }
         }
       },
-      "TsgIpsV3ListAssignedIp200": {
+      "ListAllAssignedIPsResponse": {
         "title": "List all assigned IPs response",
         "type": "array",
         "items": {
@@ -41888,33 +42451,6 @@
           }
         }
       },
-      "TsgIpAddressManagementV3AddIp201": {
-        "type": "object",
-        "properties": {
-          "ip": {
-            "type": "string",
-            "description": "The IP address that was added to your account."
-          },
-          "is_auto_warmup": {
-            "type": "boolean",
-            "description": "Indicates if the IP address is set to automatically [warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address).  This parameter is returned only if the IP address is set to automatically warm up."
-          },
-          "is_parent_assigned": {
-            "type": "boolean",
-            "description": "Indicates if a parent on the account is able to send email from the IP address."
-          },
-          "subusers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "An array of Subuser IDs the IP address was assigned to."
-          },
-          "region": {
-            "$ref": "#/components/schemas/Region2"
-          }
-        }
-      },
       "TsgIpAddressManagementV3GetIp200": {
         "type": "object",
         "properties": {
@@ -42374,39 +42910,6 @@
           }
         }
       },
-      "TsgIpProvisioningV3ListAccountIps200": {
-        "title": "AccountIPsResponse",
-        "required": [
-          "result",
-          "pages"
-        ],
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "required": [
-                "ip",
-                "region"
-              ],
-              "type": "object",
-              "properties": {
-                "ip": {
-                  "type": "string",
-                  "description": "IP address",
-                  "format": "ipv4"
-                },
-                "region": {
-                  "$ref": "#/components/schemas/TsgIpProvisioningV3Region"
-                }
-              }
-            }
-          },
-          "pages": {
-            "$ref": "#/components/schemas/IpProvisioningPagination"
-          }
-        }
-      },
       "TsgIpProvisioningV3AddAccountIps": {
         "title": "AddAccountIPsRequest",
         "required": [
@@ -42427,27 +42930,6 @@
           }
         },
         "description": "Request to add IP addresses to an account. Maximum of 10 IPs per request, all from the same region."
-      },
-      "TsgIpProvisioningV3AddAccountIps201": {
-        "title": "AddAccountIPsResponse",
-        "required": [
-          "ips",
-          "region"
-        ],
-        "type": "object",
-        "properties": {
-          "ips": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "description": "IP address that was added",
-              "format": "ipv4"
-            }
-          },
-          "region": {
-            "$ref": "#/components/schemas/TsgIpProvisioningV3Region2"
-          }
-        }
       },
       "TsgIpProvisioningV3RemoveAccountIps": {
         "title": "RemoveAccountIPsRequest",
@@ -42707,17 +43189,6 @@
       "TsgLmcCampaignsV3CreateCampaign401": {
         "type": "object"
       },
-      "TsgLmcCampaignsV3ListCampaign200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Campaigns2xx"
-            }
-          }
-        }
-      },
       "TsgLmcCampaignsV3GetCampaign200": {
         "type": "object",
         "properties": {
@@ -42844,28 +43315,6 @@
           "send_at": 1489771528
         }
       },
-      "TsgLmcCampaignsV3ScheduleCampaign201": {
-        "title": "Schedule a Campaign response",
-        "required": [
-          "id",
-          "send_at",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "The campaign ID."
-          },
-          "send_at": {
-            "type": "integer",
-            "description": "The date time you scheduled your campaign to be sent."
-          },
-          "status": {
-            "$ref": "#/components/schemas/TsgLmcCampaignsV3Status"
-          }
-        }
-      },
       "TsgLmcCampaignsV3UpdateScheduledCampaign": {
         "title": "Update a Scheduled Campaign request",
         "required": [
@@ -42882,7 +43331,7 @@
           "send_at": 1489451436
         }
       },
-      "TsgLmcCampaignsV3UpdateScheduledCampaign200": {
+      "UpdateAScheduledCampaignResponse": {
         "title": "Update a Scheduled Campaign response",
         "required": [
           "id",
@@ -42905,7 +43354,7 @@
           }
         }
       },
-      "TsgLmcCampaignsV3GetScheduledCampaign200": {
+      "ViewScheduledTimeOfACampaignResponse": {
         "title": "View Scheduled Time of a Campaign response",
         "required": [
           "send_at"
@@ -42918,7 +43367,7 @@
           }
         }
       },
-      "TsgLmcCampaignsV3SendCampaign201": {
+      "SendACampaignResponse": {
         "title": "Send a Campaign response",
         "required": [
           "id",
@@ -42951,7 +43400,7 @@
           "to": "your.email@example.com"
         }
       },
-      "TsgLmcCampaignsV3SendTestCampaign201": {
+      "SendATestCampaignRequest": {
         "title": "Send a Test Campaign request",
         "required": [
           "to"
@@ -42978,21 +43427,6 @@
           "type": "text"
         }
       },
-      "TsgLmcContactdbV3ListCustomField200": {
-        "title": "List All Custom Fields response",
-        "required": [
-          "custom_fields"
-        ],
-        "type": "object",
-        "properties": {
-          "custom_fields": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbCustomFieldId2xx"
-            }
-          }
-        }
-      },
       "TsgLmcContactdbV3CreateContactDbList": {
         "title": "Create a List request",
         "required": [
@@ -43006,21 +43440,6 @@
         },
         "example": {
           "name": "your list name"
-        }
-      },
-      "TsgLmcContactdbV3ListContactDbList200": {
-        "title": "List All Lists response",
-        "required": [
-          "lists"
-        ],
-        "type": "object",
-        "properties": {
-          "lists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbList2xx"
-            }
-          }
         }
       },
       "TsgLmcContactdbV3DeleteContactDbLists": {
@@ -43064,17 +43483,6 @@
       },
       "TsgLmcContactdbV3DeleteContactDbList202": {
         "nullable": true
-      },
-      "TsgLmcContactdbV3ListRecipientsFromContactDbList200": {
-        "type": "object",
-        "properties": {
-          "recipients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbRecipient200"
-            }
-          }
-        }
       },
       "TsgLmcContactdbV3ListRecipientsFromContactDbList404": {
         "type": "object"
@@ -43150,7 +43558,7 @@
       "TsgLmcContactdbV3DeleteRecipients200": {
         "type": "object"
       },
-      "TsgLmcContactdbV3ListRecipient200": {
+      "ListRecipientsResponse": {
         "title": "List Recipients response",
         "required": [
           "recipients"
@@ -43173,28 +43581,6 @@
       },
       "TsgLmcContactdbV3GetRecipient404": {
         "type": "object"
-      },
-      "TsgLmcContactdbV3GetRecipientList200": {
-        "type": "object",
-        "properties": {
-          "lists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbList2xx"
-            }
-          }
-        }
-      },
-      "TsgLmcContactdbV3ListSearchRecipient200": {
-        "type": "object",
-        "properties": {
-          "recipients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbRecipient200"
-            }
-          }
-        }
       },
       "TsgLmcContactdbV3SearchRecipient": {
         "required": [
@@ -43329,21 +43715,6 @@
           }
         }
       },
-      "TsgLmcContactdbV3ListSegment200": {
-        "title": "List All Segments response",
-        "required": [
-          "segments"
-        ],
-        "type": "object",
-        "properties": {
-          "segments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbSegments"
-            }
-          }
-        }
-      },
       "TsgLmcContactdbV3UpdateSegment": {
         "required": [
           "name"
@@ -43376,21 +43747,6 @@
               "and_or": ""
             }
           ]
-        }
-      },
-      "TsgLmcContactdbV3ListRecipientForSegment200": {
-        "title": "List Recipients On a Segment response",
-        "required": [
-          "recipients"
-        ],
-        "type": "object",
-        "properties": {
-          "recipients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactdbRecipient200"
-            }
-          }
         }
       },
       "TsgLmcContactdbV3ListRecipientForSegment400": {
@@ -43452,36 +43808,6 @@
             "type": "integer",
             "description": "The maximum size of an export file in MB. Note that when this option is specified, multiple output files may be returned from the export.",
             "default": 5000
-          }
-        }
-      },
-      "TsgLmcContactdbV3ExportRecipient202": {
-        "required": [
-          "_metadata"
-        ],
-        "type": "object",
-        "properties": {
-          "_metadata": {
-            "$ref": "#/components/schemas/Metadata"
-          },
-          "id": {
-            "type": "string",
-            "description": "The ID of the export job."
-          }
-        }
-      },
-      "TsgLmcContactdbV3ExportRecipient400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RecipientsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
           }
         }
       },
@@ -43617,21 +43943,6 @@
           }
         }
       },
-      "TsgLmcContactdbV3GetExportRecipient400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RecipientsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "TsgLmcSendersV3CreateSender": {
         "required": [
           "address",
@@ -43720,17 +44031,6 @@
           "message": {
             "type": "string",
             "description": "The primary error message."
-          }
-        }
-      },
-      "TsgLmcSendersV3ListSender200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SenderId"
-            }
           }
         }
       },
@@ -44048,21 +44348,6 @@
           }
         }
       },
-      "TsgMcContactsV3UpdateContact400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "TsgMcContactsV3DeleteContact202": {
         "required": [
           "job_id"
@@ -44107,21 +44392,6 @@
           }
         }
       },
-      "TsgMcContactsV3ListContact400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "TsgMcContactsV3ListContact404": {
         "type": "object"
       },
@@ -44145,17 +44415,6 @@
             "1234",
             "1235"
           ]
-        }
-      },
-      "TsgMcContactsV3ListBatchedContact200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactDetails3"
-            }
-          }
         }
       },
       "TsgMcContactsV3ListBatchedContact404": {
@@ -44274,36 +44533,6 @@
             "type": "integer",
             "description": "The maximum size of an export file in MB. Note that when this option is specified, multiple output files may be returned from the export.",
             "default": 5000
-          }
-        }
-      },
-      "TsgMcContactsV3ExportContact202": {
-        "required": [
-          "_metadata"
-        ],
-        "type": "object",
-        "properties": {
-          "_metadata": {
-            "$ref": "#/components/schemas/TsgMcContactsV3Metadata"
-          },
-          "id": {
-            "type": "string",
-            "description": "The ID of the export job."
-          }
-        }
-      },
-      "TsgMcContactsV3ExportContact400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
           }
         }
       },
@@ -44439,21 +44668,6 @@
           }
         }
       },
-      "TsgMcContactsV3GetExportContact400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "TsgMcContactsV3ImportContact": {
         "required": [
           "file_type",
@@ -44512,53 +44726,6 @@
               }
             },
             "description": "A list of headers that must be included in PUT request."
-          }
-        }
-      },
-      "TsgMcContactsV3ImportContact400": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgMcContactsV3ImportContact404": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        },
-        "description": "If any of the specified lists do not exist."
-      },
-      "TsgMcContactsV3GetImportContact400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "$ref": "#/components/schemas/ContactsError"
           }
         }
       },
@@ -44931,25 +45098,6 @@
           }
         }
       },
-      "TsgMcCustomFieldsV3CreateFieldDefinition400": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomFieldsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "TsgMcCustomFieldsV3ListFieldDefinition200": {
         "maxProperties": 500,
         "minProperties": 0,
@@ -45010,63 +45158,6 @@
           },
           "_metadata": {
             "$ref": "#/components/schemas/TsgMcCustomFieldsV3Metadata"
-          }
-        }
-      },
-      "TsgMcCustomFieldsV3UpdateFieldDefinition400": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomFieldsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgMcCustomFieldsV3UpdateFieldDefinition404": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomFieldsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgMcCustomFieldsV3DeleteFieldDefinition404": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomFieldsError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
           }
         }
       },
@@ -45166,21 +45257,6 @@
           "name": "list-name"
         }
       },
-      "TsgMcListsV3CreateMarketingList400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TsgMcListsV3Error"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "TsgMcListsV3ListMarketingList200": {
         "type": "object",
         "properties": {
@@ -45236,21 +45312,6 @@
         },
         "example": {
           "name": "updated-list-name"
-        }
-      },
-      "TsgMcListsV3UpdateMarketingList400": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TsgMcListsV3Error"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
         }
       },
       "TsgMcListsV3UpdateMarketingList404": {
@@ -45383,18 +45444,6 @@
           "country": {
             "type": "string",
             "description": "The country of the Sender."
-          }
-        }
-      },
-      "TsgMcSendersV3ListSender200": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Sender"
-            },
-            "description": "An array of Sender objects."
           }
         }
       },
@@ -45801,19 +45850,6 @@
         },
         "example": {
           "send_at": "3752-01-28T23:21:52.575Z"
-        }
-      },
-      "TsgMcSinglesendsV3ScheduleSingleSend201": {
-        "type": "object",
-        "properties": {
-          "send_at": {
-            "type": "string",
-            "description": "The ISO 8601 time at which to send the Single Send. This must be in future or the string `now`. SendGrid [Mail Send](https://docs.sendgrid.com/api-reference/mail-send/mail-send) emails can be scheduled up to 72 hours in advance. However, this scheduling constraint does not apply to emails sent via [Marketing Campaigns](https://docs.sendgrid.com/ui/sending-email/how-to-send-email-with-marketing-campaigns/).",
-            "format": "date-time"
-          },
-          "status": {
-            "$ref": "#/components/schemas/TsgMcSinglesendsV3Status"
-          }
         }
       },
       "TsgMcSinglesendsV3ScheduleSingleSend404": {
@@ -46262,7 +46298,7 @@
           "$ref": "#/components/schemas/ScheduledSendStatus"
         }
       },
-      "TsgScheduledSendsV3GetScheduledSend200": {
+      "RetrieveScheduledSendResponse": {
         "title": "Retrieve scheduled send response",
         "type": "array",
         "items": {
@@ -47129,7 +47165,7 @@
           }
         }
       },
-      "TsgSuppressionsV3GetGlobalSuppression200": {
+      "RetrieveAGlobalSuppressionResponse": {
         "title": "Retrieve a Global Suppression response",
         "required": [
           "recipient_email"
@@ -47573,73 +47609,6 @@
         },
         "description": "An object containing an array of errors objects."
       },
-      "TsgTeammatesV3GetTeammate200": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "description": "Teammate's username"
-          },
-          "first_name": {
-            "type": "string",
-            "description": "Teammate's first name"
-          },
-          "last_name": {
-            "type": "string",
-            "description": "Teammate's last name"
-          },
-          "email": {
-            "type": "string",
-            "description": "Teammate's email"
-          },
-          "scopes": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            },
-            "description": "Scopes associated to teammate"
-          },
-          "user_type": {
-            "$ref": "#/components/schemas/UserType1"
-          },
-          "is_admin": {
-            "type": "boolean",
-            "description": "Set to true if teammate has admin privileges"
-          },
-          "phone": {
-            "type": "string",
-            "description": "(optional) Teammate's phone number"
-          },
-          "website": {
-            "type": "string",
-            "description": "(optional) Teammate's website"
-          },
-          "address": {
-            "type": "string",
-            "description": "(optional) Teammate's address"
-          },
-          "address2": {
-            "type": "string",
-            "description": "(optional) Teammate's address"
-          },
-          "city": {
-            "type": "string",
-            "description": "(optional) Teammate's city"
-          },
-          "state": {
-            "type": "string",
-            "description": "(optional) Teammate's state"
-          },
-          "zip": {
-            "type": "string",
-            "description": "(optional) Teammate's zip"
-          },
-          "country": {
-            "type": "string",
-            "description": "(optional) Teammate's country"
-          }
-        }
-      },
       "TsgTeammatesV3UpdateTeammate": {
         "required": [
           "scopes",
@@ -47665,73 +47634,6 @@
             "user.profile.edit"
           ],
           "is_admin": false
-        }
-      },
-      "TsgTeammatesV3UpdateTeammate200": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "description": "Teammate's username"
-          },
-          "first_name": {
-            "type": "string",
-            "description": "Teammate's first name"
-          },
-          "last_name": {
-            "type": "string",
-            "description": "Teammate's last name"
-          },
-          "email": {
-            "type": "string",
-            "description": "Teammate's email address"
-          },
-          "scopes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Scopes given to teammate"
-          },
-          "user_type": {
-            "$ref": "#/components/schemas/UserType2"
-          },
-          "is_admin": {
-            "type": "boolean",
-            "description": "Set to true if teammate has admin priveleges"
-          },
-          "phone": {
-            "type": "string",
-            "description": "(optional) Teammate's phone number"
-          },
-          "website": {
-            "type": "string",
-            "description": "(optional) Teammate's website"
-          },
-          "address": {
-            "type": "string",
-            "description": "(optional) Teammate's address"
-          },
-          "address2": {
-            "type": "string",
-            "description": "(optional) Teammate's address"
-          },
-          "city": {
-            "type": "string",
-            "description": "(optional) Teammate's city"
-          },
-          "state": {
-            "type": "string",
-            "description": "(optional) Teammate's state"
-          },
-          "zip": {
-            "type": "string",
-            "description": "(optional) Teammate's zip"
-          },
-          "country": {
-            "type": "string",
-            "description": "(optional) Teammate's country"
-          }
         }
       },
       "TsgTeammatesV3UpdateTeammate400": {
@@ -48071,23 +47973,6 @@
           }
         }
       },
-      "TsgUserV3ListAccount200": {
-        "title": "GET User Account response",
-        "required": [
-          "type",
-          "reputation"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/TsgUserV3Type"
-          },
-          "reputation": {
-            "type": "number",
-            "description": "The sender reputation for this user."
-          }
-        }
-      },
       "TsgUserV3ListCredit200": {
         "required": [
           "remain",
@@ -48192,7 +48077,7 @@
       "TsgUserV3UpdatePassword200": {
         "type": "object"
       },
-      "TsgUserV3ListProfile200": {
+      "GETUserProfileResponse": {
         "title": "GET User Profile response",
         "required": [
           "address",
@@ -48325,17 +48210,6 @@
           "message": {
             "type": "string",
             "description": "The primary error message."
-          }
-        }
-      },
-      "TsgVerifiedSendersV3ListVerifiedSender200": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VerifiedSenderResponse"
-            }
           }
         }
       },
@@ -48822,18 +48696,6 @@
           "message": {
             "type": "string",
             "description": "The primary error message."
-          }
-        }
-      },
-      "TsgWebhooksV3ListParseSetting200": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParseSetting"
-            },
-            "description": "The list of your current inbound parse settings."
           }
         }
       },

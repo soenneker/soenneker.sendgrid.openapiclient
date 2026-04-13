@@ -49,7 +49,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Dow
         /// <summary>
         /// This request will kick off a backend process to generate a CSV file. Once generated, the worker will then send an email for the user download the file. The link will expire in 3 days.The CSV will contain the events from the last 30 days, limited to the last 1 million events maximum. This endpoint will be rate limited to 1 request every 12 hours (rate limit may change).This endpoint is similar to the GET Single Message endpoint - the only difference is that /download is added to indicate that this is a CSV download requests but the same query is used to determine what the CSV should contain.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv400">When receiving a 400 status code</exception>
@@ -57,11 +57,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Dow
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv202?> PostAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadPostResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv202> PostAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadPostResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -71,7 +71,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Dow
                 { "429", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv429.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv202>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3RequestCsv202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadPostResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Download.DownloadPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This request will kick off a backend process to generate a CSV file. Once generated, the worker will then send an email for the user download the file. The link will expire in 3 days.The CSV will contain the events from the last 30 days, limited to the last 1 million events maximum. This endpoint will be rate limited to 1 request every 12 hours (rate limit may change).This endpoint is similar to the GET Single Message endpoint - the only difference is that /download is added to indicate that this is a CSV download requests but the same query is used to determine what the CSV should contain.

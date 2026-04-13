@@ -39,7 +39,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3DeleteFieldDefinition404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.Item.WithCustom_field_404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3DeleteFieldDefinition404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.Item.WithCustom_field_404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -63,8 +63,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.Item.TsgMcCustomFieldsV3UpdateFieldDefinition200400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.Item.TsgMcCustomFieldsV3UpdateFieldDefinition200404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,8 +78,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.Item.TsgMcCustomFieldsV3UpdateFieldDefinition200400Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.Item.TsgMcCustomFieldsV3UpdateFieldDefinition200404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3UpdateFieldDefinition200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -71,7 +71,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3CreateFieldDefinition400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.TsgMcCustomFieldsV3CreateFieldDefinition200400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3CreateFieldDefinition200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3CreateFieldDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,7 +85,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3CreateFieldDefinition400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.Field_definitions.TsgMcCustomFieldsV3CreateFieldDefinition200400Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3CreateFieldDefinition200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3CreateFieldDefinition200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

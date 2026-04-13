@@ -78,18 +78,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Inte
         /// <summary>
         /// This endpoint returns all the Integrations for the user making this call.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Integrations.IntegrationsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser403">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Integrations.IntegrationsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Integrations.IntegrationsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -98,7 +98,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Inte
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser403.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgIntegrationsV3GetIntegrationsByUser200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Integrations.IntegrationsGetResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Integrations.IntegrationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint creates an Integration for email event forwarding. Each Integration has a maximum number of allowed Integration instances per user. For example, users can create up to 10 Segment Integrations.

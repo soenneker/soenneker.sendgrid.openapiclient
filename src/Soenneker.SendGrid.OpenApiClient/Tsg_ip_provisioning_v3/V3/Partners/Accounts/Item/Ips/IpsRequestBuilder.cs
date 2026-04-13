@@ -75,78 +75,78 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <summary>
         /// Retrieves a paginated list of IPs associated with the specified account, ordered by most recently added IP.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200500Error">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200502Error">When receiving a 502 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200503Error">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200504Error">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips502Error">When receiving a 502 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips503Error">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips504Error">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200500Error.CreateFromDiscriminatorValue },
-                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200502Error.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200503Error.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200504Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Ips400Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Ips401Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Ips403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Ips404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Ips500Error.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.Ips502Error.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.Ips503Error.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.Ips504Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3ListAccountIps200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsGetResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds IP(s) to the specified account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsPostResponse"/></returns>
         /// <param name="body">Request to add IP addresses to an account. Maximum of 10 IPs per request, all from the same region.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201500Error">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201502Error">When receiving a 502 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201503Error">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201504Error">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips502Error">When receiving a 502 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips503Error">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Ips504Error">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsPostResponse?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsPostResponse> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201500Error.CreateFromDiscriminatorValue },
-                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201502Error.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201503Error.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201504Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.Ips400Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.Ips401Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.Ips403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.Ips404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Ips500Error.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.Ips502Error.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.Ips503Error.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.Ips504Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIps201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsPostResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes IP(s) from the specified account.
