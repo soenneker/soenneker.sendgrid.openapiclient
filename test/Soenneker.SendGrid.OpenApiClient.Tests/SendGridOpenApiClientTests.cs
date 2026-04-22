@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.SendGrid.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class SendGridOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class SendGridOpenApiClientTests : HostedUnitTest
 {
-    public SendGridOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public SendGridOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
