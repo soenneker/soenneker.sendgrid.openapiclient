@@ -561,7 +561,46 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgAlertsV3ListAlert200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "created_at",
+                      "email_to",
+                      "id",
+                      "type"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "created_at": {
+                        "type": "integer",
+                        "description": "A Unix timestamp indicating when the alert was created."
+                      },
+                      "email_to": {
+                        "type": "string",
+                        "description": "The email address that the alert will be sent to."
+                      },
+                      "id": {
+                        "type": "integer",
+                        "description": "The ID of the alert."
+                      },
+                      "percentage": {
+                        "type": "integer",
+                        "description": "If the alert is of type usage_limit, this indicates the percentage of email usage that must be reached before the alert will be sent."
+                      },
+                      "type": {
+                        "$ref": "#/components/schemas/TsgAlertsV3Type1"
+                      },
+                      "updated_at": {
+                        "type": "integer",
+                        "description": "A Unix timestamp indicating when the alert was last modified."
+                      },
+                      "frequency": {
+                        "type": "string",
+                        "description": "If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example, \"daily\", \"weekly\", or \"monthly\"."
+                      }
+                    }
+                  },
+                  "description": "The list of alerts."
                 },
                 "examples": {
                   "response": {
@@ -2076,7 +2115,169 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "automatic_security",
+                      "custom_spf",
+                      "default",
+                      "dns",
+                      "domain",
+                      "id",
+                      "ips",
+                      "legacy",
+                      "subdomain",
+                      "user_id",
+                      "username",
+                      "valid"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "description": "The ID of the authenticated domain."
+                      },
+                      "user_id": {
+                        "type": "number",
+                        "description": "The ID of the user that this domain is associated with."
+                      },
+                      "subdomain": {
+                        "type": "string",
+                        "description": "The subdomain or custom return-path to use for this authenticated domain."
+                      },
+                      "domain": {
+                        "type": "string",
+                        "description": "The domain to be authenticated."
+                      },
+                      "username": {
+                        "type": "string",
+                        "description": "The username that this domain will be associated with."
+                      },
+                      "ips": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "The IPs to be included in the custom SPF record for this authenticated domain."
+                      },
+                      "custom_spf": {
+                        "type": "boolean",
+                        "description": "Indicates whether this authenticated domain uses custom SPF."
+                      },
+                      "default": {
+                        "type": "boolean",
+                        "description": "Indicates if this is the default authenticated domain."
+                      },
+                      "legacy": {
+                        "type": "boolean",
+                        "description": "Indicates if this authenticated domain was created using the legacy whitelabel tool. If it is a legacy whitelabel, it will still function, but you'll need to create a new authenticated domain if you need to update it."
+                      },
+                      "automatic_security": {
+                        "type": "boolean",
+                        "description": "Indicates if this authenticated domain uses automated security."
+                      },
+                      "valid": {
+                        "type": "boolean",
+                        "description": "Indicates if this is a valid authenticated domain."
+                      },
+                      "dns": {
+                        "required": [
+                          "mail_cname",
+                          "dkim1",
+                          "dkim2"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "mail_cname": {
+                            "required": [
+                              "valid",
+                              "type",
+                              "host",
+                              "data"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "valid": {
+                                "type": "boolean",
+                                "description": "Indicates if this is a valid CNAME."
+                              },
+                              "type": {
+                                "type": "string",
+                                "description": "The type of DNS record."
+                              },
+                              "host": {
+                                "type": "string",
+                                "description": "The domain that this CNAME is created for.",
+                                "format": "hostname"
+                              },
+                              "data": {
+                                "type": "string",
+                                "description": "The CNAME record."
+                              }
+                            },
+                            "description": "The CNAME for your sending domain that points to sendgrid.net."
+                          },
+                          "dkim1": {
+                            "required": [
+                              "valid",
+                              "type",
+                              "host",
+                              "data"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "valid": {
+                                "type": "boolean",
+                                "description": "Indicates if this is a valid DNS record."
+                              },
+                              "type": {
+                                "type": "string",
+                                "description": "The type of DNS record."
+                              },
+                              "host": {
+                                "type": "string",
+                                "description": "The domain that this DNS record was created for."
+                              },
+                              "data": {
+                                "type": "string",
+                                "description": "The DNS record."
+                              }
+                            },
+                            "description": "A DNS record."
+                          },
+                          "dkim2": {
+                            "required": [
+                              "valid",
+                              "type",
+                              "host",
+                              "data"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "valid": {
+                                "type": "boolean",
+                                "description": "Indicates if this is a valid DNS record."
+                              },
+                              "type": {
+                                "type": "string",
+                                "description": "The type of DNS record."
+                              },
+                              "host": {
+                                "type": "string",
+                                "description": "The domain that this DNS record was created for."
+                              },
+                              "data": {
+                                "type": "string",
+                                "description": "The DNS record."
+                              }
+                            },
+                            "description": "A DNS record."
+                          }
+                        },
+                        "description": "The DNS records used to authenticate the sending domain."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -3576,7 +3777,59 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpsV3ListIp200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "ip",
+                      "subusers",
+                      "pools",
+                      "warmup",
+                      "start_date",
+                      "whitelabeled",
+                      "assigned_at"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "ip": {
+                        "type": "string",
+                        "description": "An IP address."
+                      },
+                      "subusers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "The subusers that are able to send email from this IP."
+                      },
+                      "rdns": {
+                        "type": "string",
+                        "description": "The reverse DNS record for this IP address."
+                      },
+                      "pools": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "The IP pools that this IP has been added to."
+                      },
+                      "warmup": {
+                        "type": "boolean",
+                        "description": "Indicates if this IP address is currently warming up."
+                      },
+                      "start_date": {
+                        "type": "number",
+                        "description": "The date that the IP address was entered into warmup."
+                      },
+                      "whitelabeled": {
+                        "type": "boolean",
+                        "description": "Indicates if this IP address is associated with a reverse DNS record."
+                      },
+                      "assigned_at": {
+                        "type": "integer",
+                        "description": "The date that the IP address was assigned to the user."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -3685,7 +3938,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAllAssignedIPsResponse"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "ip",
+                      "pools",
+                      "warmup",
+                      "start_date"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "ip": {
+                        "type": "string",
+                        "description": "The IP address."
+                      },
+                      "pools": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "The IP pools that this IP address has been added to."
+                      },
+                      "warmup": {
+                        "type": "boolean",
+                        "description": "Indicates if this IP address is currently warming up."
+                      },
+                      "start_date": {
+                        "type": "integer",
+                        "description": "The start date that this IP address was entered into warmup."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -3763,7 +4046,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpsV3ListIpPool200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IpPools200"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -6045,7 +6331,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IpWarmup200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IpWarmup200Item"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -6097,7 +6386,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IpWarmup200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IpWarmup200Item"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -6129,7 +6421,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IpWarmup200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IpWarmup200Item"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -6301,7 +6596,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLinkBrandingV3ListBrandedLink200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LinkBranding200"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -8634,7 +8932,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteContactDbLists"
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
               }
             }
           }
@@ -9162,7 +9463,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientsToContactDbList"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -9501,7 +9805,31 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipient"
+                "type": "array",
+                "items": {
+                  "required": [
+                    "email"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "The email address of the recipient.",
+                      "format": "email"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "The first name of the recipient."
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "The last name of the recipient."
+                    },
+                    "age": {
+                      "type": "integer"
+                    }
+                  }
+                }
               }
             }
           }
@@ -9603,7 +9931,27 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TsgLmcContactdbV3UpdateRecipient"
+                "type": "array",
+                "items": {
+                  "required": [
+                    "email"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "format": "email"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "The last name of the recipient. This is one of the default custom fields."
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "The first name of the recipient. This is one of the default custom fields."
+                    }
+                  }
+                }
               }
             }
           }
@@ -9681,7 +10029,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteRecipients"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -15256,7 +15607,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3GetMarketingList404"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TsgMcListsV3Error"
+                  }
                 }
               }
             }
@@ -17332,7 +17686,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgReverseDnsV3ListReverseDns200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReverseDns"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -17648,7 +18005,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgScheduledSendsV3ListScheduledSend200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduledSendStatus"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -17704,7 +18064,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RetrieveScheduledSendResponse"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduledSendStatus"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -18271,7 +18634,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSsoV3ListSsoIntegration200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SsoIntegration"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -18486,7 +18852,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSsoV3ListSsoIntegrationCertificate200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SsoCertificateBody"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -19322,7 +19691,36 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListBrowserStat200"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the statistics were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "The type of segmentation."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "The name of the specific segmentation."
+                            },
+                            "metrics": {
+                              "$ref": "#/components/schemas/AdvancedStatsClicks"
+                            }
+                          }
+                        },
+                        "description": "The list of statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -19418,7 +19816,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListCategory200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "category"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "category": {
+                        "type": "string",
+                        "description": "A category used to group emails by broad topic."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -19513,7 +19923,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListCategoryStat200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoryStats"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -19859,7 +20272,36 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListClientStat200"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the statistics were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "The type of segmentation."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "The name of the specific segmentation."
+                            },
+                            "metrics": {
+                              "$ref": "#/components/schemas/AdvancedStatsOpens"
+                            }
+                          }
+                        },
+                        "description": "The list of statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -19927,7 +20369,36 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3GetClientStat200"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the statistics were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "The type of segmentation."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "The name of the specific segmentation."
+                            },
+                            "metrics": {
+                              "$ref": "#/components/schemas/AdvancedStatsOpens"
+                            }
+                          }
+                        },
+                        "description": "The list of statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -20012,7 +20483,36 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListDeviceStat200"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the statistics were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "The type of segmentation."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "The name of the specific segmentation."
+                            },
+                            "metrics": {
+                              "$ref": "#/components/schemas/AdvancedStatsOpens"
+                            }
+                          }
+                        },
+                        "description": "The list of statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -20471,7 +20971,36 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListGeoStat200"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the statistics were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "The type of segmentation."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "The name of the specific segmentation."
+                            },
+                            "metrics": {
+                              "$ref": "#/components/schemas/AdvancedStatsClicksOpens"
+                            }
+                          }
+                        },
+                        "description": "The list of statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -20998,7 +21527,36 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListMailboxProviderStat200"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the statistics were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "The type of segmentation."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "The name of the specific segmentation."
+                            },
+                            "metrics": {
+                              "$ref": "#/components/schemas/AdvancedStatsMailboxProvider"
+                            }
+                          }
+                        },
+                        "description": "The list of statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -21757,7 +22315,32 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListStat200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "date",
+                      "stats"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date the stats were gathered."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "metrics": {
+                              "$ref": "#/components/schemas/StatsAdvancedGlobalStats"
+                            }
+                          }
+                        },
+                        "description": "The individual email activity stats."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -21998,7 +22581,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3ListSubuser200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Subuser"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -22546,7 +23132,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TsgSubusersV3UpdateSubuserIp"
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "ipv4"
+                },
+                "description": "The IP addresses you would like to assign to the subuser."
               }
             }
           }
@@ -22730,7 +23321,24 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3ListReputation200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "reputation",
+                      "username"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "reputation": {
+                        "type": "number",
+                        "description": "The sender reputation this subuser has attained."
+                      },
+                      "username": {
+                        "type": "string",
+                        "description": "The subuser that has this reputation."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -22818,7 +23426,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3ListStat200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TsgSubusersV3CategoryStats"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -23442,7 +24053,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmGroup200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SuppressionGroup"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -23646,7 +24260,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListSuppressionFromAsmGroup200"
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "description": "The list of email addresses belonging to the given suppression group."
                 },
                 "examples": {
                   "response": {
@@ -23744,7 +24363,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3SearchSuppressionFromAsmGroup200"
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "description": "The email address from your search that do exist in the suppression group."
                 },
                 "examples": {
                   "response": {
@@ -23790,7 +24414,34 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmSuppression200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "email",
+                      "group_id",
+                      "group_name",
+                      "created_at"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "email": {
+                        "type": "string",
+                        "description": "The email address that was suppressed."
+                      },
+                      "group_id": {
+                        "type": "integer",
+                        "description": "The id of the suppression group that this email address belongs to."
+                      },
+                      "group_name": {
+                        "type": "string",
+                        "description": "The name of the suppression group that this email address belongs to."
+                      },
+                      "created_at": {
+                        "type": "integer",
+                        "description": "A UNIX timestamp indicating when the suppression was created."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -23933,7 +24584,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BlocksResponse"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlocksResponseItem"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -24014,7 +24668,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BlocksResponse"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlocksResponseItem"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -24126,7 +24783,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListSuppressionBounces200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BounceResponse"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -24237,7 +24897,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3GetSuppressionBounces200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BounceResponse"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -24656,7 +25319,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListInvalidEmail200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvalidEmail"
+                  },
+                  "description": "The list of invalid email addresses."
                 },
                 "examples": {
                   "response": {
@@ -24735,7 +25402,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3GetInvalidEmail200"
+                  "maxItems": 1,
+                  "minItems": 0,
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvalidEmail"
+                  },
+                  "description": "A specific invalid email."
                 },
                 "examples": {
                   "response": {
@@ -24836,7 +25509,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SpamReportsResponse"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpamReportsResponseItem"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -24915,7 +25591,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SpamReportsResponse"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpamReportsResponseItem"
+                  }
                 },
                 "examples": {
                   "response": {
@@ -25017,7 +25696,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListGlobalSuppression200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "created",
+                      "email"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "created": {
+                        "type": "integer",
+                        "description": "A Unix timestamp indicating when the recipient was added to the global suppression list."
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "The email address of the recipient who is globally suppressed.",
+                        "format": "email"
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -28598,7 +29295,41 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgWebhooksV3ListParseStatic200"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "date",
+                      "stats"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "description": "The date that the stats were collected."
+                      },
+                      "stats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "metrics": {
+                              "required": [
+                                "received"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "received": {
+                                  "type": "number",
+                                  "description": "The number of emails received and parsed by the Parse Webhook."
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "description": "The Parse Webhook usage statistics."
+                      }
+                    }
+                  }
                 },
                 "examples": {
                   "response": {
@@ -32424,7 +33155,11 @@
             "$ref": "#/components/schemas/TlsEnabled"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32500,7 +33235,11 @@
             "description": "User agent of the request that triggered the event"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32572,7 +33311,11 @@
             "$ref": "#/components/schemas/TlsEnabled"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32649,7 +33392,11 @@
             "$ref": "#/components/schemas/TlsEnabled"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32711,7 +33458,11 @@
             "$ref": "#/components/schemas/OutboundIpPoolMetadata"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32773,7 +33524,11 @@
             "description": "User agent of the request that triggered the event"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32839,7 +33594,11 @@
             "$ref": "#/components/schemas/OutboundIpPoolMetadata"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -32958,7 +33717,11 @@
             "description": "Unix timestamp"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "custom_args": {
             "type": "object",
@@ -33008,7 +33771,11 @@
             "description": "User agent of the request that triggered the event"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -33062,7 +33829,11 @@
             "description": "User agent of the request that triggered the event"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "asm_group_id": {
             "type": "integer",
@@ -33120,7 +33891,11 @@
             "type": "string"
           },
           "category": {
-            "$ref": "#/components/schemas/EmailCategories"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
           },
           "date": {
             "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
@@ -45114,7 +45889,10 @@
             }
           },
           "reserved_fields": {
-            "$ref": "#/components/schemas/ReservedFieldDefinitionsResponse"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReservedFieldDefinitionsResponseItem"
+            }
           },
           "_metadata": {
             "$ref": "#/components/schemas/TsgMcCustomFieldsV3Metadata"
@@ -51656,7 +52434,10 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SsoErrorResponse"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SsoErrorResponseItem"
+              }
             }
           }
         }
@@ -51666,7 +52447,10 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SsoErrorResponse"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SsoErrorResponseItem"
+              }
             }
           }
         }
@@ -51676,7 +52460,10 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SsoErrorResponse"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SsoErrorResponseItem"
+              }
             }
           }
         }
@@ -51686,7 +52473,10 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SsoErrorResponse"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SsoErrorResponseItem"
+              }
             }
           }
         }
@@ -51696,7 +52486,10 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SsoErrorResponse"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SsoErrorResponseItem"
+              }
             }
           }
         }

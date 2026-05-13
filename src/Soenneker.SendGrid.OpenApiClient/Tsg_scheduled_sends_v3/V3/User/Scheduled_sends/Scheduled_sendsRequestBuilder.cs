@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ListScheduledSend200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.Scheduled_sends500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,7 +73,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ListScheduledSend200500Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.Scheduled_sends500Error.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
