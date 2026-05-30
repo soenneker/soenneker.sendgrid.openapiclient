@@ -2256,7 +2256,8 @@
                             },
                             "reason": {
                               "type": "string",
-                              "description": "The reason this record is invalid."
+                              "description": "The reason this record is invalid.",
+                              "nullable": true
                             }
                           },
                           "description": "The CNAME record for the authenticated domain."
@@ -2269,7 +2270,8 @@
                               "description": "Indicates if the DNS record is valid."
                             },
                             "reason": {
-                              "type": "string"
+                              "type": "string",
+                              "nullable": true
                             }
                           },
                           "description": "A DNS record for this authenticated domain."
@@ -2282,7 +2284,8 @@
                               "description": "Indicates if the DNS record is valid."
                             },
                             "reason": {
-                              "type": "string"
+                              "type": "string",
+                              "nullable": true
                             }
                           },
                           "description": "A DNS record for this authenticated domain."
@@ -2295,7 +2298,8 @@
                               "description": "Indicates if the SPF record is valid."
                             },
                             "reason": {
-                              "type": "string"
+                              "type": "string",
+                              "nullable": true
                             }
                           },
                           "description": "The SPF record for the authenticated domain."
@@ -4952,7 +4956,8 @@
                       },
                       "start_date": {
                         "type": "number",
-                        "description": "The date that the IP address was entered into warmup."
+                        "description": "The date that the IP address was entered into warmup.",
+                        "nullable": true
                       },
                       "whitelabeled": {
                         "type": "boolean",
@@ -4960,7 +4965,8 @@
                       },
                       "assigned_at": {
                         "type": "integer",
-                        "description": "The date that the IP address was assigned to the user."
+                        "description": "The date that the IP address was assigned to the user.",
+                        "nullable": true
                       }
                     }
                   }
@@ -5054,7 +5060,8 @@
                     },
                     "start_date": {
                       "type": "integer",
-                      "description": "The date that the IP address was entered into warmup."
+                      "description": "The date that the IP address was entered into warmup.",
+                      "nullable": true
                     },
                     "whitelabeled": {
                       "type": "boolean",
@@ -22543,7 +22550,8 @@
                             },
                             "reason": {
                               "type": "string",
-                              "description": "The reason the reverse DNS record could not be validated. Is `null` if the reverse DNS record was validated."
+                              "description": "The reason the reverse DNS record could not be validated. Is `null` if the reverse DNS record was validated.",
+                              "nullable": true
                             }
                           }
                         }
@@ -36711,7 +36719,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -36825,7 +36834,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -37579,7 +37589,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -37949,7 +37960,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -38046,7 +38058,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -38453,52 +38466,62 @@
           },
           "subject": {
             "type": "string",
-            "description": "The subject of your campaign that your recipients will see."
+            "description": "The subject of your campaign that your recipients will see.",
+            "nullable": true
           },
           "sender_id": {
             "type": "integer",
-            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails."
+            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails.",
+            "nullable": true
           },
           "list_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs"
+            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs",
+            "nullable": true
           },
           "segment_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs."
+            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs.",
+            "nullable": true
           },
           "categories": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "The categories you would like associated to this campaign."
+            "description": "The categories you would like associated to this campaign.",
+            "nullable": true
           },
           "suppression_group_id": {
             "type": "integer",
-            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type."
+            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type.",
+            "nullable": true
           },
           "custom_unsubscribe_url": {
             "type": "string",
-            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups."
+            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups.",
+            "nullable": true
           },
           "ip_pool": {
             "type": "string",
-            "description": "The pool of IPs that you would like to send this email from."
+            "description": "The pool of IPs that you would like to send this email from.",
+            "nullable": true
           },
           "html_content": {
             "type": "string",
-            "description": "The HTML of your marketing email."
+            "description": "The HTML of your marketing email.",
+            "nullable": true
           },
           "plain_content": {
             "type": "string",
-            "description": "The plain text content of your emails."
+            "description": "The plain text content of your emails.",
+            "nullable": true
           },
           "editor": {
             "$ref": "#/components/schemas/Editor"
@@ -38541,52 +38564,62 @@
           },
           "subject": {
             "type": "string",
-            "description": "The subject of your campaign that your recipients will see."
+            "description": "The subject of your campaign that your recipients will see.",
+            "nullable": true
           },
           "sender_id": {
             "type": "integer",
-            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails."
+            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails.",
+            "nullable": true
           },
           "list_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs"
+            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs",
+            "nullable": true
           },
           "segment_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs."
+            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs.",
+            "nullable": true
           },
           "categories": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "The categories you would like associated to this campaign."
+            "description": "The categories you would like associated to this campaign.",
+            "nullable": true
           },
           "suppression_group_id": {
             "type": "integer",
-            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type."
+            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type.",
+            "nullable": true
           },
           "custom_unsubscribe_url": {
             "type": "string",
-            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups."
+            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups.",
+            "nullable": true
           },
           "ip_pool": {
             "type": "string",
-            "description": "The pool of IPs that you would like to send this email from."
+            "description": "The pool of IPs that you would like to send this email from.",
+            "nullable": true
           },
           "html_content": {
             "type": "string",
-            "description": "The HTML of your marketing email."
+            "description": "The HTML of your marketing email.",
+            "nullable": true
           },
           "plain_content": {
             "type": "string",
-            "description": "The plain text content of your emails."
+            "description": "The plain text content of your emails.",
+            "nullable": true
           },
           "editor": {
             "$ref": "#/components/schemas/Editor"
@@ -38614,7 +38647,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -38729,7 +38763,8 @@
           },
           "value": {
             "type": "string",
-            "description": "The value of this recipient's custom field"
+            "description": "The value of this recipient's custom field",
+            "nullable": true
           }
         }
       },
@@ -38767,23 +38802,28 @@
                 },
                 "first_name": {
                   "type": "string",
-                  "description": "The first name of this recipient. This is a default custom field that SendGrid provides."
+                  "description": "The first name of this recipient. This is a default custom field that SendGrid provides.",
+                  "nullable": true
                 },
                 "last_name": {
                   "type": "string",
-                  "description": "The last name of the recipient."
+                  "description": "The last name of the recipient.",
+                  "nullable": true
                 },
                 "last_clicked": {
                   "type": "number",
-                  "description": "The last time this recipient clicked a link from one of your campaigns, in unixtime."
+                  "description": "The last time this recipient clicked a link from one of your campaigns, in unixtime.",
+                  "nullable": true
                 },
                 "last_emailed": {
                   "type": "number",
-                  "description": "The last time this user was emailed by one of your campaigns, in unixtime."
+                  "description": "The last time this user was emailed by one of your campaigns, in unixtime.",
+                  "nullable": true
                 },
                 "last_opened": {
                   "type": "number",
-                  "description": "The last time this recipient opened an email from you, in unixtime."
+                  "description": "The last time this recipient opened an email from you, in unixtime.",
+                  "nullable": true
                 },
                 "updated_at": {
                   "type": "number",
@@ -39015,7 +39055,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -40576,11 +40617,13 @@
           },
           "soft_bounces": {
             "type": "integer",
-            "description": "The number of days after which SendGrid will purge all contacts from your soft bounces suppression lists."
+            "description": "The number of days after which SendGrid will purge all contacts from your soft bounces suppression lists.",
+            "nullable": true
           },
           "hard_bounces": {
             "type": "integer",
-            "description": "The number of days after which SendGrid will purge all contacts from your hard bounces suppression lists."
+            "description": "The number of days after which SendGrid will purge all contacts from your hard bounces suppression lists.",
+            "nullable": true
           }
         },
         "example": {
@@ -40618,7 +40661,8 @@
         "properties": {
           "email": {
             "type": "string",
-            "description": "The email address that you would like your bounce reports forwarded to."
+            "description": "The email address that you would like your bounce reports forwarded to.",
+            "nullable": true
           },
           "enabled": {
             "type": "boolean",
@@ -40729,7 +40773,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -41134,7 +41179,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -41692,7 +41738,8 @@
             "items": {
               "type": "string",
               "format": "email"
-            }
+            },
+            "nullable": true
           },
           "address_line_1": {
             "type": "string"
@@ -42445,7 +42492,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -42581,20 +42629,24 @@
               },
               "suppression_group_id": {
                 "type": "integer",
-                "description": "The ID of the Suppression Group to allow recipients to unsubscribe — you must provide this or the `custom_unsubscribe_url`."
+                "description": "The ID of the Suppression Group to allow recipients to unsubscribe — you must provide this or the `custom_unsubscribe_url`.",
+                "nullable": true
               },
               "custom_unsubscribe_url": {
                 "type": "string",
                 "description": "The URL allowing recipients to unsubscribe — you must provide this or the `suppression_group_id`.",
-                "format": "uri"
+                "format": "uri",
+                "nullable": true
               },
               "sender_id": {
                 "type": "integer",
-                "description": "The ID of the verified Sender. You can retrieve a verified Sender's ID from the [\"Get Verified Senders\" endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the Sender's detail page URL in the SendGrid App."
+                "description": "The ID of the verified Sender. You can retrieve a verified Sender's ID from the [\"Get Verified Senders\" endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the Sender's detail page URL in the SendGrid App.",
+                "nullable": true
               },
               "ip_pool": {
                 "type": "string",
-                "description": "The name of the IP Pool from which the Single Send emails are sent."
+                "description": "The name of the IP Pool from which the Single Send emails are sent.",
+                "nullable": true
               }
             }
           }
@@ -42717,20 +42769,24 @@
               },
               "suppression_group_id": {
                 "type": "integer",
-                "description": "The ID of the Suppression Group to allow recipients to unsubscribe. You must provide a `suppression_group_id` or the `custom_unsubscribe_url` with your Single Send."
+                "description": "The ID of the Suppression Group to allow recipients to unsubscribe. You must provide a `suppression_group_id` or the `custom_unsubscribe_url` with your Single Send.",
+                "nullable": true
               },
               "custom_unsubscribe_url": {
                 "type": "string",
                 "description": "The URL allowing recipients to unsubscribe. You must provide a `custom_unsubscribe_url` or a `suppression_group_id` with your Single Send.",
-                "format": "uri"
+                "format": "uri",
+                "nullable": true
               },
               "sender_id": {
                 "type": "integer",
-                "description": "The ID of the verified sender from whom the Single Send will be sent. You can retrieve a verified sender's ID from the [**Get Verified Senders** endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the sender's detail page URL in the SendGrid App."
+                "description": "The ID of the verified sender from whom the Single Send will be sent. You can retrieve a verified sender's ID from the [**Get Verified Senders** endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the sender's detail page URL in the SendGrid App.",
+                "nullable": true
               },
               "ip_pool": {
                 "type": "string",
-                "description": "The name of the IP Pool from which the Single Send emails are sent."
+                "description": "The name of the IP Pool from which the Single Send emails are sent.",
+                "nullable": true
               }
             }
           },
@@ -42846,13 +42902,16 @@
           },
           "winner_selected_at": {
             "type": "string",
-            "description": "When the winner was selected"
+            "description": "When the winner was selected",
+            "nullable": true
           },
           "expiration_date": {
             "type": "string",
-            "description": "Last day to select an A/B Test Winner"
+            "description": "Last day to select an A/B Test Winner",
+            "nullable": true
           }
-        }
+        },
+        "nullable": true
       },
       "tsg_mc_singlesends_v3_Metadata": {
         "title": "_metadata",
@@ -43259,7 +43318,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -43346,7 +43406,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -43613,7 +43674,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -43671,7 +43733,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -44435,7 +44498,8 @@
               "type": "string"
             },
             "field": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "error_id": {
               "type": "string"
@@ -45320,7 +45384,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -45670,7 +45735,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -46286,7 +46352,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -46464,7 +46531,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -47046,7 +47114,8 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error."
+                  "description": "When applicable, this property value will be the field that generated the error.",
+                  "nullable": true
                 },
                 "help": {
                   "type": "object",
@@ -48216,7 +48285,8 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error."
+                        "description": "The field that generated the error.",
+                        "nullable": true
                       },
                       "message": {
                         "type": "string",
@@ -48254,7 +48324,8 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error."
+                        "description": "The field that generated the error.",
+                        "nullable": true
                       },
                       "message": {
                         "type": "string",
@@ -48292,7 +48363,8 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error."
+                        "description": "The field that generated the error.",
+                        "nullable": true
                       },
                       "message": {
                         "type": "string",
@@ -48330,7 +48402,8 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error."
+                        "description": "The field that generated the error.",
+                        "nullable": true
                       },
                       "message": {
                         "type": "string",
@@ -48368,7 +48441,8 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error."
+                        "description": "The field that generated the error.",
+                        "nullable": true
                       },
                       "message": {
                         "type": "string",
