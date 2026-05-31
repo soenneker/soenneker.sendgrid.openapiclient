@@ -44517,7 +44517,10 @@
                         "type": "object",
                         "anyOf": [
                           {
-                            "$ref": "#/components/schemas/UnionBranch"
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
                           }
                         ]
                       },
@@ -49830,17 +49833,6 @@
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
-      },
-      "UnionBranch": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
-          }
-        }
       }
     },
     "responses": {
