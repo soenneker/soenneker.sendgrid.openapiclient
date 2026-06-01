@@ -10,11 +10,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "US")]
         #pragma warning disable CS1591
-        US,
+        Us,
         #pragma warning restore CS1591
         [EnumMember(Value = "CA")]
         #pragma warning disable CS1591
-        CA,
+        Ca,
         #pragma warning restore CS1591
     }
 }

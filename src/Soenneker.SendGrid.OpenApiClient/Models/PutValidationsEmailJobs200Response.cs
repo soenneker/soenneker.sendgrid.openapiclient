@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Array containing headers and header values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response_upload_headers>? UploadHeaders { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem>? UploadHeaders { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response_upload_headers> UploadHeaders { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem> UploadHeaders { get; set; }
 #endif
         /// <summary>The URI to use for the request to upload your list of email addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "job_id", n => { JobId = n.GetStringValue(); } },
-                { "upload_headers", n => { UploadHeaders = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response_upload_headers>(global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response_upload_headers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "upload_headers", n => { UploadHeaders = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "upload_uri", n => { UploadUri = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("job_id", JobId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response_upload_headers>("upload_headers", UploadHeaders);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem>("upload_headers", UploadHeaders);
             writer.WriteStringValue("upload_uri", UploadUri);
             writer.WriteAdditionalData(AdditionalData);
         }

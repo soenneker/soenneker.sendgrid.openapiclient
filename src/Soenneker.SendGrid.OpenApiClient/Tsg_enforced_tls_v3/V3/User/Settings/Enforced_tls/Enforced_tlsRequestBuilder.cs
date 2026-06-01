@@ -42,7 +42,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_enforced_tls_v3.V3.User.Settings.
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTls500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_enforced_tls_v3.V3.User.Settings.
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse500Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTls500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,7 +72,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_enforced_tls_v3.V3.User.Settings.
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTls500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +89,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_enforced_tls_v3.V3.User.Settings.
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse500Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTls500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

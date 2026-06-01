@@ -67,10 +67,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetails_custom_fields? CustomFields { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetailsCustomFieldsProperty? CustomFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetails_custom_fields CustomFields { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetailsCustomFieldsProperty CustomFields { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -228,7 +228,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetails_custom_fields>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetails_custom_fields.CreateFromDiscriminatorValue); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetailsCustomFieldsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetailsCustomFieldsProperty.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "facebook", n => { Facebook = n.GetStringValue(); } },
@@ -262,7 +262,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetails_custom_fields>("custom_fields", CustomFields);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactDetailsCustomFieldsProperty>("custom_fields", CustomFields);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("facebook", Facebook);

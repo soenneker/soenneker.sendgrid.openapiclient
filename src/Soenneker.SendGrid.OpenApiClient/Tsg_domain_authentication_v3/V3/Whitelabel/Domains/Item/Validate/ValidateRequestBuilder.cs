@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.Item.Validate
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_domain_authentication_v3\v3\whitelabel\domains\{domain_-id}\validate
+    /// Builds and executes requests for operations under \tsg_domain_authentication_v3\v3\whitelabel\domains\{domain-id}\validate
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ValidateRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ValidateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/{domain_%2Did}/validate", pathParameters)
+        public ValidateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/{domain%2Did}/validate", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/{domain_%2Did}/validate", rawUrl)
+        public ValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/{domain%2Did}/validate", rawUrl)
         {
         }
         /// <summary>
         /// **This endpoint allows you to validate an authenticated domain. If it fails, it will return an error message describing why the domain could not be validated.**
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain500.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3ValidateAuthenticatedDomain200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to validate an authenticated domain. If it fails, it will return an error message describing why the domain could not be validated.**

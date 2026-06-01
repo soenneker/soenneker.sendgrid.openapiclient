@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Array containing error messages related to the Bulk Email Address Validation Job. Array is empty if no errors ocurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult_errors>? Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult_errors> Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The ISO8601 timestamp when the Job was finished.</summary>
         public double? FinishedAt { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult_errors>(global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "finished_at", n => { FinishedAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_download_available", n => { IsDownloadAvailable = n.GetBoolValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult_errors>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem>("errors", Errors);
             writer.WriteDoubleValue("finished_at", FinishedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_download_available", IsDownloadAvailable);

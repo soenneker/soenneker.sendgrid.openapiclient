@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Stats.Monthly
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_subusers_v3\v3\subusers\{subuser_name}\stats\monthly
+    /// Builds and executes requests for operations under \tsg_subusers_v3\v3\subusers\{subuserName}\stats\monthly
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonthlyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Stat
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuser_name}/stats/monthly?date={date}{&limit*,offset*,sort_by_direction*,sort_by_metric*}", pathParameters)
+        public MonthlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuserName}/stats/monthly?date={date}{&limit*,offset*,sort_by_direction*,sort_by_metric*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Stat
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuser_name}/stats/monthly?date={date}{&limit*,offset*,sort_by_direction*,sort_by_metric*}", rawUrl)
+        public MonthlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuserName}/stats/monthly?date={date}{&limit*,offset*,sort_by_direction*,sort_by_metric*}", rawUrl)
         {
         }
         /// <summary>

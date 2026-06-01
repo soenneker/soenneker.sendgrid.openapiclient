@@ -18,10 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The possible SendGrid email event types for event forwarding. Specify all the email event types that you would like to forward to the Integration&apos;s destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Items?>? EmailEvents { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ItemsValue?>? EmailEvents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Items?> EmailEvents { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ItemsValue?> EmailEvents { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchFilters"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email_events", n => { EmailEvents = n.GetCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.Items>()?.AsList(); } },
+                { "email_events", n => { EmailEvents = n.GetCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.ItemsValue>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.Items>("email_events", EmailEvents);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.ItemsValue>("email_events", EmailEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

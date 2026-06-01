@@ -10,11 +10,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "ab_variation")]
         #pragma warning disable CS1591
-        Ab_variation,
+        AbVariation,
         #pragma warning restore CS1591
         [EnumMember(Value = "ab_phase")]
         #pragma warning disable CS1591
-        Ab_phase,
+        AbPhase,
         #pragma warning restore CS1591
     }
 }

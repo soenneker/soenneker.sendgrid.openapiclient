@@ -9,7 +9,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "1")]
         #pragma warning disable CS1591
-        One,
+        Value1,
         #pragma warning restore CS1591
     }
 }

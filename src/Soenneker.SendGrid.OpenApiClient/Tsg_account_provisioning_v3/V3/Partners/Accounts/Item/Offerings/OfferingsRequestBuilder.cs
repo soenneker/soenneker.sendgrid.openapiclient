@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partners.Accounts.Item.Offerings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_account_provisioning_v3\v3\partners\accounts\{accountID}\offerings
+    /// Builds and executes requests for operations under \tsg_account_provisioning_v3\v3\partners\accounts\{accountId}\offerings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OfferingsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OfferingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_account_provisioning_v3/v3/partners/accounts/{accountID}/offerings", pathParameters)
+        public OfferingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_account_provisioning_v3/v3/partners/accounts/{accountId}/offerings", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OfferingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_account_provisioning_v3/v3/partners/accounts/{accountID}/offerings", rawUrl)
+        public OfferingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_account_provisioning_v3/v3/partners/accounts/{accountId}/offerings", rawUrl)
         {
         }
         /// <summary>
@@ -39,14 +39,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList500Error">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList502Error">When receiving a 502 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList503Error">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList504Error">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse500Response">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response">When receiving a 502 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,14 +59,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList500Error.CreateFromDiscriminatorValue },
-                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList502Error.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList503Error.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList504Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse404Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse500Response.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -77,33 +77,33 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList500Error">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList502Error">When receiving a 502 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList503Error">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList504Error">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse500Response">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response">When receiving a 502 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOffering body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOfferingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOffering body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOfferingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList500Error.CreateFromDiscriminatorValue },
-                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList502Error.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList503Error.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList504Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse500Response.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -134,11 +134,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOffering body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOfferingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOffering body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgAccountProvisioningV3UpdateAccountOfferingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Website_access
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_subusers_v3\v3\subusers\{subuser_name}\website_access
+    /// Builds and executes requests for operations under \tsg_subusers_v3\v3\subusers\{subuserName}\website_access
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Website_accessRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Webs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Website_accessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuser_name}/website_access", pathParameters)
+        public Website_accessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuserName}/website_access", pathParameters)
         {
         }
         /// <summary>
@@ -30,28 +30,28 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Webs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Website_accessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuser_name}/website_access", rawUrl)
+        public Website_accessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_subusers_v3/v3/subusers/{subuserName}/website_access", rawUrl)
         {
         }
         /// <summary>
         /// Enable/Disable website access for a Subuser, while still preserving email send functionality.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Website_access.Website_accessPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.DefaultResponseResponseJson8"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Website_access.Website_accessPatchResponse?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccess body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.DefaultResponseResponseJson8?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccessRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Website_access.Website_accessPatchResponse> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccess body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.DefaultResponseResponseJson8> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccessRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Website_access.Website_accessPatchResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Website_access.Website_accessPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.DefaultResponseResponseJson8>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.DefaultResponseResponseJson8.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enable/Disable website access for a Subuser, while still preserving email send functionality.
@@ -61,11 +61,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Webs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccess body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccessRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccess body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserWebsiteAccessRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

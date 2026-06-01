@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The list of statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStats_stats>? Stats { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStatsStatsItem>? Stats { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStats_stats> Stats { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStatsStatsItem> Stats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStats"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "date", n => { Date = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStats_stats>(global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStats_stats.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "stats", n => { Stats = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStatsStatsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStatsStatsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("date", Date);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStats_stats>("stats", Stats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserStatsStatsItem>("stats", Stats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

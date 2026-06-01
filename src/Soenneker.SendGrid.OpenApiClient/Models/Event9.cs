@@ -10,7 +10,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "group_unsubscribe")]
         #pragma warning disable CS1591
-        Group_unsubscribe,
+        GroupUnsubscribe,
         #pragma warning restore CS1591
     }
 }

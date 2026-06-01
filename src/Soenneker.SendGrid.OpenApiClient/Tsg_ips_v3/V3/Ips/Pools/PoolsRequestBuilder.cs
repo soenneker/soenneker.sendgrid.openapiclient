@@ -20,14 +20,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_ips_v3.v3.ips.pools.item collection</summary>
         /// <param name="position">The name of the IP pool that you want to retrieve the IP addresses for.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.WithPool_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.WithPool_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.WithPoolNameItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.WithPoolNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("pool_name", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.WithPool_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("poolName", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools.Item.WithPoolNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -74,11 +74,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.IpPools200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.IpPools200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPoolRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.IpPools200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.IpPools200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPoolRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -112,11 +112,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPoolRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3CreateIpPoolRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

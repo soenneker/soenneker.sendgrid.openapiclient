@@ -41,10 +41,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The IP addresses that are included in the SPF record for this authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips>? Ips { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfIpsItem>? Ips { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips> Ips { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfIpsItem> Ips { get; set; }
 #endif
         /// <summary>Indicates if this authenticated domain was created using the legacy whitelabel tool. If it is a legacy whitelabel, it will still function, but you&apos;ll need to create a new authenticated domain if you need to update it.</summary>
         public bool? Legacy { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns>(global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips>(global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfIpsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfIpsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legacy", n => { Legacy = n.GetBoolValue(); } },
                 { "subdomain", n => { Subdomain = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetIntValue(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns>("dns", Dns);
             writer.WriteStringValue("domain", Domain);
             writer.WriteIntValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpf_ips>("ips", Ips);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfIpsItem>("ips", Ips);
             writer.WriteBoolValue("legacy", Legacy);
             writer.WriteStringValue("subdomain", Subdomain);
             writer.WriteIntValue("user_id", UserId);

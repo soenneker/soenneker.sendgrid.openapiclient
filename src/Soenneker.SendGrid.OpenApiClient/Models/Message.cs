@@ -35,10 +35,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>List of events related to email message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Message_events>? Events { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.Message_events> Events { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem> Events { get; set; }
 #endif
         /// <summary>The &apos;From&apos; email address used to deliver the message. This address should be a verified sender in your Twilio SendGrid account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "api_key_id", n => { ApiKeyId = n.GetStringValue(); } },
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.Message_events>(global::Soenneker.SendGrid.OpenApiClient.Models.Message_events.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from_email", n => { FromEmail = n.GetStringValue(); } },
                 { "msg_id", n => { MsgId = n.GetStringValue(); } },
                 { "originating_ip", n => { OriginatingIp = n.GetStringValue(); } },
@@ -169,7 +169,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("api_key_id", ApiKeyId);
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.Message_events>("events", Events);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem>("events", Events);
             writer.WriteStringValue("from_email", FromEmail);
             writer.WriteStringValue("msg_id", MsgId);
             writer.WriteStringValue("originating_ip", OriginatingIp);

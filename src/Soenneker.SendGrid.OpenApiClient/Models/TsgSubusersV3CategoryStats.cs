@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStats_stats>? Stats { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStatsStatsItem>? Stats { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStats_stats> Stats { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStatsStatsItem> Stats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStats"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "date", n => { Date = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStats_stats>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStats_stats.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "stats", n => { Stats = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStatsStatsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStatsStatsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("date", Date);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStats_stats>("stats", Stats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3CategoryStatsStatsItem>("stats", Stats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

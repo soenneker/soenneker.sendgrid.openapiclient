@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The catalog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalog_catalog>? Catalog { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem>? Catalog { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalog_catalog> Catalog { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem> Catalog { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalog"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "catalog", n => { Catalog = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalog_catalog>(global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalog_catalog.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "catalog", n => { Catalog = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem>(global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalog_catalog>("catalog", Catalog);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem>("catalog", Catalog);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -47,10 +47,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Specify which Subusers the Teammate may access and act on behalf of with this property. If this property is populated, you must set the `has_restricted_subuser_access` property to `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammatesRequest_subuser_access>? SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoTeammatesBaseRequestPropsSubuserAccessItem>? SubuserAccess { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammatesRequest_subuser_access> SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoTeammatesBaseRequestPropsSubuserAccessItem> SubuserAccess { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammatesRequest"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "persona", n => { Persona = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Persona>(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammatesRequest_subuser_access>(global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammatesRequest_subuser_access.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SsoTeammatesBaseRequestPropsSubuserAccessItem>(global::Soenneker.SendGrid.OpenApiClient.Models.SsoTeammatesBaseRequestPropsSubuserAccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("last_name", LastName);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Persona>("persona", Persona);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammatesRequest_subuser_access>("subuser_access", SubuserAccess);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SsoTeammatesBaseRequestPropsSubuserAccessItem>("subuser_access", SubuserAccess);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

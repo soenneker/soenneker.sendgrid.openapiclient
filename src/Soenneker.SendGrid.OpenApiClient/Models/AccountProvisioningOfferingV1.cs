@@ -26,7 +26,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Quantity of the specified addon to be added. If offering type is `package`, quantity must be 1.</summary>
         public long? Quantity { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TypeObject? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TypeValue? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetLongValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TypeObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TypeValue>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("quantity", Quantity);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TypeObject>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TypeValue>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

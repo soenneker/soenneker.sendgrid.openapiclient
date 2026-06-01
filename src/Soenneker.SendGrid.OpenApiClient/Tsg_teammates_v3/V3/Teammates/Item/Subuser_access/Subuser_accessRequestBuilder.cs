@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Subuser_access
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_teammates_v3\v3\teammates\{teammate_name-id}\subuser_access
+    /// Builds and executes requests for operations under \tsg_teammates_v3\v3\teammates\{teammateName-id}\subuser_access
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Subuser_accessRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Su
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Subuser_accessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_teammates_v3/v3/teammates/{teammate_name%2Did}/subuser_access{?after_subuser_id*,limit*,username*}", pathParameters)
+        public Subuser_accessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_teammates_v3/v3/teammates/{teammateName%2Did}/subuser_access{?after_subuser_id*,limit*,username*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,37 +30,37 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Su
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Subuser_accessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_teammates_v3/v3/teammates/{teammate_name%2Did}/subuser_access{?after_subuser_id*,limit*,username*}", rawUrl)
+        public Subuser_accessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_teammates_v3/v3/teammates/{teammateName%2Did}/subuser_access{?after_subuser_id*,limit*,username*}", rawUrl)
         {
         }
         /// <summary>
         /// **This operation allows you to retrieve the Subusers that can be accessed by a specified Teammate.**This operation will return the Subusers available to a Teammate, including the scopes available. If the Teammate is an administrator, all Subusers will be returned.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Subuser_access.Subuser_accessRequestBuilder.Subuser_accessRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Subuser_access.Subuser_accessRequestBuilder.Subuser_accessRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Subuser_access.Subuser_accessRequestBuilder.Subuser_accessRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates.Item.Subuser_access.Subuser_accessRequestBuilder.Subuser_accessRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate403.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3ListSubuserByTemplate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This operation allows you to retrieve the Subusers that can be accessed by a specified Teammate.**This operation will return the Subusers available to a Teammate, including the scopes available. If the Teammate is an administrator, all Subusers will be returned.

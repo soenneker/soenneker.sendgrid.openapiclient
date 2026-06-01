@@ -19,15 +19,15 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch
     public partial class BatchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_mail_v3.v3.mail.batch.item collection</summary>
-        /// <param name="position">Set this parameter to the batch ID that&apos;s associated with the mail send you want to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch.Item.WithBatch_ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch.Item.WithBatch_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch.Item.WithBatchItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch.Item.WithBatchItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("batch_id", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch.Item.WithBatch_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("batchId", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Batch.Item.WithBatchItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

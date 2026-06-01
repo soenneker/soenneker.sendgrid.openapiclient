@@ -36,18 +36,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send
         /// <summary>
         /// **This endpoint allows you to send a test marketing email to a list of email addresses**.Before sending a marketing message, you can test it using this endpoint. You may specify up to **10 contacts** in the `emails` request body field. You must also specify a `template_id` and include either a `from_address` or `sender_id`. You can manage your templates with the [Twilio SendGrid App](https://mc.sendgrid.com/dynamic-templates) or the [Transactional Templates API](https://docs.sendgrid.com/api-reference/transactional-templates).&gt; Please note that this endpoint works with Dynamic Transactional Templates only. Legacy Transactional Templates will not be delivered.For more information about managing Dynamic Transactional Templates, see [How to Send Email with Dynamic Transactional Templates](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/).You can also test your Single Sends in the [Twilio SendGrid Marketing Campaigns UI](https://mc.sendgrid.com/single-sends).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send_email.Send_emailPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send_email.Send_emailPostResponse?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send_email.Send_emailPostResponse> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send_email.Send_emailPostResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send_email.Send_emailPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to send a test marketing email to a list of email addresses**.Before sending a marketing message, you can test it using this endpoint. You may specify up to **10 contacts** in the `emails` request body field. You must also specify a `template_id` and include either a `from_address` or `sender_id`. You can manage your templates with the [Twilio SendGrid App](https://mc.sendgrid.com/dynamic-templates) or the [Transactional Templates API](https://docs.sendgrid.com/api-reference/transactional-templates).&gt; Please note that this endpoint works with Dynamic Transactional Templates only. Legacy Transactional Templates will not be delivered.For more information about managing Dynamic Transactional Templates, see [How to Send Email with Dynamic Transactional Templates](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/).You can also test your Single Sends in the [Twilio SendGrid Marketing Campaigns UI](https://mc.sendgrid.com/single-sends).
@@ -66,11 +66,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_test_v3.V3.Marketing.Test.Send
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3SendTestMarketingEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

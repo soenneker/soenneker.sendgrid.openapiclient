@@ -23,14 +23,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients
         }
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_stats_v3.v3.clients.item collection</summary>
         /// <param name="position">Specifies the type of client to retrieve stats for. Must be either &quot;phone&quot;, &quot;tablet&quot;, &quot;webmail&quot;, or &quot;desktop&quot;.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.WithClient_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.WithClient_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.WithClientTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.WithClientTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("client_type", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.WithClient_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("clientType", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.WithClientTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -23,7 +23,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("accountID", position);
+                urlTplParams.Add("accountId", position);
                 return new global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.WithAccountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

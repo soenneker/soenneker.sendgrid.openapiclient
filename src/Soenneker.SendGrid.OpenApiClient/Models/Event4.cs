@@ -14,7 +14,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "cancel_drop")]
         #pragma warning disable CS1591
-        Cancel_drop,
+        CancelDrop,
         #pragma warning restore CS1591
     }
 }

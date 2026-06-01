@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.Activate
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_templates_v3\v3\templates\{template_id}\versions\{version_id}\activate
+    /// Builds and executes requests for operations under \tsg_templates_v3\v3\templates\{templateId}\versions\{versionId}\activate
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivateRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Ve
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{template_id}/versions/{version_id}/activate", pathParameters)
+        public ActivateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{templateId}/versions/{versionId}/activate", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Ve
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{template_id}/versions/{version_id}/activate", rawUrl)
+        public ActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{templateId}/versions/{versionId}/activate", rawUrl)
         {
         }
         /// <summary>

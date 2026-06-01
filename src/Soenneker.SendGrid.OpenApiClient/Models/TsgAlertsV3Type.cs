@@ -10,11 +10,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "stats_notification")]
         #pragma warning disable CS1591
-        Stats_notification,
+        StatsNotification,
         #pragma warning restore CS1591
         [EnumMember(Value = "usage_limit")]
         #pragma warning disable CS1591
-        Usage_limit,
+        UsageLimit,
         #pragma warning restore CS1591
     }
 }

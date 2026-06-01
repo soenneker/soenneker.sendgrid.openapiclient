@@ -34,11 +34,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_clicks")]
         #pragma warning disable CS1591
-        Unique_clicks,
+        UniqueClicks,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_opens")]
         #pragma warning disable CS1591
-        Unique_opens,
+        UniqueOpens,
         #pragma warning restore CS1591
         [EnumMember(Value = "unsubscribes")]
         #pragma warning disable CS1591

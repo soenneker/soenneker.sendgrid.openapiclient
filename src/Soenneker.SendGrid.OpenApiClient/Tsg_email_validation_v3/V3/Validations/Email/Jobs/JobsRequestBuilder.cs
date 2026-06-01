@@ -20,14 +20,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validation
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_email_validation_v3.v3.validations.email.jobs.item collection</summary>
         /// <param name="position">The ID of the Bulk Email Address Validation Job you wish to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validations.Email.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validations.Email.Jobs.Item.WithJob_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validations.Email.Jobs.Item.WithJobItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validations.Email.Jobs.Item.WithJobItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("job_id", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validations.Email.Jobs.Item.WithJob_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("jobId", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validations.Email.Jobs.Item.WithJobItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -82,11 +82,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validation
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerification body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerificationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerification body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200Response> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerificationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -125,11 +125,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_validation_v3.V3.Validation
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerification body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerificationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerification body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3ListEmailJobForVerificationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

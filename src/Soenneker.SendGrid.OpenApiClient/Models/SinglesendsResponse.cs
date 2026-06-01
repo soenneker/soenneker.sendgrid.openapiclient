@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponse_results>? Results { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponse_results> Results { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem> Results { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Metadata.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponse_results>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponse_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Metadata>("_metadata", Metadata);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponse_results>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

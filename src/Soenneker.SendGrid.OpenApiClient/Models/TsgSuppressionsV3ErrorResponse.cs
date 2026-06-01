@@ -18,10 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponse_errors>? Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponseErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponse_errors> Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponseErrorsItem> Errors { get; set; }
 #endif
         /// <summary>When applicable, this property value will be an error ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponse_errors>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponseErrorsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
@@ -78,7 +78,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponse_errors>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ErrorResponseErrorsItem>("errors", Errors);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteAdditionalData(AdditionalData);

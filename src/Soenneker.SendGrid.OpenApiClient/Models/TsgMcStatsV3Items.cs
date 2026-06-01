@@ -10,7 +10,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "step_id")]
         #pragma warning disable CS1591
-        Step_id,
+        StepId,
         #pragma warning restore CS1591
     }
 }

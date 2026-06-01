@@ -63,10 +63,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The users who are able to send mail from the IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_users>? Users { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsUsersItem>? Users { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_users> Users { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsUsersItem> Users { get; set; }
 #endif
         /// <summary>Indicates if this is a valid Reverse DNS.</summary>
         public bool? Valid { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "legacy", n => { Legacy = n.GetBoolValue(); } },
                 { "rdns", n => { Rdns = n.GetStringValue(); } },
                 { "subdomain", n => { Subdomain = n.GetStringValue(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_users>(global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_users.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsUsersItem>(global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsUsersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "valid", n => { Valid = n.GetBoolValue(); } },
             };
         }
@@ -122,7 +122,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("legacy", Legacy);
             writer.WriteStringValue("rdns", Rdns);
             writer.WriteStringValue("subdomain", Subdomain);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDns_users>("users", Users);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ReverseDnsUsersItem>("users", Users);
             writer.WriteBoolValue("valid", Valid);
             writer.WriteAdditionalData(AdditionalData);
         }

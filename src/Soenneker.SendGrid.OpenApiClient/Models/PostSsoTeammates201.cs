@@ -56,10 +56,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Specifies which Subusers the Teammate may access and act on behalf of. If this property is populated, the `has_restricted_subuser_access` property will be `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201_subuser_access>? SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem>? SubuserAccess { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201_subuser_access> SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem> SubuserAccess { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201"/> and sets the default values.
@@ -93,7 +93,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "is_sso", n => { IsSso = n.GetBoolValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201_subuser_access>(global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201_subuser_access.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("is_sso", IsSso);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201_subuser_access>("subuser_access", SubuserAccess);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem>("subuser_access", SubuserAccess);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponse_recipients>? Recipients { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponseRecipientsItem>? Recipients { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponse_recipients> Recipients { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponseRecipientsItem> Recipients { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponse_recipients>(global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponse_recipients.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponseRecipientsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponseRecipientsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponse_recipients>("recipients", Recipients);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ListRecipientsResponseRecipientsItem>("recipients", Recipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

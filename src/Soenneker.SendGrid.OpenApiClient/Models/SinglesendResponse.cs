@@ -59,10 +59,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings>? Warnings { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem>? Warnings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings> Warnings { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem> Warnings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse"/> and sets the default values.
@@ -98,7 +98,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "send_to", n => { SendTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo>("send_to", SendTo);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponse_warnings>("warnings", Warnings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

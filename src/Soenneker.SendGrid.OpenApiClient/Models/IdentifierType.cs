@@ -10,19 +10,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         [EnumMember(Value = "EMAIL")]
         #pragma warning disable CS1591
-        EMAIL,
+        Email,
         #pragma warning restore CS1591
         [EnumMember(Value = "PHONENUMBERID")]
         #pragma warning disable CS1591
-        PHONENUMBERID,
+        Phonenumberid,
         #pragma warning restore CS1591
         [EnumMember(Value = "EXTERNALID")]
         #pragma warning disable CS1591
-        EXTERNALID,
+        Externalid,
         #pragma warning restore CS1591
         [EnumMember(Value = "ANONYMOUSID")]
         #pragma warning disable CS1591
-        ANONYMOUSID,
+        Anonymousid,
         #pragma warning restore CS1591
     }
 }

@@ -27,10 +27,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201_errors>? Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201_errors> Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The count of new recipients added to the contactdb.</summary>
         public double? NewCount { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "error_count", n => { ErrorCount = n.GetDoubleValue(); } },
                 { "error_indices", n => { ErrorIndices = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201_errors>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "new_count", n => { NewCount = n.GetDoubleValue(); } },
                 { "persisted_recipients", n => { PersistedRecipients = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_count", n => { UpdatedCount = n.GetDoubleValue(); } },
@@ -86,7 +86,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("error_count", ErrorCount);
             writer.WriteCollectionOfPrimitiveValues<double?>("error_indices", ErrorIndices);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201_errors>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem>("errors", Errors);
             writer.WriteDoubleValue("new_count", NewCount);
             writer.WriteCollectionOfPrimitiveValues<string>("persisted_recipients", PersistedRecipients);
             writer.WriteDoubleValue("updated_count", UpdatedCount);

@@ -17,14 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_mc_contacts_v3.v3.marketing.contacts.search.identifiers.item collection</summary>
         /// <param name="position">The type of identifier to search for. You can use only one type of identifier per search.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Contacts.Search.Identifiers.Item.WithIdentifier_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Contacts.Search.Identifiers.Item.WithIdentifier_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Contacts.Search.Identifiers.Item.WithIdentifierTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Contacts.Search.Identifiers.Item.WithIdentifierTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("identifier_type", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Contacts.Search.Identifiers.Item.WithIdentifier_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("identifierType", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Contacts.Search.Identifiers.Item.WithIdentifierTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

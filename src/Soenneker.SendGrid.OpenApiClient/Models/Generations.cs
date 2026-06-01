@@ -18,7 +18,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "legacy,dynamic")]
         #pragma warning disable CS1591
-        LegacyDynamic,
+        LegacyCommaDynamic,
         #pragma warning restore CS1591
     }
 }

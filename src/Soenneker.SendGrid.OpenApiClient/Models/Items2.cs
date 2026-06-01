@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "group_unsubscribe")]
         #pragma warning disable CS1591
-        Group_unsubscribe,
+        GroupUnsubscribe,
         #pragma warning restore CS1591
         [EnumMember(Value = "bounce")]
         #pragma warning disable CS1591
@@ -46,7 +46,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "group_resubscribe")]
         #pragma warning disable CS1591
-        Group_resubscribe,
+        GroupResubscribe,
         #pragma warning restore CS1591
         [EnumMember(Value = "spamreport")]
         #pragma warning disable CS1591
@@ -54,7 +54,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "machine_opened")]
         #pragma warning disable CS1591
-        Machine_opened,
+        MachineOpened,
         #pragma warning restore CS1591
     }
 }

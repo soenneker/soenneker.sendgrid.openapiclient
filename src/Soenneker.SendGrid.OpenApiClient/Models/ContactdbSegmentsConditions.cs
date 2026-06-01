@@ -25,7 +25,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Field { get; set; }
 #endif
         /// <summary>The operator property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Operator? Operator { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.OperatorType? Operator { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "and_or", n => { AndOr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AndOr>(); } },
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Operator>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OperatorType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AndOr>("and_or", AndOr);
             writer.WriteStringValue("field", Field);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Operator>("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OperatorType>("operator", Operator);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -89,10 +89,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Key-value pairs associated with the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent_v3_payload_details? V3PayloadDetails { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty? V3PayloadDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent_v3_payload_details V3PayloadDetails { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty V3PayloadDetails { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent"/> and sets the default values.
@@ -131,7 +131,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
                 { "useragent", n => { Useragent = n.GetStringValue(); } },
-                { "v3_payload_details", n => { V3PayloadDetails = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent_v3_payload_details>(global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent_v3_payload_details.CreateFromDiscriminatorValue); } },
+                { "v3_payload_details", n => { V3PayloadDetails = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -153,7 +153,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("size", Size);
             writer.WriteIntValue("timestamp", Timestamp);
             writer.WriteStringValue("useragent", Useragent);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent_v3_payload_details>("v3_payload_details", V3PayloadDetails);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty>("v3_payload_details", V3PayloadDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

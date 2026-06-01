@@ -20,14 +20,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_logs_v3.v3.logs.item collection</summary>
         /// <param name="position">The ID of the message you are requesting details for.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSg_message_ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSg_message_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSgMessageItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSgMessageItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("sg_message_id", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSg_message_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("sgMessageId", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSgMessageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

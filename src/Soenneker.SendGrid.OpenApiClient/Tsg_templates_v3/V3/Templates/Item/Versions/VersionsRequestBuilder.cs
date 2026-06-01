@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_templates_v3\v3\templates\{template_id}\versions
+    /// Builds and executes requests for operations under \tsg_templates_v3\v3\templates\{templateId}\versions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_templates_v3.v3.templates.item.versions.item collection</summary>
         /// <param name="position">The ID of the template version</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.WithVersion_ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.WithVersion_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.WithVersionItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("version_id", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.WithVersion_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("versionId", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Versions.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Ve
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{template_id}/versions", pathParameters)
+        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{templateId}/versions", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item.Ve
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{template_id}/versions", rawUrl)
+        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_templates_v3/v3/templates/{templateId}/versions", rawUrl)
         {
         }
         /// <summary>

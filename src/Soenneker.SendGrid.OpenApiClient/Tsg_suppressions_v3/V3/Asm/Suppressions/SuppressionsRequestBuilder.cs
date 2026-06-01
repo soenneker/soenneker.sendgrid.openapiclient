@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.SendGrid.OpenApiClient.Models;
 using Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Global;
 using Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Item;
 using System.Collections.Generic;
@@ -54,20 +55,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressio
         /// <summary>
         /// **This endpoint allows you to retrieve a list of all suppressions.**
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Suppressions&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Suppressions>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Suppressions>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Suppressions>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Suppressions.Suppressions.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

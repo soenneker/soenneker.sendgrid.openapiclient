@@ -26,14 +26,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         }
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_mc_segments_20_v3.v3.marketing.segments.TwoZero.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegment_ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegment_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegmentItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("segment_id", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegment_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("segmentId", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         /// <summary>
         /// Segment `name` has to be unique. A user can not create a new segment with an existing segment name.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Segment2xx"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Segment2Xx"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,11 +88,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ErrorsSegmentV2">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Segment2xx?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SegmentWriteV2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Segment2Xx?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SegmentWriteV2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Segment2xx> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SegmentWriteV2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Segment2Xx> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SegmentWriteV2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -102,7 +102,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.ErrorsSegmentV2.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ErrorsSegmentV2.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Segment2xx>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Segment2xx.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Segment2Xx>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Segment2Xx.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a list of segments.**The query param `parent_list_ids` is treated as a filter.  Any match will be returned.  Zero matches will return a response code of 200 with an empty `results` array.`parent_list_ids` | `no_parent_list_id` | `ids` | `result`-----------------:|:--------------------:|:-------------:|:-------------:empty | false | empty | all segments valueslist_ids | false | empty | segments filtered by list_ids valueslist_ids |true | empty | segments filtered by list_ids and segments with no parent list_ids emptyempty | true | empty | segments with no parent list_idsanything | anything | ids | segments with matching segment ids |

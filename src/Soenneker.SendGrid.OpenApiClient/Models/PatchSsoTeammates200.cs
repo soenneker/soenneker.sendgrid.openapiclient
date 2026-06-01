@@ -112,10 +112,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Specifies which Subusers the Teammate may access and act on behalf of. If this property is populated, the `has_restricted_subuser_access` property will be `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200_subuser_access>? SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem>? SubuserAccess { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200_subuser_access> SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem> SubuserAccess { get; set; }
 #endif
         /// <summary>The Teammate&apos;s username. This property is set to the Teammate&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +182,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200_subuser_access>(global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200_subuser_access.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user_type", n => { UserType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.UserType>(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
@@ -210,7 +210,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("phone", Phone);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("state", State);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200_subuser_access>("subuser_access", SubuserAccess);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem>("subuser_access", SubuserAccess);
             writer.WriteStringValue("username", Username);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.UserType>("user_type", UserType);
             writer.WriteStringValue("website", Website);

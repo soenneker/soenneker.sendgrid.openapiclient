@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Groups.Item.Suppressions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_suppressions_v3\v3\asm\groups\{group_id}\suppressions
+    /// Builds and executes requests for operations under \tsg_suppressions_v3\v3\asm\groups\{groupId}\suppressions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionsRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Groups.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/asm/groups/{group_id}/suppressions", pathParameters)
+        public SuppressionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/asm/groups/{groupId}/suppressions", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Groups.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/asm/groups/{group_id}/suppressions", rawUrl)
+        public SuppressionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/asm/groups/{groupId}/suppressions", rawUrl)
         {
         }
         /// <summary>
@@ -74,22 +74,22 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Groups.Ite
         /// <summary>
         /// **This endpoint allows you to add email addresses to an unsubscribe group.**If you attempt to add suppressions to a group that has been deleted or does not exist, the suppressions will be added to the global suppressions list.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SuppressionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201Response?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SuppressionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SuppressionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201Response> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SuppressionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgSuppressionsV3AddSuppressionToAsmGroup201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve all suppressed email addresses belonging to the given group.**

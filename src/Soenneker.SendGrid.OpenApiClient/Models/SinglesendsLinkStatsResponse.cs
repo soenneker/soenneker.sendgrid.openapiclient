@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>This is the index of the link&apos;s location in the email contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse_results>? Results { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse_results> Results { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem> Results { get; set; }
 #endif
         /// <summary>The total_clicks property</summary>
         public int? TotalClicks { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.LinkTrackingMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.LinkTrackingMetadata.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse_results>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total_clicks", n => { TotalClicks = n.GetIntValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.LinkTrackingMetadata>("_metadata", Metadata);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse_results>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem>("results", Results);
             writer.WriteIntValue("total_clicks", TotalClicks);
             writer.WriteAdditionalData(AdditionalData);
         }

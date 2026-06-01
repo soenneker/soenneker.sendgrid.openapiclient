@@ -18,7 +18,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "not_delivered")]
         #pragma warning disable CS1591
-        Not_delivered,
+        NotDelivered,
         #pragma warning restore CS1591
     }
 }
