@@ -48,6 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TsgLmcContactdbV3ExportRecipientRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxFileSize = 5000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

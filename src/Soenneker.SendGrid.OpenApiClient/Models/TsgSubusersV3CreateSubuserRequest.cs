@@ -56,6 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TsgSubusersV3CreateSubuserRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeRegion = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -32,6 +32,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TsgMcContactsV3ListContactCount200Response()
         {
             AdditionalData = new Dictionary<string, object>();
+            BillableCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

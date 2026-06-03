@@ -66,6 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TransactionalTemplateVersionCreate()
         {
             AdditionalData = new Dictionary<string, object>();
+            GeneratePlainContent = true;
             PlainContent = "<generated from html_content if left empty>";
         }
         /// <summary>

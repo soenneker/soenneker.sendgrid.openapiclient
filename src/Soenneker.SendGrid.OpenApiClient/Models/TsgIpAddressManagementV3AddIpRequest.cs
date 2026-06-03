@@ -36,6 +36,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TsgIpAddressManagementV3AddIpRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeRegion = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -62,6 +62,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TsgMcDesignsV3UpdateDesignRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            GeneratePlainContent = true;
             Name = "My Design";
             PlainContent = "<generated from html_content if left empty>";
         }

@@ -42,6 +42,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public SuppressionGroup()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsDefault = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

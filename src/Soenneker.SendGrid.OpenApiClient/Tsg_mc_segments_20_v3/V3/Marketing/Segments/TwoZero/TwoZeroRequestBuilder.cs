@@ -41,7 +41,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TwoZeroRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0{?ids*,no_parent_list_id*,parent_list_ids*}", pathParameters)
+        public TwoZeroRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TwoZeroRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0{?ids*,no_parent_list_id*,parent_list_ids*}", rawUrl)
+        public TwoZeroRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

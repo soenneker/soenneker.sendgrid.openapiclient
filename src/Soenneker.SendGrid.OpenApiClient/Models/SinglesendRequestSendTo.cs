@@ -38,6 +38,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public SinglesendRequestSendTo()
         {
             AdditionalData = new Dictionary<string, object>();
+            All = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

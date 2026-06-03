@@ -50,6 +50,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public ContactdbRecipientResponse201()
         {
             AdditionalData = new Dictionary<string, object>();
+            ErrorCount = 0;
+            NewCount = 0;
+            UpdatedCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

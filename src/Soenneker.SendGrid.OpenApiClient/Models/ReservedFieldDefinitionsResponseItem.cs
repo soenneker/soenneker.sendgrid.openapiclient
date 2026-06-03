@@ -32,6 +32,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public ReservedFieldDefinitionsResponseItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            ReadOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

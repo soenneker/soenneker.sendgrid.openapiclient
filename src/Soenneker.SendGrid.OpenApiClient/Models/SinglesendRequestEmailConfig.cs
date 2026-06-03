@@ -76,6 +76,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public SinglesendRequestEmailConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            GeneratePlainContent = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

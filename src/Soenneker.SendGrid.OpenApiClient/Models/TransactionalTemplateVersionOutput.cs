@@ -100,6 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TransactionalTemplateVersionOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            GeneratePlainContent = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

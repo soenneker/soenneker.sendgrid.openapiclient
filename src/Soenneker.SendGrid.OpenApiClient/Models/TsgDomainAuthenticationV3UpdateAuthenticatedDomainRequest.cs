@@ -24,6 +24,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public TsgDomainAuthenticationV3UpdateAuthenticatedDomainRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            CustomSpf = false;
+            Default = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
