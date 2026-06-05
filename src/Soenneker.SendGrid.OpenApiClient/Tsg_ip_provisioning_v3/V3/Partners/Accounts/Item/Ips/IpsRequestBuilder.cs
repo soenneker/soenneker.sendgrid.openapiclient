@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_provisioning_v3/v3/partners/accounts/{accountId}/ips", pathParameters)
+        public IpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_provisioning_v3/v3/partners/accounts/{accountId}/ips{?limit*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_provisioning_v3/v3/partners/accounts/{accountId}/ips", rawUrl)
+        public IpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_provisioning_v3/v3/partners/accounts/{accountId}/ips{?limit*,offset*}", rawUrl)
         {
         }
         /// <summary>
@@ -184,7 +184,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_ip_provisioning_v3/v3/partners/accounts/{accountId}/ips{?limit*,offset*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

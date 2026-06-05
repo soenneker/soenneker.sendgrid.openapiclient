@@ -35,7 +35,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BlocksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public BlocksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/suppression/blocks{?email*,end_time*,limit*,offset*,start_time*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BlocksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public BlocksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/suppression/blocks{?email*,end_time*,limit*,offset*,start_time*}", rawUrl)
         {
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bl
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_suppressions_v3/v3/suppression/blocks", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -120,7 +120,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bl
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Blocks.BlocksRequestBuilder.BlocksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_suppressions_v3/v3/suppression/blocks{?email*,end_time*,limit*,offset*,start_time*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SinglesendsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public SinglesendsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_singlesends_v3/v3/marketing/singlesends{?ids,page_size*,page_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SinglesendsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public SinglesendsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_singlesends_v3/v3/marketing/singlesends{?ids,page_size*,page_token*}", rawUrl)
         {
         }
         /// <summary>
@@ -147,7 +147,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.SinglesendsRequestBuilder.SinglesendsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_mc_singlesends_v3/v3/marketing/singlesends{?ids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -166,7 +166,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.SinglesendsRequestBuilder.SinglesendsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_mc_singlesends_v3/v3/marketing/singlesends{?page_size*,page_token*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -187,7 +187,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tsg_mc_singlesends_v3/v3/marketing/singlesends", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

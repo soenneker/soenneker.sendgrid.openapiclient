@@ -28,7 +28,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lis
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithListItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_lmc_contactdb_v3/v3/contactdb/lists/{listId}", pathParameters)
+        public WithListItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_lmc_contactdb_v3/v3/contactdb/lists/{listId}{?delete_contacts*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lis
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_lmc_contactdb_v3/v3/contactdb/lists/{listId}", rawUrl)
+        public WithListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_lmc_contactdb_v3/v3/contactdb/lists/{listId}{?delete_contacts*}", rawUrl)
         {
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lis
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lists.Item.WithListItemRequestBuilder.WithListItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_lmc_contactdb_v3/v3/contactdb/lists/{listId}{?delete_contacts*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

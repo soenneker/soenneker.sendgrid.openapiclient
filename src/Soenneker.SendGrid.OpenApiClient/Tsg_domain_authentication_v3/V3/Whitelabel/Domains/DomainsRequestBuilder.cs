@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DomainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public DomainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains{?domain*,exclude_subusers*,limit*,offset*,username*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public DomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains{?domain*,exclude_subusers*,limit*,offset*,username*}", rawUrl)
         {
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains{?domain*,exclude_subusers*,limit*,offset*,username*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -132,7 +132,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

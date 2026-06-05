@@ -35,7 +35,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public ListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_lists_v3/v3/marketing/lists{?page_size*,page_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_lists_v3/v3/marketing/lists{?page_size*,page_token*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_mc_lists_v3/v3/marketing/lists{?page_size*,page_token*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -124,7 +124,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tsg_mc_lists_v3/v3/marketing/lists", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -40,7 +40,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/pools/{poolid}", pathParameters)
+        public WithPoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/pools/{poolid}{?include_region*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/pools/{poolid}", rawUrl)
+        public WithPoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/pools/{poolid}{?include_region*}", rawUrl)
         {
         }
         /// <summary>
@@ -167,7 +167,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_ips.Pools.Item.WithPoolItemRequestBuilder.WithPoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/pools/{poolid}{?include_region*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

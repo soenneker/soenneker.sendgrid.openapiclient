@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0/{segmentId}", pathParameters)
+        public WithSegmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0/{segmentId}{?contacts_sample*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0/{segmentId}", rawUrl)
+        public WithSegmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0/{segmentId}{?contacts_sample*}", rawUrl)
         {
         }
         /// <summary>
@@ -143,7 +143,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Se
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.V3.Marketing.Segments.TwoZero.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_mc_segments_2.0_v3/v3/marketing/segments/2.0/{segmentId}{?contacts_sample*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

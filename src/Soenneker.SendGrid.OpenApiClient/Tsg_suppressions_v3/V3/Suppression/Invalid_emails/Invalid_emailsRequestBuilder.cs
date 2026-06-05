@@ -35,7 +35,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Invalid_emailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public Invalid_emailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/suppression/invalid_emails{?email*,end_time*,limit*,offset*,start_time*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Invalid_emailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public Invalid_emailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_suppressions_v3/v3/suppression/invalid_emails{?email*,end_time*,limit*,offset*,start_time*}", rawUrl)
         {
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_suppressions_v3/v3/suppression/invalid_emails", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -120,7 +120,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Invalid_emails.Invalid_emailsRequestBuilder.Invalid_emailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_suppressions_v3/v3/suppression/invalid_emails{?email*,end_time*,limit*,offset*,start_time*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

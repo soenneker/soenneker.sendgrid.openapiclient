@@ -120,7 +120,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_webhooks_v3/v3/user/webhooks/event/settings/{id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

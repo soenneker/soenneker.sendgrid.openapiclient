@@ -28,7 +28,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubuserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public SubuserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/subuser", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubuserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public SubuserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/subuser", rawUrl)
         {
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.Whitelabel.Domains.Subuser.SubuserRequestBuilder.SubuserRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_domain_authentication_v3/v3/whitelabel/domains/subuser{?username*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

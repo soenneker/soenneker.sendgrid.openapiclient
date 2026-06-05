@@ -35,7 +35,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public IpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/ips{?after_key*,before_key*,end_added_at*,include_region*,ip*,is_enabled*,is_leased*,is_parent_assigned*,limit*,pool*,region*,start_added_at*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public IpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/ips{?after_key*,before_key*,end_added_at*,include_region*,ip*,is_enabled*,is_leased*,is_parent_assigned*,limit*,pool*,region*,start_added_at*}", rawUrl)
         {
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_ips.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/ips{?after_key*,before_key*,end_added_at*,include_region*,ip*,is_enabled*,is_leased*,is_parent_assigned*,limit*,pool*,region*,start_added_at*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -137,7 +137,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tsg_ip_address_management_v3/v3/send_ips/ips", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
