@@ -2,7 +2,7 @@
   "descriptionHash": "E2A2A931CE1F4D5D633AB406CB2701A8FD4B7EA5D53785BC76C3BA52843B61CA622F779E07AD08842D5BEDEEF99F4498B4CD05258854DF25A11200E7F9F990C6",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.3",
+  "kiotaVersion": "1.32.4",
   "clientClassName": "SendGridOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.SendGrid.OpenApiClient",
