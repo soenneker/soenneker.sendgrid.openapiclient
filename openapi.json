@@ -569,8 +569,7 @@
                   "email_to": {
                     "type": "string",
                     "description": "The email address the alert will be sent to.\nExample: test@example.com",
-                    "format": "email",
-                    "nullable": true
+                    "format": "email"
                   },
                   "frequency": {
                     "type": "string",
@@ -2256,8 +2255,7 @@
                             },
                             "reason": {
                               "type": "string",
-                              "description": "The reason this record is invalid.",
-                              "nullable": true
+                              "description": "The reason this record is invalid."
                             }
                           },
                           "description": "The CNAME record for the authenticated domain."
@@ -2270,8 +2268,7 @@
                               "description": "Indicates if the DNS record is valid."
                             },
                             "reason": {
-                              "type": "string",
-                              "nullable": true
+                              "type": "string"
                             }
                           },
                           "description": "A DNS record for this authenticated domain."
@@ -2284,8 +2281,7 @@
                               "description": "Indicates if the DNS record is valid."
                             },
                             "reason": {
-                              "type": "string",
-                              "nullable": true
+                              "type": "string"
                             }
                           },
                           "description": "A DNS record for this authenticated domain."
@@ -2298,8 +2294,7 @@
                               "description": "Indicates if the SPF record is valid."
                             },
                             "reason": {
-                              "type": "string",
-                              "nullable": true
+                              "type": "string"
                             }
                           },
                           "description": "The SPF record for the authenticated domain."
@@ -4956,8 +4951,7 @@
                       },
                       "start_date": {
                         "type": "number",
-                        "description": "The date that the IP address was entered into warmup.",
-                        "nullable": true
+                        "description": "The date that the IP address was entered into warmup."
                       },
                       "whitelabeled": {
                         "type": "boolean",
@@ -4965,8 +4959,7 @@
                       },
                       "assigned_at": {
                         "type": "integer",
-                        "description": "The date that the IP address was assigned to the user.",
-                        "nullable": true
+                        "description": "The date that the IP address was assigned to the user."
                       }
                     }
                   }
@@ -5060,8 +5053,7 @@
                     },
                     "start_date": {
                       "type": "integer",
-                      "description": "The date that the IP address was entered into warmup.",
-                      "nullable": true
+                      "description": "The date that the IP address was entered into warmup."
                     },
                     "whitelabeled": {
                       "type": "boolean",
@@ -5413,8 +5405,7 @@
                         "type": "object",
                         "properties": {
                           "field": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "message": {
                             "type": "string",
@@ -5579,8 +5570,7 @@
                         "type": "object",
                         "properties": {
                           "field": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "message": {
                             "type": "string",
@@ -6244,18 +6234,15 @@
                           },
                           "is_parent_assigned": {
                             "type": "boolean",
-                            "description": "Indicates if a parent on the account is able to send email from the IP address. This parameter will be returned only if the request was made by the parent account.",
-                            "nullable": true
+                            "description": "Indicates if a parent on the account is able to send email from the IP address. This parameter will be returned only if the request was made by the parent account."
                           },
                           "updated_at": {
                             "type": "integer",
-                            "description": "A timestamp indicating when the IP was last updated.",
-                            "nullable": true
+                            "description": "A timestamp indicating when the IP was last updated."
                           },
                           "is_enabled": {
                             "type": "boolean",
-                            "description": "Indicates if the IP address is billed and able to send email. This parameter applies to non-Twilio SendGrid APIs that been added to your Twilio SendGrid account. This parameter's value is `null` for Twilio SendGrid IP addresses.",
-                            "nullable": true
+                            "description": "Indicates if the IP address is billed and able to send email. This parameter applies to non-Twilio SendGrid APIs that been added to your Twilio SendGrid account. This parameter's value is `null` for Twilio SendGrid IP addresses."
                           },
                           "is_leased": {
                             "type": "boolean",
@@ -6279,13 +6266,11 @@
                           "properties": {
                             "after_key": {
                               "type": "string",
-                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter.",
-                              "nullable": true
+                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter."
                             },
                             "before_key": {
                               "type": "string",
-                              "description": "Specifies which items to be returned by the API. When the `before_key` is specified, the API will return items beginning from the first item before the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `before_key` cannot be used in combination with the `after_key` parameter.",
-                              "nullable": true
+                              "description": "Specifies which items to be returned by the API. When the `before_key` is specified, the API will return items beginning from the first item before the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `before_key` cannot be used in combination with the `after_key` parameter."
                             },
                             "ip": {
                               "type": "string",
@@ -6647,13 +6632,11 @@
                     },
                     "updated_at": {
                       "type": "integer",
-                      "description": "A timestamp indicating when the IP was last updated.",
-                      "nullable": true
+                      "description": "A timestamp indicating when the IP was last updated."
                     },
                     "is_enabled": {
                       "type": "boolean",
-                      "description": "Indicates if the IP address is billed and able to send email. This parameter applies to non-Twilio SendGrid APIs that been added to your Twilio SendGrid account. This parameter's value is `null` for Twilio SendGrid IP addresses.",
-                      "nullable": true
+                      "description": "Indicates if the IP address is billed and able to send email. This parameter applies to non-Twilio SendGrid APIs that been added to your Twilio SendGrid account. This parameter's value is `null` for Twilio SendGrid IP addresses."
                     },
                     "is_leased": {
                       "type": "boolean",
@@ -6881,8 +6864,7 @@
                           "properties": {
                             "after_key": {
                               "type": "string",
-                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter.",
-                              "nullable": true
+                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter."
                             },
                             "limit": {
                               "type": "string",
@@ -7247,8 +7229,7 @@
                           "properties": {
                             "after_key": {
                               "type": "string",
-                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter.",
-                              "nullable": true
+                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter."
                             },
                             "ip": {
                               "type": "string",
@@ -7776,8 +7757,7 @@
                           "properties": {
                             "after_key": {
                               "type": "string",
-                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter.",
-                              "nullable": true
+                              "description": "Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter."
                             },
                             "limit": {
                               "type": "string",
@@ -8427,8 +8407,7 @@
                         "type": "object",
                         "properties": {
                           "field": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "message": {
                             "type": "string",
@@ -8530,8 +8509,7 @@
                         "type": "object",
                         "properties": {
                           "field": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "message": {
                             "type": "string",
@@ -8584,8 +8562,7 @@
                         "type": "object",
                         "properties": {
                           "field": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "message": {
                             "type": "string",
@@ -9009,8 +8986,7 @@
                             },
                             "reason": {
                               "type": "string",
-                              "description": "Null if the DNS record is valid. If the DNS record is invalid, this will explain why.",
-                              "nullable": true
+                              "description": "Null if the DNS record is valid. If the DNS record is invalid, this will explain why."
                             }
                           },
                           "description": "The DNS record generated for the sending domain used for this branded link."
@@ -9027,8 +9003,7 @@
                             },
                             "reason": {
                               "type": "string",
-                              "description": "Null if valid. If the DNS record is invalid, this will explain why.",
-                              "nullable": true
+                              "description": "Null if valid. If the DNS record is invalid, this will explain why."
                             }
                           },
                           "description": "The DNS record created to verify the branded link."
@@ -11670,9 +11645,7 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": {
-                  "nullable": true
-                }
+                "schema": { }
               }
             }
           },
@@ -11952,9 +11925,7 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": {
-                  "nullable": true
-                }
+                "schema": { }
               }
             }
           },
@@ -12072,9 +12043,7 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": {
-                  "nullable": true
-                }
+                "schema": { }
               }
             }
           },
@@ -17486,8 +17455,7 @@
                     "uniqueItems": false,
                     "type": "array",
                     "items": {
-                      "type": "string",
-                      "nullable": true
+                      "type": "string"
                     },
                     "description": "Import file header to reserved/custom field mapping."
                   }
@@ -22550,8 +22518,7 @@
                             },
                             "reason": {
                               "type": "string",
-                              "description": "The reason the reverse DNS record could not be validated. Is `null` if the reverse DNS record was validated.",
-                              "nullable": true
+                              "description": "The reason the reverse DNS record could not be validated. Is `null` if the reverse DNS record was validated."
                             }
                           }
                         }
@@ -23026,8 +22993,7 @@
                         "properties": {
                           "field": {
                             "type": "string",
-                            "description": "This empty field is returned instead of the list of scopes if the user making the call doesn't have the authorization required.",
-                            "nullable": true
+                            "description": "This empty field is returned instead of the list of scopes if the user making the call doesn't have the authorization required."
                           },
                           "message": {
                             "type": "string",
@@ -36357,8 +36323,7 @@
                   "type": "object",
                   "properties": {
                     "policy": {
-                      "type": "string",
-                      "nullable": true
+                      "type": "string"
                     }
                   }
                 }
@@ -36719,8 +36684,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -36834,8 +36798,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -37589,8 +37552,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -37960,8 +37922,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -38058,8 +38019,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -38466,62 +38426,52 @@
           },
           "subject": {
             "type": "string",
-            "description": "The subject of your campaign that your recipients will see.",
-            "nullable": true
+            "description": "The subject of your campaign that your recipients will see."
           },
           "sender_id": {
             "type": "integer",
-            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails.",
-            "nullable": true
+            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails."
           },
           "list_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs",
-            "nullable": true
+            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs"
           },
           "segment_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs.",
-            "nullable": true
+            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs."
           },
           "categories": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "The categories you would like associated to this campaign.",
-            "nullable": true
+            "description": "The categories you would like associated to this campaign."
           },
           "suppression_group_id": {
             "type": "integer",
-            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type.",
-            "nullable": true
+            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type."
           },
           "custom_unsubscribe_url": {
             "type": "string",
-            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups.",
-            "nullable": true
+            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups."
           },
           "ip_pool": {
             "type": "string",
-            "description": "The pool of IPs that you would like to send this email from.",
-            "nullable": true
+            "description": "The pool of IPs that you would like to send this email from."
           },
           "html_content": {
             "type": "string",
-            "description": "The HTML of your marketing email.",
-            "nullable": true
+            "description": "The HTML of your marketing email."
           },
           "plain_content": {
             "type": "string",
-            "description": "The plain text content of your emails.",
-            "nullable": true
+            "description": "The plain text content of your emails."
           },
           "editor": {
             "$ref": "#/components/schemas/Editor"
@@ -38564,62 +38514,52 @@
           },
           "subject": {
             "type": "string",
-            "description": "The subject of your campaign that your recipients will see.",
-            "nullable": true
+            "description": "The subject of your campaign that your recipients will see."
           },
           "sender_id": {
             "type": "integer",
-            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails.",
-            "nullable": true
+            "description": "The ID of the \"sender\" identity that you have created. Your recipients will see this as the \"from\" on your marketing emails."
           },
           "list_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs",
-            "nullable": true
+            "description": "The IDs of the lists you are sending this campaign to. You can have both segment IDs and list IDs"
           },
           "segment_ids": {
             "type": "array",
             "items": {
               "type": "integer"
             },
-            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs.",
-            "nullable": true
+            "description": "The segment IDs that you are sending this list to. You can have both segment IDs and list IDs. Segments are limited to 10 segment IDs."
           },
           "categories": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "The categories you would like associated to this campaign.",
-            "nullable": true
+            "description": "The categories you would like associated to this campaign."
           },
           "suppression_group_id": {
             "type": "integer",
-            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type.",
-            "nullable": true
+            "description": "The suppression group that this marketing email belongs to, allowing recipients to opt-out of emails of this type."
           },
           "custom_unsubscribe_url": {
             "type": "string",
-            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups.",
-            "nullable": true
+            "description": "This is the url of the custom unsubscribe page that you provide for customers to unsubscribe from your suppression groups."
           },
           "ip_pool": {
             "type": "string",
-            "description": "The pool of IPs that you would like to send this email from.",
-            "nullable": true
+            "description": "The pool of IPs that you would like to send this email from."
           },
           "html_content": {
             "type": "string",
-            "description": "The HTML of your marketing email.",
-            "nullable": true
+            "description": "The HTML of your marketing email."
           },
           "plain_content": {
             "type": "string",
-            "description": "The plain text content of your emails.",
-            "nullable": true
+            "description": "The plain text content of your emails."
           },
           "editor": {
             "$ref": "#/components/schemas/Editor"
@@ -38647,8 +38587,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -38763,8 +38702,7 @@
           },
           "value": {
             "type": "string",
-            "description": "The value of this recipient's custom field",
-            "nullable": true
+            "description": "The value of this recipient's custom field"
           }
         }
       },
@@ -38802,28 +38740,23 @@
                 },
                 "first_name": {
                   "type": "string",
-                  "description": "The first name of this recipient. This is a default custom field that SendGrid provides.",
-                  "nullable": true
+                  "description": "The first name of this recipient. This is a default custom field that SendGrid provides."
                 },
                 "last_name": {
                   "type": "string",
-                  "description": "The last name of the recipient.",
-                  "nullable": true
+                  "description": "The last name of the recipient."
                 },
                 "last_clicked": {
                   "type": "number",
-                  "description": "The last time this recipient clicked a link from one of your campaigns, in unixtime.",
-                  "nullable": true
+                  "description": "The last time this recipient clicked a link from one of your campaigns, in unixtime."
                 },
                 "last_emailed": {
                   "type": "number",
-                  "description": "The last time this user was emailed by one of your campaigns, in unixtime.",
-                  "nullable": true
+                  "description": "The last time this user was emailed by one of your campaigns, in unixtime."
                 },
                 "last_opened": {
                   "type": "number",
-                  "description": "The last time this recipient opened an email from you, in unixtime.",
-                  "nullable": true
+                  "description": "The last time this recipient opened an email from you, in unixtime."
                 },
                 "updated_at": {
                   "type": "number",
@@ -39055,8 +38988,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -40617,13 +40549,11 @@
           },
           "soft_bounces": {
             "type": "integer",
-            "description": "The number of days after which SendGrid will purge all contacts from your soft bounces suppression lists.",
-            "nullable": true
+            "description": "The number of days after which SendGrid will purge all contacts from your soft bounces suppression lists."
           },
           "hard_bounces": {
             "type": "integer",
-            "description": "The number of days after which SendGrid will purge all contacts from your hard bounces suppression lists.",
-            "nullable": true
+            "description": "The number of days after which SendGrid will purge all contacts from your hard bounces suppression lists."
           }
         },
         "example": {
@@ -40661,8 +40591,7 @@
         "properties": {
           "email": {
             "type": "string",
-            "description": "The email address that you would like your bounce reports forwarded to.",
-            "nullable": true
+            "description": "The email address that you would like your bounce reports forwarded to."
           },
           "enabled": {
             "type": "boolean",
@@ -40773,8 +40702,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -41179,8 +41107,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -41738,8 +41665,7 @@
             "items": {
               "type": "string",
               "format": "email"
-            },
-            "nullable": true
+            }
           },
           "address_line_1": {
             "type": "string"
@@ -42492,8 +42418,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -42569,8 +42494,7 @@
           "send_at": {
             "type": "string",
             "description": "Set this property to an ISO 8601 formatted date-time when you would like to send the Single Send. Please note that any `send_at` property value set with this endpoint will prepopulate the send date in the SendGrid user interface (UI). However, the Single Send will remain an unscheduled draft until it's updated with the [**Schedule Single Send**](https://docs.sendgrid.com/api-reference/single-sends/schedule-single-send) endpoint or SendGrid application UI. Additionally, the `now` keyword is a valid `send_at` value only when using the Schedule Single Send endpoint. Setting this property to `now` with this endpoint will cause an error.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "send_to": {
             "type": "object",
@@ -42629,24 +42553,20 @@
               },
               "suppression_group_id": {
                 "type": "integer",
-                "description": "The ID of the Suppression Group to allow recipients to unsubscribe — you must provide this or the `custom_unsubscribe_url`.",
-                "nullable": true
+                "description": "The ID of the Suppression Group to allow recipients to unsubscribe — you must provide this or the `custom_unsubscribe_url`."
               },
               "custom_unsubscribe_url": {
                 "type": "string",
                 "description": "The URL allowing recipients to unsubscribe — you must provide this or the `suppression_group_id`.",
-                "format": "uri",
-                "nullable": true
+                "format": "uri"
               },
               "sender_id": {
                 "type": "integer",
-                "description": "The ID of the verified Sender. You can retrieve a verified Sender's ID from the [\"Get Verified Senders\" endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the Sender's detail page URL in the SendGrid App.",
-                "nullable": true
+                "description": "The ID of the verified Sender. You can retrieve a verified Sender's ID from the [\"Get Verified Senders\" endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the Sender's detail page URL in the SendGrid App."
               },
               "ip_pool": {
                 "type": "string",
-                "description": "The name of the IP Pool from which the Single Send emails are sent.",
-                "nullable": true
+                "description": "The name of the IP Pool from which the Single Send emails are sent."
               }
             }
           }
@@ -42699,8 +42619,7 @@
           "send_at": {
             "type": "string",
             "description": "An ISO 8601 formatted date-time when the Single Send is set to be sent. Please note that any `send_at` property value will have no effect while the Single Send `status` is `draft`. You must update the Single Send with the [**Schedule Single Send**](https://docs.sendgrid.com/api-reference/single-sends/schedule-single-send) endpoint or SendGrid application UI to schedule it.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "send_to": {
             "type": "object",
@@ -42769,24 +42688,20 @@
               },
               "suppression_group_id": {
                 "type": "integer",
-                "description": "The ID of the Suppression Group to allow recipients to unsubscribe. You must provide a `suppression_group_id` or the `custom_unsubscribe_url` with your Single Send.",
-                "nullable": true
+                "description": "The ID of the Suppression Group to allow recipients to unsubscribe. You must provide a `suppression_group_id` or the `custom_unsubscribe_url` with your Single Send."
               },
               "custom_unsubscribe_url": {
                 "type": "string",
                 "description": "The URL allowing recipients to unsubscribe. You must provide a `custom_unsubscribe_url` or a `suppression_group_id` with your Single Send.",
-                "format": "uri",
-                "nullable": true
+                "format": "uri"
               },
               "sender_id": {
                 "type": "integer",
-                "description": "The ID of the verified sender from whom the Single Send will be sent. You can retrieve a verified sender's ID from the [**Get Verified Senders** endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the sender's detail page URL in the SendGrid App.",
-                "nullable": true
+                "description": "The ID of the verified sender from whom the Single Send will be sent. You can retrieve a verified sender's ID from the [**Get Verified Senders** endpoint](https://www.twilio.com/docs/sendgrid/api-reference/sender-verification/get-all-verified-senders) or by pulling it from the sender's detail page URL in the SendGrid App."
               },
               "ip_pool": {
                 "type": "string",
-                "description": "The name of the IP Pool from which the Single Send emails are sent.",
-                "nullable": true
+                "description": "The name of the IP Pool from which the Single Send emails are sent."
               }
             }
           },
@@ -42902,16 +42817,13 @@
           },
           "winner_selected_at": {
             "type": "string",
-            "description": "When the winner was selected",
-            "nullable": true
+            "description": "When the winner was selected"
           },
           "expiration_date": {
             "type": "string",
-            "description": "Last day to select an A/B Test Winner",
-            "nullable": true
+            "description": "Last day to select an A/B Test Winner"
           }
-        },
-        "nullable": true
+        }
       },
       "tsg_mc_singlesends_v3_Metadata": {
         "title": "_metadata",
@@ -43318,8 +43230,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -43406,8 +43317,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -43674,8 +43584,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -43733,8 +43642,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -44498,8 +44406,7 @@
               "type": "string"
             },
             "field": {
-              "type": "string",
-              "nullable": true
+              "type": "string"
             },
             "error_id": {
               "type": "string"
@@ -45025,20 +44932,17 @@
           "remain": {
             "minimum": 0,
             "type": "integer",
-            "description": "Total number of remaining credits. `remain` is `null` if the reset `type` for the Subuser's credits is set to `unlimited`.",
-            "nullable": true
+            "description": "Total number of remaining credits. `remain` is `null` if the reset `type` for the Subuser's credits is set to `unlimited`."
           },
           "total": {
             "minimum": 0,
             "type": "integer",
-            "description": "Total number of allowable credits. `total` is `null` if the reset `type` for the Subuser's credits is set to `unlimited` or `nonrecurring`.",
-            "nullable": true
+            "description": "Total number of allowable credits. `total` is `null` if the reset `type` for the Subuser's credits is set to `unlimited` or `nonrecurring`."
           },
           "used": {
             "minimum": 0,
             "type": "integer",
-            "description": "Total number of used credits. `used` is `null` if the reset `type` for the Subuser's credits is set to `unlimited` or `nonrecurring`.",
-            "nullable": true
+            "description": "Total number of used credits. `used` is `null` if the reset `type` for the Subuser's credits is set to `unlimited` or `nonrecurring`."
           }
         },
         "example": {
@@ -45384,8 +45288,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -45735,8 +45638,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -46352,8 +46254,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -46531,8 +46432,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -46616,23 +46516,19 @@
           },
           "friendly_name": {
             "type": "string",
-            "description": "Optionally set this property to a friendly name for the Event Webhook. A friendly name may be assigned to each of your webhooks to help you differentiate them. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks.",
-            "nullable": true
+            "description": "Optionally set this property to a friendly name for the Event Webhook. A friendly name may be assigned to each of your webhooks to help you differentiate them. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks."
           },
           "oauth_client_id": {
             "type": "string",
-            "description": "Set this property to the OAuth client ID that SendGrid will pass to your OAuth server or service provider to generate an OAuth access token. When passing data in this property, you must also include the `oauth_token_url` property.",
-            "nullable": true
+            "description": "Set this property to the OAuth client ID that SendGrid will pass to your OAuth server or service provider to generate an OAuth access token. When passing data in this property, you must also include the `oauth_token_url` property."
           },
           "oauth_client_secret": {
             "type": "string",
-            "description": "Set this property to the OAuth client secret that SendGrid will pass to your OAuth server or service provider to generate an OAuth access token. This secret is needed only once to create an access token. SendGrid will store the secret, allowing you to update your client ID and Token URL without passing the secret to SendGrid again. When passing data in this field, you must also include the `oauth_client_id` and `oauth_token_url` properties.",
-            "nullable": true
+            "description": "Set this property to the OAuth client secret that SendGrid will pass to your OAuth server or service provider to generate an OAuth access token. This secret is needed only once to create an access token. SendGrid will store the secret, allowing you to update your client ID and Token URL without passing the secret to SendGrid again. When passing data in this field, you must also include the `oauth_client_id` and `oauth_token_url` properties."
           },
           "oauth_token_url": {
             "type": "string",
-            "description": "Set this property to the URL where SendGrid will send the OAuth client ID and client secret to generate an OAuth access token. This should be your OAuth server or service provider. When passing data in this field, you must also include the `oauth_client_id` property.",
-            "nullable": true
+            "description": "Set this property to the URL where SendGrid will send the OAuth client ID and client secret to generate an OAuth access token. This should be your OAuth server or service provider. When passing data in this field, you must also include the `oauth_client_id` property."
           }
         }
       },
@@ -46653,18 +46549,15 @@
           },
           "oauth_client_id": {
             "type": "string",
-            "description": "The client ID Twilio SendGrid sends to your OAuth server or service provider to generate an OAuth access token. When passing data in this property, you must also include the `oauth_token_url` property.",
-            "nullable": true
+            "description": "The client ID Twilio SendGrid sends to your OAuth server or service provider to generate an OAuth access token. When passing data in this property, you must also include the `oauth_token_url` property."
           },
           "oauth_client_secret": {
             "type": "string",
-            "description": "The `oauth_client_secret` is needed only once to create an access token. SendGrid will store this secret, allowing you to update your Client ID and Token URL without passing the secret to SendGrid again. When passing data in this field, you must also include the `oauth_client_id` and `oauth_token_url` properties.",
-            "nullable": true
+            "description": "The `oauth_client_secret` is needed only once to create an access token. SendGrid will store this secret, allowing you to update your Client ID and Token URL without passing the secret to SendGrid again. When passing data in this field, you must also include the `oauth_client_id` and `oauth_token_url` properties."
           },
           "oauth_token_url": {
             "type": "string",
-            "description": "The URL where Twilio SendGrid sends the Client ID and Client Secret to generate an access token. This should be your OAuth server or service provider. When passing data in this field, you must also include the `oauth_client_id` property.",
-            "nullable": true
+            "description": "The URL where Twilio SendGrid sends the Client ID and Client Secret to generate an access token. This should be your OAuth server or service provider. When passing data in this field, you must also include the `oauth_client_id` property."
           }
         },
         "example": {
@@ -46736,8 +46629,7 @@
           },
           "friendly_name": {
             "type": "string",
-            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks.",
-            "nullable": true
+            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks."
           },
           "id": {
             "type": "string",
@@ -46751,8 +46643,7 @@
           "created_date": {
             "type": "string",
             "description": "An ISO 8601 timestamp in UTC timezone when the Event Webhook was created. If a Webhook's `created_date` is `null`, it is a [legacy Event Webook](https://www.twilio.com/en-us/changelog/event-webhooks), which means it is your oldest Webhook.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "updated_date": {
             "type": "string",
@@ -46766,13 +46657,11 @@
         "properties": {
           "oauth_client_id": {
             "type": "string",
-            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token.",
-            "nullable": true
+            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token."
           },
           "oauth_token_url": {
             "type": "string",
-            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider.",
-            "nullable": true
+            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider."
           }
         }
       },
@@ -46846,8 +46735,7 @@
           },
           "friendly_name": {
             "type": "string",
-            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks.",
-            "nullable": true
+            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks."
           },
           "id": {
             "type": "string",
@@ -46856,8 +46744,7 @@
           "created_date": {
             "type": "string",
             "description": "An ISO 8601 timestamp in UTC timezone when the Event Webhook was created. If a Webhook's `created_date` is `null`, it is a [legacy Event Webook](https://www.twilio.com/en-us/changelog/event-webhooks), which means it is your oldest Webhook.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "updated_date": {
             "type": "string",
@@ -46866,13 +46753,11 @@
           },
           "oauth_client_id": {
             "type": "string",
-            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token.",
-            "nullable": true
+            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token."
           },
           "oauth_token_url": {
             "type": "string",
-            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider.",
-            "nullable": true
+            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider."
           }
         }
       },
@@ -46937,8 +46822,7 @@
           },
           "friendly_name": {
             "type": "string",
-            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks.",
-            "nullable": true
+            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks."
           },
           "id": {
             "type": "string",
@@ -46947,8 +46831,7 @@
           "created_date": {
             "type": "string",
             "description": "An ISO 8601 timestamp in UTC timezone when the Event Webhook was created. If a Webhook's `created_date` is `null`, it is a [legacy Event Webook](https://www.twilio.com/en-us/changelog/event-webhooks), which means it is your oldest Webhook.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "updated_date": {
             "type": "string",
@@ -46957,13 +46840,11 @@
           },
           "oauth_client_id": {
             "type": "string",
-            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token.",
-            "nullable": true
+            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token."
           },
           "oauth_token_url": {
             "type": "string",
-            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider.",
-            "nullable": true
+            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider."
           },
           "public_key": {
             "type": "string",
@@ -47032,8 +46913,7 @@
           },
           "friendly_name": {
             "type": "string",
-            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks.",
-            "nullable": true
+            "description": "An optional friendly name assigned to the Event Webhook to help you differentiate it. The friendly name is for convenience only. You should use the webhook `id` property for any programmatic tasks."
           },
           "id": {
             "type": "string",
@@ -47041,13 +46921,11 @@
           },
           "oauth_client_id": {
             "type": "string",
-            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token.",
-            "nullable": true
+            "description": "The OAuth client ID SendGrid sends to your OAuth server or service provider to generate an OAuth access token."
           },
           "oauth_token_url": {
             "type": "string",
-            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider.",
-            "nullable": true
+            "description": "The URL where SendGrid sends the OAuth client ID and client secret to generate an access token. This should be your OAuth server or service provider."
           },
           "public_key": {
             "type": "string",
@@ -47114,8 +46992,7 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "When applicable, this property value will be the field that generated the error.",
-                  "nullable": true
+                  "description": "When applicable, this property value will be the field that generated the error."
                 },
                 "help": {
                   "type": "object",
@@ -48285,8 +48162,7 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error.",
-                        "nullable": true
+                        "description": "The field that generated the error."
                       },
                       "message": {
                         "type": "string",
@@ -48324,8 +48200,7 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error.",
-                        "nullable": true
+                        "description": "The field that generated the error."
                       },
                       "message": {
                         "type": "string",
@@ -48363,8 +48238,7 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error.",
-                        "nullable": true
+                        "description": "The field that generated the error."
                       },
                       "message": {
                         "type": "string",
@@ -48402,8 +48276,7 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error.",
-                        "nullable": true
+                        "description": "The field that generated the error."
                       },
                       "message": {
                         "type": "string",
@@ -48441,8 +48314,7 @@
                       },
                       "field": {
                         "type": "string",
-                        "description": "The field that generated the error.",
-                        "nullable": true
+                        "description": "The field that generated the error."
                       },
                       "message": {
                         "type": "string",
