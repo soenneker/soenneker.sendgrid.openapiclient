@@ -561,7 +561,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgAlertsV3ListAlert200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgAlertsV3ListAlert200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -655,7 +655,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/TsgAlertsV3DeleteAlert204Response"
                 }
               }
             }
@@ -1329,7 +1329,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3DeleteAuthenticatedDomain204Response"
                 }
               }
             }
@@ -1463,7 +1463,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3DisassociateSubuserFromDomain204Response"
                 }
               }
             }
@@ -1947,7 +1947,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3DisassociateAuthenticatedDomainFromUser204Response"
                 }
               }
             }
@@ -1980,7 +1980,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -3464,7 +3464,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpsV3ListIp200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgIpsV3ListIp200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -3651,7 +3651,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpsV3ListIpPool200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgIpsV3ListIpPool200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -4286,7 +4286,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/TsgIpAccessManagementV3DeleteAllowedIp204Response"
                 }
               }
             }
@@ -5058,7 +5058,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpAddressManagementV3ListIpPool200ResponseResponseXml2"
+                  "$ref": "#/components/schemas/TsgIpAddressManagementV3ListIpPool200XmlResponseSchema"
                 }
               }
             }
@@ -6115,7 +6115,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLinkBrandingV3ListBrandedLink200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLinkBrandingV3ListBrandedLink200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -6311,7 +6311,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/TsgLinkBrandingV3DeleteBrandedLink204Response"
                 }
               }
             }
@@ -6624,7 +6624,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/TsgLinkBrandingV3DisassociateBrandedLinkFromSubuser204Response"
                 }
               }
             }
@@ -6770,7 +6770,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3CreateCampaign401ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcCampaignsV3CreateCampaign401ResponseSchema"
                 }
               }
             }
@@ -6922,7 +6922,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3GetCampaign401ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcCampaignsV3GetCampaign401ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -6944,7 +6944,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3GetCampaign404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcCampaignsV3GetCampaign404ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -6981,7 +6981,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3DeleteCampaign401ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcCampaignsV3DeleteCampaign401ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -7003,7 +7003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcCampaignsV3DeleteCampaign404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcCampaignsV3DeleteCampaign404ResponseSchema"
                 }
               }
             }
@@ -8657,7 +8657,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteContactDbList202ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteContactDbList202ResponseSchema"
                 }
               }
             }
@@ -8878,7 +8878,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientsFromContactDbList404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientsFromContactDbList404ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -8924,7 +8924,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientsToContactDbList201ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientsToContactDbList201ResponseSchema"
                 }
               }
             }
@@ -9044,7 +9044,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientToContactDbList201ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema"
                 }
               }
             }
@@ -9443,7 +9443,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteRecipients200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteRecipients200ResponseSchema"
                 }
               }
             }
@@ -9537,7 +9537,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipient400ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipient400ResponseSchema"
                 }
               }
             }
@@ -9596,7 +9596,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3GetRecipient400ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3GetRecipient400ResponseSchema"
                 }
               }
             }
@@ -9628,7 +9628,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3GetRecipient404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3GetRecipient404ResponseSchema"
                 }
               }
             }
@@ -10900,7 +10900,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientForSegment400ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientForSegment400ResponseSchema"
                 }
               }
             }
@@ -10932,7 +10932,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientForSegment404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3ListRecipientForSegment404ResponseSchema"
                 }
               }
             }
@@ -12909,7 +12909,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ListContact404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcContactsV3ListContact404ResponseSchema"
                 }
               }
             }
@@ -13000,7 +13000,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcContactsV3ListBatchedContact404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcContactsV3ListBatchedContact404ResponseSchema"
                 }
               }
             }
@@ -14741,7 +14741,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3GetMarketingList404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcListsV3GetMarketingList404ResponseSchema"
                 }
               }
             }
@@ -14802,7 +14802,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3UpdateMarketingList404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcListsV3UpdateMarketingList404ResponseSchema"
                 }
               }
             }
@@ -14850,7 +14850,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3DeleteMarketingList204ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcListsV3DeleteMarketingList204ResponseSchema"
                 }
               }
             }
@@ -14925,7 +14925,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3DeleteContact404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcListsV3DeleteContact404ResponseSchema"
                 }
               }
             }
@@ -14976,7 +14976,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3ListContactCount404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcListsV3ListContactCount404ResponseSchema"
                 }
               }
             }
@@ -16320,7 +16320,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcStatsV3ExportAutomationStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcStatsV3ExportAutomationStat200ResponseSchema"
                 }
               }
             }
@@ -16478,7 +16478,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcStatsV3ListSingleSendTrackingStat404ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcStatsV3ListSingleSendTrackingStat404ResponseSchema"
                 }
               }
             }
@@ -16536,7 +16536,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcStatsV3ExportSingleSendStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcStatsV3ExportSingleSendStat200ResponseSchema"
                 }
               }
             }
@@ -16567,7 +16567,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgMcTestV3SendTestMarketingEmail202ResponseSchema"
                 }
               }
             }
@@ -16782,7 +16782,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgReverseDnsV3ListReverseDns200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgReverseDnsV3ListReverseDns200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -16915,7 +16915,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/TsgReverseDnsV3DeleteReverseDns204Response"
                 }
               }
             }
@@ -17096,7 +17096,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgScheduledSendsV3ListScheduledSend200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgScheduledSendsV3ListScheduledSend200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -17719,7 +17719,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSsoV3ListSsoIntegration200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSsoV3ListSsoIntegration200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -17934,7 +17934,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSsoV3ListSsoIntegrationCertificate200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSsoV3ListSsoIntegrationCertificate200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -18770,7 +18770,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListBrowserStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListBrowserStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -18866,7 +18866,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListCategory200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListCategory200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -18961,7 +18961,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListCategoryStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListCategoryStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -19307,7 +19307,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListClientStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListClientStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -19375,7 +19375,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3GetClientStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3GetClientStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -19460,7 +19460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListDeviceStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListDeviceStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -19919,7 +19919,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListGeoStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListGeoStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -20446,7 +20446,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListMailboxProviderStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListMailboxProviderStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -21205,7 +21205,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgStatsV3ListStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgStatsV3ListStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -21446,7 +21446,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3ListSubuser200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSubusersV3ListSubuser200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -21604,7 +21604,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3CreateSubuser500ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSubusersV3CreateSubuser500ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -21771,7 +21771,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/TsgSubusersV3UpdateSubuserWebsiteAccess200Response"
                 }
               }
             }
@@ -22176,7 +22176,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3ListReputation200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSubusersV3ListReputation200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -22264,7 +22264,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3ListStat200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSubusersV3ListStat200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -22888,7 +22888,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmGroup200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmGroup200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -23014,7 +23014,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteAsmGroup204Response"
                 }
               }
             }
@@ -23090,7 +23090,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListSuppressionFromAsmGroup200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3ListSuppressionFromAsmGroup200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -23136,7 +23136,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSuppressionFromAsmGroup204Response"
                 }
               }
             }
@@ -23186,7 +23186,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3SearchSuppressionFromAsmGroup200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3SearchSuppressionFromAsmGroup200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -23232,7 +23232,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmSuppression200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmSuppression200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -23427,7 +23427,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSuppressionBlocks204Response"
                 }
               }
             }
@@ -23491,7 +23491,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSuppressionBlock204Response"
                 }
               }
             }
@@ -23564,7 +23564,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListSuppressionBounces200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3ListSuppressionBounces200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -23675,7 +23675,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3GetSuppressionBounces200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3GetSuppressionBounces200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -24024,7 +24024,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteGlobalSuppression204Response"
                 }
               }
             }
@@ -24092,7 +24092,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListInvalidEmail200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3ListInvalidEmail200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -24142,7 +24142,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteInvalidEmails204Response"
                 }
               }
             }
@@ -24169,7 +24169,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3GetInvalidEmail200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3GetInvalidEmail200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -24205,7 +24205,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteInvalidEmail204Response"
                 }
               }
             }
@@ -24318,7 +24318,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSpamReports204Response"
                 }
               }
             }
@@ -24381,7 +24381,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSpamReport204Response"
                 }
               }
             }
@@ -24445,7 +24445,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3ListGlobalSuppression200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgSuppressionsV3ListGlobalSuppression200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -25393,7 +25393,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
+                  "$ref": "#/components/schemas/TsgTemplatesV3DeleteTemplate204Response"
                 }
               }
             }
@@ -25572,7 +25572,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
+                  "$ref": "#/components/schemas/TsgTemplatesV3DeleteTemplateVersion204Response"
                 }
               }
             }
@@ -26208,7 +26208,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgUserV3UpdatePassword200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgUserV3UpdatePassword200ResponseSchema"
                 }
               }
             }
@@ -27294,7 +27294,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
+                  "$ref": "#/components/schemas/TsgWebhooksV3TestEventWebhook201Response"
                 }
               }
             }
@@ -27861,7 +27861,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgWebhooksV3ListParseStatic200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TsgWebhooksV3ListParseStatic200ResponseSchema"
                 },
                 "examples": {
                   "response": {
@@ -44923,7 +44923,7 @@
           }
         }
       },
-      "TsgIpAddressManagementV3ListIpPool200ResponseResponseXml": {
+      "TsgIpAddressManagementV3ListIpPool200XmlResponse": {
         "type": "object"
       },
       "TsgIpAddressManagementV3CreateIpPoolRequest": {
@@ -49294,10 +49294,10 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "TsgAlertsV3ListAlert200ResponseResponseJson": {
+      "TsgAlertsV3ListAlert200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgAlertsV3ListAlert200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgAlertsV3ListAlert200ResponseSchemaItem"
         },
         "description": "The list of alerts."
       },
@@ -49340,7 +49340,7 @@
           }
         }
       },
-      "DefaultResponse": {
+      "TsgAlertsV3DeleteAlert204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -49406,25 +49406,25 @@
           }
         }
       },
-      "DefaultResponseResponseJson": {
+      "TsgDomainAuthenticationV3DeleteAuthenticatedDomain204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson2": {
+      "TsgDomainAuthenticationV3DisassociateSubuserFromDomain204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson3": {
+      "TsgDomainAuthenticationV3DisassociateAuthenticatedDomainFromUser204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseResponseJson": {
+      "TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseSchemaItem"
         }
       },
       "TsgEmailActivityV3RequestCsv202Response": {
@@ -49449,10 +49449,10 @@
           }
         }
       },
-      "TsgIpsV3ListIp200ResponseResponseJson": {
+      "TsgIpsV3ListIp200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgIpsV3ListIp200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgIpsV3ListIp200ResponseSchemaItem"
         }
       },
       "TsgIpsV3ListAssignedIp200Response": {
@@ -49461,13 +49461,13 @@
           "$ref": "#/components/schemas/TsgIpsV3ListAssignedIp200ResponseItem"
         }
       },
-      "TsgIpsV3ListIpPool200ResponseResponseJson": {
+      "TsgIpsV3ListIpPool200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/IpPools200"
         }
       },
-      "DefaultResponseResponseJson4": {
+      "TsgIpAccessManagementV3DeleteAllowedIp204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -49499,7 +49499,7 @@
           }
         }
       },
-      "TsgIpAddressManagementV3ListIpPool200ResponseResponseXml2": {
+      "TsgIpAddressManagementV3ListIpPool200XmlResponseSchema": {
         "type": "object"
       },
       "AccountIPsResponse": {
@@ -49560,23 +49560,23 @@
           "$ref": "#/components/schemas/IpWarmup200Item"
         }
       },
-      "TsgLinkBrandingV3ListBrandedLink200ResponseResponseJson": {
+      "TsgLinkBrandingV3ListBrandedLink200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/LinkBranding200"
         }
       },
-      "DefaultResponseResponseJson5": {
+      "TsgLinkBrandingV3DeleteBrandedLink204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson6": {
+      "TsgLinkBrandingV3DisassociateBrandedLinkFromSubuser204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgLmcCampaignsV3CreateCampaign401ResponseResponseJson": {
+      "TsgLmcCampaignsV3CreateCampaign401ResponseSchema": {
         "type": "object"
       },
       "TsgLmcCampaignsV3ListCampaign200Response": {
@@ -49590,16 +49590,16 @@
           }
         }
       },
-      "TsgLmcCampaignsV3GetCampaign401ResponseResponseJson": {
+      "TsgLmcCampaignsV3GetCampaign401ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcCampaignsV3GetCampaign404ResponseResponseJson": {
+      "TsgLmcCampaignsV3GetCampaign404ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcCampaignsV3DeleteCampaign401ResponseResponseJson": {
+      "TsgLmcCampaignsV3DeleteCampaign401ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcCampaignsV3DeleteCampaign404ResponseResponseJson": {
+      "TsgLmcCampaignsV3DeleteCampaign404ResponseSchema": {
         "type": "object"
       },
       "ScheduleACampaignResponse": {
@@ -49660,7 +49660,7 @@
           "type": "integer"
         }
       },
-      "TsgLmcContactdbV3DeleteContactDbList202ResponseResponseJson": {
+      "TsgLmcContactdbV3DeleteContactDbList202ResponseSchema": {
         "type": "object"
       },
       "TsgLmcContactdbV3ListRecipientsFromContactDbList200Response": {
@@ -49674,7 +49674,7 @@
           }
         }
       },
-      "TsgLmcContactdbV3ListRecipientsFromContactDbList404ResponseResponseJson": {
+      "TsgLmcContactdbV3ListRecipientsFromContactDbList404ResponseSchema": {
         "type": "object"
       },
       "TsgLmcContactdbV3AddRecipientsToContactDbListRequestRequestBody": {
@@ -49683,10 +49683,10 @@
           "type": "string"
         }
       },
-      "TsgLmcContactdbV3AddRecipientsToContactDbList201ResponseResponseJson": {
+      "TsgLmcContactdbV3AddRecipientsToContactDbList201ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcContactdbV3AddRecipientToContactDbList201ResponseResponseJson": {
+      "TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema": {
         "type": "object"
       },
       "TsgLmcContactdbV3AddRecipientRequestRequestBody": {
@@ -49707,16 +49707,16 @@
           "type": "string"
         }
       },
-      "TsgLmcContactdbV3DeleteRecipients200ResponseResponseJson": {
+      "TsgLmcContactdbV3DeleteRecipients200ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcContactdbV3ListRecipient400ResponseResponseJson": {
+      "TsgLmcContactdbV3ListRecipient400ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcContactdbV3GetRecipient400ResponseResponseJson": {
+      "TsgLmcContactdbV3GetRecipient400ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcContactdbV3GetRecipient404ResponseResponseJson": {
+      "TsgLmcContactdbV3GetRecipient404ResponseSchema": {
         "type": "object"
       },
       "TsgLmcContactdbV3GetRecipientList200Response": {
@@ -49771,10 +49771,10 @@
           }
         }
       },
-      "TsgLmcContactdbV3ListRecipientForSegment400ResponseResponseJson": {
+      "TsgLmcContactdbV3ListRecipientForSegment400ResponseSchema": {
         "type": "object"
       },
-      "TsgLmcContactdbV3ListRecipientForSegment404ResponseResponseJson": {
+      "TsgLmcContactdbV3ListRecipientForSegment404ResponseSchema": {
         "type": "object"
       },
       "TsgLmcContactdbV3ExportRecipient202Response": {
@@ -49863,7 +49863,7 @@
           }
         }
       },
-      "TsgMcContactsV3ListContact404ResponseResponseJson": {
+      "TsgMcContactsV3ListContact404ResponseSchema": {
         "type": "object"
       },
       "TsgMcContactsV3ListBatchedContact200Response": {
@@ -49877,7 +49877,7 @@
           }
         }
       },
-      "TsgMcContactsV3ListBatchedContact404ResponseResponseJson": {
+      "TsgMcContactsV3ListBatchedContact404ResponseSchema": {
         "type": "object"
       },
       "TsgMcContactsV3ExportContact202Response": {
@@ -50063,7 +50063,7 @@
           }
         }
       },
-      "TsgMcListsV3GetMarketingList404ResponseResponseJson": {
+      "TsgMcListsV3GetMarketingList404ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TsgMcListsV3Error"
@@ -50084,18 +50084,18 @@
           }
         }
       },
-      "TsgMcListsV3UpdateMarketingList404ResponseResponseJson": {
+      "TsgMcListsV3UpdateMarketingList404ResponseSchema": {
         "type": "object"
       },
-      "TsgMcListsV3DeleteMarketingList204ResponseResponseJson": {
+      "TsgMcListsV3DeleteMarketingList204ResponseSchema": {
         "type": "string",
         "description": "The delete has been processed. "
       },
-      "TsgMcListsV3DeleteContact404ResponseResponseJson": {
+      "TsgMcListsV3DeleteContact404ResponseSchema": {
         "type": "object",
         "description": "The specified list ID does not exist or one or more contact IDs do not exist."
       },
-      "TsgMcListsV3ListContactCount404ResponseResponseJson": {
+      "TsgMcListsV3ListContactCount404ResponseSchema": {
         "type": "object"
       },
       "TsgMcSendersV3ListSender200Response": {
@@ -50123,32 +50123,32 @@
           }
         }
       },
-      "TsgMcStatsV3ExportAutomationStat200ResponseResponseJson": {
+      "TsgMcStatsV3ExportAutomationStat200ResponseSchema": {
         "type": "string",
         "description": "CSV data"
       },
-      "TsgMcStatsV3ListSingleSendTrackingStat404ResponseResponseJson": {
+      "TsgMcStatsV3ListSingleSendTrackingStat404ResponseSchema": {
         "type": "object"
       },
-      "TsgMcStatsV3ExportSingleSendStat200ResponseResponseJson": {
+      "TsgMcStatsV3ExportSingleSendStat200ResponseSchema": {
         "type": "string",
         "description": "CSV data"
       },
-      "TsgMcTestV3SendTestMarketingEmail202ResponseResponseJson": {
+      "TsgMcTestV3SendTestMarketingEmail202ResponseSchema": {
         "type": "object"
       },
-      "TsgReverseDnsV3ListReverseDns200ResponseResponseJson": {
+      "TsgReverseDnsV3ListReverseDns200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ReverseDns"
         }
       },
-      "DefaultResponseResponseJson7": {
+      "TsgReverseDnsV3DeleteReverseDns204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgScheduledSendsV3ListScheduledSend200ResponseResponseJson": {
+      "TsgScheduledSendsV3ListScheduledSend200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ScheduledSendStatus"
@@ -50160,82 +50160,82 @@
           "$ref": "#/components/schemas/ScheduledSendStatus"
         }
       },
-      "TsgSsoV3ListSsoIntegration200ResponseResponseJson": {
+      "TsgSsoV3ListSsoIntegration200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SsoIntegration"
         }
       },
-      "TsgSsoV3ListSsoIntegrationCertificate200ResponseResponseJson": {
+      "TsgSsoV3ListSsoIntegrationCertificate200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SsoCertificateBody"
         }
       },
-      "TsgStatsV3ListBrowserStat200ResponseResponseJson": {
+      "TsgStatsV3ListBrowserStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListBrowserStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListBrowserStat200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3ListCategory200ResponseResponseJson": {
+      "TsgStatsV3ListCategory200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListCategory200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListCategory200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3ListCategoryStat200ResponseResponseJson": {
+      "TsgStatsV3ListCategoryStat200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/CategoryStats"
         }
       },
-      "TsgStatsV3ListClientStat200ResponseResponseJson": {
+      "TsgStatsV3ListClientStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListClientStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListClientStat200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3GetClientStat200ResponseResponseJson": {
+      "TsgStatsV3GetClientStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3GetClientStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3GetClientStat200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3ListDeviceStat200ResponseResponseJson": {
+      "TsgStatsV3ListDeviceStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListDeviceStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListDeviceStat200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3ListGeoStat200ResponseResponseJson": {
+      "TsgStatsV3ListGeoStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListGeoStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListGeoStat200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3ListMailboxProviderStat200ResponseResponseJson": {
+      "TsgStatsV3ListMailboxProviderStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListMailboxProviderStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListMailboxProviderStat200ResponseSchemaItem"
         }
       },
-      "TsgStatsV3ListStat200ResponseResponseJson": {
+      "TsgStatsV3ListStat200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgStatsV3ListStat200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgStatsV3ListStat200ResponseSchemaItem"
         }
       },
-      "TsgSubusersV3ListSubuser200ResponseResponseJson": {
+      "TsgSubusersV3ListSubuser200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Subuser"
         }
       },
-      "TsgSubusersV3CreateSubuser500ResponseResponseJson": {
+      "TsgSubusersV3CreateSubuser500ResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson8": {
+      "TsgSubusersV3UpdateSubuserWebsiteAccess200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -50248,30 +50248,30 @@
         },
         "description": "The IP addresses you would like to assign to the subuser."
       },
-      "TsgSubusersV3ListReputation200ResponseResponseJson": {
+      "TsgSubusersV3ListReputation200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgSubusersV3ListReputation200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgSubusersV3ListReputation200ResponseSchemaItem"
         }
       },
-      "TsgSubusersV3ListStat200ResponseResponseJson": {
+      "TsgSubusersV3ListStat200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TsgSubusersV3CategoryStats"
         }
       },
-      "TsgSuppressionsV3ListAsmGroup200ResponseResponseJson": {
+      "TsgSuppressionsV3ListAsmGroup200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SuppressionGroup"
         }
       },
-      "DefaultResponseResponseJson9": {
+      "TsgSuppressionsV3DeleteAsmGroup204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgSuppressionsV3ListSuppressionFromAsmGroup200ResponseResponseJson": {
+      "TsgSuppressionsV3ListSuppressionFromAsmGroup200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "string",
@@ -50279,12 +50279,12 @@
         },
         "description": "The list of email addresses belonging to the given suppression group."
       },
-      "DefaultResponseResponseJson10": {
+      "TsgSuppressionsV3DeleteSuppressionFromAsmGroup204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgSuppressionsV3SearchSuppressionFromAsmGroup200ResponseResponseJson": {
+      "TsgSuppressionsV3SearchSuppressionFromAsmGroup200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "string",
@@ -50292,10 +50292,10 @@
         },
         "description": "The email address from your search that do exist in the suppression group."
       },
-      "TsgSuppressionsV3ListAsmSuppression200ResponseResponseJson": {
+      "TsgSuppressionsV3ListAsmSuppression200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgSuppressionsV3ListAsmSuppression200ResponseSchemaItem"
         }
       },
       "TsgSuppressionsV3ListSuppressionBlock200Response": {
@@ -50304,7 +50304,7 @@
           "$ref": "#/components/schemas/BlocksResponseItem"
         }
       },
-      "DefaultResponseResponseJson11": {
+      "TsgSuppressionsV3DeleteSuppressionBlocks204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -50315,41 +50315,41 @@
           "$ref": "#/components/schemas/BlocksResponseItem"
         }
       },
-      "DefaultResponseResponseJson12": {
+      "TsgSuppressionsV3DeleteSuppressionBlock204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgSuppressionsV3ListSuppressionBounces200ResponseResponseJson": {
+      "TsgSuppressionsV3ListSuppressionBounces200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BounceResponse"
         }
       },
-      "TsgSuppressionsV3GetSuppressionBounces200ResponseResponseJson": {
+      "TsgSuppressionsV3GetSuppressionBounces200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BounceResponse"
         }
       },
-      "DefaultResponseResponseJson13": {
+      "TsgSuppressionsV3DeleteGlobalSuppression204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgSuppressionsV3ListInvalidEmail200ResponseResponseJson": {
+      "TsgSuppressionsV3ListInvalidEmail200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/InvalidEmail"
         },
         "description": "The list of invalid email addresses."
       },
-      "DefaultResponseResponseJson14": {
+      "TsgSuppressionsV3DeleteInvalidEmails204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgSuppressionsV3GetInvalidEmail200ResponseResponseJson": {
+      "TsgSuppressionsV3GetInvalidEmail200ResponseSchema": {
         "maxItems": 1,
         "minItems": 0,
         "type": "array",
@@ -50358,7 +50358,7 @@
         },
         "description": "A specific invalid email."
       },
-      "DefaultResponseResponseJson15": {
+      "TsgSuppressionsV3DeleteInvalidEmail204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -50369,7 +50369,7 @@
           "$ref": "#/components/schemas/SpamReportsResponseItem"
         }
       },
-      "DefaultResponseResponseJson16": {
+      "TsgSuppressionsV3DeleteSpamReports204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -50380,15 +50380,15 @@
           "$ref": "#/components/schemas/SpamReportsResponseItem"
         }
       },
-      "DefaultResponseResponseJson17": {
+      "TsgSuppressionsV3DeleteSpamReport204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TsgSuppressionsV3ListGlobalSuppression200ResponseResponseJson": {
+      "TsgSuppressionsV3ListGlobalSuppression200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgSuppressionsV3ListGlobalSuppression200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgSuppressionsV3ListGlobalSuppression200ResponseSchemaItem"
         }
       },
       "TsgTeammatesV3GetTeammate200Response": {
@@ -50525,12 +50525,12 @@
           }
         }
       },
-      "DefaultResponseResponseJson18": {
+      "TsgTemplatesV3DeleteTemplate204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson19": {
+      "TsgTemplatesV3DeleteTemplateVersion204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -50552,7 +50552,7 @@
           }
         }
       },
-      "TsgUserV3UpdatePassword200ResponseResponseJson": {
+      "TsgUserV3UpdatePassword200ResponseSchema": {
         "type": "object"
       },
       "TsgVerifiedSendersV3ListVerifiedSender200Response": {
@@ -50566,7 +50566,7 @@
           }
         }
       },
-      "DefaultResponseResponseJson20": {
+      "TsgWebhooksV3TestEventWebhook201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -50583,10 +50583,10 @@
           }
         }
       },
-      "TsgWebhooksV3ListParseStatic200ResponseResponseJson": {
+      "TsgWebhooksV3ListParseStatic200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/TsgWebhooksV3ListParseStatic200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/TsgWebhooksV3ListParseStatic200ResponseSchemaItem"
         }
       },
       "DomainAuthentication200ResponseContent": {
@@ -53518,7 +53518,7 @@
           }
         }
       },
-      "TsgAlertsV3ListAlert200ResponseResponseJsonItem": {
+      "TsgAlertsV3ListAlert200ResponseSchemaItem": {
         "required": [
           "created_at",
           "email_to",
@@ -53556,7 +53556,7 @@
           }
         }
       },
-      "TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseResponseJsonItem": {
+      "TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseSchemaItem": {
         "required": [
           "automatic_security",
           "custom_spf",
@@ -53625,7 +53625,7 @@
           }
         }
       },
-      "TsgIpsV3ListIp200ResponseResponseJsonItem": {
+      "TsgIpsV3ListIp200ResponseSchemaItem": {
         "required": [
           "ip",
           "subusers",
@@ -53768,7 +53768,7 @@
           }
         }
       },
-      "TsgStatsV3ListBrowserStat200ResponseResponseJsonItem": {
+      "TsgStatsV3ListBrowserStat200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "date": {
@@ -53784,7 +53784,7 @@
           }
         }
       },
-      "TsgStatsV3ListCategory200ResponseResponseJsonItem": {
+      "TsgStatsV3ListCategory200ResponseSchemaItem": {
         "required": [
           "category"
         ],
@@ -53796,7 +53796,7 @@
           }
         }
       },
-      "TsgStatsV3ListClientStat200ResponseResponseJsonItem": {
+      "TsgStatsV3ListClientStat200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "date": {
@@ -53812,7 +53812,7 @@
           }
         }
       },
-      "TsgStatsV3GetClientStat200ResponseResponseJsonItem": {
+      "TsgStatsV3GetClientStat200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "date": {
@@ -53828,7 +53828,7 @@
           }
         }
       },
-      "TsgStatsV3ListDeviceStat200ResponseResponseJsonItem": {
+      "TsgStatsV3ListDeviceStat200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "date": {
@@ -53844,7 +53844,7 @@
           }
         }
       },
-      "TsgStatsV3ListGeoStat200ResponseResponseJsonItem": {
+      "TsgStatsV3ListGeoStat200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "date": {
@@ -53860,7 +53860,7 @@
           }
         }
       },
-      "TsgStatsV3ListMailboxProviderStat200ResponseResponseJsonItem": {
+      "TsgStatsV3ListMailboxProviderStat200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "date": {
@@ -53876,7 +53876,7 @@
           }
         }
       },
-      "TsgStatsV3ListStat200ResponseResponseJsonItem": {
+      "TsgStatsV3ListStat200ResponseSchemaItem": {
         "required": [
           "date",
           "stats"
@@ -53896,7 +53896,7 @@
           }
         }
       },
-      "TsgSubusersV3ListReputation200ResponseResponseJsonItem": {
+      "TsgSubusersV3ListReputation200ResponseSchemaItem": {
         "required": [
           "reputation",
           "username"
@@ -53913,7 +53913,7 @@
           }
         }
       },
-      "TsgSuppressionsV3ListAsmSuppression200ResponseResponseJsonItem": {
+      "TsgSuppressionsV3ListAsmSuppression200ResponseSchemaItem": {
         "required": [
           "email",
           "group_id",
@@ -53940,7 +53940,7 @@
           }
         }
       },
-      "TsgSuppressionsV3ListGlobalSuppression200ResponseResponseJsonItem": {
+      "TsgSuppressionsV3ListGlobalSuppression200ResponseSchemaItem": {
         "required": [
           "created",
           "email"
@@ -53961,7 +53961,7 @@
       "TsgTeammatesV3GetTeammate200ResponseScopesItem": {
         "type": "object"
       },
-      "TsgWebhooksV3ListParseStatic200ResponseResponseJsonItem": {
+      "TsgWebhooksV3ListParseStatic200ResponseSchemaItem": {
         "required": [
           "date",
           "stats"
