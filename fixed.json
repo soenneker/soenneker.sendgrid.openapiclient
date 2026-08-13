@@ -36552,7 +36552,14 @@
             "description": "Indicates if your messages are generating excessive spam complaints from recipients. This score is determined by calculating the number of recipients who open your mail and then mark it as spam. Your score will range from \u00601\u0060 to \u00605\u0060 with a higher score representing fewer spam reports and better engagement quality."
           }
         },
-        "description": "A collection of metrics representing your engagement score across multiple indicators such as your open rate, spam rate, and bounce rate. Each metric is assigned a score from \u00601\u0060 to \u00605\u0060 with a higher score representing better engagement quality for that particular metric. The \u0060metrics\u0060 property will be omitted when a score is unknown. A score may be unknown if you have not turned on [open tracking](https://docs.sendgrid.com/ui/account-and-settings/tracking) and/or your account or Subuser has not sent at least 1,000 messages during the previous 30 days."
+        "description": "A collection of metrics representing your engagement score across multiple indicators such as your open rate, spam rate, and bounce rate. Each metric is assigned a score from \u00601\u0060 to \u00605\u0060 with a higher score representing better engagement quality for that particular metric. The \u0060metrics\u0060 property will be omitted when a score is unknown. A score may be unknown if you have not turned on [open tracking](https://docs.sendgrid.com/ui/account-and-settings/tracking) and/or your account or Subuser has not sent at least 1,000 messages during the previous 30 days.",
+        "example": {
+          "engagement_recency": 4,
+          "open_rate": 1,
+          "bounce_classification": 2,
+          "bounce_rate": 4,
+          "spam_rate": 4
+        }
       },
       "SeqScore": {
         "title": "Score",
@@ -36584,7 +36591,20 @@
             "$ref": "#/components/schemas/SeqMetrics"
           }
         },
-        "description": "A user\u0027s SendGrid Engagement Quality (SEQ) score for a specified date. Your SEQ score is determined by measuring several key metrics including your open rate, spam rate, and engagement recency. Your overall score allows you to quickly assess how your email program is performing at a high level. You will receive a score from \u00601\u0060 to \u00605\u0060 with a higher number representing better engagement quality. See the \u0060metrics\u0060 property to understand how your program is performing across the input categories that determine your overall score."
+        "description": "A user\u0027s SendGrid Engagement Quality (SEQ) score for a specified date. Your SEQ score is determined by measuring several key metrics including your open rate, spam rate, and engagement recency. Your overall score allows you to quickly assess how your email program is performing at a high level. You will receive a score from \u00601\u0060 to \u00605\u0060 with a higher number representing better engagement quality. See the \u0060metrics\u0060 property to understand how your program is performing across the input categories that determine your overall score.",
+        "example": {
+          "score": 3,
+          "username": "jdoe123",
+          "date": "2006-01-02",
+          "user_id": "180",
+          "metrics": {
+            "engagement_recency": 4,
+            "open_rate": 1,
+            "bounce_classification": 2,
+            "bounce_rate": 4,
+            "spam_rate": 4
+          }
+        }
       },
       "SeqMetadata": {
         "title": "Metadata",
@@ -50625,17 +50645,6 @@
           "$ref": "#/components/schemas/SsoErrorResponseItem"
         }
       },
-      "TsgLmcContactdbV3SearchRecipient200ResponseRecipientsItemCustomFieldsItemValue": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "integer"
-          },
-          {
-            "type": "string"
-          }
-        ]
-      },
       "AuthenticatedDomainSpfIpsItem": {
         "type": "object"
       },
@@ -54253,7 +54262,14 @@
             "type": "string"
           },
           "value": {
-            "$ref": "#/components/schemas/TsgLmcContactdbV3SearchRecipient200ResponseRecipientsItemCustomFieldsItemValue"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
           },
           "type": {
             "type": "string"
