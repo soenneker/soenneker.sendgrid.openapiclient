@@ -99,7 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Au
             /// <summary>Dictates how the stats are time-sliced. Currently, `&quot;total&quot;` and `&quot;day&quot;` are supported.</summary>
             [QueryParameter("aggregated_by")]
             public global::Soenneker.SendGrid.OpenApiClient.Models.AggregatedBy? AggregatedBy { get; set; }
-            /// <summary>&quot;Format: `YYYY-MM-DD`.If this parameter is included, the stats&apos; end date is included in the search.&quot;</summary>
+            /// <summary>Format: `YYYY-MM-DD`.If this parameter is included, the stats&apos; end date is included in the search.</summary>
             [QueryParameter("end_date")]
             public Date? EndDate { get; set; }
             /// <summary>Automations can have multiple steps. Including `step_id` as a `group_by` metric allows further granularity of stats.</summary>
@@ -125,7 +125,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Au
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>&quot;Format: `YYYY-MM-DD`. If this parameter is included, the stats&apos; start date is included in the search.&quot;</summary>
+            /// <summary>Format: `YYYY-MM-DD`. If this parameter is included, the stats&apos; start date is included in the search.</summary>
             [QueryParameter("start_date")]
             public Date? StartDate { get; set; }
             /// <summary>Comma-separated list of `step_ids` that you want the link stats for.</summary>

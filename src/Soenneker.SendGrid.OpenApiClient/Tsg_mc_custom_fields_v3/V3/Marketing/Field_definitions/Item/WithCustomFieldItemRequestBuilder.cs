@@ -36,17 +36,16 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
         /// <summary>
         /// **This endpoint deletes a defined Custom Field.**You can delete only Custom Fields; Reserved Fields cannot be deleted.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3DeleteFieldDefinition404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -54,7 +53,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             {
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcCustomFieldsV3DeleteFieldDefinition404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to update a defined Custom Field.**Only your Custom fields can be modified; Reserved Fields cannot be updated.

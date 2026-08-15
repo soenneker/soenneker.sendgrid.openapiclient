@@ -104,7 +104,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Stats.Mon
             /// <summary>The direction you want to sort.</summary>
             [QueryParameter("sort_by_direction")]
             public global::Soenneker.SendGrid.OpenApiClient.Models.SortByDirection1? SortByDirection { get; set; }
-            /// <summary>&quot;The metric that you want to sort by. Metrics that you can sort by are: `blocks`, `bounces`, `clicks`, `delivered`, `opens`, `requests`, `unique_clicks`, `unique_opens`, and `unsubscribes`.&apos;&quot;</summary>
+            /// <summary>The metric that you want to sort by. Metrics that you can sort by are: `blocks`, `bounces`, `clicks`, `delivered`, `opens`, `requests`, `unique_clicks`, `unique_opens`, and `unsubscribes`.&apos;</summary>
             [QueryParameter("sort_by_metric")]
             public global::Soenneker.SendGrid.OpenApiClient.Models.SortByMetric? SortByMetric { get; set; }
             /// <summary>A substring search of your subusers.</summary>

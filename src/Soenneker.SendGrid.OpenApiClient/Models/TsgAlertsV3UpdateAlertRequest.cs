@@ -14,7 +14,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The new email address you want your alert to be sent to.Example: test@example.com&quot;</summary>
+        /// <summary>The new email address you want your alert to be sent to.Example: test@example.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailTo { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string EmailTo { get; set; }
 #endif
-        /// <summary>&quot;The new frequency at which to send the stats_notification alert.Example: monthly&quot;</summary>
+        /// <summary>The new frequency at which to send the stats_notification alert.Example: monthly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Frequency { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string Frequency { get; set; }
 #endif
-        /// <summary>&quot;The new percentage threshold at which the usage_limit alert will be sent.Example: 90&quot;</summary>
+        /// <summary>The new percentage threshold at which the usage_limit alert will be sent.Example: 90</summary>
         public int? Percentage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgAlertsV3UpdateAlertRequest"/> and sets the default values.

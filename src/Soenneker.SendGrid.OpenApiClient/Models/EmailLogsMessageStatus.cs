@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.SendGrid.OpenApiClient.Models
 {
-    /// <summary>&quot;**A summary of the message status based on which events have occurred.**- processed: `processed`- dropped: `drop`, `cancel_drop`- deferred: `deferred`- bounced: `bounce`- blocked: `bounce` (type=`block`)- delivered: `delivered`, `click`, `open`&quot;</summary>
+    /// <summary>**A summary of the message status based on which events have occurred.**- processed: `processed`- dropped: `drop`, `cancel_drop`- deferred: `deferred`- bounced: `bounce`- blocked: `bounce` (type=`block`)- delivered: `delivered`, `click`, `open`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailLogsMessageStatus
     {

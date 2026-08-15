@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The job type. Allowed values: `upsert`, or `delete`.&quot;</summary>
+        /// <summary>The job type. Allowed values: `upsert`, or `delete`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobType { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string StartedAt { get; set; }
 #endif
-        /// <summary>&quot;The job state. Allowed values: `pending`, `completed`, `errored`, or `failed`.&quot;</summary>
+        /// <summary>The job state. Allowed values: `pending`, `completed`, `errored`, or `failed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

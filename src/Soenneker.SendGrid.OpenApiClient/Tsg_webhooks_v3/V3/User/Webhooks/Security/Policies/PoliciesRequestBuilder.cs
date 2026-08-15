@@ -65,7 +65,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Secu
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3ListAllSecurityPolicies200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3ListAllSecurityPolicies200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a new webhook security policy. Note: One of signature or oauth must be given to have a valid security policy.&quot;
+        /// Create a new webhook security policy. Note: One of signature or oauth must be given to have a valid security policy.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3CreateSecurityPolicy201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Secu
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a new webhook security policy. Note: One of signature or oauth must be given to have a valid security policy.&quot;
+        /// Create a new webhook security policy. Note: One of signature or oauth must be given to have a valid security policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

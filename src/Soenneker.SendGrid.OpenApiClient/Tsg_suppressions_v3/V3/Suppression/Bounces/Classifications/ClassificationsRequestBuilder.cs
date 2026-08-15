@@ -19,7 +19,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bo
     public partial class ClassificationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_suppressions_v3.v3.suppression.bounces.classifications.item collection</summary>
-        /// <param name="position">&quot;The classification you want to filter by. Possible values are: `Content`, `Frequency or Volume Too High`, `Invalid Address`, `Mailbox Unavailable`, `Reputation`, `Technical Failure`, `Unclassified`.&quot;</param>
+        /// <param name="position">The classification you want to filter by. Possible values are: `Content`, `Frequency or Volume Too High`, `Invalid Address`, `Mailbox Unavailable`, `Reputation`, `Technical Failure`, `Unclassified`.</param>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bounces.Classifications.Item.WithClassificationItemRequestBuilder"/></returns>
         public global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Bounces.Classifications.Item.WithClassificationItemRequestBuilder this[string position]
         {

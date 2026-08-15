@@ -36,7 +36,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
         /// <summary>
         /// **This endpoint allows you to resend a verification email to a specified Sender Identity**.Passing the `id` assigned to a Sender Identity to this endpoint will resend a verification email to the `from_address` associated with the Sender Identity. This can be useful if someone loses their verification email or needs to have it resent for any other reason.You can retrieve the IDs associated with Sender Identities by passing a &quot;Get All Verified Senders&quot; endpoint.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ResendVerifiedSender400Response">When receiving a 400 status code</exception>
@@ -46,11 +45,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -62,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ResendVerifiedSender404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to resend a verification email to a specified Sender Identity**.Passing the `id` assigned to a Sender Identity to this endpoint will resend a verification email to the `from_address` associated with the Sender Identity. This can be useful if someone loses their verification email or needs to have it resent for any other reason.You can retrieve the IDs associated with Sender Identities by passing a &quot;Get All Verified Senders&quot; endpoint.

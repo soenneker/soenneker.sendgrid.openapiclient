@@ -86,7 +86,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

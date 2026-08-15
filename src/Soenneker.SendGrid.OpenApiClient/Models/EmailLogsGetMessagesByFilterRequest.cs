@@ -16,7 +16,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of messages to return (1–1000).</summary>
         public int? Limit { get; set; }
-        /// <summary>&quot;**Allowed event fields and operators**- sg_message_id: `=`- subject: `=`- to_email: `=`- status: `IN`- reason: `=`- categories: `IN`- sg_message_id_created_at: `&gt;`, `&lt;`, `&gt;=`, `&lt;=`**Notes:**- multiple conditions (up to 160) can be combined with `AND`- nesting is not allowed- `IN` operator accepts a list of string values: `field IN (&apos;value1&apos;, &apos;value2&apos;)`&quot;</summary>
+        /// <summary>**Allowed event fields and operators**- sg_message_id: `=`- subject: `=`- to_email: `=`- status: `IN`- reason: `=`- categories: `IN`- sg_message_id_created_at: `&gt;`, `&lt;`, `&gt;=`, `&lt;=`**Notes:**- multiple conditions (up to 160) can be combined with `AND`- nesting is not allowed- `IN` operator accepts a list of string values: `field IN (&apos;value1&apos;, &apos;value2&apos;)`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query { get; set; }

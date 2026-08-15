@@ -36,7 +36,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <summary>
         /// **This endpoint allows you to revoke an existing API Key using an `api_key_id`**Authentications using a revoked API Key will fail after after some small propogation delay. If the API Key ID does not exist, a `404` status will be returned.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3ErrorResponse">When receiving a 400 status code</exception>
@@ -46,11 +45,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GlobalError500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -62,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.GlobalError500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a single API key using an `api_key_id`.**The endpoint will return a key&apos;s name, ID, and scopes. If the API Key ID does not, exist a `404` status will be returned.See the [API Key Permissions List](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authorization) for all available scopes. An API key&apos;s scopes can be updated after creation using the &quot;Update API keys&quot; endpoint.

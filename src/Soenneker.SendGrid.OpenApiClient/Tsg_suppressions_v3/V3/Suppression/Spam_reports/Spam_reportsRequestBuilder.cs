@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Sp
         {
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to delete your spam reports.**Deleting a spam report will remove the suppression, meaning email will once again be sent to the previously suppressed address. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.There are two options for deleting spam reports: 1. You can delete all spam reports by setting the `delete_all` field to `true` in the request body.2. You can delete a list of select spam reports by specifying the email addresses in the `emails` array of the request body.&quot;
+        /// **This endpoint allows you to delete your spam reports.**Deleting a spam report will remove the suppression, meaning email will once again be sent to the previously suppressed address. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.There are two options for deleting spam reports: 1. You can delete all spam reports by setting the `delete_all` field to `true` in the request body.2. You can delete a list of select spam reports by specifying the email addresses in the `emails` array of the request body.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Sp
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to delete your spam reports.**Deleting a spam report will remove the suppression, meaning email will once again be sent to the previously suppressed address. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.There are two options for deleting spam reports: 1. You can delete all spam reports by setting the `delete_all` field to `true` in the request body.2. You can delete a list of select spam reports by specifying the email addresses in the `emails` array of the request body.&quot;
+        /// **This endpoint allows you to delete your spam reports.**Deleting a spam report will remove the suppression, meaning email will once again be sent to the previously suppressed address. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.There are two options for deleting spam reports: 1. You can delete all spam reports by setting the `delete_all` field to `true` in the request body.2. You can delete a list of select spam reports by specifying the email addresses in the `emails` array of the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Sp
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

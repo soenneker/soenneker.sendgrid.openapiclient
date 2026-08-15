@@ -42,18 +42,17 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Ite
         /// <summary>
         /// **This endpoint allows you to delete a specific campaign.**
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign401ResponseSchema">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign404ResponseSchema">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -62,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Ite
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign401ResponseSchema.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign404ResponseSchema.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a specific campaign.**

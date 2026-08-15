@@ -38,7 +38,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string ExpiresAt { get; set; }
 #endif
-        /// <summary>&quot;Allowed types: `contacts_export`, `list_export`, or `segment_export`.&quot;</summary>
+        /// <summary>Allowed types: `contacts_export`, `list_export`, or `segment_export`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExportType { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ListExportRecipient200ResponseResultItemSegmentsItem> Segments { get; set; }
 #endif
-        /// <summary>&quot;Allowed values: `pending`, `ready`, or `failure`.&quot;</summary>
+        /// <summary>Allowed values: `pending`, `ready`, or `failure`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

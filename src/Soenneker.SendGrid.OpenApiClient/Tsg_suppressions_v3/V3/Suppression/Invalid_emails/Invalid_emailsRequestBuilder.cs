@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
         {
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to remove email addresses from your invalid email address list.**There are two options for deleting invalid email addresses: 1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.&quot;
+        /// **This endpoint allows you to remove email addresses from your invalid email address list.**There are two options for deleting invalid email addresses: 1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to remove email addresses from your invalid email address list.**There are two options for deleting invalid email addresses: 1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.&quot;
+        /// **This endpoint allows you to remove email addresses from your invalid email address list.**There are two options for deleting invalid email addresses: 1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.In
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

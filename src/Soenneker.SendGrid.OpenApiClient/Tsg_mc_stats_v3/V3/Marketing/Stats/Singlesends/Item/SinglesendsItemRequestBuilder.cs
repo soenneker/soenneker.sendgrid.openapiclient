@@ -99,7 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
             /// <summary>Dictates how the stats are time-sliced. Currently, `&quot;total&quot;` and `&quot;day&quot;` are supported.</summary>
             [QueryParameter("aggregated_by")]
             public global::Soenneker.SendGrid.OpenApiClient.Models.AggregatedBy? AggregatedBy { get; set; }
-            /// <summary>&quot;Format: `YYYY-MM-DD`.If this parameter is included, the stats&apos; end date is included in the search.&quot;</summary>
+            /// <summary>Format: `YYYY-MM-DD`.If this parameter is included, the stats&apos; end date is included in the search.</summary>
             [QueryParameter("end_date")]
             public Date? EndDate { get; set; }
             /// <summary>A/B Single Sends have multiple variation IDs and phase IDs. Including these additional fields allows further granularity of stats by these fields.</summary>
@@ -125,7 +125,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>&quot;Format: `YYYY-MM-DD`. If this parameter is included, the stats&apos; start date is included in the search.&quot;</summary>
+            /// <summary>Format: `YYYY-MM-DD`. If this parameter is included, the stats&apos; start date is included in the search.</summary>
             [QueryParameter("start_date")]
             public Date? StartDate { get; set; }
             /// <summary>[IANA Area/Region](https://en.wikipedia.org/wiki/Tz_database#Names_of_timezones) string representing the timezone in which the stats are to be presented, e.g., &quot;America/Chicago&quot;.</summary>

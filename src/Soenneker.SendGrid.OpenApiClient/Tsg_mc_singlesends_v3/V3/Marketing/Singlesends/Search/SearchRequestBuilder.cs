@@ -34,7 +34,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         {
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are \&quot;drafts\&quot; or \&quot;scheduled\&quot; and also associated with the category \&quot;shoes,\&quot; your request body may look like the example below.```javascript{  \&quot;status\&quot;: [    \&quot;draft\&quot;,    \&quot;scheduled\&quot;  ],  \&quot;categories\&quot;: [    \&quot;shoes\&quot;  ],}```&quot;
+        /// **This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are &quot;drafts&quot; or &quot;scheduled&quot; and also associated with the category &quot;shoes,&quot; your request body may look like the example below.```javascript{  &quot;status&quot;: [    &quot;draft&quot;,    &quot;scheduled&quot;  ],  &quot;categories&quot;: [    &quot;shoes&quot;  ],}```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3SearchSingleSend200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are \&quot;drafts\&quot; or \&quot;scheduled\&quot; and also associated with the category \&quot;shoes,\&quot; your request body may look like the example below.```javascript{  \&quot;status\&quot;: [    \&quot;draft\&quot;,    \&quot;scheduled\&quot;  ],  \&quot;categories\&quot;: [    \&quot;shoes\&quot;  ],}```&quot;
+        /// **This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are &quot;drafts&quot; or &quot;scheduled&quot; and also associated with the category &quot;shoes,&quot; your request body may look like the example below.```javascript{  &quot;status&quot;: [    &quot;draft&quot;,    &quot;scheduled&quot;  ],  &quot;categories&quot;: [    &quot;shoes&quot;  ],}```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
             return new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Singlesends.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are \&quot;drafts\&quot; or \&quot;scheduled\&quot; and also associated with the category \&quot;shoes,\&quot; your request body may look like the example below.```javascript{  \&quot;status\&quot;: [    \&quot;draft\&quot;,    \&quot;scheduled\&quot;  ],  \&quot;categories\&quot;: [    \&quot;shoes\&quot;  ],}```&quot;
+        /// **This endpoint allows you to search for Single Sends based on specified criteria.**You can search for Single Sends by passing a combination of values using the `name`, `status`, and `categories` request body fields.For example, if you want to search for all Single Sends that are &quot;drafts&quot; or &quot;scheduled&quot; and also associated with the category &quot;shoes,&quot; your request body may look like the example below.```javascript{  &quot;status&quot;: [    &quot;draft&quot;,    &quot;scheduled&quot;  ],  &quot;categories&quot;: [    &quot;shoes&quot;  ],}```
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderPostQueryParameters 

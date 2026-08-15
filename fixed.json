@@ -123,7 +123,8 @@
                 ]
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -169,6 +170,9 @@
         "description": "Delete a specific account under your organization by account ID. Note that this is an **irreversible** action that does the following:\n\n - Revokes API Keys and SSO so that the account user cannot log in or access SendGrid data.\n - Removes all offerings and configured SendGrid resources such as dedicated IPs.\n - Cancels billing effective immediately.",
         "operationId": "TsgAccountProvisioningV3DeleteAccount",
         "responses": {
+          "204": {
+            "description": "Account successfully deleted."
+          },
           "400": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse400"
           },
@@ -269,7 +273,8 @@
                 ]
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -320,6 +325,9 @@
         "description": "Authenticates and logs in a user to Twilio Sendgrid as a specific admin identity configured for SSO by partner. Any additional teammates or subusers will need to log in directly via app.sendgrid.com",
         "operationId": "TsgAccountProvisioningV3AuthenticateAccount",
         "responses": {
+          "303": {
+            "description": "Successful redirect to app.sendgrid.com."
+          },
           "401": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse401"
           },
@@ -408,9 +416,13 @@
                 "$ref": "#/components/schemas/AccountProvisioningStateWrite"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "State successfully updated"
+          },
           "400": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse400"
           },
@@ -651,14 +663,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgAlertsV3DeleteAlert204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -1033,6 +1038,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "$ref": "#/components/responses/ApiKeysError400"
           },
@@ -1080,6 +1088,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -1325,14 +1336,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3DeleteAuthenticatedDomain204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -1459,14 +1463,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3DisassociateSubuserFromDomain204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       }
@@ -1477,7 +1474,7 @@
           "Domain Authentication"
         ],
         "summary": "Associate an authenticated domain with a given user, for up to five domains.",
-        "description": "\u0022**This endpoint allows you to associate a specific authenticated domain with a subuser. It can be used to associate up to five authenticated domains.**\n\n\nThis functionality allows subusers to send mail using their parent\u0027s domain. Authenticated domains can be associated with (i.e. assigned to) subusers from a parent account. To associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.\n\n\nA subuser can have up to five associated authenticated domains. To see the domains that have already been associated with this user, you can [use the API to list the domains currently associated with the subuser](https://www.twilio.com/docs/sendgrid/api-reference/domain-authentication/list-the-authenticated-domain-associated-with-a-subuser-multiple).\n\n\nWhen selecting a domain to send email from, SendGrid checks for domains in the following order and chooses the first one that appears in the hierarchy: \n1. Domain assigned by the subuser that matches the email\u0027s \u0060From\u0060 address domain. \n2. The subuser\u0027s default domain. \n3. Domain assigned by the parent user that matches the \u0060From\u0060 address domain. \n4. Parent user\u0027s default domain. \n5. sendgrid.net\u0022",
+        "description": "**This endpoint allows you to associate a specific authenticated domain with a subuser. It can be used to associate up to five authenticated domains.**\n\n\nThis functionality allows subusers to send mail using their parent\u0027s domain. Authenticated domains can be associated with (i.e. assigned to) subusers from a parent account. To associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.\n\n\nA subuser can have up to five associated authenticated domains. To see the domains that have already been associated with this user, you can [use the API to list the domains currently associated with the subuser](https://www.twilio.com/docs/sendgrid/api-reference/domain-authentication/list-the-authenticated-domain-associated-with-a-subuser-multiple).\n\n\nWhen selecting a domain to send email from, SendGrid checks for domains in the following order and chooses the first one that appears in the hierarchy: \n1. Domain assigned by the subuser that matches the email\u0027s \u0060From\u0060 address domain. \n2. The subuser\u0027s default domain. \n3. Domain assigned by the parent user that matches the \u0060From\u0060 address domain. \n4. Parent user\u0027s default domain. \n5. sendgrid.net",
         "operationId": "TsgDomainAuthenticationV3AssociateSubuserWithDomainMultiple",
         "requestBody": {
           "content": {
@@ -1943,14 +1940,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgDomainAuthenticationV3DisassociateAuthenticatedDomainFromUser204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       }
@@ -1961,7 +1951,7 @@
           "Domain Authentication"
         ],
         "summary": "List all the authenticated domains associated with the given user.",
-        "description": "\u0022**This endpoint allows you to retrieve all of the authenticated domains that have been assigned to a specific subuser.**\n\n\nThis functionality allows subusers to send mail using their parent\u0027s domain. Authenticated domains can be associated with (i.e. assigned to) subusers from a parent account, and a subuser can have up to five associated domains. \n\nTo associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.\n\n\nWhen selecting a domain to send email from, SendGrid checks for domains in the following order and chooses the first one that appears in the hierarchy: \n1. Domain assigned by the subuser that matches the email\u0027s \u0060From\u0060 address domain. \n2. The subuser\u0027s default domain. \n3. Domain assigned by the parent user that matches the \u0060From\u0060 address domain. \n4. Parent user\u0027s default domain. \n5. sendgrid.net\u0022",
+        "description": "**This endpoint allows you to retrieve all of the authenticated domains that have been assigned to a specific subuser.**\n\n\nThis functionality allows subusers to send mail using their parent\u0027s domain. Authenticated domains can be associated with (i.e. assigned to) subusers from a parent account, and a subuser can have up to five associated domains. \n\nTo associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.\n\n\nWhen selecting a domain to send email from, SendGrid checks for domains in the following order and chooses the first one that appears in the hierarchy: \n1. Domain assigned by the subuser that matches the email\u0027s \u0060From\u0060 address domain. \n2. The subuser\u0027s default domain. \n3. Domain assigned by the parent user that matches the \u0060From\u0060 address domain. \n4. Parent user\u0027s default domain. \n5. sendgrid.net",
         "operationId": "TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser",
         "parameters": [
           {
@@ -3004,7 +2994,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3090,6 +3081,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Successful Operation"
+          },
           "400": {
             "description": "Invalid Request",
             "content": {
@@ -3250,7 +3244,8 @@
                 "destination": "Segment"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3607,7 +3602,7 @@
           "IP Pools"
         ],
         "summary": "Create an IP pool",
-        "description": "\u0022**This endpoint allows you to create an IP pool.**\n\nBefore you can create an IP pool, you need to activate the IP in your SendGrid account: \n\n1. Log into your SendGrid account.  \n1. Navigate to **Settings** and then select **IP Addresses**.  \n1. Find the IP address you want to activate and then click **Edit**.  \n1. Check **Allow my account to send mail using this IP address**.\n1. Click **Save**.\u0022",
+        "description": "**This endpoint allows you to create an IP pool.**\n\nBefore you can create an IP pool, you need to activate the IP in your SendGrid account: \n\n1. Log into your SendGrid account.  \n1. Navigate to **Settings** and then select **IP Addresses**.  \n1. Find the IP address you want to activate and then click **Edit**.  \n1. Check **Allow my account to send mail using this IP address**.\n1. Click **Save**.",
         "operationId": "TsgIpsV3CreateIpPool",
         "requestBody": {
           "content": {
@@ -3792,6 +3787,9 @@
         "description": "**This endpoint allows you to delete an IP pool.**",
         "operationId": "TsgIpsV3DeleteIpPool",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -3908,6 +3906,9 @@
         "description": "**This endpoint allows you to remove an IP address from an IP pool.**",
         "operationId": "TsgIpsV3DeleteIpFromIpPool",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -4213,6 +4214,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "$ref": "#/components/responses/IpAccessManagement401"
           },
@@ -4282,14 +4286,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgIpAccessManagementV3DeleteAllowedIp204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -4940,6 +4937,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5335,6 +5335,9 @@
         "description": "This operation deletes an IP Pool and unassigns all IP addresses associated with the Pool. IP addresses associated with the deleted Pool will remain in your account.",
         "operationId": "TsgIpAddressManagementV3DeleteIpPool",
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5582,6 +5585,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5735,7 +5741,8 @@
                 "region": "us"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5801,9 +5808,13 @@
                 ]
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "$ref": "#/components/responses/IpProvisioningErrorResponse400"
           },
@@ -5990,6 +6001,9 @@
         "description": "**This endpoint allows you to remove an IP address from warmup mode.**\n\nYour request will return a 204 status code if the specified IP was successfully removed from warmup mode. To retrieve details of the IP\u2019s warmup status *before* removing it from warmup mode, call the  \u0022Retrieve the warmpup status for a specific IP address\u0022 endpoint.",
         "operationId": "TsgIpWarmupV3StopIpWarmUp",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -6307,14 +6321,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgLinkBrandingV3DeleteBrandedLink204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -6620,14 +6627,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgLinkBrandingV3DisassociateBrandedLinkFromSubuser204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       }
@@ -6976,6 +6976,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "description": "401 response",
             "content": {
@@ -7549,6 +7552,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "403": {
             "description": "The request was formatted incorrectly or missing required parameters.",
             "content": {
@@ -8399,6 +8405,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "All list ids are not valid",
             "content": {
@@ -8644,7 +8653,7 @@
             "in": "query",
             "description": "Adds the ability to delete all contacts on the list in addition to deleting the list.",
             "schema": {
-              "type": "boolean"
+              "$ref": "#/components/schemas/DeleteContacts"
             }
           },
           {
@@ -9138,6 +9147,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "Input failed validation",
             "content": {
@@ -9648,6 +9660,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "Returned if \u0060recipient_id\u0060 is not valid",
             "content": {
@@ -10068,7 +10083,7 @@
           "Recipients"
         ],
         "summary": "Search recipients",
-        "description": "\u0022Search using segment conditions without actually creating a segment.\nBody contains a JSON object with \u0060conditions\u0060, a list of conditions as described below, and an optional \u0060list_id\u0060, which is a valid list ID for a list to limit the search on.\n\nValid operators for create and update depend on the type of the field for which you are searching.\n\n- Dates:\n  - \u0060\\\u0022eq\\\u0022\u0060, \u0060\\\u0022ne\\\u0022\u0060, \u0060\\\u0022lt\\\u0022\u0060 (before), \u0060\\\u0022gt\\\u0022\u0060 (after)\n    - You may use MM/DD/YYYY for day granularity or an epoch for second granularity.\n  - \u0060\\\u0022empty\\\u0022\u0060, \u0060\\\u0022not_empty\\\u0022\u0060\n  - \u0060\\\u0022is within\\\u0022\u0060\n    - You may use an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format or the # of days.\n- Text: \u0060\\\u0022contains\\\u0022\u0060, \u0060\\\u0022eq\\\u0022\u0060 (is - matches the full field), \u0060\\\u0022ne\\\u0022\u0060 (is not - matches any field where the entire field is not the condition value), \u0060\\\u0022empty\\\u0022\u0060, \u0060\\\u0022not_empty\\\u0022\u0060\n- Numbers: \u0060\\\u0022eq\\\u0022\u0060, \u0060\\\u0022lt\\\u0022\u0060, \u0060\\\u0022gt\\\u0022\u0060, \u0060\\\u0022empty\\\u0022\u0060, \u0060\\\u0022not_empty\\\u0022\u0060\n- Email Clicks and Opens: \u0060\\\u0022eq\\\u0022\u0060 (opened), \u0060\\\u0022ne\\\u0022\u0060 (not opened)\n\nField values must all be a string.\n\nSearch conditions using \u0060\\\u0022eq\\\u0022\u0060 or \u0060\\\u0022ne\\\u0022\u0060 for email clicks and opens should provide a \\\u0022field\\\u0022 of either \u0060clicks.campaign_identifier\u0060 or \u0060opens.campaign_identifier\u0060.\n\nThe condition value should be a string containing the id of a completed campaign.\n\nSearch conditions list may contain multiple conditions, joined by an \u0060\\\u0022and\\\u0022\u0060 or \u0060\\\u0022or\\\u0022\u0060 in the \u0060\\\u0022and_or\\\u0022\u0060 field.\n\nThe first condition in the conditions list must have an empty \u0060\\\u0022and_or\\\u0022\u0060, and subsequent conditions must all specify an \u0060\\\u0022and_or\\\u0022\u0060.\u0022",
+        "description": "Search using segment conditions without actually creating a segment.\nBody contains a JSON object with \u0060conditions\u0060, a list of conditions as described below, and an optional \u0060list_id\u0060, which is a valid list ID for a list to limit the search on.\n\nValid operators for create and update depend on the type of the field for which you are searching.\n\n- Dates:\n  - \u0060\u0022eq\u0022\u0060, \u0060\u0022ne\u0022\u0060, \u0060\u0022lt\u0022\u0060 (before), \u0060\u0022gt\u0022\u0060 (after)\n    - You may use MM/DD/YYYY for day granularity or an epoch for second granularity.\n  - \u0060\u0022empty\u0022\u0060, \u0060\u0022not_empty\u0022\u0060\n  - \u0060\u0022is within\u0022\u0060\n    - You may use an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format or the # of days.\n- Text: \u0060\u0022contains\u0022\u0060, \u0060\u0022eq\u0022\u0060 (is - matches the full field), \u0060\u0022ne\u0022\u0060 (is not - matches any field where the entire field is not the condition value), \u0060\u0022empty\u0022\u0060, \u0060\u0022not_empty\u0022\u0060\n- Numbers: \u0060\u0022eq\u0022\u0060, \u0060\u0022lt\u0022\u0060, \u0060\u0022gt\u0022\u0060, \u0060\u0022empty\u0022\u0060, \u0060\u0022not_empty\u0022\u0060\n- Email Clicks and Opens: \u0060\u0022eq\u0022\u0060 (opened), \u0060\u0022ne\u0022\u0060 (not opened)\n\nField values must all be a string.\n\nSearch conditions using \u0060\u0022eq\u0022\u0060 or \u0060\u0022ne\u0022\u0060 for email clicks and opens should provide a \u0022field\u0022 of either \u0060clicks.campaign_identifier\u0060 or \u0060opens.campaign_identifier\u0060.\n\nThe condition value should be a string containing the id of a completed campaign.\n\nSearch conditions list may contain multiple conditions, joined by an \u0060\u0022and\u0022\u0060 or \u0060\u0022or\u0022\u0060 in the \u0060\u0022and_or\u0022\u0060 field.\n\nThe first condition in the conditions list must have an empty \u0060\u0022and_or\u0022\u0060, and subsequent conditions must all specify an \u0060\u0022and_or\u0022\u0060.",
         "operationId": "TsgLmcContactdbV3SearchRecipient",
         "requestBody": {
           "content": {
@@ -10148,6 +10163,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "400 response"
           }
         }
       }
@@ -10747,6 +10765,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "Either segment_id or delete_contacts is not valid",
             "content": {
@@ -11579,6 +11600,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "403": {
             "description": "403 response",
             "content": {
@@ -11651,6 +11675,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -11817,7 +11844,8 @@
                 "$ref": "#/components/schemas/EmailLogsGetMessagesByFilterRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -12431,7 +12459,7 @@
           "Mail Settings"
         ],
         "summary": "Update forward spam mail settings",
-        "description": "\u0022**This endpoint allows you to update your current Forward Spam mail settings.**\n\nEnabling the Forward Spam setting allows you to specify \u0060email\u0060 addresses to which spam reports will be forwarded. You can set multiple addresses by passing this endpoint a comma separated list of emails in a single string.\n\n\u0060\u0060\u0060\n{\n  \\\u0022email\\\u0022: \\\u0022address1@example.com, address2@exapmle.com\\\u0022,\n  \\\u0022enabled\\\u0022: true\n}\n\u0060\u0060\u0060\n\nThe Forward Spam setting may also be used to receive emails sent to \u0060abuse@\u0060 and \u0060postmaster@\u0060 role addresses if you have authenticated your domain.\n\nFor example, if you authenticated \u0060example.com\u0060 as your root domain and set a custom return path of \u0060sub\u0060 for that domain, you could turn on Forward Spam, and any emails sent to \u0060abuse@sub.example.com\u0060 or \u0060postmaster@sub.example.com\u0060 would be forwarded to the email address you entered in the \u0060email\u0060 field.\n\nYou can authenticate your domain using the \\\u0022Authenticate a domain\\\u0022 endpoint or in the [Sender Authentication section of the Twilio SendGrid App](https://app.sendgrid.com/settings/sender_auth). You can also configure the Forward Spam mail settings in the [Mail Settings section of the Twilio SendGrid App](https://app.sendgrid.com/settings/mail_settings).\u0022",
+        "description": "**This endpoint allows you to update your current Forward Spam mail settings.**\n\nEnabling the Forward Spam setting allows you to specify \u0060email\u0060 addresses to which spam reports will be forwarded. You can set multiple addresses by passing this endpoint a comma separated list of emails in a single string.\n\n\u0060\u0060\u0060\n{\n  \u0022email\u0022: \u0022address1@example.com, address2@exapmle.com\u0022,\n  \u0022enabled\u0022: true\n}\n\u0060\u0060\u0060\n\nThe Forward Spam setting may also be used to receive emails sent to \u0060abuse@\u0060 and \u0060postmaster@\u0060 role addresses if you have authenticated your domain.\n\nFor example, if you authenticated \u0060example.com\u0060 as your root domain and set a custom return path of \u0060sub\u0060 for that domain, you could turn on Forward Spam, and any emails sent to \u0060abuse@sub.example.com\u0060 or \u0060postmaster@sub.example.com\u0060 would be forwarded to the email address you entered in the \u0060email\u0060 field.\n\nYou can authenticate your domain using the \u0022Authenticate a domain\u0022 endpoint or in the [Sender Authentication section of the Twilio SendGrid App](https://app.sendgrid.com/settings/sender_auth). You can also configure the Forward Spam mail settings in the [Mail Settings section of the Twilio SendGrid App](https://app.sendgrid.com/settings/mail_settings).",
         "operationId": "TsgMailSettingsV3UpdateForwardSpam",
         "parameters": [
           {
@@ -12734,6 +12762,9 @@
           "$ref": "#/components/requestBodies/PostMailSend"
         },
         "responses": {
+          "202": {
+            "description": "Accepted"
+          },
           "400": {
             "$ref": "#/components/responses/PostMailSend400"
           },
@@ -12944,6 +12975,9 @@
           },
           "403": {
             "$ref": "#/components/responses/MarketingContacts403"
+          },
+          "404": {
+            "description": "404 response"
           },
           "500": {
             "$ref": "#/components/responses/MarketingContacts500"
@@ -13264,7 +13298,7 @@
           "Contacts"
         ],
         "summary": "Import Contacts",
-        "description": "\u0022**This endpoint allows a CSV upload containing up to one million contacts or 5GB of data, whichever is smaller. At least one identifier is required for a successful import.**\n\nImports take place asynchronously: the endpoint returns a URL (\u0060upload_uri\u0060) and HTTP headers (\u0060upload_headers\u0060) which can subsequently be used to \u0060PUT\u0060 a file of contacts to be imported into our system.\n\nUploaded CSV files may also be [gzip-compressed](https://en.wikipedia.org/wiki/Gzip).\n\nIn either case, you must include the field \u0060file_type\u0060 with the value \u0060csv\u0060 in your request body.\n\nThe \u0060field_mappings\u0060 parameter is a respective list of field definition IDs to map the uploaded CSV columns to. It allows you to use CSVs where one or more columns are skipped (\u0060null\u0060) or remapped to the contact field.\n\nFor example, if \u0060field_mappings\u0060 is set to \u0060[null, \\\u0022w1\\\u0022, \\\u0022_rf1\\\u0022]\u0060, this means skip column 0, map column 1 to the custom field with the ID \u0060w1\u0060, and map column 2 to the reserved field with the ID \u0060_rf1\u0060. See the \\\u0022Get All Field Definitions\\\u0022 endpoint to fetch your custom and reserved field IDs to use with \u0060field_mappings\u0060.\n\nOnce you receive the response body you can then initiate a **second** API call where you use the supplied URL and HTTP header to upload your file. For example:\n\n\u0060curl --upload-file \\\u0022file/path.csv\\\u0022 \\\u0022URL_GIVEN\\\u0022 -H \\\u0022HEADER_GIVEN\\\u0022\u0060\n\nIf you would like to monitor the status of your import job, use the \u0060job_id\u0060 and the \\\u0022Import Contacts Status\\\u0022 endpoint.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n\u0022",
+        "description": "**This endpoint allows a CSV upload containing up to one million contacts or 5GB of data, whichever is smaller. At least one identifier is required for a successful import.**\n\nImports take place asynchronously: the endpoint returns a URL (\u0060upload_uri\u0060) and HTTP headers (\u0060upload_headers\u0060) which can subsequently be used to \u0060PUT\u0060 a file of contacts to be imported into our system.\n\nUploaded CSV files may also be [gzip-compressed](https://en.wikipedia.org/wiki/Gzip).\n\nIn either case, you must include the field \u0060file_type\u0060 with the value \u0060csv\u0060 in your request body.\n\nThe \u0060field_mappings\u0060 parameter is a respective list of field definition IDs to map the uploaded CSV columns to. It allows you to use CSVs where one or more columns are skipped (\u0060null\u0060) or remapped to the contact field.\n\nFor example, if \u0060field_mappings\u0060 is set to \u0060[null, \u0022w1\u0022, \u0022_rf1\u0022]\u0060, this means skip column 0, map column 1 to the custom field with the ID \u0060w1\u0060, and map column 2 to the reserved field with the ID \u0060_rf1\u0060. See the \u0022Get All Field Definitions\u0022 endpoint to fetch your custom and reserved field IDs to use with \u0060field_mappings\u0060.\n\nOnce you receive the response body you can then initiate a **second** API call where you use the supplied URL and HTTP header to upload your file. For example:\n\n\u0060curl --upload-file \u0022file/path.csv\u0022 \u0022URL_GIVEN\u0022 -H \u0022HEADER_GIVEN\u0022\u0060\n\nIf you would like to monitor the status of your import job, use the \u0060job_id\u0060 and the \u0022Import Contacts Status\u0022 endpoint.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n",
         "operationId": "TsgMcContactsV3ImportContact",
         "requestBody": {
           "content": {
@@ -13324,7 +13358,7 @@
           "Contacts"
         ],
         "summary": "Import Contacts Status",
-        "description": "\u0022**This endpoint can be used to check the status of a contact import job**. \n\nUse the \u0060job_id\u0060 from the \\\u0022Import Contacts,\\\u0022 \\\u0022Add or Update a Contact,\\\u0022 or \\\u0022Delete Contacts\\\u0022 endpoints as the \u0060id\u0060 in the path parameter.\n\nIf there is an error with your \u0060PUT\u0060 request, download the \u0060errors_url\u0060 file and open it to view more details.\n\nThe job \u0060status\u0060 field indicates whether the job is \u0060pending\u0060, \u0060completed\u0060, \u0060errored\u0060, or \u0060failed\u0060. \n\nPending means not started. Completed means finished without any errors. Errored means finished with some errors. Failed means finished with all errors, or the job was entirely unprocessable: for example, if you attempt to import file format we do not support.\n\nThe \u0060results\u0060 object will have fields depending on the job type.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\u0022",
+        "description": "**This endpoint can be used to check the status of a contact import job**. \n\nUse the \u0060job_id\u0060 from the \u0022Import Contacts,\u0022 \u0022Add or Update a Contact,\u0022 or \u0022Delete Contacts\u0022 endpoints as the \u0060id\u0060 in the path parameter.\n\nIf there is an error with your \u0060PUT\u0060 request, download the \u0060errors_url\u0060 file and open it to view more details.\n\nThe job \u0060status\u0060 field indicates whether the job is \u0060pending\u0060, \u0060completed\u0060, \u0060errored\u0060, or \u0060failed\u0060. \n\nPending means not started. Completed means finished without any errors. Errored means finished with some errors. Failed means finished with all errors, or the job was entirely unprocessable: for example, if you attempt to import file format we do not support.\n\nThe \u0060results\u0060 object will have fields depending on the job type.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.",
         "operationId": "TsgMcContactsV3GetImportContact",
         "responses": {
           "200": {
@@ -13418,6 +13452,9 @@
           },
           "404": {
             "$ref": "#/components/responses/MarketingContacts404"
+          },
+          "408": {
+            "description": "408 response"
           },
           "500": {
             "description": "500 response",
@@ -13574,7 +13611,7 @@
           "Contacts"
         ],
         "summary": "Get Contacts by Identifiers",
-        "description": "\u0022Use this endpoint to retrieve up to 100 contacts that match the requested identifier values for a single identifier type.\n\n\u0060identifier_type\u0060 must be a valid identifier type: \u0060email\u0060, \u0060phone_number_id\u0060, \u0060external_id\u0060, or \u0060anonymous_id\u0060.\n\nUse this endpoint instead of the [Search Contacts endpoint](https://www.twilio.com/docs/sendgrid/api-reference/contacts/search-contacts) when you can provide exact identifiers and do not need to include other [Segmentation Query Language (SGQL)](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/segmentation-query-language/) filters when searching.\n\nThis endpoint returns a \u0060200\u0060 status code when any contacts match the identifiers you supplied. When searching multiple identifier values in a single request, it is possible that some will match a contact while others will not. When a partially successful search like this is made, the matching contacts are returned in an object and an error message is returned for the identifier values that are not found.\n\nThis endpoint returns a \u0060404\u0060 status code when no contacts are found for the provided identifiers.\n\nThis endpoint returns a \u0060400\u0060 status code if any searched addresses are invalid.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n\u0022",
+        "description": "Use this endpoint to retrieve up to 100 contacts that match the requested identifier values for a single identifier type.\n\n\u0060identifier_type\u0060 must be a valid identifier type: \u0060email\u0060, \u0060phone_number_id\u0060, \u0060external_id\u0060, or \u0060anonymous_id\u0060.\n\nUse this endpoint instead of the [Search Contacts endpoint](https://www.twilio.com/docs/sendgrid/api-reference/contacts/search-contacts) when you can provide exact identifiers and do not need to include other [Segmentation Query Language (SGQL)](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/segmentation-query-language/) filters when searching.\n\nThis endpoint returns a \u0060200\u0060 status code when any contacts match the identifiers you supplied. When searching multiple identifier values in a single request, it is possible that some will match a contact while others will not. When a partially successful search like this is made, the matching contacts are returned in an object and an error message is returned for the identifier values that are not found.\n\nThis endpoint returns a \u0060404\u0060 status code when no contacts are found for the provided identifiers.\n\nThis endpoint returns a \u0060400\u0060 status code if any searched addresses are invalid.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n",
         "operationId": "TsgMcContactsV3GetContactByIdentifiers",
         "requestBody": {
           "content": {
@@ -13652,7 +13689,7 @@
           "Custom Fields"
         ],
         "summary": "Create Custom Field Definition",
-        "description": "\u0022**This endpoint creates a new custom field definition.**\n\nCustom field definitions are created with the given \u0060name\u0060 and \u0060field_type\u0060. Although field names are stored in a case-sensitive manner, all field names must be case-insensitively unique. This means you may create a field named \u0060CamelCase\u0060 or \u0060camelcase\u0060, but not both. Additionally, a Custom Field name cannot collide with any Reserved Field names. You should save the returned \u0060id\u0060 value in order to update or delete the field at a later date. You can have up to 500 custom fields.\n\nThe custom field name should be created using only alphanumeric characters (A-Z and 0-9) and underscores (\\_). Custom fields can only begin with letters  A-Z or underscores (_). The field type can be date, text, or number fields. The field type is important for creating segments from your contact database.\n\n**Note: Creating a custom field that begins with a number will cause issues with sending in Marketing Campaigns.**\u0022",
+        "description": "**This endpoint creates a new custom field definition.**\n\nCustom field definitions are created with the given \u0060name\u0060 and \u0060field_type\u0060. Although field names are stored in a case-sensitive manner, all field names must be case-insensitively unique. This means you may create a field named \u0060CamelCase\u0060 or \u0060camelcase\u0060, but not both. Additionally, a Custom Field name cannot collide with any Reserved Field names. You should save the returned \u0060id\u0060 value in order to update or delete the field at a later date. You can have up to 500 custom fields.\n\nThe custom field name should be created using only alphanumeric characters (A-Z and 0-9) and underscores (\\_). Custom fields can only begin with letters  A-Z or underscores (_). The field type can be date, text, or number fields. The field type is important for creating segments from your contact database.\n\n**Note: Creating a custom field that begins with a number will cause issues with sending in Marketing Campaigns.**",
         "operationId": "TsgMcCustomFieldsV3CreateFieldDefinition",
         "requestBody": {
           "content": {
@@ -13941,6 +13978,9 @@
         "description": "**This endpoint deletes a defined Custom Field.**\n\nYou can delete only Custom Fields; Reserved Fields cannot be deleted.",
         "operationId": "TsgMcCustomFieldsV3DeleteFieldDefinition",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -14110,7 +14150,7 @@
           "Designs"
         ],
         "summary": "Duplicate Design",
-        "description": "\u0022**This endpoint allows you to duplicate one of your existing designs**.\n\nModifying an existing design is often the easiest way to create something new.\n\nYou are not required to pass any data in the body of a request to this endpoint. If you choose to leave the \u0060name\u0060 field blank, your duplicate will be assigned the name of the design it was copied from with the text \\\u0022Duplicate: \\\u0022 prepended to it. This name change is only a convenience, as the duplicate will be assigned a unique ID that differentiates it from your other designs.\n\nYou can modify your duplicate\u2019s name at the time of creation by passing an updated value to the \u0060name\u0060 field when making the initial request.\nMore on retrieving design IDs can be found below.\u0022",
+        "description": "**This endpoint allows you to duplicate one of your existing designs**.\n\nModifying an existing design is often the easiest way to create something new.\n\nYou are not required to pass any data in the body of a request to this endpoint. If you choose to leave the \u0060name\u0060 field blank, your duplicate will be assigned the name of the design it was copied from with the text \u0022Duplicate: \u0022 prepended to it. This name change is only a convenience, as the duplicate will be assigned a unique ID that differentiates it from your other designs.\n\nYou can modify your duplicate\u2019s name at the time of creation by passing an updated value to the \u0060name\u0060 field when making the initial request.\nMore on retrieving design IDs can be found below.",
         "operationId": "TsgMcDesignsV3DuplicateDesign",
         "requestBody": {
           "$ref": "#/components/requestBodies/DesignDuplicateInput"
@@ -14227,7 +14267,7 @@
           "Designs"
         ],
         "summary": "Update Design",
-        "description": "\u0022**This endpoint allows you to edit a design**.\n\nThe Design API supports PATCH requests, which allow you to make partial updates to a single design. Passing data to a specific field will update only the data stored in that field; all other fields will be unaltered.\n\nFor example, updating a design\u0027s name requires that you make a PATCH request to this endpoint with data specified for the \u0060name\u0060 field only.\n\n\u0060\u0060\u0060\n{\n    \\\u0022name\\\u0022: \\\u0022\u003CUpdated Name\u003E\\\u0022\n}\n\u0060\u0060\u0060\u0022",
+        "description": "**This endpoint allows you to edit a design**.\n\nThe Design API supports PATCH requests, which allow you to make partial updates to a single design. Passing data to a specific field will update only the data stored in that field; all other fields will be unaltered.\n\nFor example, updating a design\u0027s name requires that you make a PATCH request to this endpoint with data specified for the \u0060name\u0060 field only.\n\n\u0060\u0060\u0060\n{\n    \u0022name\u0022: \u0022\u003CUpdated Name\u003E\u0022\n}\n\u0060\u0060\u0060",
         "operationId": "TsgMcDesignsV3UpdateDesign",
         "requestBody": {
           "content": {
@@ -14297,6 +14337,9 @@
         "description": "**This endpoint allows you to delete a single design**.\n\nBe sure to check the ID of the design you intend to delete before making this request; deleting a design is a permanent action.",
         "operationId": "TsgMcDesignsV3DeleteDesign",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -14449,7 +14492,7 @@
           "Designs"
         ],
         "summary": "Duplicate SendGrid Pre-built Design",
-        "description": "\u0022**This endpoint allows you to duplicate one of the pre-built Twilio SendGrid designs**.\n\nLike duplicating one of your existing designs, you are not required to pass any data in the body of a request to this endpoint. If you choose to leave the \u0060name\u0060 field blank, your duplicate will be assigned the name of the design it was copied from with the text \\\u0022Duplicate: \\\u0022 prepended to it. This name change is only a convenience, as the duplicate design will be assigned a unique ID that differentiates it from your other designs. You can retrieve the IDs for Twilio SendGrid pre-built designs using the \\\u0022List SendGrid Pre-built Designs\\\u0022 endpoint.\n\nYou can modify your duplicate\u2019s name at the time of creation by passing an updated value to the \u0060name\u0060 field when making the initial request.\nMore on retrieving design IDs can be found above.\u0022",
+        "description": "**This endpoint allows you to duplicate one of the pre-built Twilio SendGrid designs**.\n\nLike duplicating one of your existing designs, you are not required to pass any data in the body of a request to this endpoint. If you choose to leave the \u0060name\u0060 field blank, your duplicate will be assigned the name of the design it was copied from with the text \u0022Duplicate: \u0022 prepended to it. This name change is only a convenience, as the duplicate design will be assigned a unique ID that differentiates it from your other designs. You can retrieve the IDs for Twilio SendGrid pre-built designs using the \u0022List SendGrid Pre-built Designs\u0022 endpoint.\n\nYou can modify your duplicate\u2019s name at the time of creation by passing an updated value to the \u0060name\u0060 field when making the initial request.\nMore on retrieving design IDs can be found above.",
         "operationId": "TsgMcDesignsV3DuplicatePreBuiltDesign",
         "requestBody": {
           "$ref": "#/components/requestBodies/DesignDuplicateInput"
@@ -15026,6 +15069,12 @@
               }
             }
           },
+          "404": {
+            "description": "404 response"
+          },
+          "429": {
+            "description": "429 response"
+          },
           "500": {
             "description": "500 response",
             "content": {
@@ -15096,6 +15145,9 @@
               }
             }
           },
+          "404": {
+            "description": "404 response"
+          },
           "500": {
             "description": "500 response",
             "content": {
@@ -15146,6 +15198,9 @@
                 }
               }
             }
+          },
+          "429": {
+            "description": "429 response"
           },
           "500": {
             "description": "500 response",
@@ -15217,6 +15272,9 @@
         "description": "**This endpoint allows you to delete a segment by ID.**",
         "operationId": "TsgMcSegments20V3DeleteSegment",
         "responses": {
+          "202": {
+            "description": "202 response"
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -15226,6 +15284,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "404 response"
           },
           "500": {
             "description": "500 response",
@@ -15288,6 +15349,9 @@
               }
             }
           },
+          "403": {
+            "description": "Endpoint is forbidden to the user because they are a free user."
+          },
           "404": {
             "description": "Segment ID was not found",
             "content": {
@@ -15300,6 +15364,9 @@
                 }
               }
             }
+          },
+          "429": {
+            "description": "The user has reached their limit of 2 requests per segment per day, 1 request per segment per hour, or 10 requests across all segments per day."
           },
           "500": {
             "description": "500 response",
@@ -15458,6 +15525,9 @@
         "description": "**This endpoint allows you to delete an existing Sender.**",
         "operationId": "TsgMcSendersV3DeleteSender",
         "responses": {
+          "204": {
+            "description": "successfully deleted, no response in payload"
+          },
           "403": {
             "$ref": "#/components/responses/Senders403"
           },
@@ -15484,6 +15554,9 @@
         "description": "**This endpoint allows you to resend the verification request for a specific Sender.**",
         "operationId": "TsgMcSendersV3ResetSenderVerification",
         "responses": {
+          "204": {
+            "description": "successfully posted, no response in payload"
+          },
           "400": {
             "$ref": "#/components/responses/Senders400"
           },
@@ -15644,6 +15717,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -15835,6 +15911,9 @@
         "description": "**This endpoint allows you to delete one Single Send using a Single Send ID.**\n\nTo first retrieve all your Single Sends\u0027 IDs, you can make a GET request to the \u0060/marketing/singlensends\u0060 endpoint.\n\nPlease note that a \u0060DELETE\u0060 request is permanent, and your Single Send will not be recoverable after deletion.",
         "operationId": "TsgMcSinglesendsV3DeleteSingleSend",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -16026,7 +16105,7 @@
           "Single Sends"
         ],
         "summary": "Get Single Sends Search",
-        "description": "\u0022**This endpoint allows you to search for Single Sends based on specified criteria.**\n\nYou can search for Single Sends by passing a combination of values using the \u0060name\u0060, \u0060status\u0060, and \u0060categories\u0060 request body fields.\n\nFor example, if you want to search for all Single Sends that are \\\u0022drafts\\\u0022 or \\\u0022scheduled\\\u0022 and also associated with the category \\\u0022shoes,\\\u0022 your request body may look like the example below.\n\n\u0060\u0060\u0060javascript\n{\n  \\\u0022status\\\u0022: [\n    \\\u0022draft\\\u0022,\n    \\\u0022scheduled\\\u0022\n  ],\n  \\\u0022categories\\\u0022: [\n    \\\u0022shoes\\\u0022\n  ],\n}\n\u0060\u0060\u0060\u0022",
+        "description": "**This endpoint allows you to search for Single Sends based on specified criteria.**\n\nYou can search for Single Sends by passing a combination of values using the \u0060name\u0060, \u0060status\u0060, and \u0060categories\u0060 request body fields.\n\nFor example, if you want to search for all Single Sends that are \u0022drafts\u0022 or \u0022scheduled\u0022 and also associated with the category \u0022shoes,\u0022 your request body may look like the example below.\n\n\u0060\u0060\u0060javascript\n{\n  \u0022status\u0022: [\n    \u0022draft\u0022,\n    \u0022scheduled\u0022\n  ],\n  \u0022categories\u0022: [\n    \u0022shoes\u0022\n  ],\n}\n\u0060\u0060\u0060",
         "operationId": "TsgMcSinglesendsV3SearchSingleSend",
         "parameters": [
           {
@@ -16205,6 +16284,9 @@
           },
           "400": {
             "$ref": "#/components/responses/Stats400"
+          },
+          "404": {
+            "description": "404 response"
           }
         }
       },
@@ -16287,7 +16369,7 @@
           "Stats"
         ],
         "summary": "Export Single Send Stats",
-        "description": "\u0022**This endpoint allows you to export Single Send stats as .CSV data**.\n\nYou can specify one Single Send or many: include as many Single Send IDs as you need, separating them with commas, as the value of the \u0060ids\u0060 query string parameter.\n\nThe data is returned as plain text response but in .CSV format, so your application making the call can present the information in whatever way is most appropriate, or just save the data as a .csv file.\u0022",
+        "description": "**This endpoint allows you to export Single Send stats as .CSV data**.\n\nYou can specify one Single Send or many: include as many Single Send IDs as you need, separating them with commas, as the value of the \u0060ids\u0060 query string parameter.\n\nThe data is returned as plain text response but in .CSV format, so your application making the call can present the information in whatever way is most appropriate, or just save the data as a .csv file.",
         "operationId": "TsgMcStatsV3ExportAutomationStat",
         "parameters": [
           {
@@ -16324,6 +16406,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "400 response"
           }
         }
       }
@@ -16419,6 +16504,9 @@
           },
           "400": {
             "$ref": "#/components/responses/Stats400"
+          },
+          "404": {
+            "description": "404 response"
           }
         }
       },
@@ -16503,7 +16591,7 @@
           "Stats"
         ],
         "summary": "Export Single Send Stats",
-        "description": "\u0022**This endpoint allows you to export Single Send stats as .CSV data**.\n\nYou can specify one Single Send or many: include as many Single Send IDs as you need, separating them with commas, as the value of the \u0060ids\u0060 query string parameter.\n\nThe data is returned as plain text response but in .CSV format, so your application making the call can present the information in whatever way is most appropriate, or just save the data as a .csv file.\u0022",
+        "description": "**This endpoint allows you to export Single Send stats as .CSV data**.\n\nYou can specify one Single Send or many: include as many Single Send IDs as you need, separating them with commas, as the value of the \u0060ids\u0060 query string parameter.\n\nThe data is returned as plain text response but in .CSV format, so your application making the call can present the information in whatever way is most appropriate, or just save the data as a .csv file.",
         "operationId": "TsgMcStatsV3ExportSingleSendStat",
         "parameters": [
           {
@@ -16540,6 +16628,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "400 response"
           }
         }
       }
@@ -16656,7 +16747,8 @@
                 ]
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "202": {
@@ -16911,14 +17003,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgReverseDnsV3DeleteReverseDns204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -17210,6 +17295,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "$ref": "#/components/responses/ScheduledSends400"
           },
@@ -17240,6 +17328,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "$ref": "#/components/responses/ScheduledSends400"
           },
@@ -17417,11 +17508,20 @@
           "200": {
             "$ref": "#/components/responses/SeqPaginatedScores"
           },
+          "202": {
+            "description": "A 202 is returned when the request is successfully received but a score is not calculated for requested date."
+          },
           "400": {
             "$ref": "#/components/responses/SeqV1SubusersScores400"
           },
           "401": {
             "$ref": "#/components/responses/SeqV1Scores401"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
           },
           "500": {
             "$ref": "#/components/responses/SeqV1Scores500"
@@ -17892,6 +17992,9 @@
         "description": "**This endpoint allows you to delete an IdP configuration by ID.**\n\nYou can retrieve the IDs for your configurations from the response provided by the \u0022Get All SSO Integrations\u0022 endpoint.",
         "operationId": "TsgSsoV3DeleteSsoIntegration",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "$ref": "#/components/responses/Sso400"
           },
@@ -17987,7 +18090,7 @@
           "SSO Teammates"
         ],
         "summary": "Create an SSO Teammate.",
-        "description": "\u0022**This endpoint allows you to create an SSO Teammate.**\n\nThe email address provided for the Teammate will also function as the Teammate\u0027s username. Once created, the Teammate\u0027s email address cannot be changed.\n\n### Scopes\n\nWhen creating a Teammate, you will assign it permissions or scopes. These scopes determine which actions the Teammate can perform and which features they can access. Scopes are provided with one of three properties passed to this endpoint: \u0060is_admin\u0060, \u0060scopes\u0060, and \u0060persona\u0060.\n\nYou can make a Teammate an administrator by setting \u0060is_admin\u0060 to \u0060true\u0060. Administrators will have all scopes assigned to them. Alternatively, you can assign a \u0060persona\u0060 to the teammate, which will assign them a block of permissions commonly required for that type of user. See the \\\u0022Persona scopes\\\u0022 section of [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions#persona-scopes) for a list of permsissions granted by persona. Lastly, you can assign individual permissions with the \u0060scopes\u0060 property. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a full list of scopes that can be assigned to a Teammate.\n\n### Subuser access\n\nSendGrid Teammates may be assigned access to one or more Subusers. Subusers function like SendGrid sub-accounts with their own resources. See [**Subusers**](https://docs.sendgrid.com/ui/account-and-settings/subusers) for more information.\n\nWhen assigning Subuser access to a Teammate, you may set the \u0060has_restricted_subuser_access\u0060 property to \u0060true\u0060 to constrain the Teammate so that they can operate only on behalf of the Subusers to which they are assigned. You may further set the level of access the Teammate has to each Subuser with the \u0060subuser_access\u0060 property.\u0022",
+        "description": "**This endpoint allows you to create an SSO Teammate.**\n\nThe email address provided for the Teammate will also function as the Teammate\u0027s username. Once created, the Teammate\u0027s email address cannot be changed.\n\n### Scopes\n\nWhen creating a Teammate, you will assign it permissions or scopes. These scopes determine which actions the Teammate can perform and which features they can access. Scopes are provided with one of three properties passed to this endpoint: \u0060is_admin\u0060, \u0060scopes\u0060, and \u0060persona\u0060.\n\nYou can make a Teammate an administrator by setting \u0060is_admin\u0060 to \u0060true\u0060. Administrators will have all scopes assigned to them. Alternatively, you can assign a \u0060persona\u0060 to the teammate, which will assign them a block of permissions commonly required for that type of user. See the \u0022Persona scopes\u0022 section of [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions#persona-scopes) for a list of permsissions granted by persona. Lastly, you can assign individual permissions with the \u0060scopes\u0060 property. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a full list of scopes that can be assigned to a Teammate.\n\n### Subuser access\n\nSendGrid Teammates may be assigned access to one or more Subusers. Subusers function like SendGrid sub-accounts with their own resources. See [**Subusers**](https://docs.sendgrid.com/ui/account-and-settings/subusers) for more information.\n\nWhen assigning Subuser access to a Teammate, you may set the \u0060has_restricted_subuser_access\u0060 property to \u0060true\u0060 to constrain the Teammate so that they can operate only on behalf of the Subusers to which they are assigned. You may further set the level of access the Teammate has to each Subuser with the \u0060subuser_access\u0060 property.",
         "operationId": "TsgSsoV3CreateSsoTeammate",
         "requestBody": {
           "content": {
@@ -18350,7 +18453,7 @@
           "SSO Teammates"
         ],
         "summary": "Edit an SSO Teammate",
-        "description": "\u0022**This endpoint allows you to modify an existing SSO Teammate.**\n\nOnly the parent user and Teammates with admin permissions can update another Teammate\u0027s permissions.\n\n### Scopes\n\nWhen updating a Teammate, you will assign it permissions or scopes. These scopes determine which actions the Teammate can perform and which features they can access. Scopes are provided with one of three properties passed to this endpoint: \u0060is_admin\u0060, \u0060scopes\u0060, and \u0060persona\u0060.\n\nYou can make a Teammate an administrator by setting \u0060is_admin\u0060 to \u0060true\u0060. Administrators will have all scopes assigned to them. Alternatively, you can assign a \u0060persona\u0060 to the teammate, which will assign them a block of permissions commonly required for that type of user. See the \\\u0022Persona scopes\\\u0022 section of [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions#persona-scopes) for a list of permsissions granted by persona. Lastly, you can assign individual permissions with the \u0060scopes\u0060 property. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a full list of scopes that can be assigned to a Teammate.\n\n### Subuser access\n\nSendGrid Teammates may be assigned access to one or more Subusers. Subusers function like SendGrid sub-accounts with their own resources. See [**Subusers**](https://docs.sendgrid.com/ui/account-and-settings/subusers) for more information.\n\nWhen assigning Subuser access to a Teammate, you may set the \u0060has_restricted_subuser_access\u0060 property to \u0060true\u0060 to constrain the Teammate so that they can operate only on behalf of the Subusers to which they are assigned. You may further set the level of access the Teammate has to each Subuser with the \u0060subuser_access\u0060 property.\u0022",
+        "description": "**This endpoint allows you to modify an existing SSO Teammate.**\n\nOnly the parent user and Teammates with admin permissions can update another Teammate\u0027s permissions.\n\n### Scopes\n\nWhen updating a Teammate, you will assign it permissions or scopes. These scopes determine which actions the Teammate can perform and which features they can access. Scopes are provided with one of three properties passed to this endpoint: \u0060is_admin\u0060, \u0060scopes\u0060, and \u0060persona\u0060.\n\nYou can make a Teammate an administrator by setting \u0060is_admin\u0060 to \u0060true\u0060. Administrators will have all scopes assigned to them. Alternatively, you can assign a \u0060persona\u0060 to the teammate, which will assign them a block of permissions commonly required for that type of user. See the \u0022Persona scopes\u0022 section of [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions#persona-scopes) for a list of permsissions granted by persona. Lastly, you can assign individual permissions with the \u0060scopes\u0060 property. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a full list of scopes that can be assigned to a Teammate.\n\n### Subuser access\n\nSendGrid Teammates may be assigned access to one or more Subusers. Subusers function like SendGrid sub-accounts with their own resources. See [**Subusers**](https://docs.sendgrid.com/ui/account-and-settings/subusers) for more information.\n\nWhen assigning Subuser access to a Teammate, you may set the \u0060has_restricted_subuser_access\u0060 property to \u0060true\u0060 to constrain the Teammate so that they can operate only on behalf of the Subusers to which they are assigned. You may further set the level of access the Teammate has to each Subuser with the \u0060subuser_access\u0060 property.",
         "operationId": "TsgSsoV3UpdateSsoTeammate",
         "requestBody": {
           "content": {
@@ -21641,6 +21744,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -21718,6 +21824,9 @@
         "description": "**This endpoint allows you to delete a subuser.**\n\nThis is a permanent action. Once deleted, a subuser cannot be retrieved.",
         "operationId": "TsgSubusersV3DeleteSubuser",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "description": "401 response",
             "content": {
@@ -21766,15 +21875,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSubusersV3UpdateSubuserWebsiteAccess200Response"
-                }
-              }
-            }
+          "204": {
+            "description": "204 response"
           }
         }
       },
@@ -21857,7 +21959,8 @@
                 "$ref": "#/components/schemas/SubuserCreditsRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -21926,7 +22029,8 @@
                 "$ref": "#/components/schemas/TsgSubusersV3UpdateSubuserRemainingCreditRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -22068,7 +22172,7 @@
           {
             "name": "sort_by_metric",
             "in": "query",
-            "description": "\u0022The metric that you want to sort by. Metrics that you can sort by are: \u0060blocks\u0060, \u0060bounces\u0060, \u0060clicks\u0060, \u0060delivered\u0060, \u0060opens\u0060, \u0060requests\u0060, \u0060unique_clicks\u0060, \u0060unique_opens\u0060, and \u0060unsubscribes\u0060.\u0027\u0022",
+            "description": "The metric that you want to sort by. Metrics that you can sort by are: \u0060blocks\u0060, \u0060bounces\u0060, \u0060clicks\u0060, \u0060delivered\u0060, \u0060opens\u0060, \u0060requests\u0060, \u0060unique_clicks\u0060, \u0060unique_opens\u0060, and \u0060unsubscribes\u0060.\u0027",
             "schema": {
               "type": "string",
               "default": "delivered"
@@ -22577,7 +22681,7 @@
           {
             "name": "sort_by_metric",
             "in": "query",
-            "description": "\u0022The metric that you want to sort by. Metrics that you can sort by are: \u0060blocks\u0060, \u0060bounces\u0060, \u0060clicks\u0060, \u0060delivered\u0060, \u0060opens\u0060, \u0060requests\u0060, \u0060unique_clicks\u0060, \u0060unique_opens\u0060, and \u0060unsubscribes\u0060.\u0027\u0022",
+            "description": "The metric that you want to sort by. Metrics that you can sort by are: \u0060blocks\u0060, \u0060bounces\u0060, \u0060clicks\u0060, \u0060delivered\u0060, \u0060opens\u0060, \u0060requests\u0060, \u0060unique_clicks\u0060, \u0060unique_opens\u0060, and \u0060unsubscribes\u0060.\u0027",
             "schema": {
               "$ref": "#/components/schemas/SortByMetric"
             }
@@ -23010,14 +23114,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteAsmGroup204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -23132,14 +23229,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSuppressionFromAsmGroup204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -23405,7 +23495,7 @@
           "Blocks"
         ],
         "summary": "Delete blocks",
-        "description": "\u0022**This endpoint allows you to delete all email addresses on your blocks list.**\n\nThere are two options for deleting blocked emails: \n\n1. You can delete all blocked emails by setting \u0060delete_all\u0060 to \u0060true\u0060 in the request body. \n2. You can delete a selection of blocked emails by specifying the email addresses in the \u0060emails\u0060 array of the request body.\u0022",
+        "description": "**This endpoint allows you to delete all email addresses on your blocks list.**\n\nThere are two options for deleting blocked emails: \n\n1. You can delete all blocked emails by setting \u0060delete_all\u0060 to \u0060true\u0060 in the request body. \n2. You can delete a selection of blocked emails by specifying the email addresses in the \u0060emails\u0060 array of the request body.",
         "operationId": "TsgSuppressionsV3DeleteSuppressionBlocks",
         "parameters": [
           {
@@ -23423,14 +23513,7 @@
         },
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSuppressionBlocks204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       }
@@ -23487,14 +23570,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSuppressionBlock204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -23604,7 +23680,7 @@
           "Bounces"
         ],
         "summary": "Delete bounces",
-        "description": "\u0022**This endpoint allows you to delete all emails on your bounces list.**\n\nThere are two options for deleting bounced emails: \n\n1. You can delete all bounced emails by setting \u0060delete_all\u0060 to \u0060true\u0060 in the request body. \n2. You can delete a selection of bounced emails by specifying the email addresses in the \u0060emails\u0060 array of the request body. \n\n**WARNING:** You can not have both \u0060emails\u0060 and \u0060delete_all\u0060 set.\u0022",
+        "description": "**This endpoint allows you to delete all emails on your bounces list.**\n\nThere are two options for deleting bounced emails: \n\n1. You can delete all bounced emails by setting \u0060delete_all\u0060 to \u0060true\u0060 in the request body. \n2. You can delete a selection of bounced emails by specifying the email addresses in the \u0060emails\u0060 array of the request body. \n\n**WARNING:** You can not have both \u0060emails\u0060 and \u0060delete_all\u0060 set.",
         "operationId": "TsgSuppressionsV3DeleteSuppressionBounces",
         "parameters": [
           {
@@ -23621,6 +23697,9 @@
           }
         },
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "description": "401 response",
             "content": {
@@ -23717,6 +23796,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "description": "401 response",
             "content": {
@@ -23859,7 +23941,7 @@
           {
             "name": "classification",
             "in": "path",
-            "description": "\u0022The classification you want to filter by. Possible values are: \u0060Content\u0060, \u0060Frequency or Volume Too High\u0060, \u0060Invalid Address\u0060, \u0060Mailbox Unavailable\u0060, \u0060Reputation\u0060, \u0060Technical Failure\u0060, \u0060Unclassified\u0060.\u0022",
+            "description": "The classification you want to filter by. Possible values are: \u0060Content\u0060, \u0060Frequency or Volume Too High\u0060, \u0060Invalid Address\u0060, \u0060Mailbox Unavailable\u0060, \u0060Reputation\u0060, \u0060Technical Failure\u0060, \u0060Unclassified\u0060.",
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/Classification1"
@@ -24020,14 +24102,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteGlobalSuppression204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -24120,7 +24195,7 @@
           "Invalid Emails"
         ],
         "summary": "Delete invalid emails",
-        "description": "\u0022**This endpoint allows you to remove email addresses from your invalid email address list.**\n\nThere are two options for deleting invalid email addresses: \n\n1) You can delete all invalid email addresses by setting \u0060delete_all\u0060 to true in the request body.\n2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.\u0022",
+        "description": "**This endpoint allows you to remove email addresses from your invalid email address list.**\n\nThere are two options for deleting invalid email addresses: \n\n1) You can delete all invalid email addresses by setting \u0060delete_all\u0060 to true in the request body.\n2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.",
         "operationId": "TsgSuppressionsV3DeleteInvalidEmails",
         "parameters": [
           {
@@ -24138,14 +24213,7 @@
         },
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteInvalidEmails204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       }
@@ -24201,14 +24269,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteInvalidEmail204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -24296,7 +24357,7 @@
           "Spam Reports"
         ],
         "summary": "Delete spam reports",
-        "description": "\u0022**This endpoint allows you to delete your spam reports.**\n\nDeleting a spam report will remove the suppression, meaning email will once again be sent to the previously suppressed address. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.\n\nThere are two options for deleting spam reports: \n\n1. You can delete all spam reports by setting the \u0060delete_all\u0060 field to \u0060true\u0060 in the request body.\n2. You can delete a list of select spam reports by specifying the email addresses in the \u0060emails\u0060 array of the request body.\u0022",
+        "description": "**This endpoint allows you to delete your spam reports.**\n\nDeleting a spam report will remove the suppression, meaning email will once again be sent to the previously suppressed address. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.\n\nThere are two options for deleting spam reports: \n\n1. You can delete all spam reports by setting the \u0060delete_all\u0060 field to \u0060true\u0060 in the request body.\n2. You can delete a list of select spam reports by specifying the email addresses in the \u0060emails\u0060 array of the request body.",
         "operationId": "TsgSuppressionsV3DeleteSpamReports",
         "parameters": [
           {
@@ -24314,14 +24375,7 @@
         },
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSpamReports204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       }
@@ -24377,14 +24431,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgSuppressionsV3DeleteSpamReport204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -24921,6 +24968,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "The Teammate was successfully deleted."
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -25023,6 +25073,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -25389,14 +25442,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgTemplatesV3DeleteTemplate204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -25568,14 +25614,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgTemplatesV3DeleteTemplateVersion204Response"
-                }
-              }
-            }
+            "description": "204 response"
           }
         }
       },
@@ -26662,6 +26701,9 @@
         "description": "**This endpoint allows you to delete a Sender Identity**.\n\nPass the \u0060id\u0060 assigned to a Sender Identity to this endpoint to delete the Sender Identity from your account.\n\nYou can retrieve the IDs associated with Sender Identities using the \u0022Get All Verified Senders\u0022 endpoint.",
         "operationId": "TsgVerifiedSendersV3DeleteVerifiedSender",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "$ref": "#/components/responses/VerifiedSenders401"
           },
@@ -26758,6 +26800,9 @@
         "description": "**This endpoint allows you to resend a verification email to a specified Sender Identity**.\n\nPassing the \u0060id\u0060 assigned to a Sender Identity to this endpoint will resend a verification email to the \u0060from_address\u0060 associated with the Sender Identity. This can be useful if someone loses their verification email or needs to have it resent for any other reason.\n\nYou can retrieve the IDs associated with Sender Identities by passing a \u0022Get All Verified Senders\u0022 endpoint.",
         "operationId": "TsgVerifiedSendersV3ResendVerifiedSender",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -26853,6 +26898,9 @@
         "description": "**This endpoint allows you to verify a sender requests.**\n\nThe token is generated by SendGrid and included in a verification email delivered to the address that\u0027s pending verification.",
         "operationId": "TsgVerifiedSendersV3VerifySenderToken",
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "$ref": "#/components/responses/VerifiedSenders401"
           },
@@ -27272,7 +27320,7 @@
           "Event Webhook"
         ],
         "summary": "Test an Event Webhook\u0027s settings",
-        "description": "\u0022**This endpoint allows you to test an Event Webhook.**\n\nRetry logic for this endpoint differs from other endpoints, which use a rolling 24-hour retry.\n\nThis endpoint will make a POST request with a fake event notification to a URL you provide. This allows you to verify that you have properly configured the webhook before sending real data to your URL.\n\n### Test OAuth configuration\n\nTo test your OAuth configuration, you must include the necessary OAuth properties: \u0060oauth_client_id\u0060, \u0060oauth_client_secret\u0060, and \u0060oauth_token_url\u0060.\n\nIf the webhook you are testing already has OAuth credentials saved, you will provide only the \u0060oauth_client_id\u0060 and \u0060oauth_token_url\u0060\u2014we will pull the secret for you. If you are testing a new set of OAuth credentials that have not been saved with SendGrid, you must provide all three property values.\n\nYou can retrieve a previously saved \u0060oauth_client_id\u0060 and \u0060oauth_token_url\u0060 from the [**Get an Event Webhook**](https://docs.sendgrid.com/api-reference/webhooks/get-an-event-webhook) endpoint; however, for security reasons, SendGrid will not provide your \u0060oauth_client_secret\u0060.\u0022",
+        "description": "**This endpoint allows you to test an Event Webhook.**\n\nRetry logic for this endpoint differs from other endpoints, which use a rolling 24-hour retry.\n\nThis endpoint will make a POST request with a fake event notification to a URL you provide. This allows you to verify that you have properly configured the webhook before sending real data to your URL.\n\n### Test OAuth configuration\n\nTo test your OAuth configuration, you must include the necessary OAuth properties: \u0060oauth_client_id\u0060, \u0060oauth_client_secret\u0060, and \u0060oauth_token_url\u0060.\n\nIf the webhook you are testing already has OAuth credentials saved, you will provide only the \u0060oauth_client_id\u0060 and \u0060oauth_token_url\u0060\u2014we will pull the secret for you. If you are testing a new set of OAuth credentials that have not been saved with SendGrid, you must provide all three property values.\n\nYou can retrieve a previously saved \u0060oauth_client_id\u0060 and \u0060oauth_token_url\u0060 from the [**Get an Event Webhook**](https://docs.sendgrid.com/api-reference/webhooks/get-an-event-webhook) endpoint; however, for security reasons, SendGrid will not provide your \u0060oauth_client_secret\u0060.",
         "operationId": "TsgWebhooksV3TestEventWebhook",
         "parameters": [
           {
@@ -27289,15 +27337,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TsgWebhooksV3TestEventWebhook201Response"
-                }
-              }
-            }
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -27536,6 +27577,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "404": {
             "description": "404 response",
             "content": {
@@ -27617,7 +27661,7 @@
           "Parse Webhook"
         ],
         "summary": "Create a parse setting",
-        "description": "\u0022**This endpoint allows you to create a new inbound parse setting.**\n\nCreating an Inbound Parse setting requires two pieces of information: a \u0060url\u0060 and a \u0060hostname\u0060.\n\nThe \u0060hostname\u0060 must correspond to a domain authenticated by Twilio SendGrid on your account. If you need to complete domain authentication, you can use the [Twilio SendGrid App](https://app.sendgrid.com/settings/sender_auth) or the **Authenticate a Domain** endpoint. See [**How to Set Up Domain Authentication**](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-domain-authentication/) for instructions.\n\nAny email received by the \u0060hostname\u0060 will be parsed when you complete this setup. You must also add a Twilio SendGrid MX record to this domain\u0027s DNS records. See [**Setting up the Inbound Parse Webhook**](https://sendgrid.com/docs/for-developers/parsing-email/setting-up-the-inbound-parse-webhook/) for full instructions.\n\nThe \u0060url\u0060 represents a location where the parsed message data will be delivered. Twilio SendGrid will make an HTTP POST request to this \u0060url\u0060 with the message data. The \u0060url\u0060 must be publicly reachable, and your application must return a \u0060200\u0060 status code to signal that the message data has been received.\u0022",
+        "description": "**This endpoint allows you to create a new inbound parse setting.**\n\nCreating an Inbound Parse setting requires two pieces of information: a \u0060url\u0060 and a \u0060hostname\u0060.\n\nThe \u0060hostname\u0060 must correspond to a domain authenticated by Twilio SendGrid on your account. If you need to complete domain authentication, you can use the [Twilio SendGrid App](https://app.sendgrid.com/settings/sender_auth) or the **Authenticate a Domain** endpoint. See [**How to Set Up Domain Authentication**](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-domain-authentication/) for instructions.\n\nAny email received by the \u0060hostname\u0060 will be parsed when you complete this setup. You must also add a Twilio SendGrid MX record to this domain\u0027s DNS records. See [**Setting up the Inbound Parse Webhook**](https://sendgrid.com/docs/for-developers/parsing-email/setting-up-the-inbound-parse-webhook/) for full instructions.\n\nThe \u0060url\u0060 represents a location where the parsed message data will be delivered. Twilio SendGrid will make an HTTP POST request to this \u0060url\u0060 with the message data. The \u0060url\u0060 must be publicly reachable, and your application must return a \u0060200\u0060 status code to signal that the message data has been received.",
         "operationId": "TsgWebhooksV3CreateParseSetting",
         "parameters": [
           {
@@ -27774,6 +27818,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "204 response"
+          },
           "401": {
             "$ref": "#/components/responses/Webhook401"
           },
@@ -28191,7 +28238,7 @@
           "Webhook Security"
         ],
         "summary": "Create a new webhook security policy",
-        "description": "\u0022Create a new webhook security policy. Note: One of signature or oauth must be given to have a valid security policy.\n\u0022",
+        "description": "Create a new webhook security policy. Note: One of signature or oauth must be given to have a valid security policy.\n",
         "operationId": "TsgWebhooksV3CreateSecurityPolicy",
         "parameters": [
           {
@@ -30591,13 +30638,13 @@
             "description": "The ID of the user that this link branding is associated with."
           },
           "default": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Default2"
           },
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Valid3"
           },
           "legacy": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Legacy"
           },
           "dns": {
             "$ref": "#/components/schemas/LinkBranding200Dns"
@@ -30605,6 +30652,10 @@
         }
       },
       "DefaultType": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
@@ -30631,34 +30682,66 @@
         }
       },
       "Default1": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Valid": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Valid1": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Valid2": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Default2": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Valid3": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Legacy": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "Valid4": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
@@ -30690,6 +30773,10 @@
         }
       },
       "Valid5": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
@@ -31358,6 +31445,10 @@
         }
       },
       "DeleteContacts": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
@@ -31450,7 +31541,8 @@
       "AndOr": {
         "enum": [
           "and",
-          "or"
+          "or",
+          ""
         ],
         "type": "string",
         "additionalProperties": false,
@@ -31652,7 +31744,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022**A summary of the message status based on which events have occurred.**\n\n- processed: \u0060processed\u0060\n- dropped: \u0060drop\u0060, \u0060cancel_drop\u0060\n- deferred: \u0060deferred\u0060\n- bounced: \u0060bounce\u0060\n- blocked: \u0060bounce\u0060 (type=\u0060block\u0060)\n- delivered: \u0060delivered\u0060, \u0060click\u0060, \u0060open\u0060\n\u0022",
+        "description": "**A summary of the message status based on which events have occurred.**\n\n- processed: \u0060processed\u0060\n- dropped: \u0060drop\u0060, \u0060cancel_drop\u0060\n- deferred: \u0060deferred\u0060\n- bounced: \u0060bounce\u0060\n- blocked: \u0060bounce\u0060 (type=\u0060block\u0060)\n- delivered: \u0060delivered\u0060, \u0060click\u0060, \u0060open\u0060\n",
         "x-ms-enum": {
           "name": "EmailLogsMessageStatus",
           "modelAsString": false,
@@ -31689,7 +31781,7 @@
         "properties": {
           "query": {
             "type": "string",
-            "description": "\u0022**Allowed event fields and operators**\n\n- sg_message_id: \u0060=\u0060\n- subject: \u0060=\u0060\n- to_email: \u0060=\u0060\n- status: \u0060IN\u0060\n- reason: \u0060=\u0060\n- categories: \u0060IN\u0060\n- sg_message_id_created_at: \u0060\u003E\u0060, \u0060\u003C\u0060, \u0060\u003E=\u0060, \u0060\u003C=\u0060\n\n**Notes:**\n\n- multiple conditions (up to 160) can be combined with \u0060AND\u0060\n- nesting is not allowed\n- \u0060IN\u0060 operator accepts a list of string values: \u0060field IN (\u0027value1\u0027, \u0027value2\u0027)\u0060\n\u0022",
+            "description": "**Allowed event fields and operators**\n\n- sg_message_id: \u0060=\u0060\n- subject: \u0060=\u0060\n- to_email: \u0060=\u0060\n- status: \u0060IN\u0060\n- reason: \u0060=\u0060\n- categories: \u0060IN\u0060\n- sg_message_id_created_at: \u0060\u003E\u0060, \u0060\u003C\u0060, \u0060\u003E=\u0060, \u0060\u003C=\u0060\n\n**Notes:**\n\n- multiple conditions (up to 160) can be combined with \u0060AND\u0060\n- nesting is not allowed\n- \u0060IN\u0060 operator accepts a list of string values: \u0060field IN (\u0027value1\u0027, \u0027value2\u0027)\u0060\n",
             "example": "sg_message_id_created_at \u003E TIMESTAMP \u00222025-01-01T00:00:00Z\u0022 AND sg_message_id_created_at \u003C TIMESTAMP \u00222025-02-01T00:00:00Z\u0022 AND status IN (\u0027delivered\u0027, \u0027processed\u0027) AND categories IN (\u0027newsletter\u0027, \u0027marketing\u0027)"
           },
           "limit": {
@@ -31870,9 +31962,6 @@
         "description": "Summary information for a single message matching the filter.\n"
       },
       "EmailLogsEvent": {
-        "required": [
-          "event"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -31913,10 +32002,150 @@
           }
         ],
         "properties": {
-          "event": {
-            "title": "event",
+          "email": {
             "type": "string",
-            "description": "Union discriminator"
+            "description": "Recipient email address.\n"
+          },
+          "sg_message_id": {
+            "type": "string",
+            "description": "SendGrid Message ID, a string that uniquely identifies the message"
+          },
+          "sg_event_id": {
+            "type": "string",
+            "description": "SendGrid Event ID, a string that uniquely identifies the event"
+          },
+          "timestamp": {
+            "type": "integer",
+            "description": "Unix timestamp"
+          },
+          "smtp-id": {
+            "type": "string",
+            "description": "SMTP ID associated with the message"
+          },
+          "ip": {
+            "type": "string",
+            "description": "IPv4 or IPv6 address"
+          },
+          "tls": {
+            "$ref": "#/components/schemas/TlsEnabled"
+          },
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Message categories"
+          },
+          "asm_group_id": {
+            "type": "integer",
+            "description": "The ID of the ASM (Advanced Suppression Manager) group associated with the message"
+          },
+          "bounce_classification": {
+            "$ref": "#/components/schemas/BounceClassification"
+          },
+          "reason": {
+            "type": "string",
+            "description": "SMTP response code and message indicating the reason the delivery succeeded or failed"
+          },
+          "status": {
+            "pattern": "^([245]\\.[01234567]\\.[01234567]|[1-5][0-9][0-9])$",
+            "type": "string",
+            "description": "SMTP status code associated with the bounce"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TsgLogsV3BounceType"
+          },
+          "cert_err": {
+            "$ref": "#/components/schemas/CertificateError"
+          },
+          "url": {
+            "type": "string",
+            "description": "Url associated with the event"
+          },
+          "useragent": {
+            "type": "string",
+            "description": "User agent of the request that triggered the event"
+          },
+          "url_offset": {
+            "$ref": "#/components/schemas/EngagementUrlOffset"
+          },
+          "response": {
+            "type": "string",
+            "description": "SMTP response code and message indicating the reason the delivery succeeded or failed"
+          },
+          "attempt": {
+            "pattern": "^[0-9]\u002B$",
+            "type": "string",
+            "description": "The number of delivery attempts made for this email (zero-based counting)."
+          },
+          "domain": {
+            "pattern": "^.\u002B\\..\u002B$",
+            "type": "string",
+            "description": "The domain part of the recipient\u0027s email address.",
+            "example": "example.com"
+          },
+          "from": {
+            "type": "string",
+            "description": "The email address of the sender.\nThis may not always be a valid email address.\n"
+          },
+          "pool": {
+            "$ref": "#/components/schemas/OutboundIpPoolMetadata"
+          },
+          "message": {
+            "type": "string",
+            "description": "A detailed error message indicating why the email was dropped."
+          },
+          "sg_content_type": {
+            "$ref": "#/components/schemas/EngagementUrlContentType"
+          },
+          "sg_machine_open": {
+            "$ref": "#/components/schemas/SgMachineOpen"
+          },
+          "send_at": {
+            "type": "integer",
+            "description": "The Unix timestamp in seconds of when the email is scheduled to be sent.",
+            "format": "int64"
+          },
+          "recv_msgid": {
+            "type": "string",
+            "description": "Received Message ID, a string that uniquely identifies the mail send request"
+          },
+          "api_key_id": {
+            "maxLength": 50,
+            "pattern": "^$|^[A-Za-z0-9_-]\u002B$",
+            "type": "string",
+            "description": "The ID of the API Key used to authenticate the sending request for the message."
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "client_ip": {
+            "type": "string",
+            "description": "IPv4 or IPv6 address.",
+            "example": "192.168.1.1"
+          },
+          "protocol": {
+            "type": "string",
+            "example": "HTTP"
+          },
+          "recipient_count": {
+            "type": "integer",
+            "description": "Number of recipients."
+          },
+          "reseller_id": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "description": "Size of the email in bytes."
+          },
+          "v3_payload_details": {
+            "$ref": "#/components/schemas/ReceivedEventV3PayloadDetailsProperty"
+          },
+          "date": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string",
+            "description": "A date in the format YYYY-MM-DD, after converting the timestamp to the customer\u0027s timezone.\n"
           }
         },
         "description": "The union of all possible event types for email logs.\n",
@@ -32381,10 +32610,12 @@
         }
       },
       "SgMachineOpen": {
+        "enum": [
+          true
+        ],
         "type": "boolean",
         "additionalProperties": false,
-        "description": "Indicates whether the open was detected as being performed by a machine rather than a human.\nThe field is omitted if the value would be false.\n",
-        "default": true
+        "description": "Indicates whether the open was detected as being performed by a machine rather than a human.\nThe field is omitted if the value would be false.\n"
       },
       "EngagementUrlOffset": {
         "type": "object",
@@ -32835,8 +33066,7 @@
             "$ref": "#/components/schemas/EngagementUrlContentType"
           },
           "sg_machine_open": {
-            "type": "boolean",
-            "description": "Indicates whether the open was detected as being performed by a machine rather than a human.\nThe field is omitted if the value would be false.\n"
+            "$ref": "#/components/schemas/SgMachineOpen"
           },
           "custom_args": {
             "$ref": "#/components/schemas/OpenEventCustomArgs"
@@ -33669,11 +33899,11 @@
           },
           "status": {
             "type": "string",
-            "description": "\u0022The job state. Allowed values: \u0060pending\u0060, \u0060completed\u0060, \u0060errored\u0060, or \u0060failed\u0060.\u0022"
+            "description": "The job state. Allowed values: \u0060pending\u0060, \u0060completed\u0060, \u0060errored\u0060, or \u0060failed\u0060."
           },
           "job_type": {
             "type": "string",
-            "description": "\u0022The job type. Allowed values: \u0060upsert\u0060, or \u0060delete\u0060.\u0022"
+            "description": "The job type. Allowed values: \u0060upsert\u0060, or \u0060delete\u0060."
           },
           "results": {
             "$ref": "#/components/schemas/ContactImportResults"
@@ -36346,10 +36576,18 @@
         }
       },
       "TsgReverseDnsV3Valid": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
       "TsgReverseDnsV3Valid1": {
+        "enum": [
+          true,
+          false
+        ],
         "type": "boolean",
         "additionalProperties": false
       },
@@ -39526,7 +39764,7 @@
           },
           "dropped": {
             "type": "boolean",
-            "description": "\u0022Set this property to \u0060true\u0060 to receive dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.\u0022"
+            "description": "Set this property to \u0060true\u0060 to receive dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota."
           },
           "friendly_name": {
             "type": "string",
@@ -39639,7 +39877,7 @@
           },
           "dropped": {
             "type": "boolean",
-            "description": "\u0022Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.\u0022"
+            "description": "Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota."
           },
           "friendly_name": {
             "type": "string",
@@ -39745,7 +39983,7 @@
           },
           "dropped": {
             "type": "boolean",
-            "description": "\u0022Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.\u0022"
+            "description": "Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota."
           },
           "friendly_name": {
             "type": "string",
@@ -39832,7 +40070,7 @@
           },
           "dropped": {
             "type": "boolean",
-            "description": "\u0022Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.\u0022"
+            "description": "Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota."
           },
           "friendly_name": {
             "type": "string",
@@ -39923,7 +40161,7 @@
           },
           "dropped": {
             "type": "boolean",
-            "description": "\u0022Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.\u0022"
+            "description": "Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a \u0060reason\u0060 property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota."
           },
           "friendly_name": {
             "type": "string",
@@ -41229,7 +41467,7 @@
       },
       "PostMailSendRequestHeaders": {
         "type": "object",
-        "description": "\u0022A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060.\u0022"
+        "description": "A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060."
       },
       "PostMailSendRequestAsm": {
         "required": [
@@ -41356,7 +41594,7 @@
         "properties": {
           "w1": {
             "type": "string",
-            "description": "\u0022The properties in this object are made up of a key (the custom field ID) and value you want associated with that custom field. For example \u0060{\\\u0022w1\\\u0022: \\\u0022coffee\\\u0022}\u0060.\u0022"
+            "description": "The properties in this object are made up of a key (the custom field ID) and value you want associated with that custom field. For example \u0060{\u0022w1\u0022: \u0022coffee\u0022}\u0060."
           }
         },
         "description": "An object of custom field IDs and the values you want to associate with those custom fields. You can retrieve the IDs of your custom fields from the [Get All Field Definitions endpoint](https://docs.sendgrid.com/api-reference/custom-fields/get-all-field-definitions).",
@@ -42731,7 +42969,7 @@
         "type": "object",
         "properties": {
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Valid4"
           },
           "type": {
             "$ref": "#/components/schemas/TsgLinkBrandingV3Type"
@@ -42756,7 +42994,7 @@
         "type": "object",
         "properties": {
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Valid5"
           },
           "type": {
             "$ref": "#/components/schemas/TsgLinkBrandingV3Type1"
@@ -42782,7 +43020,7 @@
       },
       "PostMailSendRequestPersonalizationsItemHeaders": {
         "type": "object",
-        "description": "\u0022A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060.\u0022"
+        "description": "A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060."
       },
       "PostMailSendRequestPersonalizationsItemSubstitutions": {
         "maxProperties": 10000,
@@ -43421,16 +43659,16 @@
           },
           "email_to": {
             "type": "string",
-            "description": "\u0022The email address the alert will be sent to.\nExample: test@example.com\u0022",
+            "description": "The email address the alert will be sent to.\nExample: test@example.com",
             "format": "email"
           },
           "frequency": {
             "type": "string",
-            "description": "\u0022Required for stats_notification. How frequently the alert will be sent.\nExample: daily\u0022"
+            "description": "Required for stats_notification. How frequently the alert will be sent.\nExample: daily"
           },
           "percentage": {
             "type": "integer",
-            "description": "\u0022Required for usage_limit. When this usage threshold is reached, the alert will be sent.\nExample: 90\u0022"
+            "description": "Required for usage_limit. When this usage threshold is reached, the alert will be sent.\nExample: 90"
           }
         },
         "example": {
@@ -43492,15 +43730,15 @@
         "properties": {
           "email_to": {
             "type": "string",
-            "description": "\u0022The new email address you want your alert to be sent to.\nExample: test@example.com\u0022"
+            "description": "The new email address you want your alert to be sent to.\nExample: test@example.com"
           },
           "frequency": {
             "type": "string",
-            "description": "\u0022The new frequency at which to send the stats_notification alert.\nExample: monthly\u0022"
+            "description": "The new frequency at which to send the stats_notification alert.\nExample: monthly"
           },
           "percentage": {
             "type": "integer",
-            "description": "\u0022The new percentage threshold at which the usage_limit alert will be sent.\nExample: 90\u0022"
+            "description": "The new percentage threshold at which the usage_limit alert will be sent.\nExample: 90"
           }
         },
         "example": {
@@ -45221,7 +45459,7 @@
             "description": "The subdomain to create the link branding for. Must be different from the subdomain you used for authenticating your domain."
           },
           "default": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/DefaultType"
           },
           "region": {
             "$ref": "#/components/schemas/TsgLinkBrandingV3Region"
@@ -45243,7 +45481,7 @@
         "type": "object",
         "properties": {
           "default": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Default1"
           }
         },
         "example": {
@@ -45263,7 +45501,7 @@
             "description": "The ID of the branded link."
           },
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Valid"
           },
           "validation_results": {
             "$ref": "#/components/schemas/TsgLinkBrandingV3ValidateBrandedLink200ResponseValidationResults"
@@ -47534,7 +47772,7 @@
             "description": "The ID of the reverse DNS record."
           },
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/TsgReverseDnsV3Valid"
           },
           "validation_results": {
             "$ref": "#/components/schemas/TsgReverseDnsV3ValidateReverseDns200ResponseValidationResults"
@@ -49341,7 +49579,7 @@
           },
           "frequency": {
             "type": "string",
-            "description": "\u0022If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \\\u0022daily\\\u0022, \\\u0022weekly\\\u0022, or \\\u0022monthly\\\u0022.\u0022"
+            "description": "If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \u0022daily\u0022, \u0022weekly\u0022, or \u0022monthly\u0022."
           },
           "id": {
             "type": "integer",
@@ -49359,11 +49597,6 @@
             "description": "If the alert is of type usage_limit, this indicates the percentage of email usage that must be reached before the alert will be sent."
           }
         }
-      },
-      "TsgAlertsV3DeleteAlert204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgAlertsV3UpdateAlert200Response": {
         "required": [
@@ -49385,7 +49618,7 @@
           },
           "frequency": {
             "type": "string",
-            "description": "\u0022If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \\\u0022daily\\\u0022, \\\u0022weekly\\\u0022, or \\\u0022monthly\\\u0022.\u0022"
+            "description": "If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \u0022daily\u0022, \u0022weekly\u0022, or \u0022monthly\u0022."
           },
           "id": {
             "type": "integer",
@@ -49425,21 +49658,6 @@
             }
           }
         }
-      },
-      "TsgDomainAuthenticationV3DeleteAuthenticatedDomain204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TsgDomainAuthenticationV3DisassociateSubuserFromDomain204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TsgDomainAuthenticationV3DisassociateAuthenticatedDomainFromUser204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgDomainAuthenticationV3ListAllAuthenticatedDomainWithUser200ResponseSchema": {
         "type": "array",
@@ -49486,11 +49704,6 @@
         "items": {
           "$ref": "#/components/schemas/IpPools200"
         }
-      },
-      "TsgIpAccessManagementV3DeleteAllowedIp204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgIpAddressManagementV3AddIp201Response": {
         "type": "object",
@@ -49585,16 +49798,6 @@
         "items": {
           "$ref": "#/components/schemas/LinkBranding200"
         }
-      },
-      "TsgLinkBrandingV3DeleteBrandedLink204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TsgLinkBrandingV3DisassociateBrandedLinkFromSubuser204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgLmcCampaignsV3CreateCampaign401ResponseSchema": {
         "type": "object"
@@ -50163,11 +50366,6 @@
           "$ref": "#/components/schemas/ReverseDns"
         }
       },
-      "TsgReverseDnsV3DeleteReverseDns204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgScheduledSendsV3ListScheduledSend200ResponseSchema": {
         "type": "array",
         "items": {
@@ -50255,11 +50453,6 @@
       "TsgSubusersV3CreateSubuser500ResponseSchema": {
         "type": "object"
       },
-      "TsgSubusersV3UpdateSubuserWebsiteAccess200Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgSubusersV3UpdateSubuserIpRequestRequestBody": {
         "type": "array",
         "items": {
@@ -50286,11 +50479,6 @@
           "$ref": "#/components/schemas/SuppressionGroup"
         }
       },
-      "TsgSuppressionsV3DeleteAsmGroup204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgSuppressionsV3ListSuppressionFromAsmGroup200ResponseSchema": {
         "type": "array",
         "items": {
@@ -50298,11 +50486,6 @@
           "format": "email"
         },
         "description": "The list of email addresses belonging to the given suppression group."
-      },
-      "TsgSuppressionsV3DeleteSuppressionFromAsmGroup204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgSuppressionsV3SearchSuppressionFromAsmGroup200ResponseSchema": {
         "type": "array",
@@ -50324,21 +50507,11 @@
           "$ref": "#/components/schemas/BlocksResponseItem"
         }
       },
-      "TsgSuppressionsV3DeleteSuppressionBlocks204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgSuppressionsV3GetSuppressionBlock200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BlocksResponseItem"
         }
-      },
-      "TsgSuppressionsV3DeleteSuppressionBlock204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgSuppressionsV3ListSuppressionBounces200ResponseSchema": {
         "type": "array",
@@ -50352,22 +50525,12 @@
           "$ref": "#/components/schemas/BounceResponse"
         }
       },
-      "TsgSuppressionsV3DeleteGlobalSuppression204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgSuppressionsV3ListInvalidEmail200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/InvalidEmail"
         },
         "description": "The list of invalid email addresses."
-      },
-      "TsgSuppressionsV3DeleteInvalidEmails204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgSuppressionsV3GetInvalidEmail200ResponseSchema": {
         "maxItems": 1,
@@ -50378,32 +50541,17 @@
         },
         "description": "A specific invalid email."
       },
-      "TsgSuppressionsV3DeleteInvalidEmail204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgSuppressionsV3ListSpamReport200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SpamReportsResponseItem"
         }
       },
-      "TsgSuppressionsV3DeleteSpamReports204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "TsgSuppressionsV3GetSpamReport200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SpamReportsResponseItem"
         }
-      },
-      "TsgSuppressionsV3DeleteSpamReport204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgSuppressionsV3ListGlobalSuppression200ResponseSchema": {
         "type": "array",
@@ -50545,16 +50693,6 @@
           }
         }
       },
-      "TsgTemplatesV3DeleteTemplate204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TsgTemplatesV3DeleteTemplateVersion204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "GetUserAccountResponse": {
         "title": "GET User Account response",
         "required": [
@@ -50585,11 +50723,6 @@
             }
           }
         }
-      },
-      "TsgWebhooksV3TestEventWebhook201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TsgWebhooksV3ListParseSetting200Response": {
         "type": "object",
@@ -50657,7 +50790,7 @@
       },
       "PostMailSendRequestHeadersProperty": {
         "type": "object",
-        "description": "\u0022A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060.\u0022"
+        "description": "A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060."
       },
       "BounceEventCustomArgs": {
         "type": "object",
@@ -50784,7 +50917,7 @@
       },
       "PostMailSendRequestPersonalizationsItemHeadersProperty": {
         "type": "object",
-        "description": "\u0022A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060.\u0022"
+        "description": "A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: \u0060x-sg-id\u0060, \u0060x-sg-eid\u0060, \u0060received\u0060, \u0060dkim-signature\u0060, \u0060Content-Type\u0060, \u0060Content-Transfer-Encoding\u0060, \u0060To\u0060, \u0060From\u0060, \u0060Subject\u0060, \u0060Reply-To\u0060, \u0060CC\u0060, \u0060BCC\u0060."
       },
       "PostMailSendRequestPersonalizationsItemSubstitutionsProperty": {
         "type": "object",
@@ -51787,7 +51920,7 @@
           },
           "status": {
             "type": "string",
-            "description": "\u0022Allowed values: \u0060pending\u0060, \u0060ready\u0060, or \u0060failure\u0060.\u0022"
+            "description": "Allowed values: \u0060pending\u0060, \u0060ready\u0060, or \u0060failure\u0060."
           },
           "created_at": {
             "type": "string",
@@ -51814,7 +51947,7 @@
           },
           "export_type": {
             "type": "string",
-            "description": "\u0022Allowed types: \u0060contacts_export\u0060, \u0060list_export\u0060, or \u0060segment_export\u0060.\u0022"
+            "description": "Allowed types: \u0060contacts_export\u0060, \u0060list_export\u0060, or \u0060segment_export\u0060."
           },
           "segments": {
             "type": "array",
@@ -52045,7 +52178,7 @@
           },
           "status": {
             "type": "string",
-            "description": "\u0022Allowed values: \u0060pending\u0060, \u0060ready\u0060, or \u0060failure\u0060.\u0022"
+            "description": "Allowed values: \u0060pending\u0060, \u0060ready\u0060, or \u0060failure\u0060."
           },
           "created_at": {
             "type": "string",
@@ -52072,7 +52205,7 @@
           },
           "export_type": {
             "type": "string",
-            "description": "\u0022Allowed types: \u0060contacts_export\u0060, \u0060list_export\u0060, or \u0060segment_export\u0060.\u0022"
+            "description": "Allowed types: \u0060contacts_export\u0060, \u0060list_export\u0060, or \u0060segment_export\u0060."
           },
           "segments": {
             "type": "array",
@@ -54226,7 +54359,7 @@
         "type": "object",
         "properties": {
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Valid1"
           },
           "reason": {
             "type": "string",
@@ -54243,7 +54376,7 @@
         "type": "object",
         "properties": {
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Valid2"
           },
           "reason": {
             "type": "string",
@@ -54373,7 +54506,7 @@
         "type": "object",
         "properties": {
           "valid": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/TsgReverseDnsV3Valid1"
           },
           "reason": {
             "type": "string",
@@ -56693,7 +56826,7 @@
       "OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56701,7 +56834,7 @@
       "tsg_api_keys_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56709,7 +56842,7 @@
       "tsg_domain_authentication_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56727,7 +56860,7 @@
       "tsg_enforced_tls_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56745,7 +56878,7 @@
       "tsg_ip_access_management_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56878,7 +57011,7 @@
       "tsg_link_branding_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56886,7 +57019,7 @@
       "tsg_lmc_campaigns_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56904,7 +57037,7 @@
       "tsg_lmc_contactdb_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56912,7 +57045,7 @@
       "tsg_lmc_senders_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56920,7 +57053,7 @@
       "tsg_mail_settings_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -56990,7 +57123,7 @@
       "tsg_mc_senders_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57060,7 +57193,7 @@
       "StartDateBaseProps": {
         "name": "start_date",
         "in": "query",
-        "description": "\u0022Format: \u0060YYYY-MM-DD\u0060. If this parameter is included, the stats\u0027 start date is included in the search.\u0022",
+        "description": "Format: \u0060YYYY-MM-DD\u0060. If this parameter is included, the stats\u0027 start date is included in the search.",
         "schema": {
           "type": "string",
           "format": "date",
@@ -57070,7 +57203,7 @@
       "EndDateBaseProps": {
         "name": "end_date",
         "in": "query",
-        "description": "\u0022Format: \u0060YYYY-MM-DD\u0060.If this parameter is included, the stats\u0027 end date is included in the search.\u0022",
+        "description": "Format: \u0060YYYY-MM-DD\u0060.If this parameter is included, the stats\u0027 end date is included in the search.",
         "schema": {
           "type": "string",
           "format": "date",
@@ -57128,7 +57261,7 @@
       "tsg_partner_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57146,7 +57279,7 @@
       "tsg_recipients_data_erasure_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57154,7 +57287,7 @@
       "tsg_reverse_dns_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57172,7 +57305,7 @@
       "tsg_scheduled_sends_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57180,7 +57313,7 @@
       "tsg_scopes_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57218,7 +57351,7 @@
       "tsg_seq_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57302,7 +57435,7 @@
       "tsg_stats_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57337,7 +57470,7 @@
       "tsg_suppressions_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). It is important to use the Base URL that corresponds to the region of the account or Subuser you specify in the \u0060on-behalf-of\u0060 header. See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). It is important to use the Base URL that corresponds to the region of the account or Subuser you specify in the \u0060on-behalf-of\u0060 header. See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57365,7 +57498,7 @@
       "tsg_teammates_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57383,7 +57516,7 @@
       "tsg_templates_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57391,7 +57524,7 @@
       "tsg_tracking_settings_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57399,7 +57532,7 @@
       "tsg_user_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -57429,7 +57562,7 @@
       "tsg_webhooks_v3_OnBehalfOf": {
         "name": "on-behalf-of",
         "in": "header",
-        "description": "\u0022The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \\\u0022account-id\\\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.\u0022",
+        "description": "The \u0060on-behalf-of\u0060 header allows you to make API calls from a parent account on behalf of the parent\u0027s Subusers or customer accounts. You will use the parent account\u0027s API key when using this header. When making a call on behalf of a customer account, the property value should be \u0022account-id\u0022 followed by the customer account\u0027s ID (e.g., \u0060on-behalf-of: account-id \u003Caccount-id\u003E\u0060). When making a call on behalf of a Subuser, the property value should be the Subuser\u0027s username (e.g., \u0060on-behalf-of: \u003Csubuser-username\u003E\u0060). See [**On Behalf Of**](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/on-behalf-of) for more information.",
         "schema": {
           "type": "string"
         }
@@ -58372,12 +58505,6 @@
         "type": "http",
         "description": "Twilio SendGrid requires you to authenticate with its APIs using an API key. The API key must be sent as a bearer token in the Authorization header.",
         "scheme": "bearer"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },

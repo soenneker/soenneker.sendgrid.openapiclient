@@ -36,7 +36,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Send
         /// <summary>
         /// *The Mail Send operation allows you to send email over SendGrid&apos;s v3 Web API*For an overview of this API, including its features and limitations, please see the [Mail Send API overview page](https://www.twilio.com/docs/sendgrid/api-reference/mail-send)The overview page also includes links to SendGrid&apos;s Email API quickstarts and helper libraries to get you working with this endpoint even faster.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,11 +48,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Send
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailV3ErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -68,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Send
                 { "413", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailV3ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// *The Mail Send operation allows you to send email over SendGrid&apos;s v3 Web API*For an overview of this API, including its features and limitations, please see the [Mail Send API overview page](https://www.twilio.com/docs/sendgrid/api-reference/mail-send)The overview page also includes links to SendGrid&apos;s Email API quickstarts and helper libraries to get you working with this endpoint even faster.

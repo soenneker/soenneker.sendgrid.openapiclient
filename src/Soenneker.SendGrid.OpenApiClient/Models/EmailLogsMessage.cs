@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string SgMessageIdCreatedAt { get; set; }
 #endif
-        /// <summary>&quot;**A summary of the message status based on which events have occurred.**- processed: `processed`- dropped: `drop`, `cancel_drop`- deferred: `deferred`- bounced: `bounce`- blocked: `bounce` (type=`block`)- delivered: `delivered`, `click`, `open`&quot;</summary>
+        /// <summary>**A summary of the message status based on which events have occurred.**- processed: `processed`- dropped: `drop`, `cancel_drop`- deferred: `deferred`- bounced: `bounce`- blocked: `bounce` (type=`block`)- delivered: `delivered`, `click`, `open`</summary>
         public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus? Status { get; set; }
         /// <summary>Email subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

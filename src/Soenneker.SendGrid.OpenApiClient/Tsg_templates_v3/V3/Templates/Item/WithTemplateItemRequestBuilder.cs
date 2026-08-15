@@ -130,7 +130,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

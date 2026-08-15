@@ -36,18 +36,17 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
         /// <summary>
         /// **This endpoint is used to share DNS records with a colleagues**Use this endpoint to send SendGrid-generated DNS record information to a co-worker so they can enter it into your DNS provider to validate your domain and link branding. What type of records are sent will depend on whether you have chosen Automated Security or not. When using Automated Security, SendGrid provides you with three CNAME records. If you turn Automated Security off, you are instead given TXT and MX records.If you pass a `link_id` to this endpoint, the generated email will supply the DNS records necessary to complete [Link Branding](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-link-branding/) setup. If you pass a `domain_id` to this endpoint, the generated email will supply the DNS records needed to complete [Domain Authentication](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-domain-authentication/). Passing both IDs will generate an email with the records needed to complete both setup steps.You can retrieve all your domain IDs from the returned `id` fields for each domain using the &quot;List all authenticated domains&quot; endpoint. You can retrieve all of your link IDs using the &quot;Retrieve all branded links&quot; endpoint.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3EmailDnsRecord400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3EmailDnsRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3EmailDnsRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3EmailDnsRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3EmailDnsRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_domain_authentication_v3.V3.White
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgDomainAuthenticationV3EmailDnsRecord400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint is used to share DNS records with a colleagues**Use this endpoint to send SendGrid-generated DNS record information to a co-worker so they can enter it into your DNS provider to validate your domain and link branding. What type of records are sent will depend on whether you have chosen Automated Security or not. When using Automated Security, SendGrid provides you with three CNAME records. If you turn Automated Security off, you are instead given TXT and MX records.If you pass a `link_id` to this endpoint, the generated email will supply the DNS records necessary to complete [Link Branding](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-link-branding/) setup. If you pass a `domain_id` to this endpoint, the generated email will supply the DNS records needed to complete [Domain Authentication](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-domain-authentication/). Passing both IDs will generate an email with the records needed to complete both setup steps.You can retrieve all your domain IDs from the returned `id` fields for each domain using the &quot;List all authenticated domains&quot; endpoint. You can retrieve all of your link IDs using the &quot;Retrieve all branded links&quot; endpoint.

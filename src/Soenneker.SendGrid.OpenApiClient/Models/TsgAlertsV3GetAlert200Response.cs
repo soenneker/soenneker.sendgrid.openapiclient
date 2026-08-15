@@ -24,7 +24,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string EmailTo { get; set; }
 #endif
-        /// <summary>&quot;If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: \&quot;daily\&quot;, \&quot;weekly\&quot;, or \&quot;monthly\&quot;.&quot;</summary>
+        /// <summary>If the alert is of type stats_notification, this indicates how frequently the stats notifications will be sent. For example: &quot;daily&quot;, &quot;weekly&quot;, or &quot;monthly&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Frequency { get; set; }

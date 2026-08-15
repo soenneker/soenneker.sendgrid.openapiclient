@@ -26,7 +26,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public bool? Deferred { get; set; }
         /// <summary>Indicates if the webhook is configured to send delivered events. Delivered events occur when a message has been successfully delivered to the receiving server.</summary>
         public bool? Delivered { get; set; }
-        /// <summary>&quot;Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a `reason` property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.&quot;</summary>
+        /// <summary>Indicates if the webhook is configured to send dropped events. Dropped events occur when your message is not delivered by Twilio SendGrid. Dropped events are accomponied by a `reason` property, which indicates why the message was dropped. Reasons for a dropped message include: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota.</summary>
         public bool? Dropped { get; set; }
         /// <summary>Indicates if the Event Webhook is enabled.</summary>
         public bool? Enabled { get; set; }

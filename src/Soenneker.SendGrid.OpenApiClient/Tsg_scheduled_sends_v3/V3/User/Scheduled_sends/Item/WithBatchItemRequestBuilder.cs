@@ -36,7 +36,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
         /// <summary>
         /// **This endpoint allows you to delete the cancellation/pause of a scheduled send.**Scheduled sends cancelled less than 10 minutes before the scheduled time are not guaranteed to be cancelled.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse">When receiving a 400 status code</exception>
@@ -46,11 +45,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSends500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -62,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSends500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve the cancel/paused scheduled send information for a specific `batch_id`.**
@@ -99,7 +98,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
         /// <summary>
         /// **This endpoint allows you to update the status of a scheduled send for the given `batch_id`.**If you have already set a `cancel` or `pause` status on a scheduled send using the &quot;Cancel or pause a scheduled send&quot; endpoint, you can update it&apos;s status using this endpoint. Attempting to update a status once it has been set with the &quot;Cancel or pause a scheduled send&quot; endpoint will result in a `400` error.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,11 +108,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSends500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3UpdateScheduledSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3UpdateScheduledSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3UpdateScheduledSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3UpdateScheduledSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -127,7 +125,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSends500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to delete the cancellation/pause of a scheduled send.**Scheduled sends cancelled less than 10 minutes before the scheduled time are not guaranteed to be cancelled.

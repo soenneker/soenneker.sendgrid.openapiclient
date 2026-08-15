@@ -36,7 +36,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <summary>
         /// Removes IP(s) from the specified account.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,11 +49,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -70,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paginated list of IPs associated with the specified account, ordered by most recently added IP.

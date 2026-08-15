@@ -110,7 +110,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Asm.Groups.Ite
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

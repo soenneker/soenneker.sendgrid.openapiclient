@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to create an IP pool.**Before you can create an IP pool, you need to activate the IP in your SendGrid account: 1. Log into your SendGrid account.  1. Navigate to **Settings** and then select **IP Addresses**.  1. Find the IP address you want to activate and then click **Edit**.  1. Check **Allow my account to send mail using this IP address**.1. Click **Save**.&quot;
+        /// **This endpoint allows you to create an IP pool.**Before you can create an IP pool, you need to activate the IP in your SendGrid account: 1. Log into your SendGrid account.  1. Navigate to **Settings** and then select **IP Addresses**.  1. Find the IP address you want to activate and then click **Edit**.  1. Check **Allow my account to send mail using this IP address**.1. Click **Save**.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpPools200"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ips_v3.V3.Ips.Pools
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to create an IP pool.**Before you can create an IP pool, you need to activate the IP in your SendGrid account: 1. Log into your SendGrid account.  1. Navigate to **Settings** and then select **IP Addresses**.  1. Find the IP address you want to activate and then click **Edit**.  1. Check **Allow my account to send mail using this IP address**.1. Click **Save**.&quot;
+        /// **This endpoint allows you to create an IP pool.**Before you can create an IP pool, you need to activate the IP in your SendGrid account: 1. Log into your SendGrid account.  1. Navigate to **Settings** and then select **IP Addresses**.  1. Find the IP address you want to activate and then click **Edit**.  1. Check **Allow my account to send mail using this IP address**.1. Click **Save**.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

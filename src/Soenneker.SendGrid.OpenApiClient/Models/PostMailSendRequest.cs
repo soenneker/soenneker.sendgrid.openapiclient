@@ -70,7 +70,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom From { get; set; }
 #endif
-        /// <summary>&quot;A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: `x-sg-id`, `x-sg-eid`, `received`, `dkim-signature`, `Content-Type`, `Content-Transfer-Encoding`, `To`, `From`, `Subject`, `Reply-To`, `CC`, `BCC`.&quot;</summary>
+        /// <summary>A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: `x-sg-id`, `x-sg-eid`, `received`, `dkim-signature`, `Content-Type`, `Content-Transfer-Encoding`, `To`, `From`, `Subject`, `Reply-To`, `CC`, `BCC`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty? Headers { get; set; }

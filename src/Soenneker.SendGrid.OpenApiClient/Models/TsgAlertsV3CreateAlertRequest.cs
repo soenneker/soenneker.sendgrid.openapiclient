@@ -14,7 +14,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The email address the alert will be sent to.Example: test@example.com&quot;</summary>
+        /// <summary>The email address the alert will be sent to.Example: test@example.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailTo { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string EmailTo { get; set; }
 #endif
-        /// <summary>&quot;Required for stats_notification. How frequently the alert will be sent.Example: daily&quot;</summary>
+        /// <summary>Required for stats_notification. How frequently the alert will be sent.Example: daily</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Frequency { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string Frequency { get; set; }
 #endif
-        /// <summary>&quot;Required for usage_limit. When this usage threshold is reached, the alert will be sent.Example: 90&quot;</summary>
+        /// <summary>Required for usage_limit. When this usage threshold is reached, the alert will be sent.Example: 90</summary>
         public int? Percentage { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.SendGrid.OpenApiClient.Models.TsgAlertsV3Type? Type { get; set; }

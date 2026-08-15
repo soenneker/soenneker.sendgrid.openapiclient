@@ -116,7 +116,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

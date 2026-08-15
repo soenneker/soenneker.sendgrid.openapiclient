@@ -36,18 +36,17 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
         /// <summary>
         /// **This endpoint allows you to delete a single design**.Be sure to check the ID of the design you intend to delete before making this request; deleting a design is a permanent action.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ApiErrors">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ApiErrors">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -56,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.ApiErrors.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.ApiErrors.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a single design**.A GET request to `/designs/{id}` will retrieve details about a specific design in your Design Library.This endpoint is valuable when retrieving information stored in a field that you wish to update using a PATCH request.
@@ -84,7 +83,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to edit a design**.The Design API supports PATCH requests, which allow you to make partial updates to a single design. Passing data to a specific field will update only the data stored in that field; all other fields will be unaltered.For example, updating a design&apos;s name requires that you make a PATCH request to this endpoint with data specified for the `name` field only.```{    \&quot;name\&quot;: \&quot;&lt;Updated Name&gt;\&quot;}```&quot;
+        /// **This endpoint allows you to edit a design**.The Design API supports PATCH requests, which allow you to make partial updates to a single design. Passing data to a specific field will update only the data stored in that field; all other fields will be unaltered.For example, updating a design&apos;s name requires that you make a PATCH request to this endpoint with data specified for the `name` field only.```{    &quot;name&quot;: &quot;&lt;Updated Name&gt;&quot;}```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +110,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to duplicate one of your existing designs**.Modifying an existing design is often the easiest way to create something new.You are not required to pass any data in the body of a request to this endpoint. If you choose to leave the `name` field blank, your duplicate will be assigned the name of the design it was copied from with the text \&quot;Duplicate: \&quot; prepended to it. This name change is only a convenience, as the duplicate will be assigned a unique ID that differentiates it from your other designs.You can modify your duplicate’s name at the time of creation by passing an updated value to the `name` field when making the initial request.More on retrieving design IDs can be found below.&quot;
+        /// **This endpoint allows you to duplicate one of your existing designs**.Modifying an existing design is often the easiest way to create something new.You are not required to pass any data in the body of a request to this endpoint. If you choose to leave the `name` field blank, your duplicate will be assigned the name of the design it was copied from with the text &quot;Duplicate: &quot; prepended to it. This name change is only a convenience, as the duplicate will be assigned a unique ID that differentiates it from your other designs.You can modify your duplicate’s name at the time of creation by passing an updated value to the `name` field when making the initial request.More on retrieving design IDs can be found below.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.DesignOutput"/></returns>
         /// <param name="body">The request body</param>
@@ -176,7 +175,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to edit a design**.The Design API supports PATCH requests, which allow you to make partial updates to a single design. Passing data to a specific field will update only the data stored in that field; all other fields will be unaltered.For example, updating a design&apos;s name requires that you make a PATCH request to this endpoint with data specified for the `name` field only.```{    \&quot;name\&quot;: \&quot;&lt;Updated Name&gt;\&quot;}```&quot;
+        /// **This endpoint allows you to edit a design**.The Design API supports PATCH requests, which allow you to make partial updates to a single design. Passing data to a specific field will update only the data stored in that field; all other fields will be unaltered.For example, updating a design&apos;s name requires that you make a PATCH request to this endpoint with data specified for the `name` field only.```{    &quot;name&quot;: &quot;&lt;Updated Name&gt;&quot;}```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -198,7 +197,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3.V3.Designs.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**This endpoint allows you to duplicate one of your existing designs**.Modifying an existing design is often the easiest way to create something new.You are not required to pass any data in the body of a request to this endpoint. If you choose to leave the `name` field blank, your duplicate will be assigned the name of the design it was copied from with the text \&quot;Duplicate: \&quot; prepended to it. This name change is only a convenience, as the duplicate will be assigned a unique ID that differentiates it from your other designs.You can modify your duplicate’s name at the time of creation by passing an updated value to the `name` field when making the initial request.More on retrieving design IDs can be found below.&quot;
+        /// **This endpoint allows you to duplicate one of your existing designs**.Modifying an existing design is often the easiest way to create something new.You are not required to pass any data in the body of a request to this endpoint. If you choose to leave the `name` field blank, your duplicate will be assigned the name of the design it was copied from with the text &quot;Duplicate: &quot; prepended to it. This name change is only a convenience, as the duplicate will be assigned a unique ID that differentiates it from your other designs.You can modify your duplicate’s name at the time of creation by passing an updated value to the `name` field when making the initial request.More on retrieving design IDs can be found below.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

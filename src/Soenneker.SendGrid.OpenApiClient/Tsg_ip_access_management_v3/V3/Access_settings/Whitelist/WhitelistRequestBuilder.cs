@@ -49,7 +49,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_access_management_v3.V3.Access
         /// <summary>
         /// **This endpoint allows you to remove one or more IP addresses from your list of allowed addresses.**To remove one or more IP addresses, pass this endpoint an array containing the ID(s) associated with the IP(s) you intend to remove. You can retrieve the IDs associated with your allowed IP addresses using the &quot;Retrieve a list of currently allowed IPs&quot; endpoint.It is possible to remove your own IP address, which will block access to your account. You will need to submit a [support ticket](https://sendgrid.com/docs/ui/account-and-settings/support/) if this happens. For this reason, it is important to double check that you are removing only the IPs you intend to remove when using this endpoint.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,11 +58,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_access_management_v3.V3.Access
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpAccessManagement500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAccessManagementV3DeleteAllowedIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAccessManagementV3DeleteAllowedIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAccessManagementV3DeleteAllowedIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAccessManagementV3DeleteAllowedIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -75,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_access_management_v3.V3.Access
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAccessManagementV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.IpAccessManagement500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a list of IP addresses that are currently allowed to access your account.**Each IP address returned to you will have `created_at` and `updated_at` dates. Each IP will also be associated with an `id` that can be used to remove the address from your allow list.

@@ -42,18 +42,17 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
         /// <summary>
         /// **This endpoint allows you to delete one Single Send using a Single Send ID.**To first retrieve all your Single Sends&apos; IDs, you can make a GET request to the `/marketing/singlensends` endpoint.Please note that a `DELETE` request is permanent, and your Single Send will not be recoverable after deletion.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -62,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3.V3.Marketing.Si
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3DeleteSingleSend500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve details about one Single Send using a Single Send ID.**You can retrieve all of your Single Sends by making a GET request to the `/marketing/singlesends` endpoint.
