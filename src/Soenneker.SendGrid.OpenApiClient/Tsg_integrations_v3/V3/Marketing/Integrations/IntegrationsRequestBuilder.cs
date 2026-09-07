@@ -142,7 +142,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Inte
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_integrations_v3.V3.Marketing.Integrations.IntegrationsRequestBuilder.IntegrationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_integrations_v3/v3/marketing/integrations?ids={ids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tsg_integrations_v3/v3/marketing/integrations{?ids*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

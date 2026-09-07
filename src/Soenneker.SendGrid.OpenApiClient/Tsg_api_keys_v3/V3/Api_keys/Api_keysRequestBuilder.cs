@@ -164,8 +164,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Api_keysRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

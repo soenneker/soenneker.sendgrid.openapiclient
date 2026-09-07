@@ -83,10 +83,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Scopes associated to teammate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3GetTeammate200ResponseScopesItem>? Scopes { get; set; }
+        public UntypedNode? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3GetTeammate200ResponseScopesItem> Scopes { get; set; }
+        public UntypedNode Scopes { get; set; }
 #endif
         /// <summary>(optional) Teammate&apos;s state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +156,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "is_admin", n => { IsAdmin = n.GetBoolValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3GetTeammate200ResponseScopesItem>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3GetTeammate200ResponseScopesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "user_type", n => { UserType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.UserType1>(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("is_admin", IsAdmin);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTeammatesV3GetTeammate200ResponseScopesItem>("scopes", Scopes);
+            writer.WriteObjectValue<UntypedNode>("scopes", Scopes);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("username", Username);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.UserType1>("user_type", UserType);

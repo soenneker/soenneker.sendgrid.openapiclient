@@ -164,8 +164,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Secu
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesItemRequestBuilderDeleteQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("force")]
             public bool? Force { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

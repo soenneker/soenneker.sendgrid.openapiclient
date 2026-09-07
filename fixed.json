@@ -15384,6 +15384,289 @@
         }
       }
     },
+    "/tsg_mc_segments_v3/v3/marketing/segments": {
+      "get": {
+        "tags": [
+          "Segmenting Contacts"
+        ],
+        "summary": "Get List of Segments",
+        "description": "**This endpoint allows you to retrieve a list of segments.**\n\nThe query param \u0060parent_list_ids\u0060 is treated as a filter.  Any match will be returned.  Zero matches will return a response code of 200 with an empty \u0060results\u0060 array.\n\n\u0060parent_list_ids\u0060 | \u0060no_parent_list_id\u0060 | \u0060ids\u0060 | \u0060result\u0060\n-----------------:|:--------------------:|:-------------:|:-------------:\nempty | false | empty | all segments values\nlist_ids | false | empty | segments filtered by list_ids values\nlist_ids |true | empty | segments filtered by list_ids and segments with no parent list_ids empty\nempty | true | empty | segments with no parent list_ids\nanything | anything | ids | segments with matching segment ids |",
+        "operationId": "TsgMcSegmentsV3ListSegment",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "A list of segment IDs to retrieve. When this parameter is included, the \u0060no_parent_list_ids\u0060 and \u0060parent_list_ids\u0060 parameters are ignored and only segments with given IDs are returned.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "parent_list_ids",
+            "in": "query",
+            "description": "A comma separated list of list ids to be used when searching for segments with the specified parent_list_id, no more than 50 is allowed",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "no_parent_list_id",
+            "in": "query",
+            "description": "If set to \u0060true\u0060 segments with an empty value of \u0060parent_list_id\u0060 will be returned in the filter.  If the value is not present it defaults to \u0027false\u0027.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3ListSegment200Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "12099613-91e5-4d09-a900-df7626325288",
+                          "contacts_count": 78434802,
+                          "created_at": "2921-01-27T19:33:36.479Z",
+                          "sample_updated_at": "4685-11-26T07:05:04.660Z",
+                          "updated_at": "2883-07-10T13:13:37.697Z"
+                        },
+                        {
+                          "id": "60c37015-3734-4c8e-b293-68cfa2ae4fa5",
+                          "contacts_count": 34177253,
+                          "created_at": "2575-07-26T23:17:20.984Z",
+                          "sample_updated_at": "3074-09-04T09:49:58.127Z",
+                          "updated_at": "5116-10-15T07:37:40.838Z",
+                          "parent_list_id": "fd38af3d-3f69-4947-8dca-5fa967e7be82",
+                          "name": "amet"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Segments401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Segments403"
+          },
+          "404": {
+            "$ref": "#/components/responses/Segments404"
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3ListSegment500Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tsg_mc_segments_v3/v3/marketing/segments/{segmentId}": {
+      "get": {
+        "tags": [
+          "Segmenting Contacts"
+        ],
+        "summary": "Get Segment by ID",
+        "description": "**This endpoint allows you to retrieve a single segment by ID.**",
+        "operationId": "TsgMcSegmentsV3GetSegment",
+        "parameters": [
+          {
+            "name": "query_json",
+            "in": "query",
+            "description": "Defaults to \u0060false\u0060.  Set to \u0060true\u0060 to return the parsed SQL AST as a JSON object in the field \u0060query_json\u0060",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FullSegment"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "3b049926-0a54-4a91-83f0-086ace63c530",
+                      "contacts_count": -83213117,
+                      "created_at": "2921-01-27T19:33:36.479Z",
+                      "sample_updated_at": "3407-09-25T04:25:02.140Z",
+                      "updated_at": "4389-06-21T16:59:51.403Z",
+                      "contacts_sample": [
+                        {
+                          "id": "e70eac25-1431-4231-bccd-1cfab432301e",
+                          "email": "KLTF@SurgGzlAxCPOqhOUHYNBLsfpfE.trh",
+                          "alternate_emails": [
+                            "dTeJZgU5uN9UYSo@nfIB.ijxg"
+                          ],
+                          "first_name": "ullamco esse culpa do",
+                          "last_name": "officia laboris veniam consequat",
+                          "address_line_1": "in occaecat labore est tempor",
+                          "address_line_2": "magna adipisicing",
+                          "city": "\u019E\u00F3",
+                          "state_province_region": "culpa ut",
+                          "postal_code": -75218567,
+                          "country": "voluptate in in reprehenderit aliquip",
+                          "custom_fields": {
+                            "custom_field_name1": "amet deserunt mollit",
+                            "custom_field_name2": "minim consequat id"
+                          }
+                        },
+                        {
+                          "id": "db637d33-bce1-462c-ae9c-91ec4f761de6",
+                          "email": "t7N5TjDmKhC0@gfdifW.ua",
+                          "alternate_emails": [
+                            "gQol@Xcfilli.hc",
+                            "n4K7OdaVQh@YfsnF.ie",
+                            "TdnvS3nMStREn@miFjGzNDCPZWhiswJNxrFnOYdUAZEpesQ.yxpu",
+                            "xRzGDTTzzbYK@eJ.wpgb",
+                            "iI1rOpx2ct@aZhuYGZBxJLZ.phr"
+                          ],
+                          "first_name": "ea et eu",
+                          "last_name": "velit Ut laborum ipsu",
+                          "address_line_1": "labore",
+                          "address_line_2": "non",
+                          "city": "\u0114\u0238\u0105\u009F\u00C2\u00B8\u0220\u024Fb\u0244",
+                          "state_province_region": "deserunt dolore",
+                          "postal_code": -95171713,
+                          "country": "do",
+                          "list_ids": [
+                            "c712288b-2300-4069-bef4-2e05b5948ec3",
+                            "9003ef29-5eb7-4951-898b-1b102e490d6e"
+                          ],
+                          "custom_fields": {
+                            "custom_field_name1": "amet deserunt mollit",
+                            "custom_field_name2": "minim consequat id"
+                          }
+                        }
+                      ],
+                      "name": "enim et anim",
+                      "query_dsl": "nostrud"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Segments401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Segments403"
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3GetSegment404Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3GetSegment500Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Segmenting Contacts"
+        ],
+        "summary": "Delete Segment",
+        "description": "**This endpoint allows you to delete a segment by \u0060segment_id\u0060.**\n\nNote that deleting a segment does not delete the contacts associated with the segment by default. Contacts associated with a deleted segment will remain in your list of all contacts and any other segments they belong to.",
+        "operationId": "TsgMcSegmentsV3DeleteSegment",
+        "responses": {
+          "202": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3DeleteSegment202ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Segments401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Segments403"
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3DeleteSegment404Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TsgMcSegmentsV3DeleteSegment500Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "segmentId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "maxLength": 36,
+            "minLength": 36,
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ]
+    },
     "/tsg_mc_senders_v3/v3/marketing/senders": {
       "post": {
         "tags": [
@@ -31962,6 +32245,9 @@
         "description": "Summary information for a single message matching the filter.\n"
       },
       "EmailLogsEvent": {
+        "required": [
+          "event"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -32146,6 +32432,9 @@
             "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
             "type": "string",
             "description": "A date in the format YYYY-MM-DD, after converting the timestamp to the customer\u0027s timezone.\n"
+          },
+          "event": {
+            "type": "string"
           }
         },
         "description": "The union of all possible event types for email logs.\n",
@@ -35373,6 +35662,368 @@
             "type": "string",
             "description": "A description of the error."
           }
+        }
+      },
+      "FullSegment": {
+        "title": "full_segment",
+        "required": [
+          "contacts_count",
+          "contacts_sample",
+          "created_at",
+          "id",
+          "name",
+          "query_dsl",
+          "sample_updated_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 36,
+            "minLength": 36,
+            "type": "string",
+            "format": "uuid"
+          },
+          "contacts_count": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "ISO8601 of created timestamp\n",
+            "format": "date-time"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the segment."
+          },
+          "parent_list_id": {
+            "maxLength": 36,
+            "minLength": 36,
+            "type": "string",
+            "description": "The id of the list if this segment is a child of a list.  This implies the query \u0060AND CONTAINS(list_ids, ${parent_list_id})\u0060",
+            "format": "uuid"
+          },
+          "sample_updated_at": {
+            "type": "string",
+            "description": "ISO8601 timestamp the sample was last updated",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "ISO8601 timestamp the object was last updated",
+            "format": "date-time"
+          },
+          "next_sample_update": {
+            "type": "string",
+            "description": "ISO8601 string that is equal to \u0060sample_updated_at\u0060 plus an internally calculated offset that depends on how often contacts enter or exit segments as the scheduled pipeline updates the samples."
+          },
+          "contacts_sample": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3ContactResponse"
+            }
+          },
+          "query_json": {
+            "$ref": "#/components/schemas/FullSegmentQueryJsonProperty"
+          },
+          "parent_list_ids": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The array of list ids to filter contacts on when building this segment. It allows only one such list id for now. We will support more in future"
+          },
+          "query_dsl": {
+            "type": "string",
+            "description": "SQL query which will filter contacts based on the conditions provided"
+          }
+        },
+        "example": {
+          "id": "58567a46-305e-48d1-b4f8-a006c906920e",
+          "contacts_count": 9266921,
+          "created_at": "2085-08-08T21:07:05.692Z",
+          "sample_updated_at": "3407-09-25T04:25:02.140Z",
+          "updated_at": "4431-05-07T22:23:22.352Z",
+          "contacts_sample": [
+            {
+              "id": "c1183ada-b784-49ac-9b1f-50e73578a6dc",
+              "email": "ft88@d.izxx",
+              "external_id": "1234",
+              "alternate_emails": [
+                "yKDUP11FDch@QoU.vwy",
+                "ZNSN5@czAMqPi.at",
+                "7wr51kFVVKlcBSH@DWxOueOZepetzBrku.qosk",
+                "iib-ObtO7Fxz5@vLJPRIFKPOqJGCEqcIDab.ypn"
+              ],
+              "first_name": "est",
+              "last_name": "eiusmod in laboris velit cupidatat",
+              "address_line_1": "sunt aliqua",
+              "address_line_2": "sit proident Lorem veniam labore",
+              "city": "\u009C\u020E\u0163\u0238\u00DB\t\u010D\u000BC\u0141",
+              "state_province_region": "ut proident",
+              "postal_code": 30296612,
+              "country": "do reprehenderit qui",
+              "custom_fields": {
+                "custom_field_name2": "in consectetur ut aliqua sint",
+                "custom_field_name1": "esse"
+              }
+            }
+          ],
+          "name": "culpa",
+          "query_dsl": "cillum eiusmod",
+          "parent_list_id": "2357714d-3d82-4c80-826c-b44a4147f81c",
+          "next_sample_update": ""
+        }
+      },
+      "SegmentSummary": {
+        "title": "segment_summary",
+        "required": [
+          "id",
+          "contacts_count",
+          "created_at",
+          "sample_updated_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 36,
+            "minLength": 36,
+            "type": "string",
+            "format": "uuid"
+          },
+          "contacts_count": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "ISO8601 of created timestamp\n",
+            "format": "date-time"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "parent_list_id": {
+            "maxLength": 36,
+            "minLength": 36,
+            "type": "string",
+            "description": "The id of the list if this segment is a child of a list.  This implies the query \u0060AND CONTAINS(list_ids, ${parent_list_id})\u0060",
+            "format": "uuid"
+          },
+          "sample_updated_at": {
+            "type": "string",
+            "description": "ISO8601 timestamp the sample was last updated",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "ISO8601 timestamp the object was last updated",
+            "format": "date-time"
+          },
+          "next_sample_update": {
+            "type": "string",
+            "description": "ISO8601 string that is equal to \u0060sample_updated_at\u0060 plus an internally calculated offset that depends on how often contacts enter or exit segments as the scheduled pipeline updates the samples."
+          }
+        }
+      },
+      "TsgMcSegmentsV3ContactResponse": {
+        "title": "contact_response",
+        "required": [
+          "id",
+          "alternate_emails",
+          "first_name",
+          "last_name",
+          "address_line_1",
+          "address_line_2",
+          "city",
+          "state_province_region",
+          "postal_code",
+          "country",
+          "custom_fields"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 36,
+            "pattern": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
+            "type": "string",
+            "description": "ID assigned to a contact when added to the system.",
+            "format": "uuid"
+          },
+          "email": {
+            "maxLength": 254,
+            "minLength": 3,
+            "type": "string",
+            "description": "Email of the contact. This is a reserved field.",
+            "format": "email"
+          },
+          "phone_number_id": {
+            "type": "string",
+            "description": "The contact\u0027s Phone Number ID. This must be a valid phone number."
+          },
+          "external_id": {
+            "maxLength": 254,
+            "type": "string",
+            "description": "The contact\u0027s External ID."
+          },
+          "anonymous_id": {
+            "maxLength": 254,
+            "type": "string",
+            "description": "The contact\u0027s Anonymous ID."
+          },
+          "alternate_emails": {
+            "minItems": 0,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "maxLength": 254,
+              "minLength": 3,
+              "type": "string",
+              "format": "email"
+            },
+            "description": "Alternate emails of the contact. This is a reserved field."
+          },
+          "first_name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "First name of the contact. This is a reserved field."
+          },
+          "last_name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Last name of the contact. This is a reserved field."
+          },
+          "address_line_1": {
+            "minLength": 0,
+            "type": "string",
+            "description": "First line of address of the contact. This is a reserved field."
+          },
+          "address_line_2": {
+            "minLength": 0,
+            "type": "string",
+            "description": "Second line of address of the contact. This is a reserved field."
+          },
+          "city": {
+            "minLength": 0,
+            "pattern": "^[a-zA-Z\\u0080-\\u024F\\s\\/\\-\\)\\(\\\u0060\\.\\\u0022\\\u0027]\u002B$",
+            "type": "string",
+            "description": "City associated with the contact. This is a reserved field."
+          },
+          "state_province_region": {
+            "minLength": 0,
+            "type": "string",
+            "description": "State associated with the contact. This is a reserved field."
+          },
+          "postal_code": {
+            "type": "integer",
+            "description": "Zipcode associated with the address of the contact. This is a reserved field."
+          },
+          "country": {
+            "minLength": 0,
+            "type": "string",
+            "description": "Country associated with the address of the contact. This is a reserved field."
+          },
+          "list_ids": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "IDs of all lists the contact is part of"
+          },
+          "custom_fields": {
+            "$ref": "#/components/schemas/TsgMcSegmentsV3ContactResponseCustomFields"
+          },
+          "segment_ids": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "IDs of all segments the contact is part of"
+          }
+        },
+        "example": {
+          "id": "47d23ab0-d895-4359-a0d1-ffc7a6fc7e70",
+          "email": "abcd@gmail.com",
+          "alternate_emails": [
+            "abcd@yahoo.com",
+            "abcd@hotmail.com"
+          ],
+          "first_name": "Ab",
+          "last_name": "Cd",
+          "address_line_1": "street address / P.O. box / CompanyName / c/o",
+          "address_line_2": "apartment, suite, unit, building, floor etc",
+          "city": "Redwood City",
+          "state_province_region": "CA",
+          "postal_code": 94063,
+          "country": "USA",
+          "custom_fields": {
+            "custom_field_name1": "custom_field_value1",
+            "custom_field_name2": "custom_field_value2"
+          }
+        }
+      },
+      "TsgMcSegmentsV3SegmentWriteV2": {
+        "title": "segment_write",
+        "required": [
+          "name",
+          "query_dsl"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the segment."
+          },
+          "parent_list_ids": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The array of list ids to filter contacts on when building this segment. It allows only one such list id for now. We will support more in future"
+          },
+          "query_dsl": {
+            "type": "string",
+            "description": "SQL query which will filter contacts based on the conditions provided"
+          }
+        }
+      },
+      "TsgMcSegmentsV3ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3ErrorResponseErrorsItem"
+            }
+          },
+          "id": {
+            "type": "string",
+            "description": "When applicable, this property value will be an error ID."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "example": {
+          "errors": [
+            {
+              "field": "field_name",
+              "message": "error message"
+            }
+          ]
         }
       },
       "Sender": {
@@ -41655,6 +42306,41 @@
         },
         "description": "The user may choose to create up to 120 custom fields or none at all. This is not a reserved field."
       },
+      "FullSegmentQueryJson": {
+        "type": "object",
+        "description": "AST representation of the query DSL"
+      },
+      "TsgMcSegmentsV3ContactResponseCustomFields": {
+        "minProperties": 0,
+        "type": "object",
+        "properties": {
+          "custom_field_name1": {
+            "minLength": 0,
+            "type": "string"
+          },
+          "custom_field_name2": {
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "description": "The user may choose to create up to 120 custom fields or none at all. This is not a reserved field."
+      },
+      "TsgMcSegmentsV3ErrorResponseErrorsItem": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "An error message."
+          },
+          "field": {
+            "type": "string",
+            "description": "When applicable, this property value will be the field that generated the error."
+          },
+          "help": {
+            "$ref": "#/components/schemas/TsgMcSegmentsV3ErrorResponseErrorsItemHelpProperty"
+          }
+        }
+      },
       "SenderFrom": {
         "required": [
           "email",
@@ -43195,6 +43881,10 @@
         "type": "object",
         "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
       },
+      "TsgMcSegmentsV3ErrorResponseErrorsItemHelp": {
+        "type": "object",
+        "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
+      },
       "TsgMcSendersV3ErrorResponseErrorsItemHelp": {
         "type": "object",
         "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
@@ -44382,246 +45072,6 @@
         },
         "example": {
           "file_type": "csv"
-        }
-      },
-      "TsgIntegrationsV3GetIntegrationsByUser403Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Forbidden"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3GetIntegrationsByUser500Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InternalError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3AddIntegration400Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InvalidRequest"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3AddIntegration403Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Forbidden"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3AddIntegration500Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InternalError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3DeleteIntegration400Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InvalidDeleteRequest"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3DeleteIntegration403Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Forbidden"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3DeleteIntegration404Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IntegrationNotFound"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3DeleteIntegration500Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InternalError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3FindIntegrationById403Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Forbidden"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3FindIntegrationById404Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IntegrationNotFound"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3FindIntegrationById500Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InternalError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3UpdateIntegration400Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InvalidRequest"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3UpdateIntegration403Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Forbidden"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3UpdateIntegration404Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IntegrationNotFound"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
-      "TsgIntegrationsV3UpdateIntegration500Response": {
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InternalError"
-            }
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
         }
       },
       "TsgIpsV3AddIpRequest": {
@@ -47228,6 +47678,99 @@
       "TsgMcListsV3ListContactCount404Response": {
         "type": "object"
       },
+      "TsgMcSegmentsV3ListSegment500Response": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3ListSegment500ResponseErrorsItem"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgMcSegmentsV3GetSegment404Response": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3GetSegment404ResponseErrorsItem"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgMcSegmentsV3GetSegment500Response": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3GetSegment500ResponseErrorsItem"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgMcSegmentsV3DeleteSegment202Response": {
+        "type": "object"
+      },
+      "TsgMcSegmentsV3DeleteSegment404Response": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3DeleteSegment404ResponseErrorsItem"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgMcSegmentsV3DeleteSegment500Response": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3DeleteSegment500ResponseErrorsItem"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
       "TsgMcSendersV3CreateSenderRequest": {
         "required": [
           "address",
@@ -49687,6 +50230,246 @@
           }
         }
       },
+      "TsgIntegrationsV3GetIntegrationsByUser403Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Forbidden"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3GetIntegrationsByUser500Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalError"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3AddIntegration400Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvalidRequest"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3AddIntegration403Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Forbidden"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3AddIntegration500Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalError"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3DeleteIntegration400Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvalidDeleteRequest"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3DeleteIntegration403Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Forbidden"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3DeleteIntegration404Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationNotFound"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3DeleteIntegration500Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalError"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3FindIntegrationById403Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Forbidden"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3FindIntegrationById404Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationNotFound"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3FindIntegrationById500Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalError"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3UpdateIntegration400Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvalidRequest"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3UpdateIntegration403Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Forbidden"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3UpdateIntegration404Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationNotFound"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "TsgIntegrationsV3UpdateIntegration500Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalError"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
       "TsgIpsV3ListIp200ResponseSchema": {
         "type": "array",
         "items": {
@@ -50321,6 +51104,25 @@
       "TsgMcListsV3ListContactCount404ResponseSchema": {
         "type": "object"
       },
+      "TsgMcSegmentsV3ListSegment200Response": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "minItems": 0,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SegmentSummary"
+            }
+          }
+        }
+      },
+      "TsgMcSegmentsV3DeleteSegment202ResponseSchema": {
+        "type": "object"
+      },
       "TsgMcSendersV3ListSender200Response": {
         "type": "object",
         "properties": {
@@ -50580,9 +51382,7 @@
           },
           "scopes": {
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TsgTeammatesV3GetTeammate200ResponseScopesItem"
-            },
+            "items": {},
             "description": "Scopes associated to teammate"
           },
           "user_type": {
@@ -50883,6 +51683,10 @@
       "ContactDetailsCustomFieldsProperty": {
         "type": "object"
       },
+      "FullSegmentQueryJsonProperty": {
+        "type": "object",
+        "description": "AST representation of the query DSL"
+      },
       "TsgAlertsV3ErrorResponseErrorsItemHelpProperty": {
         "type": "object",
         "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
@@ -50939,6 +51743,10 @@
         "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
       },
       "TsgMcContactsV3ErrorResponseErrorsItemHelpProperty": {
+        "type": "object",
+        "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
+      },
+      "TsgMcSegmentsV3ErrorResponseErrorsItemHelpProperty": {
         "type": "object",
         "description": "When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error."
       },
@@ -52329,6 +53137,69 @@
       },
       "TsgMcListsV3DeleteMarketingList404ResponseErrorsItem": {
         "type": "object"
+      },
+      "TsgMcSegmentsV3ListSegment500ResponseErrorsItem": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "TsgMcSegmentsV3GetSegment404ResponseErrorsItem": {
+        "required": [
+          "message",
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          }
+        }
+      },
+      "TsgMcSegmentsV3GetSegment500ResponseErrorsItem": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "TsgMcSegmentsV3DeleteSegment404ResponseErrorsItem": {
+        "required": [
+          "message",
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          }
+        }
+      },
+      "TsgMcSegmentsV3DeleteSegment500ResponseErrorsItem": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
       },
       "TsgMcSendersV3CreateSenderRequestFrom": {
         "required": [
@@ -54100,9 +54971,6 @@
           }
         }
       },
-      "TsgTeammatesV3GetTeammate200ResponseScopesItem": {
-        "type": "object"
-      },
       "TsgWebhooksV3ListParseStatic200ResponseSchemaItem": {
         "required": [
           "date",
@@ -55073,7 +55941,7 @@
         }
       },
       "ApiKeysError400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55083,7 +55951,7 @@
         }
       },
       "ApiKeysError403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55093,7 +55961,7 @@
         }
       },
       "ApiKeysError404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55103,7 +55971,7 @@
         }
       },
       "GlobalError401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55113,7 +55981,7 @@
         }
       },
       "GlobalError403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55123,7 +55991,7 @@
         }
       },
       "GlobalError404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55133,7 +56001,7 @@
         }
       },
       "GlobalError500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55228,7 +56096,7 @@
         }
       },
       "EnforcedTls401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55238,7 +56106,7 @@
         }
       },
       "EnforcedTls403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55248,7 +56116,7 @@
         }
       },
       "EnforcedTls404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55258,7 +56126,7 @@
         }
       },
       "EnforcedTls500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55268,7 +56136,7 @@
         }
       },
       "IpAccessManagement401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55278,7 +56146,7 @@
         }
       },
       "IpAccessManagement403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55288,7 +56156,7 @@
         }
       },
       "IpAccessManagement404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55298,7 +56166,7 @@
         }
       },
       "IpAccessManagement500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55509,7 +56377,7 @@
         }
       },
       "MarketingRecipients401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55519,7 +56387,7 @@
         }
       },
       "MarketingRecipients403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55529,7 +56397,7 @@
         }
       },
       "MarketingRecipients404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55539,7 +56407,7 @@
         }
       },
       "MarketingRecipients500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55549,7 +56417,7 @@
         }
       },
       "MailSettingsError400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55559,7 +56427,7 @@
         }
       },
       "MailSettingsError401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55569,7 +56437,7 @@
         }
       },
       "MailSettingsError403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55579,7 +56447,7 @@
         }
       },
       "MailSettingsError404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55589,7 +56457,7 @@
         }
       },
       "MailSettingsError500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55899,7 +56767,7 @@
         }
       },
       "MarketingContacts401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55909,7 +56777,7 @@
         }
       },
       "MarketingContacts403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55919,7 +56787,7 @@
         }
       },
       "MarketingContacts404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55929,7 +56797,7 @@
         }
       },
       "MarketingContacts500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55938,8 +56806,38 @@
           }
         }
       },
+      "Segments401": {
+        "description": "Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3ErrorResponse"
+            }
+          }
+        }
+      },
+      "Segments403": {
+        "description": "Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3ErrorResponse"
+            }
+          }
+        }
+      },
+      "Segments404": {
+        "description": "Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TsgMcSegmentsV3ErrorResponse"
+            }
+          }
+        }
+      },
       "Senders400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55949,7 +56847,7 @@
         }
       },
       "Senders401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55959,7 +56857,7 @@
         }
       },
       "Senders403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55969,7 +56867,7 @@
         }
       },
       "Senders404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55979,7 +56877,7 @@
         }
       },
       "Senders500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55989,7 +56887,7 @@
         }
       },
       "Stats400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -55999,7 +56897,7 @@
         }
       },
       "TestSend400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56228,7 +57126,7 @@
         }
       },
       "ScheduledSends400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56238,7 +57136,7 @@
         }
       },
       "ScheduledSends401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56248,7 +57146,7 @@
         }
       },
       "ScheduledSends403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56258,7 +57156,7 @@
         }
       },
       "ScheduledSends404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56268,7 +57166,7 @@
         }
       },
       "ScheduledSends500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56654,7 +57552,7 @@
         }
       },
       "Sso400": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56664,7 +57562,7 @@
         }
       },
       "Sso401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56674,7 +57572,7 @@
         }
       },
       "Sso403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56684,7 +57582,7 @@
         }
       },
       "Sso429": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56694,7 +57592,7 @@
         }
       },
       "Sso500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56704,7 +57602,7 @@
         }
       },
       "VerifiedSenders401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56714,7 +57612,7 @@
         }
       },
       "VerifiedSenders403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56724,7 +57622,7 @@
         }
       },
       "VerifiedSenders404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56734,7 +57632,7 @@
         }
       },
       "VerifiedSenders500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56744,7 +57642,7 @@
         }
       },
       "Webhook401": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56754,7 +57652,7 @@
         }
       },
       "Webhook403": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56764,7 +57662,7 @@
         }
       },
       "Webhook404": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -56774,7 +57672,7 @@
         }
       },
       "Webhook500": {
-        "description": "",
+        "description": "Response",
         "content": {
           "application/json": {
             "schema": {
@@ -58406,6 +59304,11 @@
         "description": "Twilio SendGrid requires you to authenticate with its APIs using an API key. The API key must be sent as a bearer token in the Authorization header.",
         "scheme": "bearer"
       },
+      "tsg_mc_segments_v3_BearerAuth": {
+        "type": "http",
+        "description": "Twilio SendGrid requires you to authenticate with its APIs using an API key. The API key must be sent as a bearer token in the Authorization header.",
+        "scheme": "bearer"
+      },
       "tsg_mc_senders_v3_BearerAuth": {
         "type": "http",
         "description": "Twilio SendGrid requires you to authenticate with its APIs using an API key. The API key must be sent as a bearer token in the Authorization header.",
@@ -58632,6 +59535,10 @@
     {
       "name": "Segmenting Contacts V2",
       "description": "Twilio SendGrid Marketing Campaigns Segments API V2"
+    },
+    {
+      "name": "Segmenting Contacts",
+      "description": "Twilio SendGrid Marketing Campaigns Segments API"
     },
     {
       "name": "Senders",

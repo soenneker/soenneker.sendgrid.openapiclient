@@ -31,6 +31,7 @@ using Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3;
 using Soenneker.SendGrid.OpenApiClient.Tsg_mc_designs_v3;
 using Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3;
 using Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3;
+using Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3;
 using Soenneker.SendGrid.OpenApiClient.Tsg_mc_senders_v3;
 using Soenneker.SendGrid.OpenApiClient.Tsg_mc_singlesends_v3;
 using Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3;
@@ -187,6 +188,11 @@ namespace Soenneker.SendGrid.OpenApiClient
         public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.Tsg_mc_segments_20_v3RequestBuilder Tsg_mc_segments_20_v3
         {
             get => new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_20_v3.Tsg_mc_segments_20_v3RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tsg_mc_segments_v3 property</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.Tsg_mc_segments_v3RequestBuilder Tsg_mc_segments_v3
+        {
+            get => new global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.Tsg_mc_segments_v3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tsg_mc_senders_v3 property</summary>
         public global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_senders_v3.Tsg_mc_senders_v3RequestBuilder Tsg_mc_senders_v3
