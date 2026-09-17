@@ -197,13 +197,19 @@
           "504": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/AccountProvisioningAccountId"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_account_provisioning_v3/v3/partners/accounts/{accountId}/offerings": {
       "get": {
@@ -248,7 +254,17 @@
           "504": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -308,13 +324,19 @@
           "504": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/AccountProvisioningAccountId"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_account_provisioning_v3/v3/partners/accounts/{accountId}/sso": {
       "post": {
@@ -349,13 +371,19 @@
           "504": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/AccountProvisioningAccountId"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_account_provisioning_v3/v3/partners/accounts/{accountId}/state": {
       "get": {
@@ -400,7 +428,17 @@
           "504": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -444,13 +482,19 @@
           "504": {
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/AccountProvisioningAccountId"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_account_provisioning_v3/v3/partners/offerings": {
       "get": {
@@ -5669,6 +5713,14 @@
               "format": "ipv4"
             },
             "example": "192.0.0.1"
+          },
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5786,7 +5838,17 @@
           "504": {
             "$ref": "#/components/responses/IpProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -5839,13 +5901,19 @@
           "504": {
             "$ref": "#/components/responses/IpProvisioningErrorResponse504"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/IpProvisioningAccountId"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_ip_warmup_v3/v3/ips/warmup": {
       "post": {
@@ -12716,6 +12784,14 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/tsg_mail_v3_OnBehalfOf"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12739,11 +12815,7 @@
           }
         }
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/BatchId"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_mail_v3/v3/mail/send": {
       "post": {
@@ -22097,7 +22169,17 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -22132,13 +22214,19 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/UserName"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_subusers_v3/v3/subusers/{subuserName}/website_access": {
       "patch": {
@@ -22226,7 +22314,17 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -22289,13 +22387,19 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/UserName"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_subusers_v3/v3/subusers/{subuserName}/credits/remaining": {
       "patch": {
@@ -22359,13 +22463,19 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/UserName"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_subusers_v3/v3/subusers/{subuserName}/ips": {
       "put": {
@@ -22426,13 +22536,19 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/UserName"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_subusers_v3/v3/subusers/{subuserName}/stats/monthly": {
       "get": {
@@ -22486,6 +22602,14 @@
               "type": "integer",
               "default": 0
             }
+          },
+          {
+            "name": "subuserName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -22534,11 +22658,7 @@
           }
         }
       },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/UserName"
-        }
-      ]
+      "parameters": []
     },
     "/tsg_subusers_v3/v3/subusers/reputations": {
       "get": {

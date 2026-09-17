@@ -16,7 +16,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
     public partial class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_ip_provisioning_v3.v3.partners.accounts.item collection</summary>
-        /// <param name="position">Twilio SendGrid account ID</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
         public global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Accounts.Item.WithAccountItemRequestBuilder this[string position]
         {
