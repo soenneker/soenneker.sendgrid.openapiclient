@@ -22,8 +22,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public List<string> Ips { get; set; }
 #endif
-        /// <summary>The region property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3Region2? Region { get; set; }
+        /// <summary>The region where the IP addresses are located</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponseRegion? Region { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3Region2>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponseRegion>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3Region2>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponseRegion>("region", Region);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

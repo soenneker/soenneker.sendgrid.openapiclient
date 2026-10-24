@@ -49,25 +49,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates
         /// <summary>
         /// **This endpoint allows you to retrieve all transactional templates.**
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate400Response.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListTemplate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to create a transactional template.**
@@ -78,11 +78,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -116,11 +116,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -147,7 +147,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates
         {
             /// <summary>Comma-delimited list specifying which generations of templates to return. Options are `legacy`, `dynamic` or `legacy,dynamic`.</summary>
             [QueryParameter("generations")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.Generations? Generations { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3ListTemplateGenerationsParameter? Generations { get; set; }
             /// <summary>The number of templates to be returned in each page of results</summary>
             [QueryParameter("page_size")]
             public double? PageSize { get; set; }

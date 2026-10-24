@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>An offering is a package (email infrastructure) or add-on (marketing campaigns, dedicated IP addresses, EASE) that an account can acquire. Each offering has a list of entitlements that indicate the benefits the account receives from the acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1? Offering { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? Offering { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1 Offering { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering Offering { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entitlements", n => { Entitlements = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements>(global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements.CreateFromDiscriminatorValue); } },
-                { "offering", n => { Offering = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1>(global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1.CreateFromDiscriminatorValue); } },
+                { "offering", n => { Offering = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering>(global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements>("entitlements", Entitlements);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1>("offering", Offering);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering>("offering", Offering);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

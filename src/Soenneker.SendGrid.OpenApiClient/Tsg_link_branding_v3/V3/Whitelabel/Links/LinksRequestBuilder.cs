@@ -32,14 +32,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         }
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_link_branding_v3.v3.whitelabel.links.item collection</summary>
         /// <param name="position">The ID of the branded link you want to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.LinksItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.LinksItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.LinksItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -86,11 +86,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -124,11 +124,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

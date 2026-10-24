@@ -48,7 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string SgMessageIdCreatedAt { get; set; }
 #endif
         /// <summary>**A summary of the message status based on which events have occurred.**- processed: `processed`- dropped: `drop`, `cancel_drop`- deferred: `deferred`- bounced: `bounce`- blocked: `bounce` (type=`block`)- delivered: `delivered`, `click`, `open`</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatusComposed? Status { get; set; }
         /// <summary>Email subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +94,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "sg_message_id", n => { SgMessageId = n.GetStringValue(); } },
                 { "sg_message_id_created_at", n => { SgMessageIdCreatedAt = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatusComposed>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "to_email", n => { ToEmail = n.GetStringValue(); } },
             };
@@ -110,7 +110,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("sg_message_id", SgMessageId);
             writer.WriteStringValue("sg_message_id_created_at", SgMessageIdCreatedAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatusComposed>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("to_email", ToEmail);
             writer.WriteAdditionalData(AdditionalData);

@@ -36,18 +36,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Ips
         /// <summary>
         /// **This endpoint allows you update your subusers&apos; assigned IP.**Each subuser should be assigned to an IP address from which all of this subuser&apos;s mail will be sent. Often, this is the same IP as the parent account, but each subuser can have one or more of their own IP addresses as well. More information:* [How to request more IPs](https://sendgrid.com/docs/ui/account-and-settings/dedicated-ip-addresses/)* [Setup Reverse DNS](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-reverse-dns/)
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserIp200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSubuserIp200Response"/></returns>
         /// <param name="body">The IP addresses you would like to assign to the subuser.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3ErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserIp200Response?> PutAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSubuserIp200Response?> PutAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserIp200Response> PutAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSubuserIp200Response> PutAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Ips
             {
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserIp200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3UpdateSubuserIp200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSubuserIp200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSubuserIp200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you update your subusers&apos; assigned IP.**Each subuser should be assigned to an IP address from which all of this subuser&apos;s mail will be sent. Often, this is the same IP as the parent account, but each subuser can have one or more of their own IP addresses as well. More information:* [How to request more IPs](https://sendgrid.com/docs/ui/account-and-settings/dedicated-ip-addresses/)* [Setup Reverse DNS](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-reverse-dns/)

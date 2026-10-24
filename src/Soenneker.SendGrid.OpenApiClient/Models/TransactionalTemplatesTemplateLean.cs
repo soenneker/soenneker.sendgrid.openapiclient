@@ -14,8 +14,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The generation property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Generation1? Generation { get; set; }
+        /// <summary>Defines the generation of the template.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesTemplateLeanGeneration? Generation { get; set; }
         /// <summary>The ID of the transactional template.</summary>
         public Guid? Id { get; set; }
         /// <summary>The name for the transactional template.</summary>
@@ -67,7 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "generation", n => { Generation = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Generation1>(); } },
+                { "generation", n => { Generation = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesTemplateLeanGeneration>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Generation1>("generation", Generation);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesTemplateLeanGeneration>("generation", Generation);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("updated_at", UpdatedAt);

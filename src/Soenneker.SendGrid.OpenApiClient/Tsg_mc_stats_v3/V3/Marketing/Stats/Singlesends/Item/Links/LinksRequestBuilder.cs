@@ -40,7 +40,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ListSingleSendTrackingStat404ResponseSchema">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ListSingleSendTrackingStat404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Singlesends.Item.Links.LinksRequestBuilder.LinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +54,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ListSingleSendTrackingStat404ResponseSchema.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ListSingleSendTrackingStat404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,7 +94,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
         {
             #pragma warning disable CS1591
             [QueryParameter("ab_phase_id")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.AbPhaseId? AbPhaseId { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendQueryParams2PhaseId? AbPhaseId { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("ab_variation_id")]
@@ -104,11 +104,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items2[]? GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendQueryParams2GroupByItem[]? GroupBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items2[] GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendQueryParams2GroupByItem[] GroupBy { get; set; }
 #endif
             /// <summary>The number of elements you want returned on each page.</summary>
             [QueryParameter("page_size")]

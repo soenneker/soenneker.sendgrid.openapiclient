@@ -49,20 +49,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
         /// <summary>
         /// **This endpoint allows you to retrieve a list of segments.**The query param `parent_list_ids` is treated as a filter.  Any match will be returned.  Zero matches will return a response code of 200 with an empty `results` array.`parent_list_ids` | `no_parent_list_id` | `ids` | `result`-----------------:|:--------------------:|:-------------:|:-------------:empty | false | empty | all segments valueslist_ids | false | empty | segments filtered by list_ids valueslist_ids |true | empty | segments filtered by list_ids and segments with no parent list_ids emptyempty | true | empty | segments with no parent list_idsanything | anything | ids | segments with matching segment ids |
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment500Response">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -71,9 +71,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment500Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ListSegment200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListSegment200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a list of segments.**The query param `parent_list_ids` is treated as a filter.  Any match will be returned.  Zero matches will return a response code of 200 with an empty `results` array.`parent_list_ids` | `no_parent_list_id` | `ids` | `result`-----------------:|:--------------------:|:-------------:|:-------------:empty | false | empty | all segments valueslist_ids | false | empty | segments filtered by list_ids valueslist_ids |true | empty | segments filtered by list_ids and segments with no parent list_ids emptyempty | true | empty | segments with no parent list_idsanything | anything | ids | segments with matching segment ids |

@@ -44,8 +44,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Ite
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign401ResponseSchema">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign404ResponseSchema">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,35 +58,35 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Ite
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign401ResponseSchema.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign404ResponseSchema.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign401Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3DeleteCampaign404Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a specific campaign.**
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetCampaign200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign401ResponseSchema">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign404ResponseSchema">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.GetCampaign200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.GetCampaign200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign401ResponseSchema.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign404ResponseSchema.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign401Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3GetCampaign200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.GetCampaign200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.GetCampaign200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to update a specific campaign.**This is especially useful if you only set up the campaign using POST /campaigns, but didn&apos;t set many of the parameters.
@@ -101,11 +101,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Ite
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2Xx?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2Xx?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2Xx> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2Xx> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_campaigns_v3.V3.Campaigns.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateCampaignRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

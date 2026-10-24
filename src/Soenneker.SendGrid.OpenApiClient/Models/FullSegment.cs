@@ -65,10 +65,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>AST representation of the query DSL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty? QueryJson { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty2? QueryJson { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty QueryJson { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty2 QueryJson { get; set; }
 #endif
         /// <summary>ISO8601 timestamp the sample was last updated</summary>
         public DateTimeOffset? SampleUpdatedAt { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "parent_list_id", n => { ParentListId = n.GetGuidValue(); } },
                 { "parent_list_ids", n => { ParentListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "query_dsl", n => { QueryDsl = n.GetStringValue(); } },
-                { "query_json", n => { QueryJson = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty.CreateFromDiscriminatorValue); } },
+                { "query_json", n => { QueryJson = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty2.CreateFromDiscriminatorValue); } },
                 { "sample_updated_at", n => { SampleUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -129,7 +129,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteGuidValue("parent_list_id", ParentListId);
             writer.WriteCollectionOfPrimitiveValues<string>("parent_list_ids", ParentListIds);
             writer.WriteStringValue("query_dsl", QueryDsl);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty>("query_json", QueryJson);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.FullSegmentQueryJsonProperty2>("query_json", QueryJson);
             writer.WriteDateTimeOffsetValue("sample_updated_at", SampleUpdatedAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

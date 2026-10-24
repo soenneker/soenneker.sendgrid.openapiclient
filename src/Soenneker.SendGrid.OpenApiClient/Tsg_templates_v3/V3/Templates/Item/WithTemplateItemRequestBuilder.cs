@@ -103,11 +103,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplate> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -181,11 +181,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_templates_v3.V3.Templates.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.DuplicateTemplateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

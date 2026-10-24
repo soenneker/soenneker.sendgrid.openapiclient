@@ -33,14 +33,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public List<string> Category { get; set; }
 #endif
         /// <summary>Indicates that there was a certificate error during the TLS handshake.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.CertificateError? CertErr { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCertErr? CertErr { get; set; }
         /// <summary>Custom arguments provided with the mail send request.We deviate here from the Event Webhook schema by NOT merging custom args into the top level of the object,in order to avoid collisions with system-defined fields.These are known as Custom Args in [/v3/mail/send](https://www.twilio.com/docs/sendgrid/api-reference/mail-send/mail-send)but [Unique Args](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/unique-arguments) in SMTP and HTTP v2 mail send (/api/mail.send.json).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgs? CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgsProperty? CustomArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgs CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgsProperty CustomArgs { get; set; }
 #endif
         /// <summary>The domain part of the recipient&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The event property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Event2? Event { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventEvent? Event { get; set; }
         /// <summary>The email address of the sender.This may not always be a valid email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,11 +140,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "attempt", n => { Attempt = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "cert_err", n => { CertErr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CertificateError>(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgs>(global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgs.CreateFromDiscriminatorValue); } },
+                { "cert_err", n => { CertErr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCertErr>(); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgsProperty.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event2>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventEvent>(); } },
                 { "from", n => { From = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetStringValue(); } },
@@ -165,11 +165,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteStringValue("attempt", Attempt);
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CertificateError>("cert_err", CertErr);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgs>("custom_args", CustomArgs);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCertErr>("cert_err", CertErr);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventCustomArgsProperty>("custom_args", CustomArgs);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event2>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeferredEventEvent>("event", Event);
             writer.WriteStringValue("from", From);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("response", Response);

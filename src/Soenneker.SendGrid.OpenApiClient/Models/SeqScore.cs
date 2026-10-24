@@ -21,10 +21,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A collection of metrics representing your engagement score across multiple indicators such as your open rate, spam rate, and bounce rate. Each metric is assigned a score from `1` to `5` with a higher score representing better engagement quality for that particular metric. The `metrics` property will be omitted when a score is unknown. A score may be unknown if you have not turned on [open tracking](https://docs.sendgrid.com/ui/account-and-settings/tracking) and/or your account or Subuser has not sent at least 1,000 messages during the previous 30 days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetrics? Metrics { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics? Metrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetrics Metrics { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics Metrics { get; set; }
 #endif
         /// <summary>Your SendGrid Engagement Quality Score. The `score` property will be omitted when a score is unknown. A score may be unknown if you have not turned on [open tracking](https://docs.sendgrid.com/ui/account-and-settings/tracking) and/or your account or Subuser has not sent at least 1,000 messages during the previous 30 days.</summary>
         public double? Score { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "date", n => { Date = n.GetDateValue(); } },
-                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetrics>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetrics.CreateFromDiscriminatorValue); } },
+                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetDoubleValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("date", Date);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetrics>("metrics", Metrics);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics>("metrics", Metrics);
             writer.WriteDoubleValue("score", Score);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("username", Username);

@@ -96,11 +96,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Au
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items[]? GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ItemsValue[]? GroupBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items[] GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ItemsValue[] GroupBy { get; set; }
 #endif
             /// <summary>The number of elements you want returned on each page.</summary>
             [QueryParameter("page_size")]

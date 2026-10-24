@@ -18,8 +18,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public int? Id { get; set; }
         /// <summary>The date time you scheduled your campaign to be sent.</summary>
         public int? SendAt { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3Status? Status { get; set; }
+        /// <summary>The status of your campaign.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ScheduleACampaignResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ScheduleACampaignResponse"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "send_at", n => { SendAt = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ScheduleACampaignResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteIntValue("send_at", SendAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ScheduleACampaignResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

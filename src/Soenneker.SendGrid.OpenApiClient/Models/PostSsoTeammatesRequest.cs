@@ -42,8 +42,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The persona property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Persona? Persona { get; set; }
+        /// <summary>A persona represents a group of permissions often required by a type of Teammate such as a developer or marketer. Assigning a persona allows you to allocate a group of pre-defined permissions rather than assigning each scope individually. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a full list of the scopes assigned to each persona.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestPersona? Persona { get; set; }
         /// <summary>Add or remove permissions from a Teammate using this `scopes` property. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a complete list of available scopes. You should not include this propety in the request when using the `persona` property or when setting the `is_admin` property to `true`—assigning a `persona` or setting `is_admin` to `true` will allocate a group of permissions to the Teammate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +90,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "has_restricted_subuser_access", n => { HasRestrictedSubuserAccess = n.GetBoolValue(); } },
                 { "is_admin", n => { IsAdmin = n.GetBoolValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
-                { "persona", n => { Persona = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Persona>(); } },
+                { "persona", n => { Persona = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestPersona>(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -107,7 +107,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("has_restricted_subuser_access", HasRestrictedSubuserAccess);
             writer.WriteBoolValue("is_admin", IsAdmin);
             writer.WriteStringValue("last_name", LastName);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Persona>("persona", Persona);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestPersona>("persona", Persona);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItem>("subuser_access", SubuserAccess);
             writer.WriteAdditionalData(AdditionalData);

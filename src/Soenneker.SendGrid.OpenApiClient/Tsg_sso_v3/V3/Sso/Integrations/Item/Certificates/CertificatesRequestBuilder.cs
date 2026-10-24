@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.Certificates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_sso_v3\v3\sso\integrations\{-id}\certificates
+    /// Builds and executes requests for operations under \tsg_sso_v3\v3\sso\integrations\{id}\certificates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CertificatesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.C
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_sso_v3/v3/sso/integrations/{%2Did}/certificates", pathParameters)
+        public CertificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_sso_v3/v3/sso/integrations/{id}/certificates", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.C
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_sso_v3/v3/sso/integrations/{%2Did}/certificates", rawUrl)
+        public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_sso_v3/v3/sso/integrations/{id}/certificates", rawUrl)
         {
         }
         /// <summary>

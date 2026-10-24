@@ -36,20 +36,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
         /// <summary>
         /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListGeoStat200ResponseSchemaItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.ListGeoStat200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListGeoStat200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.ListGeoStat200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListGeoStat200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.ListGeoStat200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListGeoStat200ResponseSchemaItem>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListGeoStat200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListGeoStat200ResponseSchemaItem>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListGeoStat200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -88,10 +88,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
         {
             /// <summary>How to group the statistics. Must be either &quot;day&quot;, &quot;week&quot;, or &quot;month&quot;.</summary>
             [QueryParameter("aggregated_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.AggregatedBy3? AggregatedBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.StatsAdvancedQueryStringsLimitOffsetAggregatedBy? AggregatedBy { get; set; }
             /// <summary>The country you would like to see statistics for. Currently only supported for US and CA.</summary>
             [QueryParameter("country")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.Country? Country { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3ListGeoStatCountryParameter? Country { get; set; }
             /// <summary>The end date of the statistics to retrieve. Defaults to today. Must follow format YYYY-MM-DD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>This object contains response metadata. The presence of the `after_key` property in the metadata indicates that some items are still outstanding and have not been retrieved. You can use the `after_key` value to retrieve additional items with another request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata? Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqPaginatedScoresResponseMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SeqPaginatedScoresResponseMetadata Metadata { get; set; }
 #endif
         /// <summary>An array of objects containing SendGrid Engagement Quality scores and their associated data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata.CreateFromDiscriminatorValue); } },
+                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqPaginatedScoresResponseMetadata>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqPaginatedScoresResponseMetadata.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SeqScore>(global::Soenneker.SendGrid.OpenApiClient.Models.SeqScore.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqMetadata>("_metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SeqPaginatedScoresResponseMetadata>("_metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SeqScore>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }

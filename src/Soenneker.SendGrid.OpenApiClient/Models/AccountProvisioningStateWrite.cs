@@ -14,8 +14,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The state property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.State1? State { get; set; }
+        /// <summary>The state of the account (e.g., `activated`, `deactivated`)</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningStateWriteState? State { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningStateWrite"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.State1>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningStateWriteState>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.State1>("state", State);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningStateWriteState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

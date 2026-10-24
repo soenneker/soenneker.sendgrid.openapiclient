@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <summary>
         /// **This endpoint allows you to retrieve a single API key using an `api_key_id`.**The endpoint will return a key&apos;s name, ID, and scopes. If the API Key ID does not, exist a `404` status will be returned.See the [API Key Permissions List](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authorization) for all available scopes. An API key&apos;s scopes can be updated after creation using the &quot;Update API keys&quot; endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3GetApiKey200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetApiKey200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3ErrorResponse">When receiving a 400 status code</exception>
@@ -76,11 +76,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GlobalError500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3GetApiKey200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.GetApiKey200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3GetApiKey200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.GetApiKey200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -92,7 +92,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.GlobalError500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3GetApiKey200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3GetApiKey200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.GetApiKey200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.GetApiKey200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to update the name of an existing API Key.**You must pass this endpoint a JSON request body with a `name` property, which will be used to rename the key associated with the `api_key_id` passed in the URL.
@@ -108,11 +108,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GlobalError500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -141,11 +141,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GlobalError500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse?> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ApiKeyResponse> PutAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -206,11 +206,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -228,11 +228,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_api_keys_v3.V3.Api_keys.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgApiKeysV3UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -14,8 +14,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destination property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Destination3? Destination { get; set; }
+        /// <summary>The third-party application you would like to forward your events to.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationDestination? Destination { get; set; }
         /// <summary>The configurable filters for SendGrid to destination email event forwarding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,7 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination3>(); } },
+                { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationDestination>(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters.CreateFromDiscriminatorValue); } },
                 { "integration_id", n => { IntegrationId = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
@@ -97,7 +97,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination3>("destination", Destination);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationDestination>("destination", Destination);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFilters>("filters", Filters);
             writer.WriteStringValue("integration_id", IntegrationId);
             writer.WriteStringValue("label", Label);

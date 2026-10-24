@@ -38,8 +38,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item.Re
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3ResetSenderVerification400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3ResetSenderVerification404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ResetSenderVerification400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ResetSenderVerification404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,8 +52,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item.Re
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3ResetSenderVerification400Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3ResetSenderVerification404Response.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.ResetSenderVerification400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.ResetSenderVerification404Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -40,7 +40,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3VerifySenderToken404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.VerifySenderToken404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
             {
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3VerifySenderToken404Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.VerifySenderToken404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);

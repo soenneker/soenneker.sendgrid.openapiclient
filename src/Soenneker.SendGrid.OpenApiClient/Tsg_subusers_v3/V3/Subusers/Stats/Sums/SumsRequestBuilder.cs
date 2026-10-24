@@ -113,7 +113,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Stats.Sum
             public int? Offset { get; set; }
             /// <summary>The direction you want to sort. </summary>
             [QueryParameter("sort_by_direction")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.SortByDirection2? SortByDirection { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3ListStatSumSortByDirectionParameter? SortByDirection { get; set; }
             /// <summary>The metric that you want to sort by.  Must be a single metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

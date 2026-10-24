@@ -12,8 +12,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     public partial class SinglesendsLinkStatsResponseResultsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ab_phase property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AbPhase1? AbPhase { get; set; }
+        /// <summary>This is the A/B phase of the Single Send stat returned. If the `ab_phase` query parameter was not provided, it will return `&quot;all&quot;`.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItemAbPhase? AbPhase { get; set; }
         /// <summary>This is the A/B variation of the Single Send stat returned. It is set to `&quot;all&quot;` if the `ab_variation` query parameter was not set in the request and `group_by` doesn&apos;t contain `ab_variation`.</summary>
         public Guid? AbVariation { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -55,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ab_phase", n => { AbPhase = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AbPhase1>(); } },
+                { "ab_phase", n => { AbPhase = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItemAbPhase>(); } },
                 { "ab_variation", n => { AbVariation = n.GetGuidValue(); } },
                 { "clicks", n => { Clicks = n.GetIntValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AbPhase1>("ab_phase", AbPhase);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItemAbPhase>("ab_phase", AbPhase);
             writer.WriteGuidValue("ab_variation", AbVariation);
             writer.WriteIntValue("clicks", Clicks);
             writer.WriteStringValue("url", Url);

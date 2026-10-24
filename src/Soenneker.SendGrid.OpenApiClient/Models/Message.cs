@@ -72,10 +72,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string OutboundIp { get; set; }
 #endif
-        /// <summary>The outbound_ip_type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.OutboundIpType? OutboundIpType { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Status3? Status { get; set; }
+        /// <summary>Whether or not the outbound IP is dedicated vs shared</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageOutboundIpType? OutboundIpType { get; set; }
+        /// <summary>The message&apos;s status.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageStatus? Status { get; set; }
         /// <summary>The email&apos;s subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,8 +150,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "msg_id", n => { MsgId = n.GetStringValue(); } },
                 { "originating_ip", n => { OriginatingIp = n.GetStringValue(); } },
                 { "outbound_ip", n => { OutboundIp = n.GetStringValue(); } },
-                { "outbound_ip_type", n => { OutboundIpType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OutboundIpType>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Status3>(); } },
+                { "outbound_ip_type", n => { OutboundIpType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageOutboundIpType>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "teammate", n => { Teammate = n.GetStringValue(); } },
                 { "template_id", n => { TemplateId = n.GetStringValue(); } },
@@ -174,8 +174,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("msg_id", MsgId);
             writer.WriteStringValue("originating_ip", OriginatingIp);
             writer.WriteStringValue("outbound_ip", OutboundIp);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OutboundIpType>("outbound_ip_type", OutboundIpType);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Status3>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageOutboundIpType>("outbound_ip_type", OutboundIpType);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("teammate", Teammate);
             writer.WriteStringValue("template_id", TemplateId);

@@ -18,14 +18,15 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public bool? RequireTls { get; set; }
         /// <summary>Indicates if you want to require your recipients to have a valid certificate.</summary>
         public bool? RequireValidCert { get; set; }
-        /// <summary>The version property</summary>
-        public double? Version { get; set; }
+        /// <summary>The minimum required TLS certificate version.</summary>
+        public float? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse"/> and sets the default values.
         /// </summary>
         public EnforcedTlsRequestResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Version = 1.1f;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "require_tls", n => { RequireTls = n.GetBoolValue(); } },
                 { "require_valid_cert", n => { RequireValidCert = n.GetBoolValue(); } },
-                { "version", n => { Version = n.GetDoubleValue(); } },
+                { "version", n => { Version = n.GetFloatValue(); } },
             };
         }
         /// <summary>
@@ -59,7 +60,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("require_tls", RequireTls);
             writer.WriteBoolValue("require_valid_cert", RequireValidCert);
-            writer.WriteDoubleValue("version", Version);
+            writer.WriteFloatValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

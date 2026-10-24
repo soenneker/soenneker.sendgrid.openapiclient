@@ -62,7 +62,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lis
         /// <summary>
         /// **This endpoint allows you to add a single recipient to a list.**
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema"/></returns>
+        /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 400 status code</exception>
@@ -70,11 +70,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lis
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -84,7 +84,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Lis
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3AddRecipientToContactDbList201ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to delete a single recipient from a list.**

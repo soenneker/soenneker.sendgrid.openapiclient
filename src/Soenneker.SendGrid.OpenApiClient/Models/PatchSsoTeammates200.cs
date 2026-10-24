@@ -125,8 +125,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string Username { get; set; }
 #endif
-        /// <summary>The user_type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.UserType? UserType { get; set; }
+        /// <summary>A Teammate can be an `admin`, `owner`, or `teammate`. Each role is associated with the scope of the Teammate&apos;s permissions.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200UserType? UserType { get; set; }
         /// <summary>A website associated with the Teammate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,7 +183,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "subuser_access", n => { SubuserAccess = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "user_type", n => { UserType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.UserType>(); } },
+                { "user_type", n => { UserType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200UserType>(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
                 { "zip", n => { Zip = n.GetStringValue(); } },
@@ -212,7 +212,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("state", State);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200SubuserAccessItem>("subuser_access", SubuserAccess);
             writer.WriteStringValue("username", Username);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.UserType>("user_type", UserType);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PatchSsoTeammates200UserType>("user_type", UserType);
             writer.WriteStringValue("website", Website);
             writer.WriteStringValue("zip", Zip);
             writer.WriteAdditionalData(AdditionalData);

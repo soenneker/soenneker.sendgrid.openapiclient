@@ -30,8 +30,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string CustomUnsubscribeUrl { get; set; }
 #endif
-        /// <summary>The editor property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Editor? Editor { get; set; }
+        /// <summary>The editor used in the UI.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2XxEditor? Editor { get; set; }
         /// <summary>The HTML of your marketing email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,7 +129,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "custom_unsubscribe_url", n => { CustomUnsubscribeUrl = n.GetStringValue(); } },
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Editor>(); } },
+                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2XxEditor>(); } },
                 { "html_content", n => { HtmlContent = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "ip_pool", n => { IpPool = n.GetStringValue(); } },
@@ -152,7 +152,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("custom_unsubscribe_url", CustomUnsubscribeUrl);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Editor>("editor", Editor);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Campaigns2XxEditor>("editor", Editor);
             writer.WriteStringValue("html_content", HtmlContent);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("ip_pool", IpPool);

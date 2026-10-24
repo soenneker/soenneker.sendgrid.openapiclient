@@ -36,7 +36,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <summary>
         /// **This endpoint returns the total number of contacts you have stored.**Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ListContactCount200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse">When receiving a 401 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.MarketingContacts500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ListContactCount200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ListContactCount200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_contacts_v3.V3.Marketing.Conta
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.MarketingContacts500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ListContactCount200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3ListContactCount200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint returns the total number of contacts you have stored.**Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.

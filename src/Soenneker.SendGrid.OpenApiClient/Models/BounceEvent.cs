@@ -27,14 +27,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public List<string> Category { get; set; }
 #endif
         /// <summary>Indicates that there was a certificate error during the TLS handshake.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.CertificateError? CertErr { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCertErr? CertErr { get; set; }
         /// <summary>Custom arguments provided with the mail send request.We deviate here from the Event Webhook schema by NOT merging custom args into the top level of the object,in order to avoid collisions with system-defined fields.These are known as Custom Args in [/v3/mail/send](https://www.twilio.com/docs/sendgrid/api-reference/mail-send/mail-send)but [Unique Args](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/unique-arguments) in SMTP and HTTP v2 mail send (/api/mail.send.json).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgs? CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgsProperty? CustomArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgs CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgsProperty CustomArgs { get; set; }
 #endif
         /// <summary>Recipient email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Indicates whether TLS was used (1). This field will only be present if TLS was used.</summary>
         public int? Tls { get; set; }
         /// <summary>The type of bounce that occurred.- `bounce` typically means that the message is permanently undeliverable (hard bounce).- `blocked` indicates that the message was temporarily undeliverable (soft bounce).</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3BounceType? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.BounceEvent"/> and sets the default values.
         /// </summary>
@@ -128,8 +128,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "bounce_classification", n => { BounceClassification = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceClassification>(); } },
                 { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "cert_err", n => { CertErr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CertificateError>(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgs>(global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgs.CreateFromDiscriminatorValue); } },
+                { "cert_err", n => { CertErr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCertErr>(); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgsProperty.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EventType>(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
                 { "tls", n => { Tls = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3BounceType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventType>(); } },
             };
         }
         /// <summary>
@@ -153,8 +153,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceClassification>("bounce_classification", BounceClassification);
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CertificateError>("cert_err", CertErr);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgs>("custom_args", CustomArgs);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCertErr>("cert_err", CertErr);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventCustomArgsProperty>("custom_args", CustomArgs);
             writer.WriteStringValue("email", Email);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EventType>("event", Event);
             writer.WriteStringValue("ip", Ip);
@@ -165,7 +165,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("timestamp", Timestamp);
             writer.WriteIntValue("tls", Tls);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLogsV3BounceType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceEventType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

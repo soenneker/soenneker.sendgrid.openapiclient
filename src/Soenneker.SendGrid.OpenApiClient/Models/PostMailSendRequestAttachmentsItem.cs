@@ -30,8 +30,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string ContentId { get; set; }
 #endif
-        /// <summary>The disposition property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Disposition? Disposition { get; set; }
+        /// <summary>The attachment&apos;s content-disposition specifies how you would like the attachment to be displayed. For example, `inline` results in the attached file being displayed automatically within the message while `attachment` results in the attached file requiring some action to be taken before it is displayed such as opening or downloading the file.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition? Disposition { get; set; }
         /// <summary>The attachment&apos;s filename, including the file extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "content_id", n => { ContentId = n.GetStringValue(); } },
-                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Disposition>(); } },
+                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition>(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("content_id", ContentId);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Disposition>("disposition", Disposition);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition>("disposition", Disposition);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

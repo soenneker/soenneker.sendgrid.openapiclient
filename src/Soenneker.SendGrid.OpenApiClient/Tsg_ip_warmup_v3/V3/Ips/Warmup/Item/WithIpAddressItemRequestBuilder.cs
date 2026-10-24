@@ -38,7 +38,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_warmup_v3.V3.Ips.Warmup.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3StopIpWarmUp404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.StopIpWarmUp404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +51,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_warmup_v3.V3.Ips.Warmup.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3StopIpWarmUp404Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.StopIpWarmUp404Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_warmup_v3.V3.Ips.Warmup.Item
         /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3GetWarmUpIp404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetWarmUpIp404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_warmup_v3.V3.Ips.Warmup.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpWarmupV3GetWarmUpIp404Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.GetWarmUpIp404Response.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.IpWarmup200Item.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

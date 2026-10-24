@@ -52,8 +52,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo SendTo { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2? Status { get; set; }
+        /// <summary>The current status of the Single Send. The status may be `draft`, `scheduled`, or `triggered`.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseStatus? Status { get; set; }
         /// <summary>the ISO 8601 time at which the Single Send was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The warnings property</summary>
@@ -96,7 +96,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "send_at", n => { SendAt = n.GetDateTimeOffsetValue(); } },
                 { "send_to", n => { SendTo = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -115,7 +115,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("send_at", SendAt);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseSendTo>("send_to", SendTo);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3Status2>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseWarningsItem>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);

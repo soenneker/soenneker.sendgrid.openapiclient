@@ -40,8 +40,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public double? SegmentsProcessed { get; set; }
         /// <summary>The ISO8601 timestamp when the Job was created. This is the time at which the upload request was sent to the `upload_uri`.</summary>
         public double? StartedAt { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3Status1? Status { get; set; }
+        /// <summary>The status of the Bulk Email Address Validation Job.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "segments", n => { Segments = n.GetDoubleValue(); } },
                 { "segments_processed", n => { SegmentsProcessed = n.GetDoubleValue(); } },
                 { "started_at", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3Status1>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus>(); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteDoubleValue("segments", Segments);
             writer.WriteDoubleValue("segments_processed", SegmentsProcessed);
             writer.WriteDoubleValue("started_at", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailValidationV3Status1>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

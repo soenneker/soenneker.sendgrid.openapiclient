@@ -30,8 +30,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The region property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region3? Region { get; set; }
+        /// <summary>The region this Subuser is assigned to. The property is returned only if the `include_region` parameter is included and set to `true` in the API request.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostRegion? Region { get; set; }
         /// <summary>The user ID for this subuser.</summary>
         public double? UserId { get; set; }
         /// <summary>The username of the subuser.</summary>
@@ -69,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "credit_allocation", n => { CreditAllocation = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation>(global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region3>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostRegion>(); } },
                 { "user_id", n => { UserId = n.GetDoubleValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -83,7 +83,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostCreditAllocation>("credit_allocation", CreditAllocation);
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region3>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserPostRegion>("region", Region);
             writer.WriteDoubleValue("user_id", UserId);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

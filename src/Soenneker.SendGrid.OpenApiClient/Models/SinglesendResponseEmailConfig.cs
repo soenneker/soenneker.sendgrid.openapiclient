@@ -30,8 +30,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string DesignId { get; set; }
 #endif
-        /// <summary>The editor property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Editor1? Editor { get; set; }
+        /// <summary>The editor, `design` or `code`, used to modify the Single Send&apos;s design in the Marketing Campaigns application user interface.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfigEditor? Editor { get; set; }
         /// <summary>If this property is set to `true`, `plain_content` is always generated from `html_content`. If it&apos;s set to false, `plain_content` is not altered.</summary>
         public bool? GeneratePlainContent { get; set; }
         /// <summary>The HTML content of the Single Send. This property is not used when a `design_id` value is set.</summary>
@@ -98,7 +98,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "custom_unsubscribe_url", n => { CustomUnsubscribeUrl = n.GetStringValue(); } },
                 { "design_id", n => { DesignId = n.GetStringValue(); } },
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Editor1>(); } },
+                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfigEditor>(); } },
                 { "generate_plain_content", n => { GeneratePlainContent = n.GetBoolValue(); } },
                 { "html_content", n => { HtmlContent = n.GetStringValue(); } },
                 { "ip_pool", n => { IpPool = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_unsubscribe_url", CustomUnsubscribeUrl);
             writer.WriteStringValue("design_id", DesignId);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Editor1>("editor", Editor);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendResponseEmailConfigEditor>("editor", Editor);
             writer.WriteBoolValue("generate_plain_content", GeneratePlainContent);
             writer.WriteStringValue("html_content", HtmlContent);
             writer.WriteStringValue("ip_pool", IpPool);

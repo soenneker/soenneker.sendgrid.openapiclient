@@ -14,7 +14,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The default property</summary>
+        /// <summary>Indicates if this is the default link branding.</summary>
         public bool? Default { get; set; }
         /// <summary>The DNS records generated for this link branding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #endif
         /// <summary>The ID of the branded link.</summary>
         public int? Id { get; set; }
-        /// <summary>The legacy property</summary>
+        /// <summary>Indicates if this link branding was created using the legacy whitelabel tool. If it is a legacy whitelabel, it will still function, but you&apos;ll need to create new link branding if you need to update it.</summary>
         public bool? Legacy { get; set; }
         /// <summary>The subdomain used to generate the DNS records for this link branding. This subdomain must be different from the subdomain used for your authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public string Username { get; set; }
 #endif
-        /// <summary>The valid property</summary>
+        /// <summary>Indicates if this link branding is valid.</summary>
         public bool? Valid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200"/> and sets the default values.

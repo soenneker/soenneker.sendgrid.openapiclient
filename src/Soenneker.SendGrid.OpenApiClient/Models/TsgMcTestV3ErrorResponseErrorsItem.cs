@@ -25,10 +25,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty? Help { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty2? Help { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty Help { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty2 Help { get; set; }
 #endif
         /// <summary>An error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "help", n => { Help = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty.CreateFromDiscriminatorValue); } },
+                { "help", n => { Help = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty2.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("field", Field);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty>("help", Help);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcTestV3ErrorResponseErrorsItemHelpProperty2>("help", Help);
             writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -100,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Stats
         {
             /// <summary>How to group the statistics. Must be either &quot;day&quot;, &quot;week&quot;, or &quot;month&quot;.</summary>
             [QueryParameter("aggregated_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3AggregatedBy? AggregatedBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3ListStatAggregatedByParameter? AggregatedBy { get; set; }
             /// <summary>The end date of the statistics to retrieve. Defaults to today.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -44,8 +44,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3DeleteSender403Response">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3DeleteSender404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSender403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSender404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,8 +58,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3DeleteSender403Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3DeleteSender404Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSender403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSender404Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -69,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SenderId"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3GetSender404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetSender404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SenderId?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3GetSender404Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.GetSender404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SenderId>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SenderId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -93,9 +93,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3UpdateSender400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3UpdateSender403Response">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3UpdateSender404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSender400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSender403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSender404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SenderId?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.SenderIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -109,9 +109,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_senders_v3.V3.Senders.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3UpdateSender400Response.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3UpdateSender403Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcSendersV3UpdateSender404Response.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSender400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSender403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSender404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SenderId>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SenderId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

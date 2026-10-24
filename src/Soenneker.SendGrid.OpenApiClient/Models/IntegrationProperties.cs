@@ -15,8 +15,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destination_region property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DestinationRegion2? DestinationRegion { get; set; }
+        /// <summary>The workspace region where the Segment Source write key lives.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPropertiesDestinationRegion? DestinationRegion { get; set; }
         /// <summary>The write key provided by the Segment Source you&apos;d like to have events forwarded to. Must be between 6 and 51 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination_region", n => { DestinationRegion = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DestinationRegion2>(); } },
+                { "destination_region", n => { DestinationRegion = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPropertiesDestinationRegion>(); } },
                 { "write_key", n => { WriteKey = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DestinationRegion2>("destination_region", DestinationRegion);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPropertiesDestinationRegion>("destination_region", DestinationRegion);
             writer.WriteStringValue("write_key", WriteKey);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,7 +17,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The sender reputation for this user.</summary>
         public double? Reputation { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgUserV3Type? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgUserV3TypeValue? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetUserAccountResponse"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "reputation", n => { Reputation = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgUserV3Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgUserV3TypeValue>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("reputation", Reputation);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgUserV3Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgUserV3TypeValue>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

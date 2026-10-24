@@ -49,11 +49,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.SendGrid.OpenApiClient.Models.RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -125,11 +125,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse?> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse> PostAsync(global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -155,11 +155,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.RemoveAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -196,11 +196,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpProvisioningV3AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

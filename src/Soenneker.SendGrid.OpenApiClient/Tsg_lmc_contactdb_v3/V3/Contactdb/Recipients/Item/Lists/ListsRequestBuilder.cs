@@ -36,7 +36,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Rec
         /// <summary>
         /// **This endpoint allows you to retrieve the lists that a given recipient belongs to.**Each recipient can be on many lists. This endpoint gives you all of the lists that any one recipient has been added to.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3GetRecipientList200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetRecipientList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 400 status code</exception>
@@ -44,11 +44,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Rec
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3GetRecipientList200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.GetRecipientList200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3GetRecipientList200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.GetRecipientList200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_lmc_contactdb_v3.V3.Contactdb.Rec
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3GetRecipientList200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcContactdbV3GetRecipientList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.GetRecipientList200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.GetRecipientList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve the lists that a given recipient belongs to.**Each recipient can be on many lists. This endpoint gives you all of the lists that any one recipient has been added to.

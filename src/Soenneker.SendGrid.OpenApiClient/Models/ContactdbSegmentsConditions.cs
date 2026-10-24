@@ -15,7 +15,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The and_or property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AndOr? AndOr { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsConditionsAndOr? AndOr { get; set; }
         /// <summary>The field property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "and_or", n => { AndOr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AndOr>(); } },
+                { "and_or", n => { AndOr = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsConditionsAndOr>(); } },
                 { "field", n => { Field = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OperatorType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
@@ -72,7 +72,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AndOr>("and_or", AndOr);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsConditionsAndOr>("and_or", AndOr);
             writer.WriteStringValue("field", Field);
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OperatorType>("operator", Operator);
             writer.WriteStringValue("value", Value);

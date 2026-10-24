@@ -26,8 +26,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #endif
         /// <summary>The ID of this subuser.</summary>
         public double? Id { get; set; }
-        /// <summary>The region property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region2? Region { get; set; }
+        /// <summary>The region this Subuser is assigned to. This property is returned only if the `include_region` parameter was included and set to `true` in the API request.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserRegion? Region { get; set; }
         /// <summary>The name by which this subuser will be referred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetDoubleValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region2>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserRegion>(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("email", Email);
             writer.WriteDoubleValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Region2>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserRegion>("region", Region);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }

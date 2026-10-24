@@ -27,10 +27,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Custom arguments provided with the mail send request.We deviate here from the Event Webhook schema by NOT merging custom args into the top level of the object,in order to avoid collisions with system-defined fields.These are known as Custom Args in [/v3/mail/send](https://www.twilio.com/docs/sendgrid/api-reference/mail-send/mail-send)but [Unique Args](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/unique-arguments) in SMTP and HTTP v2 mail send (/api/mail.send.json).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgs? CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgsProperty? CustomArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgs CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgsProperty CustomArgs { get; set; }
 #endif
         /// <summary>Recipient email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The event property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Event5? Event { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventEvent? Event { get; set; }
         /// <summary>IPv4 or IPv6 address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +51,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Ip { get; set; }
 #endif
         /// <summary>The content type of the email part that was interacted with.This is derived from the prefix of the &quot;urlOffset&quot; in engagement events:```h|o|uh -&gt; htmlut|t   -&gt; textum     -&gt; headera      -&gt; amp```</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EngagementUrlContentType? SgContentType { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventSgContentType? SgContentType { get; set; }
         /// <summary>SendGrid Event ID, a string that uniquely identifies the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,11 +115,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgs>(global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgs.CreateFromDiscriminatorValue); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgsProperty.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event5>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventEvent>(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
-                { "sg_content_type", n => { SgContentType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EngagementUrlContentType>(); } },
+                { "sg_content_type", n => { SgContentType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventSgContentType>(); } },
                 { "sg_event_id", n => { SgEventId = n.GetStringValue(); } },
                 { "sg_machine_open", n => { SgMachineOpen = n.GetBoolValue(); } },
                 { "sg_message_id", n => { SgMessageId = n.GetStringValue(); } },
@@ -137,11 +137,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgs>("custom_args", CustomArgs);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventCustomArgsProperty>("custom_args", CustomArgs);
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event5>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventEvent>("event", Event);
             writer.WriteStringValue("ip", Ip);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EngagementUrlContentType>("sg_content_type", SgContentType);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.OpenEventSgContentType>("sg_content_type", SgContentType);
             writer.WriteStringValue("sg_event_id", SgEventId);
             writer.WriteBoolValue("sg_machine_open", SgMachineOpen);
             writer.WriteStringValue("sg_message_id", SgMessageId);

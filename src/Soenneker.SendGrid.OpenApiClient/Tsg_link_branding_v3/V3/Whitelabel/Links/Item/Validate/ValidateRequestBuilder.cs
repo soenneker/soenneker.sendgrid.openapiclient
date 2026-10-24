@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Links.Item.Validate
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tsg_link_branding_v3\v3\whitelabel\links\{-id}\validate
+    /// Builds and executes requests for operations under \tsg_link_branding_v3\v3\whitelabel\links\{id}\validate
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ValidateRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ValidateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_link_branding_v3/v3/whitelabel/links/{%2Did}/validate", pathParameters)
+        public ValidateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_link_branding_v3/v3/whitelabel/links/{id}/validate", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_link_branding_v3/v3/whitelabel/links/{%2Did}/validate", rawUrl)
+        public ValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_link_branding_v3/v3/whitelabel/links/{id}/validate", rawUrl)
         {
         }
         /// <summary>
         /// **This endpoint allows you to validate a branded link.**You can submit this request as one of your subusers if you include their ID in the `on-behalf-of` header in the request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink500Response">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink500Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3ValidateBrandedLink200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to validate a branded link.**You can submit this request as one of your subusers if you include their ID in the `on-behalf-of` header in the request.

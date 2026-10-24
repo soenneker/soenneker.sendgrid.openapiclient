@@ -27,8 +27,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #endif
         /// <summary>The ID of a Subuser to which the Teammate has access. You can retrieve Subuser IDs from the [Subusers API](https://docs.sendgrid.com/api-reference/subusers-api/).</summary>
         public int? Id { get; set; }
-        /// <summary>The permission_type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PermissionType1? PermissionType { get; set; }
+        /// <summary>The level of access the Teammate has to the specified Subuser. This property value may be either `admin` or `restricted`. When is property is set to `restricted`, the Teammate has only the permissions assigned in the `scopes` property.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItemPermissionType? PermissionType { get; set; }
         /// <summary>The permissions or scopes that the Teammate can access on behalf of the Subuser. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a complete list of available scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PermissionType1>(); } },
+                { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItemPermissionType>(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -88,7 +88,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("email", Email);
             writer.WriteIntValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PermissionType1>("permission_type", PermissionType);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItemPermissionType>("permission_type", PermissionType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

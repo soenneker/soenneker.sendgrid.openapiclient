@@ -36,29 +36,29 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_
         /// <summary>
         /// This operation returns the IP addresses that are assigned to the specified IP pool.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAddressManagementV3ListIpAssignedToIpPool200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagementErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagementErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagementErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagement401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagement500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAddressManagementV3ListIpAssignedToIpPool200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_ips.Pools.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_ips.Pools.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAddressManagementV3ListIpAssignedToIpPool200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_ips.Pools.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_ip_address_management_v3.V3.Send_ips.Pools.Item.Ips.IpsRequestBuilder.IpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagementErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagementErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagementErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagement401Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.SendGrid.OpenApiClient.Models.IpAddressManagement500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAddressManagementV3ListIpAssignedToIpPool200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpAddressManagementV3ListIpAssignedToIpPool200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This operation returns the IP addresses that are assigned to the specified IP pool.

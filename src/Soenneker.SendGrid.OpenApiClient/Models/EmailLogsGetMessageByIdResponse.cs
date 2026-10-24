@@ -44,10 +44,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Custom key-value pairs associated with the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty? CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2? CustomArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2 CustomArgs { get; set; }
 #endif
         /// <summary>All events recorded for this message. Most recent events will be returned upto the maximum of 100 events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string SgMessageId { get; set; }
 #endif
         /// <summary>**A summary of the message status based on which events have occurred.**- processed: `processed`- dropped: `drop`, `cancel_drop`- deferred: `deferred`- bounced: `bounce`- blocked: `bounce` (type=`block`)- delivered: `delivered`, `click`, `open`</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseStatus? Status { get; set; }
         /// <summary>The email&apos;s subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,7 +172,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "client_ip", n => { ClientIp = n.GetStringValue(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty.CreateFromDiscriminatorValue); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsEvent>(global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from_email", n => { FromEmail = n.GetStringValue(); } },
                 { "marketing_campaign_id", n => { MarketingCampaignId = n.GetIntValue(); } },
@@ -182,7 +182,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "outbound_ip", n => { OutboundIp = n.GetStringValue(); } },
                 { "outbound_ip_type", n => { OutboundIpType = n.GetStringValue(); } },
                 { "sg_message_id", n => { SgMessageId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "teammate", n => { Teammate = n.GetStringValue(); } },
                 { "template_id", n => { TemplateId = n.GetStringValue(); } },
@@ -200,7 +200,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
             writer.WriteStringValue("client_ip", ClientIp);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty>("custom_args", CustomArgs);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2>("custom_args", CustomArgs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsEvent>("events", Events);
             writer.WriteStringValue("from_email", FromEmail);
             writer.WriteIntValue("marketing_campaign_id", MarketingCampaignId);
@@ -210,7 +210,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("outbound_ip", OutboundIp);
             writer.WriteStringValue("outbound_ip_type", OutboundIpType);
             writer.WriteStringValue("sg_message_id", SgMessageId);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsMessageStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("teammate", Teammate);
             writer.WriteStringValue("template_id", TemplateId);

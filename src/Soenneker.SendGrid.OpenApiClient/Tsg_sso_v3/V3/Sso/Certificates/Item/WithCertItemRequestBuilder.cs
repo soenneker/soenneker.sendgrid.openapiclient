@@ -109,11 +109,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
         /// <exception cref="List<global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem>">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -174,11 +174,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.TsgSsoV3UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSsoCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -16,12 +16,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of remaining credits. `remain` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited`.</summary>
         public int? Remain { get; set; }
-        /// <summary>The reset_frequency property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency? ResetFrequency { get; set; }
+        /// <summary>The frequency with which a Subuser&apos;s credits are reset if `type` is set to `recurring`, otherwise `null`.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency? ResetFrequency { get; set; }
         /// <summary>Total number of allowable credits. `total` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited` or `nonrecurring`.</summary>
         public int? Total { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue? Type { get; set; }
         /// <summary>Total number of used credits. `used` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited` or `nonrecurring`.</summary>
         public int? Used { get; set; }
         /// <summary>
@@ -50,9 +50,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "remain", n => { Remain = n.GetIntValue(); } },
-                { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency>(); } },
+                { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency>(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue>(); } },
                 { "used", n => { Used = n.GetIntValue(); } },
             };
         }
@@ -64,9 +64,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("remain", Remain);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency>("reset_frequency", ResetFrequency);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency>("reset_frequency", ResetFrequency);
             writer.WriteIntValue("total", Total);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue>("type", Type);
             writer.WriteIntValue("used", Used);
             writer.WriteAdditionalData(AdditionalData);
         }

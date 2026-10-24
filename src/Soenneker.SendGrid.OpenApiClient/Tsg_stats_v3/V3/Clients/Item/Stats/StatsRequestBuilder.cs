@@ -36,20 +36,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.Stats
         /// <summary>
         /// **This endpoint allows you to retrieve your email statistics segmented by a specific client type.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.### Available Client Types- phone- tablet- webmail- desktopAdvanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3GetClientStat200ResponseSchemaItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.GetClientStat200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3GetClientStat200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.GetClientStat200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3GetClientStat200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.SendGrid.OpenApiClient.Models.GetClientStat200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.Stats.StatsRequestBuilder.StatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3GetClientStat200ResponseSchemaItem>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgStatsV3GetClientStat200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.GetClientStat200ResponseSchemaItem>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.GetClientStat200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Item.Stats
         {
             /// <summary>How to group the statistics. Must be either &quot;day&quot;, &quot;week&quot;, or &quot;month&quot;.</summary>
             [QueryParameter("aggregated_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.AggregatedBy2? AggregatedBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.StatsAdvancedStatsBaseQueryStringsAggregatedBy? AggregatedBy { get; set; }
             /// <summary>The end date of the statistics to retrieve. Defaults to today. Must follow format YYYY-MM-DD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

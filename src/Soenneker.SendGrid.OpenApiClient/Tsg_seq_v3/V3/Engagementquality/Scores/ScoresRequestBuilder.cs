@@ -40,7 +40,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Score
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +54,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Score
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores400Response.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response401Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

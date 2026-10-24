@@ -77,10 +77,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Segment status indicates whether the segment&apos;s contacts will be updated periodically</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SegmentStatusResponse? Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AllSegments200Status? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SegmentStatusResponse Status { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AllSegments200Status Status { get; set; }
 #endif
         /// <summary>ISO8601 timestamp of when the object was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "parent_list_ids", n => { ParentListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "query_version", n => { QueryVersion = n.GetStringValue(); } },
                 { "sample_updated_at", n => { SampleUpdatedAt = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SegmentStatusResponse>(global::Soenneker.SendGrid.OpenApiClient.Models.SegmentStatusResponse.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AllSegments200Status>(global::Soenneker.SendGrid.OpenApiClient.Models.AllSegments200Status.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -144,7 +144,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("parent_list_ids", ParentListIds);
             writer.WriteStringValue("query_version", QueryVersion);
             writer.WriteStringValue("sample_updated_at", SampleUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SegmentStatusResponse>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AllSegments200Status>("status", Status);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -16,10 +16,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Used with &quot;deferred&quot; events to indicate the attempt number out of 10. One &quot;deferred&quot; entry will exists under events array for each time a message was deferred with error message from the server. </summary>
         public int? AttemptNum { get; set; }
-        /// <summary>The bounce_type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.BounceType? BounceType { get; set; }
-        /// <summary>The event_name property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EventName? EventName { get; set; }
+        /// <summary>Use to distinguish between types of bounces</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType? BounceType { get; set; }
+        /// <summary>Name of event</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemEventName? EventName { get; set; }
         /// <summary>Client recipient used to click or open message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,8 +86,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attempt_num", n => { AttemptNum = n.GetIntValue(); } },
-                { "bounce_type", n => { BounceType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceType>(); } },
-                { "event_name", n => { EventName = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EventName>(); } },
+                { "bounce_type", n => { BounceType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType>(); } },
+                { "event_name", n => { EventName = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemEventName>(); } },
                 { "http_user_agent", n => { HttpUserAgent = n.GetStringValue(); } },
                 { "mx_server", n => { MxServer = n.GetStringValue(); } },
                 { "processed", n => { Processed = n.GetStringValue(); } },
@@ -103,8 +103,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("attempt_num", AttemptNum);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.BounceType>("bounce_type", BounceType);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.EventName>("event_name", EventName);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType>("bounce_type", BounceType);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemEventName>("event_name", EventName);
             writer.WriteStringValue("http_user_agent", HttpUserAgent);
             writer.WriteStringValue("mx_server", MxServer);
             writer.WriteStringValue("processed", Processed);

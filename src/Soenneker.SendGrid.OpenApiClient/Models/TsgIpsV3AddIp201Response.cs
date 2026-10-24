@@ -17,10 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>List of IP objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIp201ResponseIpsItem>? Ips { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem>? Ips { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIp201ResponseIpsItem> Ips { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem> Ips { get; set; }
 #endif
         /// <summary>The number of IPs that can still be added to the user.</summary>
         public int? RemainingIps { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIp201ResponseIpsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIp201ResponseIpsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "remaining_ips", n => { RemainingIps = n.GetIntValue(); } },
                 { "warmup", n => { Warmup = n.GetBoolValue(); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIp201ResponseIpsItem>("ips", Ips);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem>("ips", Ips);
             writer.WriteIntValue("remaining_ips", RemainingIps);
             writer.WriteBoolValue("warmup", Warmup);
             writer.WriteAdditionalData(AdditionalData);

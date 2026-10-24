@@ -72,7 +72,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings
         /// <summary>
         /// **This endpoint allows you to retrieve a paginated list of all mail settings.**Each setting will be returned with an `enabled` status set to `true` or `false` and a short description that explains what the setting does.You can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests. Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListMailSetting200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.MailSettingsError400Response">When receiving a 400 status code</exception>
@@ -82,11 +82,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.MailSettingsError500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListMailSetting200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.ListMailSetting200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings.Mail_settingsRequestBuilder.Mail_settingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -98,7 +98,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_settings_v3.V3.Mail_settings
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.MailSettingsError404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.MailSettingsError500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailSettingsV3ListMailSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListMailSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListMailSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a paginated list of all mail settings.**Each setting will be returned with an `enabled` status set to `true` or `false` and a short description that explains what the setting does.You can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests. Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.

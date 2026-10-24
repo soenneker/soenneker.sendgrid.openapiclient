@@ -39,9 +39,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Ite
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage404Response">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage429Response">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.Message?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,9 +54,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Ite
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage400Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage404Response.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEmailActivityV3GetMessage429Response.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage404Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage429Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Message>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

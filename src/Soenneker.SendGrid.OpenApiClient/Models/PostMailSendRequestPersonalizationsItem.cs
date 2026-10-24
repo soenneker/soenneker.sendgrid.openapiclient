@@ -33,18 +33,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Values that are specific to this personalization that will be carried along with the email and its activity data. Substitutions will not be made on custom arguments, so any string that is assigned to this property will be assumed to be the custom argument that you would like to be used. This field may not exceed 10,000 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty? CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty2? CustomArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty2 CustomArgs { get; set; }
 #endif
         /// <summary>A collection property names that will be substituted by their corresponding property values in the `subject`, `reply-to` and `content` portions of a SendGrid Dynamic Template. Dynamic template data is available in a template using [Handlebars](https://docs.sendgrid.com/for-developers/sending-email/using-handlebars) syntax. This property should be used in combination with a Dynamic Template, which can be identified by a `template_id` starting with `d-`. See [**How to Send an Email with Dynamic Templates**](https://docs.sendgrid.com/ui/sending-email/how-to-send-an-email-with-dynamic-templates) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty? DynamicTemplateData { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty2? DynamicTemplateData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty DynamicTemplateData { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty2 DynamicTemplateData { get; set; }
 #endif
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: `x-sg-id`, `x-sg-eid`, `received`, `dkim-signature`, `Content-Type`, `Content-Transfer-Encoding`, `To`, `From`, `Subject`, `Reply-To`, `CC`, `BCC`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty? Headers { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty2? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty Headers { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty2 Headers { get; set; }
 #endif
         /// <summary>A [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) allowing you to specify when your email should be sent. A send cannot be scheduled more than 72 hours in advance.</summary>
         public int? SendAt { get; set; }
@@ -75,10 +75,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A collection property names that will be substituted by their corresponding property values in the `subject`, `reply-to` and `content` portions of your message. Name and value pairs follow the pattern `&quot;substitution_tag&quot;:&quot;value to substitute&quot;`. The total collective size of your substitutions may not exceed 10,000 bytes per personalization object. Substitutions allow you to insert data without using SendGrid&apos;s Dynamic Templates. This property should not be used in combination with a Dynamic Template, which can be identified by a `template_id` starting with `d-`. See [**Substitution Tags**](https://docs.sendgrid.com/for-developers/sending-email/substitution-tags) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty? Substitutions { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty2? Substitutions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty Substitutions { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty2 Substitutions { get; set; }
 #endif
         /// <summary>An array of recipients to whom the email will be sent. Each object in this array must contain a recipient&apos;s email address. Each object in the array may optionally contain a recipient&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,13 +115,13 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "bcc", n => { Bcc = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>(global::Soenneker.SendGrid.OpenApiClient.Models.MailTo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cc", n => { Cc = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>(global::Soenneker.SendGrid.OpenApiClient.Models.MailTo.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty.CreateFromDiscriminatorValue); } },
-                { "dynamic_template_data", n => { DynamicTemplateData = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty.CreateFromDiscriminatorValue); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty2.CreateFromDiscriminatorValue); } },
+                { "dynamic_template_data", n => { DynamicTemplateData = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty2.CreateFromDiscriminatorValue); } },
                 { "from", n => { From = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom>(global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom.CreateFromDiscriminatorValue); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty2.CreateFromDiscriminatorValue); } },
                 { "send_at", n => { SendAt = n.GetIntValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "substitutions", n => { Substitutions = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty.CreateFromDiscriminatorValue); } },
+                { "substitutions", n => { Substitutions = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty2.CreateFromDiscriminatorValue); } },
                 { "to", n => { To = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>(global::Soenneker.SendGrid.OpenApiClient.Models.MailTo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -134,13 +134,13 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>("bcc", Bcc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>("cc", Cc);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty>("custom_args", CustomArgs);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty>("dynamic_template_data", DynamicTemplateData);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemCustomArgsProperty2>("custom_args", CustomArgs);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemDynamicTemplateDataProperty2>("dynamic_template_data", DynamicTemplateData);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom>("from", From);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemHeadersProperty2>("headers", Headers);
             writer.WriteIntValue("send_at", SendAt);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty>("substitutions", Substitutions);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItemSubstitutionsProperty2>("substitutions", Substitutions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }

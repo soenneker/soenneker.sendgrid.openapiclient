@@ -27,10 +27,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Custom arguments provided with the mail send request.We deviate here from the Event Webhook schema by NOT merging custom args into the top level of the object,in order to avoid collisions with system-defined fields.These are known as Custom Args in [/v3/mail/send](https://www.twilio.com/docs/sendgrid/api-reference/mail-send/mail-send)but [Unique Args](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/unique-arguments) in SMTP and HTTP v2 mail send (/api/mail.send.json).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgs? CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgsProperty? CustomArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgs CustomArgs { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgsProperty CustomArgs { get; set; }
 #endif
         /// <summary>Recipient email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The event property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Event10? Event { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventEvent? Event { get; set; }
         /// <summary>IPv4 or IPv6 address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,9 +103,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgs>(global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgs.CreateFromDiscriminatorValue); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgsProperty.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event10>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventEvent>(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "sg_event_id", n => { SgEventId = n.GetStringValue(); } },
                 { "sg_message_id", n => { SgMessageId = n.GetStringValue(); } },
@@ -122,9 +122,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgs>("custom_args", CustomArgs);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventCustomArgsProperty>("custom_args", CustomArgs);
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event10>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.GroupResubscribeEventEvent>("event", Event);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("sg_event_id", SgEventId);
             writer.WriteStringValue("sg_message_id", SgMessageId);

@@ -32,8 +32,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string Host { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3Type? Type { get; set; }
-        /// <summary>The valid property</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3TypeValue? Type { get; set; }
+        /// <summary>Indicates if the DNS record is valid.</summary>
         public bool? Valid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname"/> and sets the default values.
@@ -62,7 +62,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3TypeValue>(); } },
                 { "valid", n => { Valid = n.GetBoolValue(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data", Data);
             writer.WriteStringValue("host", Host);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLinkBrandingV3TypeValue>("type", Type);
             writer.WriteBoolValue("valid", Valid);
             writer.WriteAdditionalData(AdditionalData);
         }

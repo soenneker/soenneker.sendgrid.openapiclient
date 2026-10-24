@@ -20,14 +20,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations
     {
         /// <summary>Gets an item from the Soenneker.SendGrid.OpenApiClient.tsg_sso_v3.v3.sso.integrations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.IntegrationsItemRequestBuilder"/></returns>
+        public global::Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.IntegrationsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Integrations.Item.IntegrationsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

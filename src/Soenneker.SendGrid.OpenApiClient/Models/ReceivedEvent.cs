@@ -39,7 +39,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public string ClientIp { get; set; }
 #endif
         /// <summary>The event property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Event7? Event { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventEvent? Event { get; set; }
         /// <summary>The protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,10 +89,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Key-value pairs associated with the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty? V3PayloadDetails { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty2? V3PayloadDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty V3PayloadDetails { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty2 V3PayloadDetails { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEvent"/> and sets the default values.
@@ -122,7 +122,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "api_key_id", n => { ApiKeyId = n.GetStringValue(); } },
                 { "api_version", n => { ApiVersion = n.GetStringValue(); } },
                 { "client_ip", n => { ClientIp = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event7>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventEvent>(); } },
                 { "protocol", n => { Protocol = n.GetStringValue(); } },
                 { "recipient_count", n => { RecipientCount = n.GetIntValue(); } },
                 { "recv_msgid", n => { RecvMsgid = n.GetStringValue(); } },
@@ -131,7 +131,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
                 { "useragent", n => { Useragent = n.GetStringValue(); } },
-                { "v3_payload_details", n => { V3PayloadDetails = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty>(global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty.CreateFromDiscriminatorValue); } },
+                { "v3_payload_details", n => { V3PayloadDetails = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("api_key_id", ApiKeyId);
             writer.WriteStringValue("api_version", ApiVersion);
             writer.WriteStringValue("client_ip", ClientIp);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Event7>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventEvent>("event", Event);
             writer.WriteStringValue("protocol", Protocol);
             writer.WriteIntValue("recipient_count", RecipientCount);
             writer.WriteStringValue("recv_msgid", RecvMsgid);
@@ -153,7 +153,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("size", Size);
             writer.WriteIntValue("timestamp", Timestamp);
             writer.WriteStringValue("useragent", Useragent);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty>("v3_payload_details", V3PayloadDetails);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReceivedEventV3PayloadDetailsProperty2>("v3_payload_details", V3PayloadDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -39,8 +39,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3DeleteVerifiedSender403Response">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3DeleteVerifiedSender404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteVerifiedSender403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteVerifiedSender404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,8 +55,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3DeleteVerifiedSender403Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3DeleteVerifiedSender404Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteVerifiedSender403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteVerifiedSender404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -68,10 +68,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3UpdateVerifiedSender400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateVerifiedSender400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3UpdateVerifiedSender403Response">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3UpdateVerifiedSender404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateVerifiedSender403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateVerifiedSender404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,10 +86,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_verified_senders_v3.V3.Verified_s
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3UpdateVerifiedSender400Response.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateVerifiedSender400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3UpdateVerifiedSender403Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgVerifiedSendersV3UpdateVerifiedSender404Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateVerifiedSender403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateVerifiedSender404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenders500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenderResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.VerifiedSenderResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

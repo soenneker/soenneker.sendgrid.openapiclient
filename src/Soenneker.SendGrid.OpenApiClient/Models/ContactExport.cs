@@ -64,8 +64,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 #else
         public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata Metadata { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Status? Status { get; set; }
+        /// <summary>The export job&apos;s status. Allowed values: `pending`, `ready`, or `failure`.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ContactExportStatus? Status { get; set; }
         /// <summary>The ISO8601 timestamp when the export was updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +114,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactExportStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -133,7 +133,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Metadata>("_metadata", Metadata);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcContactsV3Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactExportStatus>("status", Status);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);

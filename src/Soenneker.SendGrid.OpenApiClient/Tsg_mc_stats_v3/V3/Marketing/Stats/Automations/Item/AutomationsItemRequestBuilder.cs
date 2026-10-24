@@ -98,7 +98,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Au
         {
             /// <summary>Dictates how the stats are time-sliced. Currently, `&quot;total&quot;` and `&quot;day&quot;` are supported.</summary>
             [QueryParameter("aggregated_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.AggregatedBy? AggregatedBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.AggregatedByBaseProps? AggregatedBy { get; set; }
             /// <summary>Format: `YYYY-MM-DD`.If this parameter is included, the stats&apos; end date is included in the search.</summary>
             [QueryParameter("end_date")]
             public Date? EndDate { get; set; }
@@ -106,11 +106,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Au
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items[]? GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ItemsValue[]? GroupBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("group_by")]
-            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3Items[] GroupBy { get; set; }
+            public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcStatsV3ItemsValue[] GroupBy { get; set; }
 #endif
             /// <summary>The number of elements you want returned on each page.</summary>
             [QueryParameter("page_size")]

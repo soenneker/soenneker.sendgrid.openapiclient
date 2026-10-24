@@ -29,8 +29,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public long? Quantity { get; set; }
         /// <summary>Timestamp indicating when the offering was activated on the account. Format is [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Type1? Type { get; set; }
+        /// <summary>Defines the type of offering (e.g., package or addon).</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingV1Type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingV1"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetLongValue(); } },
                 { "start_date", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Type1>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingV1Type>(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("quantity", Quantity);
             writer.WriteDateTimeOffsetValue("start_date", StartDate);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Type1>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAssignedOfferingV1Type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

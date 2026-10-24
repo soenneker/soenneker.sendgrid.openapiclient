@@ -14,8 +14,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destination property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Destination2? Destination { get; set; }
+        /// <summary>The third-party application you would like to forward your events to.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination? Destination { get; set; }
         /// <summary>The configurable filters for SendGrid to destination email event forwarding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +66,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination2>(); } },
+                { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination>(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties.CreateFromDiscriminatorValue); } },
@@ -79,7 +79,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.Destination2>("destination", Destination);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination>("destination", Destination);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters>("filters", Filters);
             writer.WriteStringValue("label", Label);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties>("properties", Properties);

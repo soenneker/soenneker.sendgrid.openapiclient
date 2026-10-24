@@ -38,7 +38,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3DeleteEventWebhook404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteEventWebhook404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +51,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3DeleteEventWebhook404Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteEventWebhook404Response.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -61,7 +61,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookNoDatesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3GetEventWebhook404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetEventWebhook404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookNoDatesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Event.Settings.Item.SettingsItemRequestBuilder.SettingsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3GetEventWebhook404Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.GetEventWebhook404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookNoDatesResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookNoDatesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -85,8 +85,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3UpdateEventWebhook400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3UpdateEventWebhook404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateEventWebhook400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateEventWebhook404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookUnsignedResponse?> PatchAsync(global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookRequest body, Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Event.Settings.Item.SettingsItemRequestBuilder.SettingsItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,8 +100,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_webhooks_v3.V3.User.Webhooks.Even
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3UpdateEventWebhook400Response.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgWebhooksV3UpdateEventWebhook404Response.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateEventWebhook400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateEventWebhook404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookUnsignedResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookUnsignedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

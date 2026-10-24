@@ -12,12 +12,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     public partial class TransactionalTemplatesVersionOutputLean : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The active property</summary>
+        /// <summary>Set the version as the active version associated with the template. Only one version of a template can be active. The first version created for a template will automatically be set to Active.</summary>
         public int? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The editor property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3Editor1? Editor { get; set; }
+        /// <summary>The editor used in the UI.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesVersionOutputLeanEditor? Editor { get; set; }
         /// <summary>If true, plain_content is always generated from html_content. If false, plain_content is not altered.</summary>
         public bool? GeneratePlainContent { get; set; }
         /// <summary>The HTML content of the Design.</summary>
@@ -105,7 +105,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetIntValue(); } },
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3Editor1>(); } },
+                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesVersionOutputLeanEditor>(); } },
                 { "generate_plain_content", n => { GeneratePlainContent = n.GetBoolValue(); } },
                 { "html_content", n => { HtmlContent = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -125,7 +125,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("active", Active);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgTemplatesV3Editor1>("editor", Editor);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesVersionOutputLeanEditor>("editor", Editor);
             writer.WriteBoolValue("generate_plain_content", GeneratePlainContent);
             writer.WriteStringValue("html_content", HtmlContent);
             writer.WriteGuidValue("id", Id);

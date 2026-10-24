@@ -14,12 +14,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reset_frequency property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency1? ResetFrequency { get; set; }
+        /// <summary>The frequency with which a Subuser&apos;s credits are reset if `type` is set to `recurring`. Do _not_ include `reset_frequency` if you choose a reset `type` value of `unlimited` or `nonrecurring`.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequestResetFrequency? ResetFrequency { get; set; }
         /// <summary>Total number of credits to which the Subuser is to be reset. If `type` is `nonrecurring` then the Subuser&apos;s credits will be reset to `total` on a one-time basis. If `type` is `recurring` then the Subuser&apos;s credits will be reset to `total` every time a reset is scheduled in accordance with the `reset_frequency`. Do _not_ include `total` if you choose a reset `type` value of `unlimited`.</summary>
         public int? Total { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type1? Type { get; set; }
+        /// <summary>Type determines how credits are reset for a Subuser. `unlimited` indicates that there is no limit to the Subuser&apos;s credits. `recurring` indicates that the credits for the Subuser are reset according to the frequency determined by `reset_frequency`. `nonrecurring` indicates that there is no recurring schedule to reset credits and resets must be done on an ad hoc basis.</summary>
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequest"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency1>(); } },
+                { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequestResetFrequency>(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type1>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequestType>(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ResetFrequency1>("reset_frequency", ResetFrequency);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequestResetFrequency>("reset_frequency", ResetFrequency);
             writer.WriteIntValue("total", Total);
-            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3Type1>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
