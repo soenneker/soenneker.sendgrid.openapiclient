@@ -46222,8 +46222,7 @@
           },
           "sg_message_id_created_at": {
             "type": "string",
-            "description": "Timestamp when message_id was created at (ISO 8601).",
-            "format": "string"
+            "description": "Timestamp when message_id was created at (ISO 8601)."
           }
         },
         "description": "Summary information for a single message matching the filter.\n"
