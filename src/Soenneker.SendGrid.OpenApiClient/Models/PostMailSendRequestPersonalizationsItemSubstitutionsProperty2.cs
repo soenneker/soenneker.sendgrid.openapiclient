@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.SendGrid.OpenApiClient.Models
 {
     /// <summary>
-    /// A collection property names that will be substituted by their corresponding property values in the `subject`, `reply-to` and `content` portions of your message. Name and value pairs follow the pattern `&quot;substitution_tag&quot;:&quot;value to substitute&quot;`. The total collective size of your substitutions may not exceed 10,000 bytes per personalization object. Substitutions allow you to insert data without using SendGrid&apos;s Dynamic Templates. This property should not be used in combination with a Dynamic Template, which can be identified by a `template_id` starting with `d-`. See [**Substitution Tags**](https://docs.sendgrid.com/for-developers/sending-email/substitution-tags) for more information.
+    /// A collection property names that will be substituted by their corresponding property values in the `subject`, `reply-to` and `content` portions of your message. Name and value pairs follow the pattern `&quot;substitution_tag&quot;:&quot;value to substitute&quot;`. The total collective size of your substitutions may not exceed 100,000 bytes per personalization object. Substitutions allow you to insert data without using SendGrid&apos;s Dynamic Templates. This property should not be used in combination with a Dynamic Template, which can be identified by a `template_id` starting with `d-`. See [**Substitution Tags**](https://docs.sendgrid.com/for-developers/sending-email/substitution-tags) for more information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostMailSendRequestPersonalizationsItemSubstitutionsProperty2 : IAdditionalDataHolder, IParsable

@@ -39,7 +39,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
         /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegment202Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3SegmentDeleteConflict">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSegment404Response">When receiving a 404 status code</exception>
@@ -56,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3SegmentDeleteConflict.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSegment404Response.CreateFromDiscriminatorValue },

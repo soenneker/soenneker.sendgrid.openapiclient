@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/geo/stats?start_date={start_date}{&aggregated_by*,country*,end_date*,limit*,offset*}", pathParameters)
+        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/geo/stats?start_date={start_date}{&aggregated_by*,country*,end_date*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/geo/stats?start_date={start_date}{&aggregated_by*,country*,end_date*,limit*,offset*}", rawUrl)
+        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/geo/stats?start_date={start_date}{&aggregated_by*,country*,end_date*}", rawUrl)
         {
         }
         /// <summary>
-        /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
+        /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.**By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.ListGeoStat200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
+        /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.**By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
             return new global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats.StatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
+        /// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.**By default, 500 items will be returned per request via the Advanced Stats API endpoints.For Regional (EU) subusers, this service is not available due to PII restrictions.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [User Guide](https://wwww.twilio.com/docs/sendgrid/ui/analytics-and-reporting/stats-overview).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatsRequestBuilderGetQueryParameters 
@@ -102,12 +102,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Geo.Stats
             [QueryParameter("end_date")]
             public string EndDate { get; set; }
 #endif
-            /// <summary>The number of results to return.</summary>
-            [QueryParameter("limit")]
-            public int? Limit { get; set; }
-            /// <summary>The point in the list to begin retrieving results.</summary>
-            [QueryParameter("offset")]
-            public int? Offset { get; set; }
             /// <summary>The starting date of the statistics to retrieve. Must follow format YYYY-MM-DD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

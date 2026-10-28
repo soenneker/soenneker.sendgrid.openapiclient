@@ -22,7 +22,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/devices/stats?start_date={start_date}{&aggregated_by*,end_date*,limit*,offset*}", pathParameters)
+        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/devices/stats?start_date={start_date}{&aggregated_by*,end_date*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/devices/stats?start_date={start_date}{&aggregated_by*,end_date*,limit*,offset*}", rawUrl)
+        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tsg_stats_v3/v3/devices/stats?start_date={start_date}{&aggregated_by*,end_date*}", rawUrl)
         {
         }
         /// <summary>
@@ -99,12 +99,6 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Devices.Stats
             [QueryParameter("end_date")]
             public string EndDate { get; set; }
 #endif
-            /// <summary>The number of results to return.</summary>
-            [QueryParameter("limit")]
-            public int? Limit { get; set; }
-            /// <summary>The point in the list to begin retrieving results.</summary>
-            [QueryParameter("offset")]
-            public int? Offset { get; set; }
             /// <summary>The starting date of the statistics to retrieve. Must follow format YYYY-MM-DD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

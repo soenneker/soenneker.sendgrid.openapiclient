@@ -34,7 +34,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Stats
         {
         }
         /// <summary>
-        /// **This endpoint allows you to retrieve your email statistics segmented by client type.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
+        /// **This endpoint allows you to retrieve your email statistics segmented by client type.**By default, 500 items will be returned per request via the Advanced Stats API endpoints.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.SendGrid.OpenApiClient.Models.ListClientStat200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Stats
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// **This endpoint allows you to retrieve your email statistics segmented by client type.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
+        /// **This endpoint allows you to retrieve your email statistics segmented by client type.**By default, 500 items will be returned per request via the Advanced Stats API endpoints.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Stats
             return new global::Soenneker.SendGrid.OpenApiClient.Tsg_stats_v3.V3.Clients.Stats.StatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **This endpoint allows you to retrieve your email statistics segmented by client type.****We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
+        /// **This endpoint allows you to retrieve your email statistics segmented by client type.**By default, 500 items will be returned per request via the Advanced Stats API endpoints.Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatsRequestBuilderGetQueryParameters 
