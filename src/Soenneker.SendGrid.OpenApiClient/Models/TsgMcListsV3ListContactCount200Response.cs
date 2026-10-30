@@ -11,13 +11,24 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TsgMcListsV3ListContactCount200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billable_count") is { } nullNodeBillableCount && nullNodeBillableCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillableCount = null;
+            if (parseNode.GetChildNode("contact_count") is { } nullNodeContactCount && nullNodeContactCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable_count property</summary>
-        public int? BillableCount { get; set; }
+        public int? BillableCount { get => _explicitNullValueBillableCount; set { _explicitNullValueBillableCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable_count"); else _explicitNullProperties?.Remove("billable_count"); } }
+        private int? _explicitNullValueBillableCount = default!;
         /// <summary>The contact_count property</summary>
-        public int? ContactCount { get; set; }
+        public int? ContactCount { get => _explicitNullValueContactCount; set { _explicitNullValueContactCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_count"); else _explicitNullProperties?.Remove("contact_count"); } }
+        private int? _explicitNullValueContactCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3ListContactCount200Response"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3ListContactCount200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3ListContactCount200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcListsV3ListContactCount200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("billable_count", BillableCount);
             writer.WriteIntValue("contact_count", ContactCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

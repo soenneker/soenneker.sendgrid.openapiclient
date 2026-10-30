@@ -12,16 +12,26 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IntegrationInputFilters : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("email_events") is { } nullNodeEmailEvents && nullNodeEmailEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailEvents = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The possible SendGrid email event types for event forwarding. Specify all the email event types that you would like to forward to the Integration&apos;s destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem?>? EmailEvents { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem?>? EmailEvents { get => _explicitNullValueEmailEvents; set { _explicitNullValueEmailEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_events"); else _explicitNullProperties?.Remove("email_events"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem?>? _explicitNullValueEmailEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem?> EmailEvents { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem?> EmailEvents { get => _explicitNullValueEmailEvents; set { _explicitNullValueEmailEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_events"); else _explicitNullProperties?.Remove("email_events"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem?> _explicitNullValueEmailEvents = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFiltersEmailEventsItem>("email_events", EmailEvents);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

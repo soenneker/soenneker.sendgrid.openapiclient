@@ -84,6 +84,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
                 { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

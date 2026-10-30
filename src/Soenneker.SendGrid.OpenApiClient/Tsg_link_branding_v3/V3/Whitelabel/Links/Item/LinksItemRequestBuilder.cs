@@ -60,7 +60,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a specific branded link by providing its ID.**You can submit this request as one of your subusers if you include their ID in the `on-behalf-of` header in the request.
@@ -78,7 +78,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to update a specific branded link. You can use this endpoint to change a branded link&apos;s default status.**You can submit this request as one of your subusers if you include their ID in the `on-behalf-of` header in the request.
@@ -98,7 +98,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_link_branding_v3.V3.Whitelabel.Li
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to delete a branded link.**Your request will receive a response with a 204 status code if the deletion was successful. The call does not return the link&apos;s details, so if you wish to record these make sure you call the  &quot;Retrieve a branded link&quot; endpoint *before* you request its deletion.You can submit this request as one of your subusers if you include their ID in the `on-behalf-of` header in the request.

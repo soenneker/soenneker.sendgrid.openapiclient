@@ -11,25 +11,43 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SinglesendsLinkStatsResponseResultsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ab_phase") is { } nullNodeAbPhase && nullNodeAbPhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbPhase = null;
+            if (parseNode.GetChildNode("ab_variation") is { } nullNodeAbVariation && nullNodeAbVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbVariation = null;
+            if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("url_location") is { } nullNodeUrlLocation && nullNodeUrlLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlLocation = null;
+        }
+
         /// <summary>This is the A/B phase of the Single Send stat returned. If the `ab_phase` query parameter was not provided, it will return `&quot;all&quot;`.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItemAbPhase? AbPhase { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItemAbPhase? AbPhase { get => _explicitNullValueAbPhase; set { _explicitNullValueAbPhase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_phase"); else _explicitNullProperties?.Remove("ab_phase"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItemAbPhase? _explicitNullValueAbPhase = default!;
         /// <summary>This is the A/B variation of the Single Send stat returned. It is set to `&quot;all&quot;` if the `ab_variation` query parameter was not set in the request and `group_by` doesn&apos;t contain `ab_variation`.</summary>
-        public Guid? AbVariation { get; set; }
+        public Guid? AbVariation { get => _explicitNullValueAbVariation; set { _explicitNullValueAbVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_variation"); else _explicitNullProperties?.Remove("ab_variation"); } }
+        private Guid? _explicitNullValueAbVariation = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>the number of clicks on this particular link</summary>
-        public int? Clicks { get; set; }
+        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
+        private int? _explicitNullValueClicks = default!;
         /// <summary>This is the URL of the link clicked. If `{{custom_fields}}` are part of the URL, they will be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>This is the location of the link clicked in each Single Send A/B variation, or in the Single Send itself if there are no variations. Links are numbered from the top down; the topmost link is index `0`.</summary>
-        public int? UrlLocation { get; set; }
+        public int? UrlLocation { get => _explicitNullValueUrlLocation; set { _explicitNullValueUrlLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_location"); else _explicitNullProperties?.Remove("url_location"); } }
+        private int? _explicitNullValueUrlLocation = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem"/> and sets the default values.
         /// </summary>
@@ -45,7 +63,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsLinkStatsResponseResultsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +92,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("clicks", Clicks);
             writer.WriteStringValue("url", Url);
             writer.WriteIntValue("url_location", UrlLocation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

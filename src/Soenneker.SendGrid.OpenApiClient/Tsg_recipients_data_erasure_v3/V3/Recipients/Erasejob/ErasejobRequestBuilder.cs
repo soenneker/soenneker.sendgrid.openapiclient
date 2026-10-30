@@ -63,6 +63,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_recipients_data_erasure_v3.V3.Rec
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.RecipientsDataErasure403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.RecipientsDataErasure404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.RecipientsDataErasure500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.RecipientsDataErasureJobId>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.RecipientsDataErasureJobId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

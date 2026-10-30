@@ -11,30 +11,49 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SinglesendsResponseResultsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ab_phase") is { } nullNodeAbPhase && nullNodeAbPhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbPhase = null;
+            if (parseNode.GetChildNode("ab_variation") is { } nullNodeAbVariation && nullNodeAbVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbVariation = null;
+            if (parseNode.GetChildNode("aggregation") is { } nullNodeAggregation && nullNodeAggregation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregation = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("stats") is { } nullNodeStats && nullNodeStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stats = null;
+        }
+
         /// <summary>This is the A/B phase of the Single Send stat returned. If the `group_by` parameter doesn&apos;t include `ab_phase` in the request, then the value is &quot;all&quot;.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase? AbPhase { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase? AbPhase { get => _explicitNullValueAbPhase; set { _explicitNullValueAbPhase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_phase"); else _explicitNullProperties?.Remove("ab_phase"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase? _explicitNullValueAbPhase = default!;
         /// <summary>This is the A/B variation of the Single Send stat returned. If the `group_by` parameter doesn&apos;t include `ab_variation` in the request, then the value is &quot;all&quot;.</summary>
-        public Guid? AbVariation { get; set; }
+        public Guid? AbVariation { get => _explicitNullValueAbVariation; set { _explicitNullValueAbVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_variation"); else _explicitNullProperties?.Remove("ab_variation"); } }
+        private Guid? _explicitNullValueAbVariation = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This describes the time unit to which the stat is rolled up. It is based on the `aggregated_by` parameter included in the request. It can be &quot;total&quot; or the date (in YYYY-MM-DD format) the stats are for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aggregation { get; set; }
+        public string? Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
+        private string? _explicitNullValueAggregation = default!;
 #nullable restore
 #else
-        public string Aggregation { get; set; }
+        public string Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
+        private string _explicitNullValueAggregation = default!;
 #endif
         /// <summary>This is the ID of the Single Send you require stats for.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics? Stats { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.Metrics? _explicitNullValueStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics Stats { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.Metrics _explicitNullValueStats = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem"/> and sets the default values.
@@ -52,7 +71,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("aggregation", Aggregation);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.Metrics>("stats", Stats);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

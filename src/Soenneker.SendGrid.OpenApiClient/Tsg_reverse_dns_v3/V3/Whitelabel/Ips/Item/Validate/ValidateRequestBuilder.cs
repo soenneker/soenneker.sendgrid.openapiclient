@@ -55,6 +55,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_reverse_dns_v3.V3.Whitelabel.Ips.
             {
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

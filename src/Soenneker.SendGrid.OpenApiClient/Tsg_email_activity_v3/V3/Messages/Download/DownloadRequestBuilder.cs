@@ -70,6 +70,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Dow
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.RequestCsv400Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.SendGrid.OpenApiClient.Models.RequestCsv429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.RequestCsv500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.RequestCsv202Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.RequestCsv202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

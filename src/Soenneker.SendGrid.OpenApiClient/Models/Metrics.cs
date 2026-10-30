@@ -11,33 +11,64 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Metrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bounce_drops") is { } nullNodeBounceDrops && nullNodeBounceDrops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BounceDrops = null;
+            if (parseNode.GetChildNode("bounces") is { } nullNodeBounces && nullNodeBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bounces = null;
+            if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("delivered") is { } nullNodeDelivered && nullNodeDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delivered = null;
+            if (parseNode.GetChildNode("invalid_emails") is { } nullNodeInvalidEmails && nullNodeInvalidEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidEmails = null;
+            if (parseNode.GetChildNode("opens") is { } nullNodeOpens && nullNodeOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opens = null;
+            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("spam_report_drops") is { } nullNodeSpamReportDrops && nullNodeSpamReportDrops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamReportDrops = null;
+            if (parseNode.GetChildNode("spam_reports") is { } nullNodeSpamReports && nullNodeSpamReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamReports = null;
+            if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
+            if (parseNode.GetChildNode("unique_opens") is { } nullNodeUniqueOpens && nullNodeUniqueOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueOpens = null;
+            if (parseNode.GetChildNode("unsubscribes") is { } nullNodeUnsubscribes && nullNodeUnsubscribes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unsubscribes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bounce_drops property</summary>
-        public int? BounceDrops { get; set; }
+        public int? BounceDrops { get => _explicitNullValueBounceDrops; set { _explicitNullValueBounceDrops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounce_drops"); else _explicitNullProperties?.Remove("bounce_drops"); } }
+        private int? _explicitNullValueBounceDrops = default!;
         /// <summary>The bounces property</summary>
-        public int? Bounces { get; set; }
+        public int? Bounces { get => _explicitNullValueBounces; set { _explicitNullValueBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounces"); else _explicitNullProperties?.Remove("bounces"); } }
+        private int? _explicitNullValueBounces = default!;
         /// <summary>The clicks property</summary>
-        public int? Clicks { get; set; }
+        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
+        private int? _explicitNullValueClicks = default!;
         /// <summary>The delivered property</summary>
-        public int? Delivered { get; set; }
+        public int? Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
+        private int? _explicitNullValueDelivered = default!;
         /// <summary>The invalid_emails property</summary>
-        public int? InvalidEmails { get; set; }
+        public int? InvalidEmails { get => _explicitNullValueInvalidEmails; set { _explicitNullValueInvalidEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_emails"); else _explicitNullProperties?.Remove("invalid_emails"); } }
+        private int? _explicitNullValueInvalidEmails = default!;
         /// <summary>The opens property</summary>
-        public int? Opens { get; set; }
+        public int? Opens { get => _explicitNullValueOpens; set { _explicitNullValueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens"); else _explicitNullProperties?.Remove("opens"); } }
+        private int? _explicitNullValueOpens = default!;
         /// <summary>The requests property</summary>
-        public int? Requests { get; set; }
+        public int? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private int? _explicitNullValueRequests = default!;
         /// <summary>The spam_report_drops property</summary>
-        public int? SpamReportDrops { get; set; }
+        public int? SpamReportDrops { get => _explicitNullValueSpamReportDrops; set { _explicitNullValueSpamReportDrops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_report_drops"); else _explicitNullProperties?.Remove("spam_report_drops"); } }
+        private int? _explicitNullValueSpamReportDrops = default!;
         /// <summary>The spam_reports property</summary>
-        public int? SpamReports { get; set; }
+        public int? SpamReports { get => _explicitNullValueSpamReports; set { _explicitNullValueSpamReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_reports"); else _explicitNullProperties?.Remove("spam_reports"); } }
+        private int? _explicitNullValueSpamReports = default!;
         /// <summary>The unique_clicks property</summary>
-        public int? UniqueClicks { get; set; }
+        public int? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
+        private int? _explicitNullValueUniqueClicks = default!;
         /// <summary>The unique_opens property</summary>
-        public int? UniqueOpens { get; set; }
+        public int? UniqueOpens { get => _explicitNullValueUniqueOpens; set { _explicitNullValueUniqueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_opens"); else _explicitNullProperties?.Remove("unique_opens"); } }
+        private int? _explicitNullValueUniqueOpens = default!;
         /// <summary>The unsubscribes property</summary>
-        public int? Unsubscribes { get; set; }
+        public int? Unsubscribes { get => _explicitNullValueUnsubscribes; set { _explicitNullValueUnsubscribes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsubscribes"); else _explicitNullProperties?.Remove("unsubscribes"); } }
+        private int? _explicitNullValueUnsubscribes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.Metrics"/> and sets the default values.
         /// </summary>
@@ -53,7 +84,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.Metrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.Metrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.Metrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +127,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("unique_clicks", UniqueClicks);
             writer.WriteIntValue("unique_opens", UniqueOpens);
             writer.WriteIntValue("unsubscribes", Unsubscribes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

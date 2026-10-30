@@ -68,7 +68,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListTeammate200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListTeammate200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListTeammate200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListTeammate200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to invite a Teammate to your account via email.**You can set a Teammate&apos;s initial permissions using the `scopes` array in the request body. Teammate&apos;s will receive a minimum set of scopes from Twilio SendGrid that are necessary for the Teammate to function.**Note:** A teammate invite will expire after 7 days, but you may resend the invitation at any time to reset the expiration date.
@@ -92,6 +92,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_teammates_v3.V3.Teammates
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.InviteTeammate400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.InviteTeammate201Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.InviteTeammate201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

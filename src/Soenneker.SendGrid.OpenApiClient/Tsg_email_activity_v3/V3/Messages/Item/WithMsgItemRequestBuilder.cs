@@ -57,6 +57,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_email_activity_v3.V3.Messages.Ite
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage404Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.SendGrid.OpenApiClient.Models.GetMessage429Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Message>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

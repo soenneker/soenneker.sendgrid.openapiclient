@@ -52,6 +52,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.DeleteFieldDefinition404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -79,6 +81,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_custom_fields_v3.V3.Marketing.
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateFieldDefinition400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.UpdateFieldDefinition404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.UpdateFieldDefinition200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.UpdateFieldDefinition200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

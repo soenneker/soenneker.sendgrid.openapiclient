@@ -5550,7 +5550,8 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListIpPool200Response"
+                  "type": "string",
+                  "format": "binary"
                 },
                 "examples": {
                   "200": {
@@ -5583,11 +5584,18 @@
                       }
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/TsgIpAddressManagementV3ListIpPool200ResponseSchema"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgIpAddressManagementV3ListIpPool200XmlResponse"
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/TsgIpAddressManagementV3ListIpPool200XmlResponseSchema"
                 }
               }
             }
@@ -18429,7 +18437,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteMarketingList200Response"
+                  "$ref": "#/components/schemas/DeleteMarketingListSuccessResponse"
                 },
                 "examples": {
                   "response": {
@@ -18437,6 +18445,9 @@
                       "job_id": "abc12312-x3y4-1234-abcd-123qwe456rty"
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/DeleteMarketingList200Response"
                 }
               }
             }
@@ -18446,7 +18457,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TsgMcListsV3DeleteMarketingList204ResponseSchema"
+                  "$ref": "#/components/schemas/DeleteMarketingListSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/DeleteMarketingList204ResponseSchema"
                 }
               }
             }
@@ -22145,11 +22159,73 @@
         "responses": {
           "200": {
             "description": "200 OK",
-            "$ref": "#/components/responses/SeqV1Scores200"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListEngagementQualityScoreSuccessResponse"
+                },
+                "examples": {
+                  "200": {
+                    "value": {
+                      "result": [
+                        {
+                          "score": 2,
+                          "username": "jdoe123",
+                          "date": "2006-01-02",
+                          "user_id": "180",
+                          "metrics": {
+                            "engagement_recency": 4,
+                            "open_rate": 1,
+                            "bounce_classification": 2,
+                            "bounce_rate": 4,
+                            "spam_rate": 4
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "200 partial results": {
+                    "value": {
+                      "result": [
+                        {
+                          "score": 2,
+                          "username": "jdoe123",
+                          "date": "2006-01-02",
+                          "user_id": "180",
+                          "metrics": {
+                            "engagement_recency": 4,
+                            "open_rate": 1,
+                            "bounce_classification": 2,
+                            "bounce_rate": 4,
+                            "spam_rate": 4
+                          }
+                        },
+                        {
+                          "date": "2006-01-03",
+                          "user_id": "180"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/SeqV1Scores200Response"
+                }
+              }
+            }
           },
           "202": {
             "description": "202 Accepted",
-            "$ref": "#/components/responses/SeqV1Scores202"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListEngagementQualityScoreSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "description": "Fallback media schema"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request 400",
@@ -46198,10 +46274,6 @@
         "description": "Summary information for a single message matching the filter.\n"
       },
       "EmailLogsEvent": {
-        "required": [
-          "event"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/BounceEvent"
@@ -46240,13 +46312,8 @@
             "$ref": "#/components/schemas/UnsubscribeEvent"
           }
         ],
-        "properties": {
-          "event": {
-            "type": "string"
-          }
-        },
         "description": "The union of all possible event types for email logs.\n",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "event",
           "mapping": {
             "bounce": "#/components/schemas/BounceEvent",
@@ -46261,19 +46328,7 @@
             "spamreport": "#/components/schemas/SpamReportEvent",
             "group_unsubscribe": "#/components/schemas/GroupUnsubscribeEvent",
             "group_resubscribe": "#/components/schemas/GroupResubscribeEvent",
-            "unsubscribe": "#/components/schemas/UnsubscribeEvent",
-            "BounceEvent": "#/components/schemas/BounceEvent",
-            "ClickEvent": "#/components/schemas/ClickEvent",
-            "DeferredEvent": "#/components/schemas/DeferredEvent",
-            "DeliveredEvent": "#/components/schemas/DeliveredEvent",
-            "DroppedEvent": "#/components/schemas/DroppedEvent",
-            "OpenEvent": "#/components/schemas/OpenEvent",
-            "ProcessedEvent": "#/components/schemas/ProcessedEvent",
-            "ReceivedEvent": "#/components/schemas/ReceivedEvent",
-            "SpamReportEvent": "#/components/schemas/SpamReportEvent",
-            "GroupUnsubscribeEvent": "#/components/schemas/GroupUnsubscribeEvent",
-            "GroupResubscribeEvent": "#/components/schemas/GroupResubscribeEvent",
-            "UnsubscribeEvent": "#/components/schemas/UnsubscribeEvent"
+            "unsubscribe": "#/components/schemas/UnsubscribeEvent"
           }
         }
       },
@@ -51459,6 +51514,17 @@
       "DeleteMarketingList404ResponseErrorsItem": {
         "type": "object"
       },
+      "DeleteMarketingListSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DeleteMarketingList200Response"
+          },
+          {
+            "type": "string",
+            "description": "The delete has been processed. "
+          }
+        ]
+      },
       "TsgMcSegments20V3Metadata": {
         "title": "_metadata",
         "type": "object",
@@ -56200,6 +56266,16 @@
       "TsgSeqV3ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
+      },
+      "ListEngagementQualityScoreSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SeqV1Scores200Response"
+          },
+          {
+            "description": "Fallback media schema"
+          }
+        ]
       },
       "SsoCertificateBody": {
         "title": "Single Sign-On Certificate Body",
@@ -67086,6 +67162,14 @@
           ]
         }
       },
+      "TsgIpAddressManagementV3ListIpPool200Response": {
+        "type": "string",
+        "format": "binary"
+      },
+      "TsgIpAddressManagementV3ListIpPool200XmlResponse": {
+        "type": "string",
+        "format": "binary"
+      },
       "TsgIpAddressManagementV3ListIpPool400Response": {
         "type": "object",
         "properties": {
@@ -67121,10 +67205,6 @@
           }
         }
       },
-      "TsgMcListsV3DeleteMarketingList204Response": {
-        "type": "string",
-        "description": "The delete has been processed. "
-      },
       "TsgMcStatsV3ExportAutomationStat200Response": {
         "type": "string",
         "description": "CSV data"
@@ -67146,8 +67226,13 @@
           "$ref": "#/components/schemas/ListAllAuthenticatedDomainWithUser200ResponseSchemaItem"
         }
       },
-      "TsgIpAddressManagementV3ListIpPool200XmlResponse": {
-        "type": "object"
+      "TsgIpAddressManagementV3ListIpPool200ResponseSchema": {
+        "type": "string",
+        "format": "binary"
+      },
+      "TsgIpAddressManagementV3ListIpPool200XmlResponseSchema": {
+        "type": "string",
+        "format": "binary"
       },
       "TsgIpWarmupV3WarmUpIp200Response": {
         "title": "IP Warmup: IP",
@@ -67328,10 +67413,6 @@
       },
       "TsgMcListsV3UpdateMarketingList404Response": {
         "type": "object"
-      },
-      "TsgMcListsV3DeleteMarketingList204ResponseSchema": {
-        "type": "string",
-        "description": "The delete has been processed. "
       },
       "TsgMcListsV3DeleteContact404Response": {
         "description": "The specified list ID does not exist or one or more contact IDs do not exist."
@@ -67688,9 +67769,6 @@
             }
           }
         ]
-      },
-      "SeqV1Scores202ResponseContent": {
-        "description": "Fallback media schema"
       },
       "SeqV1Scores401ResponseContent": {
         "description": "Fallback media schema"
@@ -70258,7 +70336,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SeqV1Scores202ResponseContent"
+              "$ref": "#/components/schemas/SeqV1Scores202Response"
             }
           }
         }

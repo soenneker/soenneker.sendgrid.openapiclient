@@ -54,6 +54,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_senders_v3.V3.Marketing.Sender
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

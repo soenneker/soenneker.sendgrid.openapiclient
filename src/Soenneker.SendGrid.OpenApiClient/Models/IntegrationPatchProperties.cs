@@ -12,18 +12,30 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IntegrationPatchProperties : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destination_region") is { } nullNodeDestinationRegion && nullNodeDestinationRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationRegion = null;
+            if (parseNode.GetChildNode("write_key") is { } nullNodeWriteKey && nullNodeWriteKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WriteKey = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The workspace region where the Segment Source write key lives.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchPropertiesDestinationRegion? DestinationRegion { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchPropertiesDestinationRegion? DestinationRegion { get => _explicitNullValueDestinationRegion; set { _explicitNullValueDestinationRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_region"); else _explicitNullProperties?.Remove("destination_region"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchPropertiesDestinationRegion? _explicitNullValueDestinationRegion = default!;
         /// <summary>The write key provided by the Segment Source you&apos;d like to have events forwarded to. Must be between 6 and 51 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WriteKey { get; set; }
+        public string? WriteKey { get => _explicitNullValueWriteKey; set { _explicitNullValueWriteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("write_key"); else _explicitNullProperties?.Remove("write_key"); } }
+        private string? _explicitNullValueWriteKey = default!;
 #nullable restore
 #else
-        public string WriteKey { get; set; }
+        public string WriteKey { get => _explicitNullValueWriteKey; set { _explicitNullValueWriteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("write_key"); else _explicitNullProperties?.Remove("write_key"); } }
+        private string _explicitNullValueWriteKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchProperties"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationPatchPropertiesDestinationRegion>("destination_region", DestinationRegion);
             writer.WriteStringValue("write_key", WriteKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

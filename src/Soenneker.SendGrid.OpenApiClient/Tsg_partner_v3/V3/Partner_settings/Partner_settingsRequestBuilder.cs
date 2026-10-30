@@ -49,7 +49,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_partner_v3.V3.Partner_settings
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListPartnerSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListPartnerSetting200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListPartnerSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListPartnerSetting200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a paginated list of all partner settings that you can enable.**You can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests.Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.&apos;

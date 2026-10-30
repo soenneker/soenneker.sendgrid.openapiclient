@@ -12,15 +12,28 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ValidateEmail200ResponseResultChecksDomain : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_mx_or_a_record") is { } nullNodeHasMxOrARecord && nullNodeHasMxOrARecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMxOrARecord = null;
+            if (parseNode.GetChildNode("has_valid_address_syntax") is { } nullNodeHasValidAddressSyntax && nullNodeHasValidAddressSyntax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasValidAddressSyntax = null;
+            if (parseNode.GetChildNode("is_suspected_disposable_address") is { } nullNodeIsSuspectedDisposableAddress && nullNodeIsSuspectedDisposableAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSuspectedDisposableAddress = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the email has appropriate DNS records to deliver a message. </summary>
-        public bool? HasMxOrARecord { get; set; }
+        public bool? HasMxOrARecord { get => _explicitNullValueHasMxOrARecord; set { _explicitNullValueHasMxOrARecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_mx_or_a_record"); else _explicitNullProperties?.Remove("has_mx_or_a_record"); } }
+        private bool? _explicitNullValueHasMxOrARecord = default!;
         /// <summary>Whether the email address syntax is valid.</summary>
-        public bool? HasValidAddressSyntax { get; set; }
+        public bool? HasValidAddressSyntax { get => _explicitNullValueHasValidAddressSyntax; set { _explicitNullValueHasValidAddressSyntax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_valid_address_syntax"); else _explicitNullProperties?.Remove("has_valid_address_syntax"); } }
+        private bool? _explicitNullValueHasValidAddressSyntax = default!;
         /// <summary>Whether the domain appears to be from a disposable email address service.</summary>
-        public bool? IsSuspectedDisposableAddress { get; set; }
+        public bool? IsSuspectedDisposableAddress { get => _explicitNullValueIsSuspectedDisposableAddress; set { _explicitNullValueIsSuspectedDisposableAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_suspected_disposable_address"); else _explicitNullProperties?.Remove("is_suspected_disposable_address"); } }
+        private bool? _explicitNullValueIsSuspectedDisposableAddress = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("has_mx_or_a_record", HasMxOrARecord);
             writer.WriteBoolValue("has_valid_address_syntax", HasValidAddressSyntax);
             writer.WriteBoolValue("is_suspected_disposable_address", IsSuspectedDisposableAddress);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

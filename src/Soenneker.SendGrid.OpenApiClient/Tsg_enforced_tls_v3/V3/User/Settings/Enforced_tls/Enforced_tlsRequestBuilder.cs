@@ -59,6 +59,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_enforced_tls_v3.V3.User.Settings.
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTls500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +92,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_enforced_tls_v3.V3.User.Settings.
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgEnforcedTlsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTls500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

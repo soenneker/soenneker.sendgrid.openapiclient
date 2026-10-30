@@ -11,24 +11,37 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccountProvisioningCatalogCatalogItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entitlements") is { } nullNodeEntitlements && nullNodeEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entitlements = null;
+            if (parseNode.GetChildNode("offering") is { } nullNodeOffering && nullNodeOffering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offering = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set of entitlements the specified offering comes with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements? Entitlements { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements? Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements? _explicitNullValueEntitlements = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements Entitlements { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements _explicitNullValueEntitlements = default!;
 #endif
         /// <summary>An offering is a package (email infrastructure) or add-on (marketing campaigns, dedicated IP addresses, EASE) that an account can acquire. Each offering has a list of entitlements that indicate the benefits the account receives from the acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? Offering { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? Offering { get => _explicitNullValueOffering; set { _explicitNullValueOffering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offering"); else _explicitNullProperties?.Remove("offering"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? _explicitNullValueOffering = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering Offering { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering Offering { get => _explicitNullValueOffering; set { _explicitNullValueOffering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offering"); else _explicitNullProperties?.Remove("offering"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering _explicitNullValueOffering = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements>("entitlements", Entitlements);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering>("offering", Offering);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

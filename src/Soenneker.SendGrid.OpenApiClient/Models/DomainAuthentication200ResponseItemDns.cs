@@ -12,32 +12,48 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DomainAuthentication200ResponseItemDns : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dkim1") is { } nullNodeDkim1 && nullNodeDkim1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dkim1 = null;
+            if (parseNode.GetChildNode("dkim2") is { } nullNodeDkim2 && nullNodeDkim2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dkim2 = null;
+            if (parseNode.GetChildNode("mail_cname") is { } nullNodeMailCname && nullNodeMailCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailCname = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A DNS record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1? Dkim1 { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1? Dkim1 { get => _explicitNullValueDkim1; set { _explicitNullValueDkim1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim1"); else _explicitNullProperties?.Remove("dkim1"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1? _explicitNullValueDkim1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1 Dkim1 { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1 Dkim1 { get => _explicitNullValueDkim1; set { _explicitNullValueDkim1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim1"); else _explicitNullProperties?.Remove("dkim1"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1 _explicitNullValueDkim1 = default!;
 #endif
         /// <summary>A DNS record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2? Dkim2 { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2? Dkim2 { get => _explicitNullValueDkim2; set { _explicitNullValueDkim2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim2"); else _explicitNullProperties?.Remove("dkim2"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2? _explicitNullValueDkim2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2 Dkim2 { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2 Dkim2 { get => _explicitNullValueDkim2; set { _explicitNullValueDkim2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim2"); else _explicitNullProperties?.Remove("dkim2"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2 _explicitNullValueDkim2 = default!;
 #endif
         /// <summary>The CNAME for your sending domain that points to sendgrid.net.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname? MailCname { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname? MailCname { get => _explicitNullValueMailCname; set { _explicitNullValueMailCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_cname"); else _explicitNullProperties?.Remove("mail_cname"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname? _explicitNullValueMailCname = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname MailCname { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname MailCname { get => _explicitNullValueMailCname; set { _explicitNullValueMailCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_cname"); else _explicitNullProperties?.Remove("mail_cname"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname _explicitNullValueMailCname = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim1>("dkim1", Dkim1);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsDkim2>("dkim2", Dkim2);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDnsMailCname>("mail_cname", MailCname);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

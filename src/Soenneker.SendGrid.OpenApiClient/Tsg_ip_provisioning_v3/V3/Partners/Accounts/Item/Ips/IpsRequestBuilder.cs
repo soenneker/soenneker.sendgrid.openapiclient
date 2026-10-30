@@ -68,6 +68,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
                 { "502", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -105,6 +107,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
                 { "502", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.AccountIPsResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.AccountIPsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -144,6 +148,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_ip_provisioning_v3.V3.Partners.Ac
                 { "502", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.IpProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIPsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

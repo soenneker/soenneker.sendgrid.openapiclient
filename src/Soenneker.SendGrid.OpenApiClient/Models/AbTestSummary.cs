@@ -11,46 +11,71 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AbTestSummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
+            if (parseNode.GetChildNode("test_percentage") is { } nullNodeTestPercentage && nullNodeTestPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestPercentage = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("winner_criteria") is { } nullNodeWinnerCriteria && nullNodeWinnerCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerCriteria = null;
+            if (parseNode.GetChildNode("winner_selected_at") is { } nullNodeWinnerSelectedAt && nullNodeWinnerSelectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerSelectedAt = null;
+            if (parseNode.GetChildNode("winning_template_id") is { } nullNodeWinningTemplateId && nullNodeWinningTemplateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinningTemplateId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How long the A/B Testing will last</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Duration { get; set; }
+        public string? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private string? _explicitNullValueDuration = default!;
 #nullable restore
 #else
-        public string Duration { get; set; }
+        public string Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private string _explicitNullValueDuration = default!;
 #endif
         /// <summary>Last day to select an A/B Test Winner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpirationDate { get; set; }
+        public string? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        private string? _explicitNullValueExpirationDate = default!;
 #nullable restore
 #else
-        public string ExpirationDate { get; set; }
+        public string ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        private string _explicitNullValueExpirationDate = default!;
 #endif
         /// <summary>What percentage of your recipient will be included in your A/B testing</summary>
-        public int? TestPercentage { get; set; }
+        public int? TestPercentage { get => _explicitNullValueTestPercentage; set { _explicitNullValueTestPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_percentage"); else _explicitNullProperties?.Remove("test_percentage"); } }
+        private int? _explicitNullValueTestPercentage = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue? Type { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue? _explicitNullValueType = default!;
         /// <summary>How the winner will be decided</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria? WinnerCriteria { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria? WinnerCriteria { get => _explicitNullValueWinnerCriteria; set { _explicitNullValueWinnerCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_criteria"); else _explicitNullProperties?.Remove("winner_criteria"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria? _explicitNullValueWinnerCriteria = default!;
         /// <summary>When the winner was selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WinnerSelectedAt { get; set; }
+        public string? WinnerSelectedAt { get => _explicitNullValueWinnerSelectedAt; set { _explicitNullValueWinnerSelectedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_selected_at"); else _explicitNullProperties?.Remove("winner_selected_at"); } }
+        private string? _explicitNullValueWinnerSelectedAt = default!;
 #nullable restore
 #else
-        public string WinnerSelectedAt { get; set; }
+        public string WinnerSelectedAt { get => _explicitNullValueWinnerSelectedAt; set { _explicitNullValueWinnerSelectedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_selected_at"); else _explicitNullProperties?.Remove("winner_selected_at"); } }
+        private string _explicitNullValueWinnerSelectedAt = default!;
 #endif
         /// <summary>Winner of the A/B Test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WinningTemplateId { get; set; }
+        public string? WinningTemplateId { get => _explicitNullValueWinningTemplateId; set { _explicitNullValueWinningTemplateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winning_template_id"); else _explicitNullProperties?.Remove("winning_template_id"); } }
+        private string? _explicitNullValueWinningTemplateId = default!;
 #nullable restore
 #else
-        public string WinningTemplateId { get; set; }
+        public string WinningTemplateId { get => _explicitNullValueWinningTemplateId; set { _explicitNullValueWinningTemplateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winning_template_id"); else _explicitNullProperties?.Remove("winning_template_id"); } }
+        private string _explicitNullValueWinningTemplateId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummary"/> and sets the default values.
@@ -67,7 +92,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummary();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +127,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria>("winner_criteria", WinnerCriteria);
             writer.WriteStringValue("winner_selected_at", WinnerSelectedAt);
             writer.WriteStringValue("winning_template_id", WinningTemplateId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

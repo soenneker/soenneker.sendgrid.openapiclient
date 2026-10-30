@@ -11,26 +11,41 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListSubuserByTemplate200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_restricted_subuser_access") is { } nullNodeHasRestrictedSubuserAccess && nullNodeHasRestrictedSubuserAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRestrictedSubuserAccess = null;
+            if (parseNode.GetChildNode("_metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("subuser_access") is { } nullNodeSubuserAccess && nullNodeSubuserAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubuserAccess = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When this property is set to `true`, the Teammate has permissions to operate only on behalf of a Subuser. This property value is `true` when the `subuser_access` property is not empty. The `subuser_access` property determines which Subusers the Teammate may act on behalf of.</summary>
-        public bool? HasRestrictedSubuserAccess { get; set; }
+        public bool? HasRestrictedSubuserAccess { get => _explicitNullValueHasRestrictedSubuserAccess; set { _explicitNullValueHasRestrictedSubuserAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_restricted_subuser_access"); else _explicitNullProperties?.Remove("has_restricted_subuser_access"); } }
+        private bool? _explicitNullValueHasRestrictedSubuserAccess = default!;
         /// <summary>This object contains response metadata. The presence of the `after_subuser_id` property in the metadata indicates that some items are still outstanding and have not been retrieved. You can use the `after_subuser_id` value to retrieve additional items with another request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata? Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_metadata"); else _explicitNullProperties?.Remove("_metadata"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata Metadata { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_metadata"); else _explicitNullProperties?.Remove("_metadata"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Specifies which Subusers the Teammate may access and act on behalf of. If this property is populated, the `has_restricted_subuser_access` property will be `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem>? SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem>? SubuserAccess { get => _explicitNullValueSubuserAccess; set { _explicitNullValueSubuserAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subuser_access"); else _explicitNullProperties?.Remove("subuser_access"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem>? _explicitNullValueSubuserAccess = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem> SubuserAccess { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem> SubuserAccess { get => _explicitNullValueSubuserAccess; set { _explicitNullValueSubuserAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subuser_access"); else _explicitNullProperties?.Remove("subuser_access"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem> _explicitNullValueSubuserAccess = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200Response"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteBoolValue("has_restricted_subuser_access", HasRestrictedSubuserAccess);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseMetadata>("_metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ListSubuserByTemplate200ResponseSubuserAccessItem>("subuser_access", SubuserAccess);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

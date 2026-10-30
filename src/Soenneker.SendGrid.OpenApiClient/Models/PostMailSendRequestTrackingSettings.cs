@@ -12,40 +12,59 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostMailSendRequestTrackingSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("click_tracking") is { } nullNodeClickTracking && nullNodeClickTracking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTracking = null;
+            if (parseNode.GetChildNode("ganalytics") is { } nullNodeGanalytics && nullNodeGanalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ganalytics = null;
+            if (parseNode.GetChildNode("open_tracking") is { } nullNodeOpenTracking && nullNodeOpenTracking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenTracking = null;
+            if (parseNode.GetChildNode("subscription_tracking") is { } nullNodeSubscriptionTracking && nullNodeSubscriptionTracking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionTracking = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allows you to track if a recipient clicked a link in your email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsClickTracking? ClickTracking { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsClickTracking? ClickTracking { get => _explicitNullValueClickTracking; set { _explicitNullValueClickTracking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_tracking"); else _explicitNullProperties?.Remove("click_tracking"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsClickTracking? _explicitNullValueClickTracking = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsClickTracking ClickTracking { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsClickTracking ClickTracking { get => _explicitNullValueClickTracking; set { _explicitNullValueClickTracking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_tracking"); else _explicitNullProperties?.Remove("click_tracking"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsClickTracking _explicitNullValueClickTracking = default!;
 #endif
         /// <summary>Allows you to enable tracking provided by Google Analytics. See [**Google Analytics and SendGrid Statistics**](https://docs.sendgrid.com/ui/analytics-and-reporting/google-analytics) for more information about this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics? Ganalytics { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics? Ganalytics { get => _explicitNullValueGanalytics; set { _explicitNullValueGanalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ganalytics"); else _explicitNullProperties?.Remove("ganalytics"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics? _explicitNullValueGanalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics Ganalytics { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics Ganalytics { get => _explicitNullValueGanalytics; set { _explicitNullValueGanalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ganalytics"); else _explicitNullProperties?.Remove("ganalytics"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics _explicitNullValueGanalytics = default!;
 #endif
         /// <summary>Allows you to track if the email was opened by including a single transparent pixel image in the body of the message content. When the message is opened, a request for the pixel is sent. That request indicates to Twilio SendGrid that the message was opened.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking? OpenTracking { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking? OpenTracking { get => _explicitNullValueOpenTracking; set { _explicitNullValueOpenTracking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_tracking"); else _explicitNullProperties?.Remove("open_tracking"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking? _explicitNullValueOpenTracking = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking OpenTracking { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking OpenTracking { get => _explicitNullValueOpenTracking; set { _explicitNullValueOpenTracking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_tracking"); else _explicitNullProperties?.Remove("open_tracking"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking _explicitNullValueOpenTracking = default!;
 #endif
         /// <summary>Allows you to insert a subscription management link at the bottom of the text and HTML bodies of your email. If you would like to specify the location of the link within your email, you may use the `substitution_tag` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking? SubscriptionTracking { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking? SubscriptionTracking { get => _explicitNullValueSubscriptionTracking; set { _explicitNullValueSubscriptionTracking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_tracking"); else _explicitNullProperties?.Remove("subscription_tracking"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking? _explicitNullValueSubscriptionTracking = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking SubscriptionTracking { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking SubscriptionTracking { get => _explicitNullValueSubscriptionTracking; set { _explicitNullValueSubscriptionTracking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_tracking"); else _explicitNullProperties?.Remove("subscription_tracking"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking _explicitNullValueSubscriptionTracking = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsGanalytics>("ganalytics", Ganalytics);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsOpenTracking>("open_tracking", OpenTracking);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettingsSubscriptionTracking>("subscription_tracking", SubscriptionTracking);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

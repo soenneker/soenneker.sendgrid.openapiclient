@@ -55,6 +55,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Score
             {
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores400Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

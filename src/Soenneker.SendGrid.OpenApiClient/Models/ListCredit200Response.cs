@@ -11,41 +11,65 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListCredit200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("last_reset") is { } nullNodeLastReset && nullNodeLastReset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReset = null;
+            if (parseNode.GetChildNode("next_reset") is { } nullNodeNextReset && nullNodeNextReset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextReset = null;
+            if (parseNode.GetChildNode("overage") is { } nullNodeOverage && nullNodeOverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overage = null;
+            if (parseNode.GetChildNode("remain") is { } nullNodeRemain && nullNodeRemain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remain = null;
+            if (parseNode.GetChildNode("reset_frequency") is { } nullNodeResetFrequency && nullNodeResetFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResetFrequency = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date that your credit balance was last reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastReset { get; set; }
+        public string? LastReset { get => _explicitNullValueLastReset; set { _explicitNullValueLastReset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_reset"); else _explicitNullProperties?.Remove("last_reset"); } }
+        private string? _explicitNullValueLastReset = default!;
 #nullable restore
 #else
-        public string LastReset { get; set; }
+        public string LastReset { get => _explicitNullValueLastReset; set { _explicitNullValueLastReset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_reset"); else _explicitNullProperties?.Remove("last_reset"); } }
+        private string _explicitNullValueLastReset = default!;
 #endif
         /// <summary>The next date that your credit balance will be reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextReset { get; set; }
+        public string? NextReset { get => _explicitNullValueNextReset; set { _explicitNullValueNextReset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_reset"); else _explicitNullProperties?.Remove("next_reset"); } }
+        private string? _explicitNullValueNextReset = default!;
 #nullable restore
 #else
-        public string NextReset { get; set; }
+        public string NextReset { get => _explicitNullValueNextReset; set { _explicitNullValueNextReset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_reset"); else _explicitNullProperties?.Remove("next_reset"); } }
+        private string _explicitNullValueNextReset = default!;
 #endif
         /// <summary>The number of overdrawn credits for your account.</summary>
-        public int? Overage { get; set; }
+        public int? Overage { get => _explicitNullValueOverage; set { _explicitNullValueOverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overage"); else _explicitNullProperties?.Remove("overage"); } }
+        private int? _explicitNullValueOverage = default!;
         /// <summary>The remaining number of credits available on your account.</summary>
-        public int? Remain { get; set; }
+        public int? Remain { get => _explicitNullValueRemain; set { _explicitNullValueRemain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remain"); else _explicitNullProperties?.Remove("remain"); } }
+        private int? _explicitNullValueRemain = default!;
         /// <summary>The frequency at which your credit balance will be reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResetFrequency { get; set; }
+        public string? ResetFrequency { get => _explicitNullValueResetFrequency; set { _explicitNullValueResetFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reset_frequency"); else _explicitNullProperties?.Remove("reset_frequency"); } }
+        private string? _explicitNullValueResetFrequency = default!;
 #nullable restore
 #else
-        public string ResetFrequency { get; set; }
+        public string ResetFrequency { get => _explicitNullValueResetFrequency; set { _explicitNullValueResetFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reset_frequency"); else _explicitNullProperties?.Remove("reset_frequency"); } }
+        private string _explicitNullValueResetFrequency = default!;
 #endif
         /// <summary>The total number of credits assigned to your account.</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>The number of credits that you have used.</summary>
-        public int? Used { get; set; }
+        public int? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        private int? _explicitNullValueUsed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListCredit200Response"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ListCredit200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ListCredit200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ListCredit200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("reset_frequency", ResetFrequency);
             writer.WriteIntValue("total", Total);
             writer.WriteIntValue("used", Used);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

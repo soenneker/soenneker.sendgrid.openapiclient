@@ -11,43 +11,64 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetIpPool200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("ip_count_by_region") is { } nullNodeIpCountByRegion && nullNodeIpCountByRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpCountByRegion = null;
+            if (parseNode.GetChildNode("ips_preview") is { } nullNodeIpsPreview && nullNodeIpsPreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpsPreview = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("total_ip_count") is { } nullNodeTotalIpCount && nullNodeTotalIpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalIpCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique ID of the IP Pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The total number of IP addresses by region. this object is only returned if the `include_region` parameter is included and set to `true` in the API request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200ResponseIpCountByRegionItem>? IpCountByRegion { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200ResponseIpCountByRegionItem>? IpCountByRegion { get => _explicitNullValueIpCountByRegion; set { _explicitNullValueIpCountByRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_count_by_region"); else _explicitNullProperties?.Remove("ip_count_by_region"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200ResponseIpCountByRegionItem>? _explicitNullValueIpCountByRegion = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200ResponseIpCountByRegionItem> IpCountByRegion { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200ResponseIpCountByRegionItem> IpCountByRegion { get => _explicitNullValueIpCountByRegion; set { _explicitNullValueIpCountByRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_count_by_region"); else _explicitNullProperties?.Remove("ip_count_by_region"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200ResponseIpCountByRegionItem> _explicitNullValueIpCountByRegion = default!;
 #endif
         /// <summary>A sample list of IP addresses associated with the IP Pool. The sample is limited to 10 results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpsPreview { get; set; }
+        public List<string>? IpsPreview { get => _explicitNullValueIpsPreview; set { _explicitNullValueIpsPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips_preview"); else _explicitNullProperties?.Remove("ips_preview"); } }
+        private List<string>? _explicitNullValueIpsPreview = default!;
 #nullable restore
 #else
-        public List<string> IpsPreview { get; set; }
+        public List<string> IpsPreview { get => _explicitNullValueIpsPreview; set { _explicitNullValueIpsPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips_preview"); else _explicitNullProperties?.Remove("ips_preview"); } }
+        private List<string> _explicitNullValueIpsPreview = default!;
 #endif
         /// <summary>The name of the IP Pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The total number of IP addresses in the IP Pool. An IP Pool can have a maximum of 100 associated IP addresses.</summary>
-        public int? TotalIpCount { get; set; }
+        public int? TotalIpCount { get => _explicitNullValueTotalIpCount; set { _explicitNullValueTotalIpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_ip_count"); else _explicitNullProperties?.Remove("total_ip_count"); } }
+        private int? _explicitNullValueTotalIpCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200Response"/> and sets the default values.
         /// </summary>
@@ -63,7 +84,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.GetIpPool200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("ips_preview", IpsPreview);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("total_ip_count", TotalIpCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

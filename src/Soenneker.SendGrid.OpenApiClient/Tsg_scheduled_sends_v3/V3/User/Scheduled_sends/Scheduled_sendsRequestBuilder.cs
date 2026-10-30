@@ -74,6 +74,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSends500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -108,6 +110,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_scheduled_sends_v3.V3.User.Schedu
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgScheduledSendsV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSends500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ScheduledSendStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

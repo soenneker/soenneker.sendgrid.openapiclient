@@ -80,6 +80,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
                 { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.AccountList>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.AccountList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -117,6 +119,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_account_provisioning_v3.V3.Partne
                 { "502", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse502Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse503Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningErrorResponse504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccountId>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccountId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

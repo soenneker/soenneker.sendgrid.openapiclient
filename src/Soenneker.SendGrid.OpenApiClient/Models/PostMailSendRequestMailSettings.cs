@@ -12,56 +12,81 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostMailSendRequestMailSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bypass_bounce_management") is { } nullNodeBypassBounceManagement && nullNodeBypassBounceManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassBounceManagement = null;
+            if (parseNode.GetChildNode("bypass_list_management") is { } nullNodeBypassListManagement && nullNodeBypassListManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassListManagement = null;
+            if (parseNode.GetChildNode("bypass_spam_management") is { } nullNodeBypassSpamManagement && nullNodeBypassSpamManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassSpamManagement = null;
+            if (parseNode.GetChildNode("bypass_unsubscribe_management") is { } nullNodeBypassUnsubscribeManagement && nullNodeBypassUnsubscribeManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassUnsubscribeManagement = null;
+            if (parseNode.GetChildNode("footer") is { } nullNodeFooter && nullNodeFooter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Footer = null;
+            if (parseNode.GetChildNode("sandbox_mode") is { } nullNodeSandboxMode && nullNodeSandboxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allows you to bypass the bounce list to ensure that the email is delivered to recipients. Spam report and unsubscribe lists will still be checked; addresses on these other lists will not receive the message. This filter cannot be combined with the `bypass_list_management` filter. See the [the &quot;Bypass suppressions&quot; section of our **Suppressions Overview**](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) for more about bypass filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassBounceManagement? BypassBounceManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassBounceManagement? BypassBounceManagement { get => _explicitNullValueBypassBounceManagement; set { _explicitNullValueBypassBounceManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_bounce_management"); else _explicitNullProperties?.Remove("bypass_bounce_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassBounceManagement? _explicitNullValueBypassBounceManagement = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassBounceManagement BypassBounceManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassBounceManagement BypassBounceManagement { get => _explicitNullValueBypassBounceManagement; set { _explicitNullValueBypassBounceManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_bounce_management"); else _explicitNullProperties?.Remove("bypass_bounce_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassBounceManagement _explicitNullValueBypassBounceManagement = default!;
 #endif
         /// <summary>Allows you to bypass all unsubscribe groups and suppressions to ensure that the email is delivered to every single recipient. This should only be used in emergencies when it is absolutely necessary that every recipient receives your email. This filter cannot be combined with any other bypass filters. See the [the &quot;Bypass suppressions&quot; section of our **Suppressions Overview**](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) for more about bypass filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassListManagement? BypassListManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassListManagement? BypassListManagement { get => _explicitNullValueBypassListManagement; set { _explicitNullValueBypassListManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_list_management"); else _explicitNullProperties?.Remove("bypass_list_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassListManagement? _explicitNullValueBypassListManagement = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassListManagement BypassListManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassListManagement BypassListManagement { get => _explicitNullValueBypassListManagement; set { _explicitNullValueBypassListManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_list_management"); else _explicitNullProperties?.Remove("bypass_list_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassListManagement _explicitNullValueBypassListManagement = default!;
 #endif
         /// <summary>Allows you to bypass the spam report list to ensure that the email is delivered to recipients. Bounce and unsubscribe lists will still be checked; addresses on these other lists will not receive the message. This filter cannot be combined with the `bypass_list_management` filter. See the [the &quot;Bypass suppressions&quot; section of our **Suppressions Overview**](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) for more about bypass filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassSpamManagement? BypassSpamManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassSpamManagement? BypassSpamManagement { get => _explicitNullValueBypassSpamManagement; set { _explicitNullValueBypassSpamManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_spam_management"); else _explicitNullProperties?.Remove("bypass_spam_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassSpamManagement? _explicitNullValueBypassSpamManagement = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassSpamManagement BypassSpamManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassSpamManagement BypassSpamManagement { get => _explicitNullValueBypassSpamManagement; set { _explicitNullValueBypassSpamManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_spam_management"); else _explicitNullProperties?.Remove("bypass_spam_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassSpamManagement _explicitNullValueBypassSpamManagement = default!;
 #endif
         /// <summary>Allows you to bypass the global unsubscribe list to ensure that the email is delivered to recipients. Bounce and spam report lists will still be checked; addresses on these other lists will not receive the message. This filter applies only to global unsubscribes and will not bypass group unsubscribes. This filter cannot be combined with the `bypass_list_management` filter. See the [the &quot;Bypass suppressions&quot; section of our **Suppressions Overview**](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) for more about bypass filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement? BypassUnsubscribeManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement? BypassUnsubscribeManagement { get => _explicitNullValueBypassUnsubscribeManagement; set { _explicitNullValueBypassUnsubscribeManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_unsubscribe_management"); else _explicitNullProperties?.Remove("bypass_unsubscribe_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement? _explicitNullValueBypassUnsubscribeManagement = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement BypassUnsubscribeManagement { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement BypassUnsubscribeManagement { get => _explicitNullValueBypassUnsubscribeManagement; set { _explicitNullValueBypassUnsubscribeManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_unsubscribe_management"); else _explicitNullProperties?.Remove("bypass_unsubscribe_management"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement _explicitNullValueBypassUnsubscribeManagement = default!;
 #endif
         /// <summary>Inserts a custom footer at the bottom of the text and HTML bodies of your messages. Use the `html` and `text` properties to include the content of the footers to be inserted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter? Footer { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter? Footer { get => _explicitNullValueFooter; set { _explicitNullValueFooter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer"); else _explicitNullProperties?.Remove("footer"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter? _explicitNullValueFooter = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter Footer { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter Footer { get => _explicitNullValueFooter; set { _explicitNullValueFooter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer"); else _explicitNullProperties?.Remove("footer"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter _explicitNullValueFooter = default!;
 #endif
         /// <summary>Sandbox Mode allows you to send a test email to ensure that your request body is valid and formatted correctly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode? SandboxMode { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode? SandboxMode { get => _explicitNullValueSandboxMode; set { _explicitNullValueSandboxMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox_mode"); else _explicitNullProperties?.Remove("sandbox_mode"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode? _explicitNullValueSandboxMode = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode SandboxMode { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode SandboxMode { get => _explicitNullValueSandboxMode; set { _explicitNullValueSandboxMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox_mode"); else _explicitNullProperties?.Remove("sandbox_mode"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode _explicitNullValueSandboxMode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsBypassUnsubscribeManagement>("bypass_unsubscribe_management", BypassUnsubscribeManagement);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsFooter>("footer", Footer);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettingsSandboxMode>("sandbox_mode", SandboxMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

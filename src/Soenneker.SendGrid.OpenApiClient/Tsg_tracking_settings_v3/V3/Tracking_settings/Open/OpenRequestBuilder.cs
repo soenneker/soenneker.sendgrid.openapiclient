@@ -49,7 +49,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_tracking_settings_v3.V3.Tracking_
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListOpenTrackingSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListOpenTrackingSetting200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.ListOpenTrackingSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.ListOpenTrackingSetting200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to update your current settings for open tracking.**Open Tracking adds an invisible image at the end of the email which can track email opens.If the email recipient has images enabled on their email client, a request to SendGrid’s server for the invisible image is executed and an open event is logged.These events are logged in the Statistics portal, Email Activity interface, and are reported by the Event Webhook.
@@ -69,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_tracking_settings_v3.V3.Tracking_
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.UpdateOpenTrackingSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.UpdateOpenTrackingSetting200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.UpdateOpenTrackingSetting200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.UpdateOpenTrackingSetting200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve your current settings for open tracking.**Open Tracking adds an invisible image at the end of the email which can track email opens.If the email recipient has images enabled on their email client, a request to SendGrid’s server for the invisible image is executed and an open event is logged.These events are logged in the Statistics portal, Email Activity interface, and are reported by the Event Webhook.

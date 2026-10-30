@@ -11,39 +11,61 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContactdbRecipientResponse201 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_count") is { } nullNodeErrorCount && nullNodeErrorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCount = null;
+            if (parseNode.GetChildNode("error_indices") is { } nullNodeErrorIndices && nullNodeErrorIndices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorIndices = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("new_count") is { } nullNodeNewCount && nullNodeNewCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewCount = null;
+            if (parseNode.GetChildNode("persisted_recipients") is { } nullNodePersistedRecipients && nullNodePersistedRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistedRecipients = null;
+            if (parseNode.GetChildNode("updated_count") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of errors found while adding recipients.</summary>
-        public double? ErrorCount { get; set; }
+        public double? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_count"); else _explicitNullProperties?.Remove("error_count"); } }
+        private double? _explicitNullValueErrorCount = default!;
         /// <summary>The indices of the recipient(s) sent that caused the error. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? ErrorIndices { get; set; }
+        public List<double?>? ErrorIndices { get => _explicitNullValueErrorIndices; set { _explicitNullValueErrorIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_indices"); else _explicitNullProperties?.Remove("error_indices"); } }
+        private List<double?>? _explicitNullValueErrorIndices = default!;
 #nullable restore
 #else
-        public List<double?> ErrorIndices { get; set; }
+        public List<double?> ErrorIndices { get => _explicitNullValueErrorIndices; set { _explicitNullValueErrorIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_indices"); else _explicitNullProperties?.Remove("error_indices"); } }
+        private List<double?> _explicitNullValueErrorIndices = default!;
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem>? Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem> Errors { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201ErrorsItem> _explicitNullValueErrors = default!;
 #endif
         /// <summary>The count of new recipients added to the contactdb.</summary>
-        public double? NewCount { get; set; }
+        public double? NewCount { get => _explicitNullValueNewCount; set { _explicitNullValueNewCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_count"); else _explicitNullProperties?.Remove("new_count"); } }
+        private double? _explicitNullValueNewCount = default!;
         /// <summary>The recipient IDs of the recipients that already existed from this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PersistedRecipients { get; set; }
+        public List<string>? PersistedRecipients { get => _explicitNullValuePersistedRecipients; set { _explicitNullValuePersistedRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persisted_recipients"); else _explicitNullProperties?.Remove("persisted_recipients"); } }
+        private List<string>? _explicitNullValuePersistedRecipients = default!;
 #nullable restore
 #else
-        public List<string> PersistedRecipients { get; set; }
+        public List<string> PersistedRecipients { get => _explicitNullValuePersistedRecipients; set { _explicitNullValuePersistedRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persisted_recipients"); else _explicitNullProperties?.Remove("persisted_recipients"); } }
+        private List<string> _explicitNullValuePersistedRecipients = default!;
 #endif
         /// <summary>The recipients who were updated from this request.</summary>
-        public double? UpdatedCount { get; set; }
+        public double? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_count"); else _explicitNullProperties?.Remove("updated_count"); } }
+        private double? _explicitNullValueUpdatedCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201"/> and sets the default values.
         /// </summary>
@@ -62,7 +84,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientResponse201(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +115,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteDoubleValue("new_count", NewCount);
             writer.WriteCollectionOfPrimitiveValues<string>("persisted_recipients", PersistedRecipients);
             writer.WriteDoubleValue("updated_count", UpdatedCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

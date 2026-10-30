@@ -76,6 +76,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_sso_v3.V3.Sso.Certificates
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.SsoErrorResponseItem.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SsoCertificateBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

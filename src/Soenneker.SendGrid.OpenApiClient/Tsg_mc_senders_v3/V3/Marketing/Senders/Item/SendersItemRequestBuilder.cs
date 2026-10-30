@@ -60,6 +60,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_senders_v3.V3.Marketing.Sender
             {
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -83,6 +85,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_senders_v3.V3.Marketing.Sender
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Sender>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Sender.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -112,6 +116,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_senders_v3.V3.Marketing.Sender
                 { "400", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSendersV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.Sender>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.Sender.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

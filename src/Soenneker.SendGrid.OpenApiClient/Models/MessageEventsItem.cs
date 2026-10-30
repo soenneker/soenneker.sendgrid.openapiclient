@@ -11,54 +11,82 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MessageEventsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attempt_num") is { } nullNodeAttemptNum && nullNodeAttemptNum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptNum = null;
+            if (parseNode.GetChildNode("bounce_type") is { } nullNodeBounceType && nullNodeBounceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BounceType = null;
+            if (parseNode.GetChildNode("event_name") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
+            if (parseNode.GetChildNode("http_user_agent") is { } nullNodeHttpUserAgent && nullNodeHttpUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpUserAgent = null;
+            if (parseNode.GetChildNode("mx_server") is { } nullNodeMxServer && nullNodeMxServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MxServer = null;
+            if (parseNode.GetChildNode("processed") is { } nullNodeProcessed && nullNodeProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Processed = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Used with &quot;deferred&quot; events to indicate the attempt number out of 10. One &quot;deferred&quot; entry will exists under events array for each time a message was deferred with error message from the server. </summary>
-        public int? AttemptNum { get; set; }
+        public int? AttemptNum { get => _explicitNullValueAttemptNum; set { _explicitNullValueAttemptNum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_num"); else _explicitNullProperties?.Remove("attempt_num"); } }
+        private int? _explicitNullValueAttemptNum = default!;
         /// <summary>Use to distinguish between types of bounces</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType? BounceType { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType? BounceType { get => _explicitNullValueBounceType; set { _explicitNullValueBounceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounce_type"); else _explicitNullProperties?.Remove("bounce_type"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType? _explicitNullValueBounceType = default!;
         /// <summary>Name of event</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemEventName? EventName { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemEventName? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_name"); else _explicitNullProperties?.Remove("event_name"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemEventName? _explicitNullValueEventName = default!;
         /// <summary>Client recipient used to click or open message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpUserAgent { get; set; }
+        public string? HttpUserAgent { get => _explicitNullValueHttpUserAgent; set { _explicitNullValueHttpUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_user_agent"); else _explicitNullProperties?.Remove("http_user_agent"); } }
+        private string? _explicitNullValueHttpUserAgent = default!;
 #nullable restore
 #else
-        public string HttpUserAgent { get; set; }
+        public string HttpUserAgent { get => _explicitNullValueHttpUserAgent; set { _explicitNullValueHttpUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_user_agent"); else _explicitNullProperties?.Remove("http_user_agent"); } }
+        private string _explicitNullValueHttpUserAgent = default!;
 #endif
         /// <summary>The MX server that received the email. For example, mx.gmail.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MxServer { get; set; }
+        public string? MxServer { get => _explicitNullValueMxServer; set { _explicitNullValueMxServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mx_server"); else _explicitNullProperties?.Remove("mx_server"); } }
+        private string? _explicitNullValueMxServer = default!;
 #nullable restore
 #else
-        public string MxServer { get; set; }
+        public string MxServer { get => _explicitNullValueMxServer; set { _explicitNullValueMxServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mx_server"); else _explicitNullProperties?.Remove("mx_server"); } }
+        private string _explicitNullValueMxServer = default!;
 #endif
         /// <summary>The date when the event was processed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Processed { get; set; }
+        public string? Processed { get => _explicitNullValueProcessed; set { _explicitNullValueProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processed"); else _explicitNullProperties?.Remove("processed"); } }
+        private string? _explicitNullValueProcessed = default!;
 #nullable restore
 #else
-        public string Processed { get; set; }
+        public string Processed { get => _explicitNullValueProcessed; set { _explicitNullValueProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processed"); else _explicitNullProperties?.Remove("processed"); } }
+        private string _explicitNullValueProcessed = default!;
 #endif
         /// <summary>Explanation of what caused the message to be &quot;bounced&quot;, &quot;deferred&quot;, or &quot;blocked&quot;. Usually contains error message from the server - e.g. message from gmail why mail was deferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
 #endif
         /// <summary>Used with &quot;clicked&quot; event to indicate which url the user clicked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem"/> and sets the default values.
@@ -75,7 +103,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +138,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("processed", Processed);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

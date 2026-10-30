@@ -12,40 +12,59 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthenticatedDomainSpfDns : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dkim") is { } nullNodeDkim && nullNodeDkim.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dkim = null;
+            if (parseNode.GetChildNode("domain_spf") is { } nullNodeDomainSpf && nullNodeDomainSpf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainSpf = null;
+            if (parseNode.GetChildNode("mail_server") is { } nullNodeMailServer && nullNodeMailServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailServer = null;
+            if (parseNode.GetChildNode("subdomain_spf") is { } nullNodeSubdomainSpf && nullNodeSubdomainSpf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubdomainSpf = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The DKIM record for messages sent using this authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDkim? Dkim { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDkim? Dkim { get => _explicitNullValueDkim; set { _explicitNullValueDkim = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim"); else _explicitNullProperties?.Remove("dkim"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDkim? _explicitNullValueDkim = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDkim Dkim { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDkim Dkim { get => _explicitNullValueDkim; set { _explicitNullValueDkim = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim"); else _explicitNullProperties?.Remove("dkim"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDkim _explicitNullValueDkim = default!;
 #endif
         /// <summary>The SPF record for the root domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf? DomainSpf { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf? DomainSpf { get => _explicitNullValueDomainSpf; set { _explicitNullValueDomainSpf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_spf"); else _explicitNullProperties?.Remove("domain_spf"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf? _explicitNullValueDomainSpf = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf DomainSpf { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf DomainSpf { get => _explicitNullValueDomainSpf; set { _explicitNullValueDomainSpf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_spf"); else _explicitNullProperties?.Remove("domain_spf"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf _explicitNullValueDomainSpf = default!;
 #endif
         /// <summary>Designates which mail server is responsible for accepting messages from a domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer? MailServer { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer? MailServer { get => _explicitNullValueMailServer; set { _explicitNullValueMailServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_server"); else _explicitNullProperties?.Remove("mail_server"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer? _explicitNullValueMailServer = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer MailServer { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer MailServer { get => _explicitNullValueMailServer; set { _explicitNullValueMailServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_server"); else _explicitNullProperties?.Remove("mail_server"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer _explicitNullValueMailServer = default!;
 #endif
         /// <summary>The SPF record for the subdomain used to create this authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf? SubdomainSpf { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf? SubdomainSpf { get => _explicitNullValueSubdomainSpf; set { _explicitNullValueSubdomainSpf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain_spf"); else _explicitNullProperties?.Remove("subdomain_spf"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf? _explicitNullValueSubdomainSpf = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf SubdomainSpf { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf SubdomainSpf { get => _explicitNullValueSubdomainSpf; set { _explicitNullValueSubdomainSpf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain_spf"); else _explicitNullProperties?.Remove("subdomain_spf"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf _explicitNullValueSubdomainSpf = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDns(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsDomainSpf>("domain_spf", DomainSpf);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsMailServer>("mail_server", MailServer);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.AuthenticatedDomainSpfDnsSubdomainSpf>("subdomain_spf", SubdomainSpf);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

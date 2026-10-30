@@ -12,24 +12,37 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ValidateBrandedLink200ResponseValidationResults : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domain_cname") is { } nullNodeDomainCname && nullNodeDomainCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCname = null;
+            if (parseNode.GetChildNode("owner_cname") is { } nullNodeOwnerCname && nullNodeOwnerCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerCname = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The DNS record generated for the sending domain used for this branded link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname? DomainCname { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname? DomainCname { get => _explicitNullValueDomainCname; set { _explicitNullValueDomainCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_cname"); else _explicitNullProperties?.Remove("domain_cname"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname? _explicitNullValueDomainCname = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname DomainCname { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname DomainCname { get => _explicitNullValueDomainCname; set { _explicitNullValueDomainCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_cname"); else _explicitNullProperties?.Remove("domain_cname"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname _explicitNullValueDomainCname = default!;
 #endif
         /// <summary>The DNS record created to verify the branded link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname? OwnerCname { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname? OwnerCname { get => _explicitNullValueOwnerCname; set { _explicitNullValueOwnerCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_cname"); else _explicitNullProperties?.Remove("owner_cname"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname? _explicitNullValueOwnerCname = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname OwnerCname { get; set; }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname OwnerCname { get => _explicitNullValueOwnerCname; set { _explicitNullValueOwnerCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_cname"); else _explicitNullProperties?.Remove("owner_cname"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname _explicitNullValueOwnerCname = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResults"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsDomainCname>("domain_cname", DomainCname);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ValidateBrandedLink200ResponseValidationResultsOwnerCname>("owner_cname", OwnerCname);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

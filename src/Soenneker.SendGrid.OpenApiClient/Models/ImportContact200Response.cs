@@ -11,32 +11,48 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ImportContact200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("upload_headers") is { } nullNodeUploadHeaders && nullNodeUploadHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadHeaders = null;
+            if (parseNode.GetChildNode("upload_uri") is { } nullNodeUploadUri && nullNodeUploadUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the import job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobId { get; set; }
+        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        private string? _explicitNullValueJobId = default!;
 #nullable restore
 #else
-        public string JobId { get; set; }
+        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        private string _explicitNullValueJobId = default!;
 #endif
         /// <summary>A list of headers that must be included in PUT request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem>? UploadHeaders { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem>? UploadHeaders { get => _explicitNullValueUploadHeaders; set { _explicitNullValueUploadHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_headers"); else _explicitNullProperties?.Remove("upload_headers"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem>? _explicitNullValueUploadHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem> UploadHeaders { get; set; }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem> UploadHeaders { get => _explicitNullValueUploadHeaders; set { _explicitNullValueUploadHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_headers"); else _explicitNullProperties?.Remove("upload_headers"); } }
+        private List<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem> _explicitNullValueUploadHeaders = default!;
 #endif
         /// <summary>The URI to PUT the upload file to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadUri { get; set; }
+        public string? UploadUri { get => _explicitNullValueUploadUri; set { _explicitNullValueUploadUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_uri"); else _explicitNullProperties?.Remove("upload_uri"); } }
+        private string? _explicitNullValueUploadUri = default!;
 #nullable restore
 #else
-        public string UploadUri { get; set; }
+        public string UploadUri { get => _explicitNullValueUploadUri; set { _explicitNullValueUploadUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_uri"); else _explicitNullProperties?.Remove("upload_uri"); } }
+        private string _explicitNullValueUploadUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200Response"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("job_id", JobId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContact200ResponseUploadHeadersItem>("upload_headers", UploadHeaders);
             writer.WriteStringValue("upload_uri", UploadUri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

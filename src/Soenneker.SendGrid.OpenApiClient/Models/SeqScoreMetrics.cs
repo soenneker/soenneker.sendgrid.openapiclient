@@ -12,19 +12,36 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SeqScoreMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bounce_classification") is { } nullNodeBounceClassification && nullNodeBounceClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BounceClassification = null;
+            if (parseNode.GetChildNode("bounce_rate") is { } nullNodeBounceRate && nullNodeBounceRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BounceRate = null;
+            if (parseNode.GetChildNode("engagement_recency") is { } nullNodeEngagementRecency && nullNodeEngagementRecency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EngagementRecency = null;
+            if (parseNode.GetChildNode("open_rate") is { } nullNodeOpenRate && nullNodeOpenRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenRate = null;
+            if (parseNode.GetChildNode("spam_rate") is { } nullNodeSpamRate && nullNodeSpamRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamRate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the degree to which mailbox providers are rejecting your mail due to reputation issues or content that looks like spam. Your score is calculated based on a ratio of these specific types of bounces to your total processed email. Your score will range from `1` to `5` with a higher score representing a lower percentage of bounces and better engagement quality.</summary>
-        public double? BounceClassification { get; set; }
+        public double? BounceClassification { get => _explicitNullValueBounceClassification; set { _explicitNullValueBounceClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounce_classification"); else _explicitNullProperties?.Remove("bounce_classification"); } }
+        private double? _explicitNullValueBounceClassification = default!;
         /// <summary>Indicates if you are attempting to send too many messages to addresses that don&apos;t exist. This score is determined by calculating your permanent bounces (bounces to invalid mailboxes). Your score will range from `1` to `5` with a higher score representing fewer bounces and better engagement quality.</summary>
-        public double? BounceRate { get; set; }
+        public double? BounceRate { get => _explicitNullValueBounceRate; set { _explicitNullValueBounceRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounce_rate"); else _explicitNullProperties?.Remove("bounce_rate"); } }
+        private double? _explicitNullValueBounceRate = default!;
         /// <summary>Indicates whether or not you are sending to an engaged audience. Engagement recency is determined by factors such as how regularly your messages are being opened and clicked. Your score will range from `1` to `5` with a higher score representing better engagement quality.</summary>
-        public double? EngagementRecency { get; set; }
+        public double? EngagementRecency { get => _explicitNullValueEngagementRecency; set { _explicitNullValueEngagementRecency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagement_recency"); else _explicitNullProperties?.Remove("engagement_recency"); } }
+        private double? _explicitNullValueEngagementRecency = default!;
         /// <summary>Indicates the degree to which your audience is opening your messages. Your score will range from `1` to `5` with a higher score representing a better open rate and better engagement quality.</summary>
-        public double? OpenRate { get; set; }
+        public double? OpenRate { get => _explicitNullValueOpenRate; set { _explicitNullValueOpenRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_rate"); else _explicitNullProperties?.Remove("open_rate"); } }
+        private double? _explicitNullValueOpenRate = default!;
         /// <summary>Indicates if your messages are generating excessive spam complaints from recipients. This score is determined by calculating the number of recipients who open your mail and then mark it as spam. Your score will range from `1` to `5` with a higher score representing fewer spam reports and better engagement quality.</summary>
-        public double? SpamRate { get; set; }
+        public double? SpamRate { get => _explicitNullValueSpamRate; set { _explicitNullValueSpamRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_rate"); else _explicitNullProperties?.Remove("spam_rate"); } }
+        private double? _explicitNullValueSpamRate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.SeqScoreMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteDoubleValue("engagement_recency", EngagementRecency);
             writer.WriteDoubleValue("open_rate", OpenRate);
             writer.WriteDoubleValue("spam_rate", SpamRate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

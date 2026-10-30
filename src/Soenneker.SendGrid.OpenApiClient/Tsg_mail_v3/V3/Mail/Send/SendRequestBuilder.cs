@@ -66,6 +66,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mail_v3.V3.Mail.Send
                 { "405", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "413", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailV3ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.SendGrid.OpenApiClient.Models.TsgMailV3ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,41 +11,80 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StatsAdvancedGlobalStats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blocks") is { } nullNodeBlocks && nullNodeBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocks = null;
+            if (parseNode.GetChildNode("bounce_drops") is { } nullNodeBounceDrops && nullNodeBounceDrops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BounceDrops = null;
+            if (parseNode.GetChildNode("bounces") is { } nullNodeBounces && nullNodeBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bounces = null;
+            if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("deferred") is { } nullNodeDeferred && nullNodeDeferred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deferred = null;
+            if (parseNode.GetChildNode("delivered") is { } nullNodeDelivered && nullNodeDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delivered = null;
+            if (parseNode.GetChildNode("invalid_emails") is { } nullNodeInvalidEmails && nullNodeInvalidEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidEmails = null;
+            if (parseNode.GetChildNode("opens") is { } nullNodeOpens && nullNodeOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opens = null;
+            if (parseNode.GetChildNode("processed") is { } nullNodeProcessed && nullNodeProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Processed = null;
+            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("spam_report_drops") is { } nullNodeSpamReportDrops && nullNodeSpamReportDrops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamReportDrops = null;
+            if (parseNode.GetChildNode("spam_reports") is { } nullNodeSpamReports && nullNodeSpamReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamReports = null;
+            if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
+            if (parseNode.GetChildNode("unique_opens") is { } nullNodeUniqueOpens && nullNodeUniqueOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueOpens = null;
+            if (parseNode.GetChildNode("unsubscribe_drops") is { } nullNodeUnsubscribeDrops && nullNodeUnsubscribeDrops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsubscribeDrops = null;
+            if (parseNode.GetChildNode("unsubscribes") is { } nullNodeUnsubscribes && nullNodeUnsubscribes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unsubscribes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of emails that were not allowed to be delivered by ISPs.</summary>
-        public int? Blocks { get; set; }
+        public int? Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
+        private int? _explicitNullValueBlocks = default!;
         /// <summary>The number of emails that were dropped because of a bounce.</summary>
-        public int? BounceDrops { get; set; }
+        public int? BounceDrops { get => _explicitNullValueBounceDrops; set { _explicitNullValueBounceDrops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounce_drops"); else _explicitNullProperties?.Remove("bounce_drops"); } }
+        private int? _explicitNullValueBounceDrops = default!;
         /// <summary>The number of emails that bounced instead of being delivered.</summary>
-        public int? Bounces { get; set; }
+        public int? Bounces { get => _explicitNullValueBounces; set { _explicitNullValueBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounces"); else _explicitNullProperties?.Remove("bounces"); } }
+        private int? _explicitNullValueBounces = default!;
         /// <summary>The number of links that were clicked in your emails.</summary>
-        public int? Clicks { get; set; }
+        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
+        private int? _explicitNullValueClicks = default!;
         /// <summary>The number of emails that temporarily could not be delivered. </summary>
-        public int? Deferred { get; set; }
+        public int? Deferred { get => _explicitNullValueDeferred; set { _explicitNullValueDeferred = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deferred"); else _explicitNullProperties?.Remove("deferred"); } }
+        private int? _explicitNullValueDeferred = default!;
         /// <summary>The number of emails SendGrid was able to confirm were actually delivered to a recipient.</summary>
-        public int? Delivered { get; set; }
+        public int? Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
+        private int? _explicitNullValueDelivered = default!;
         /// <summary>The number of recipients who had malformed email addresses or whose mail provider reported the address as invalid.</summary>
-        public int? InvalidEmails { get; set; }
+        public int? InvalidEmails { get => _explicitNullValueInvalidEmails; set { _explicitNullValueInvalidEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_emails"); else _explicitNullProperties?.Remove("invalid_emails"); } }
+        private int? _explicitNullValueInvalidEmails = default!;
         /// <summary>The total number of times your emails were opened by recipients.</summary>
-        public int? Opens { get; set; }
+        public int? Opens { get => _explicitNullValueOpens; set { _explicitNullValueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens"); else _explicitNullProperties?.Remove("opens"); } }
+        private int? _explicitNullValueOpens = default!;
         /// <summary>Requests from your website, application, or mail client via SMTP Relay or the API that SendGrid processed.</summary>
-        public int? Processed { get; set; }
+        public int? Processed { get => _explicitNullValueProcessed; set { _explicitNullValueProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processed"); else _explicitNullProperties?.Remove("processed"); } }
+        private int? _explicitNullValueProcessed = default!;
         /// <summary>The number of emails that were requested to be delivered.</summary>
-        public int? Requests { get; set; }
+        public int? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private int? _explicitNullValueRequests = default!;
         /// <summary>The number of emails that were dropped due to a recipient previously marking your emails as spam.</summary>
-        public int? SpamReportDrops { get; set; }
+        public int? SpamReportDrops { get => _explicitNullValueSpamReportDrops; set { _explicitNullValueSpamReportDrops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_report_drops"); else _explicitNullProperties?.Remove("spam_report_drops"); } }
+        private int? _explicitNullValueSpamReportDrops = default!;
         /// <summary>The number of recipients who marked your email as spam.</summary>
-        public int? SpamReports { get; set; }
+        public int? SpamReports { get => _explicitNullValueSpamReports; set { _explicitNullValueSpamReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_reports"); else _explicitNullProperties?.Remove("spam_reports"); } }
+        private int? _explicitNullValueSpamReports = default!;
         /// <summary>The number of unique recipients who clicked links in your emails.</summary>
-        public int? UniqueClicks { get; set; }
+        public int? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
+        private int? _explicitNullValueUniqueClicks = default!;
         /// <summary>The number of unique recipients who opened your emails.</summary>
-        public int? UniqueOpens { get; set; }
+        public int? UniqueOpens { get => _explicitNullValueUniqueOpens; set { _explicitNullValueUniqueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_opens"); else _explicitNullProperties?.Remove("unique_opens"); } }
+        private int? _explicitNullValueUniqueOpens = default!;
         /// <summary>The number of emails dropped due to a recipient unsubscribing from your emails.</summary>
-        public int? UnsubscribeDrops { get; set; }
+        public int? UnsubscribeDrops { get => _explicitNullValueUnsubscribeDrops; set { _explicitNullValueUnsubscribeDrops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsubscribe_drops"); else _explicitNullProperties?.Remove("unsubscribe_drops"); } }
+        private int? _explicitNullValueUnsubscribeDrops = default!;
         /// <summary>The number of recipients who unsubscribed from your emails.</summary>
-        public int? Unsubscribes { get; set; }
+        public int? Unsubscribes { get => _explicitNullValueUnsubscribes; set { _explicitNullValueUnsubscribes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsubscribes"); else _explicitNullProperties?.Remove("unsubscribes"); } }
+        private int? _explicitNullValueUnsubscribes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.StatsAdvancedGlobalStats"/> and sets the default values.
         /// </summary>
@@ -61,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.StatsAdvancedGlobalStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.StatsAdvancedGlobalStats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.StatsAdvancedGlobalStats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +151,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("unique_opens", UniqueOpens);
             writer.WriteIntValue("unsubscribe_drops", UnsubscribeDrops);
             writer.WriteIntValue("unsubscribes", Unsubscribes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,27 +12,47 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContactImportResults : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_count") is { } nullNodeCreatedCount && nullNodeCreatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedCount = null;
+            if (parseNode.GetChildNode("deleted_count") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
+            if (parseNode.GetChildNode("errored_count") is { } nullNodeErroredCount && nullNodeErroredCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErroredCount = null;
+            if (parseNode.GetChildNode("errors_url") is { } nullNodeErrorsUrl && nullNodeErrorsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorsUrl = null;
+            if (parseNode.GetChildNode("requested_count") is { } nullNodeRequestedCount && nullNodeRequestedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedCount = null;
+            if (parseNode.GetChildNode("updated_count") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Created contact count from the import.</summary>
-        public double? CreatedCount { get; set; }
+        public double? CreatedCount { get => _explicitNullValueCreatedCount; set { _explicitNullValueCreatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_count"); else _explicitNullProperties?.Remove("created_count"); } }
+        private double? _explicitNullValueCreatedCount = default!;
         /// <summary>Count of deleted contacts that resulted in error.</summary>
-        public double? DeletedCount { get; set; }
+        public double? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_count"); else _explicitNullProperties?.Remove("deleted_count"); } }
+        private double? _explicitNullValueDeletedCount = default!;
         /// <summary>Count of imported contacts that resulted in error.</summary>
-        public double? ErroredCount { get; set; }
+        public double? ErroredCount { get => _explicitNullValueErroredCount; set { _explicitNullValueErroredCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored_count"); else _explicitNullProperties?.Remove("errored_count"); } }
+        private double? _explicitNullValueErroredCount = default!;
         /// <summary>The download URL of the file which provides information about any errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorsUrl { get; set; }
+        public string? ErrorsUrl { get => _explicitNullValueErrorsUrl; set { _explicitNullValueErrorsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors_url"); else _explicitNullProperties?.Remove("errors_url"); } }
+        private string? _explicitNullValueErrorsUrl = default!;
 #nullable restore
 #else
-        public string ErrorsUrl { get; set; }
+        public string ErrorsUrl { get => _explicitNullValueErrorsUrl; set { _explicitNullValueErrorsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors_url"); else _explicitNullProperties?.Remove("errors_url"); } }
+        private string _explicitNullValueErrorsUrl = default!;
 #endif
         /// <summary>Requested contact count from the import.</summary>
-        public double? RequestedCount { get; set; }
+        public double? RequestedCount { get => _explicitNullValueRequestedCount; set { _explicitNullValueRequestedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_count"); else _explicitNullProperties?.Remove("requested_count"); } }
+        private double? _explicitNullValueRequestedCount = default!;
         /// <summary>Updated contact count from the import.</summary>
-        public double? UpdatedCount { get; set; }
+        public double? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_count"); else _explicitNullProperties?.Remove("updated_count"); } }
+        private double? _explicitNullValueUpdatedCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults"/> and sets the default values.
         /// </summary>
@@ -48,7 +68,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ContactImportResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +99,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteStringValue("errors_url", ErrorsUrl);
             writer.WriteDoubleValue("requested_count", RequestedCount);
             writer.WriteDoubleValue("updated_count", UpdatedCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

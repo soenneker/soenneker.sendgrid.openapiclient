@@ -12,17 +12,32 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountProvisioningCatalogCatalogItemEntitlements : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("email_sends_max_monthly") is { } nullNodeEmailSendsMaxMonthly && nullNodeEmailSendsMaxMonthly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailSendsMaxMonthly = null;
+            if (parseNode.GetChildNode("ip_count") is { } nullNodeIpCount && nullNodeIpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpCount = null;
+            if (parseNode.GetChildNode("teammates_max_total") is { } nullNodeTeammatesMaxTotal && nullNodeTeammatesMaxTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeammatesMaxTotal = null;
+            if (parseNode.GetChildNode("users_max_total") is { } nullNodeUsersMaxTotal && nullNodeUsersMaxTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersMaxTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of email sends per month</summary>
-        public long? EmailSendsMaxMonthly { get; set; }
+        public long? EmailSendsMaxMonthly { get => _explicitNullValueEmailSendsMaxMonthly; set { _explicitNullValueEmailSendsMaxMonthly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_sends_max_monthly"); else _explicitNullProperties?.Remove("email_sends_max_monthly"); } }
+        private long? _explicitNullValueEmailSendsMaxMonthly = default!;
         /// <summary>Number of dedicated IPs offered</summary>
-        public long? IpCount { get; set; }
+        public long? IpCount { get => _explicitNullValueIpCount; set { _explicitNullValueIpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_count"); else _explicitNullProperties?.Remove("ip_count"); } }
+        private long? _explicitNullValueIpCount = default!;
         /// <summary>Total number of teammates allowed</summary>
-        public long? TeammatesMaxTotal { get; set; }
+        public long? TeammatesMaxTotal { get => _explicitNullValueTeammatesMaxTotal; set { _explicitNullValueTeammatesMaxTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teammates_max_total"); else _explicitNullProperties?.Remove("teammates_max_total"); } }
+        private long? _explicitNullValueTeammatesMaxTotal = default!;
         /// <summary>Total number of subusers allowed</summary>
-        public long? UsersMaxTotal { get; set; }
+        public long? UsersMaxTotal { get => _explicitNullValueUsersMaxTotal; set { _explicitNullValueUsersMaxTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_max_total"); else _explicitNullProperties?.Remove("users_max_total"); } }
+        private long? _explicitNullValueUsersMaxTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteLongValue("ip_count", IpCount);
             writer.WriteLongValue("teammates_max_total", TeammatesMaxTotal);
             writer.WriteLongValue("users_max_total", UsersMaxTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

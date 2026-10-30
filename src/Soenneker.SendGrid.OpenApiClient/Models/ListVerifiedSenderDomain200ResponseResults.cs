@@ -11,24 +11,37 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListVerifiedSenderDomain200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hard_failures") is { } nullNodeHardFailures && nullNodeHardFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardFailures = null;
+            if (parseNode.GetChildNode("soft_failures") is { } nullNodeSoftFailures && nullNodeSoftFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftFailures = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hard_failures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HardFailures { get; set; }
+        public List<string>? HardFailures { get => _explicitNullValueHardFailures; set { _explicitNullValueHardFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_failures"); else _explicitNullProperties?.Remove("hard_failures"); } }
+        private List<string>? _explicitNullValueHardFailures = default!;
 #nullable restore
 #else
-        public List<string> HardFailures { get; set; }
+        public List<string> HardFailures { get => _explicitNullValueHardFailures; set { _explicitNullValueHardFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_failures"); else _explicitNullProperties?.Remove("hard_failures"); } }
+        private List<string> _explicitNullValueHardFailures = default!;
 #endif
         /// <summary>The soft_failures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SoftFailures { get; set; }
+        public List<string>? SoftFailures { get => _explicitNullValueSoftFailures; set { _explicitNullValueSoftFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_failures"); else _explicitNullProperties?.Remove("soft_failures"); } }
+        private List<string>? _explicitNullValueSoftFailures = default!;
 #nullable restore
 #else
-        public List<string> SoftFailures { get; set; }
+        public List<string> SoftFailures { get => _explicitNullValueSoftFailures; set { _explicitNullValueSoftFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_failures"); else _explicitNullProperties?.Remove("soft_failures"); } }
+        private List<string> _explicitNullValueSoftFailures = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListVerifiedSenderDomain200ResponseResults"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         public static global::Soenneker.SendGrid.OpenApiClient.Models.ListVerifiedSenderDomain200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.SendGrid.OpenApiClient.Models.ListVerifiedSenderDomain200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.SendGrid.OpenApiClient.Models.ListVerifiedSenderDomain200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("hard_failures", HardFailures);
             writer.WriteCollectionOfPrimitiveValues<string>("soft_failures", SoftFailures);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
