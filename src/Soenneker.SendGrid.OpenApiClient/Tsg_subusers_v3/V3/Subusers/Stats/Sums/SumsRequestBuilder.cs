@@ -65,7 +65,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Stats.Sum
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Stats.Sums.SumsRequestBuilder.SumsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_subusers_v3/v3/subusers/stats/sums", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

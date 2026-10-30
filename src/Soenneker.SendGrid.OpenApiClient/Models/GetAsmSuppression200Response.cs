@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("suppressions") is { } nullNodeSuppressions && nullNodeSuppressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suppressions = null;
+            if (parseNode.GetChildNode("suppressions") is null) { _explicitNullValueSuppressions = default!; _explicitNullProperties?.Remove("suppressions"); }
+            else if (parseNode.GetChildNode("suppressions") is { } nullNodeSuppressions && nullNodeSuppressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suppressions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The array of suppression groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetAsmSuppression200ResponseSuppressionsItem>? Suppressions { get => _explicitNullValueSuppressions; set { _explicitNullValueSuppressions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppressions"); else _explicitNullProperties?.Remove("suppressions"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetAsmSuppression200ResponseSuppressionsItem>? Suppressions { get => _explicitNullValueSuppressions; set { _explicitNullValueSuppressions = value; AdditionalData?.Remove("suppressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppressions"); else _explicitNullProperties?.Remove("suppressions"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.GetAsmSuppression200ResponseSuppressionsItem>? _explicitNullValueSuppressions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetAsmSuppression200ResponseSuppressionsItem> Suppressions { get => _explicitNullValueSuppressions; set { _explicitNullValueSuppressions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppressions"); else _explicitNullProperties?.Remove("suppressions"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetAsmSuppression200ResponseSuppressionsItem> Suppressions { get => _explicitNullValueSuppressions; set { _explicitNullValueSuppressions = value; AdditionalData?.Remove("suppressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppressions"); else _explicitNullProperties?.Remove("suppressions"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.GetAsmSuppression200ResponseSuppressionsItem> _explicitNullValueSuppressions = default!;
 #endif
         /// <summary>

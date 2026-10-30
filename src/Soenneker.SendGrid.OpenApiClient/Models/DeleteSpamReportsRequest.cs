@@ -17,23 +17,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delete_all") is { } nullNodeDeleteAll && nullNodeDeleteAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteAll = null;
-            if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
+            if (parseNode.GetChildNode("delete_all") is null) { _explicitNullValueDeleteAll = default!; _explicitNullProperties?.Remove("delete_all"); }
+            else if (parseNode.GetChildNode("delete_all") is { } nullNodeDeleteAll && nullNodeDeleteAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteAll = null;
+            if (parseNode.GetChildNode("emails") is null) { _explicitNullValueEmails = default!; _explicitNullProperties?.Remove("emails"); }
+            else if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if you want to delete all email addresses on the spam report list.</summary>
-        public bool? DeleteAll { get => _explicitNullValueDeleteAll; set { _explicitNullValueDeleteAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_all"); else _explicitNullProperties?.Remove("delete_all"); } }
+        public bool? DeleteAll { get => _explicitNullValueDeleteAll; set { _explicitNullValueDeleteAll = value; AdditionalData?.Remove("delete_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_all"); else _explicitNullProperties?.Remove("delete_all"); } }
         private bool? _explicitNullValueDeleteAll = default!;
         /// <summary>A list of specific email addresses that you want to remove from the spam report list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        public List<string>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; AdditionalData?.Remove("emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
         private List<string>? _explicitNullValueEmails = default!;
 #nullable restore
 #else
-        public List<string> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        public List<string> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; AdditionalData?.Remove("emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
         private List<string> _explicitNullValueEmails = default!;
 #endif
         /// <summary>

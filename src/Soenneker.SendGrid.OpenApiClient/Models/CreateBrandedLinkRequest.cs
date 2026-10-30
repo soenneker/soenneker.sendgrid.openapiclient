@@ -17,38 +17,42 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("subdomain") is { } nullNodeSubdomain && nullNodeSubdomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subdomain = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("subdomain") is null) { _explicitNullValueSubdomain = default!; _explicitNullProperties?.Remove("subdomain"); }
+            else if (parseNode.GetChildNode("subdomain") is { } nullNodeSubdomain && nullNodeSubdomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subdomain = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default property</summary>
-        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private bool? _explicitNullValueDefault = default!;
         /// <summary>The root domain for the subdomain that you are creating the link branding for. This should match your FROM email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The region of the IP address. Can be `eu` or `us`.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequestRegion? _explicitNullValueRegion = default!;
         /// <summary>The subdomain to create the link branding for. Must be different from the subdomain you used for authenticating your domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
+        public string? Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; AdditionalData?.Remove("subdomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
         private string? _explicitNullValueSubdomain = default!;
 #nullable restore
 #else
-        public string Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
+        public string Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; AdditionalData?.Remove("subdomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
         private string _explicitNullValueSubdomain = default!;
 #endif
         /// <summary>
@@ -78,7 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequestRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateBrandedLinkRequestRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
                 { "subdomain", n => { Subdomain = n.GetStringValue(); } },
             };
         }

@@ -17,23 +17,40 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asm") is { } nullNodeAsm && nullNodeAsm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asm = null;
-            if (parseNode.GetChildNode("attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
-            if (parseNode.GetChildNode("batch_id") is { } nullNodeBatchId && nullNodeBatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchId = null;
-            if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("custom_args") is { } nullNodeCustomArgs && nullNodeCustomArgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomArgs = null;
-            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("ip_pool_name") is { } nullNodeIpPoolName && nullNodeIpPoolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpPoolName = null;
-            if (parseNode.GetChildNode("mail_settings") is { } nullNodeMailSettings && nullNodeMailSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailSettings = null;
-            if (parseNode.GetChildNode("personalizations") is { } nullNodePersonalizations && nullNodePersonalizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Personalizations = null;
-            if (parseNode.GetChildNode("reply_to") is { } nullNodeReplyTo && nullNodeReplyTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyTo = null;
-            if (parseNode.GetChildNode("reply_to_list") is { } nullNodeReplyToList && nullNodeReplyToList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyToList = null;
-            if (parseNode.GetChildNode("send_at") is { } nullNodeSendAt && nullNodeSendAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAt = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("template_id") is { } nullNodeTemplateId && nullNodeTemplateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateId = null;
-            if (parseNode.GetChildNode("tracking_settings") is { } nullNodeTrackingSettings && nullNodeTrackingSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingSettings = null;
+            if (parseNode.GetChildNode("asm") is null) { _explicitNullValueAsm = default!; _explicitNullProperties?.Remove("asm"); }
+            else if (parseNode.GetChildNode("asm") is { } nullNodeAsm && nullNodeAsm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asm = null;
+            if (parseNode.GetChildNode("attachments") is null) { _explicitNullValueAttachments = default!; _explicitNullProperties?.Remove("attachments"); }
+            else if (parseNode.GetChildNode("attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
+            if (parseNode.GetChildNode("batch_id") is null) { _explicitNullValueBatchId = default!; _explicitNullProperties?.Remove("batch_id"); }
+            else if (parseNode.GetChildNode("batch_id") is { } nullNodeBatchId && nullNodeBatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchId = null;
+            if (parseNode.GetChildNode("categories") is null) { _explicitNullValueCategories = default!; _explicitNullProperties?.Remove("categories"); }
+            else if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("custom_args") is null) { _explicitNullValueCustomArgs = default!; _explicitNullProperties?.Remove("custom_args"); }
+            else if (parseNode.GetChildNode("custom_args") is { } nullNodeCustomArgs && nullNodeCustomArgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomArgs = null;
+            if (parseNode.GetChildNode("from") is null) { _explicitNullValueFrom = default!; _explicitNullProperties?.Remove("from"); }
+            else if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("ip_pool_name") is null) { _explicitNullValueIpPoolName = default!; _explicitNullProperties?.Remove("ip_pool_name"); }
+            else if (parseNode.GetChildNode("ip_pool_name") is { } nullNodeIpPoolName && nullNodeIpPoolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpPoolName = null;
+            if (parseNode.GetChildNode("mail_settings") is null) { _explicitNullValueMailSettings = default!; _explicitNullProperties?.Remove("mail_settings"); }
+            else if (parseNode.GetChildNode("mail_settings") is { } nullNodeMailSettings && nullNodeMailSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailSettings = null;
+            if (parseNode.GetChildNode("personalizations") is null) { _explicitNullValuePersonalizations = default!; _explicitNullProperties?.Remove("personalizations"); }
+            else if (parseNode.GetChildNode("personalizations") is { } nullNodePersonalizations && nullNodePersonalizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Personalizations = null;
+            if (parseNode.GetChildNode("reply_to") is null) { _explicitNullValueReplyTo = default!; _explicitNullProperties?.Remove("reply_to"); }
+            else if (parseNode.GetChildNode("reply_to") is { } nullNodeReplyTo && nullNodeReplyTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyTo = null;
+            if (parseNode.GetChildNode("reply_to_list") is null) { _explicitNullValueReplyToList = default!; _explicitNullProperties?.Remove("reply_to_list"); }
+            else if (parseNode.GetChildNode("reply_to_list") is { } nullNodeReplyToList && nullNodeReplyToList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyToList = null;
+            if (parseNode.GetChildNode("send_at") is null) { _explicitNullValueSendAt = default!; _explicitNullProperties?.Remove("send_at"); }
+            else if (parseNode.GetChildNode("send_at") is { } nullNodeSendAt && nullNodeSendAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAt = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("template_id") is null) { _explicitNullValueTemplateId = default!; _explicitNullProperties?.Remove("template_id"); }
+            else if (parseNode.GetChildNode("template_id") is { } nullNodeTemplateId && nullNodeTemplateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateId = null;
+            if (parseNode.GetChildNode("tracking_settings") is null) { _explicitNullValueTrackingSettings = default!; _explicitNullProperties?.Remove("tracking_settings"); }
+            else if (parseNode.GetChildNode("tracking_settings") is { } nullNodeTrackingSettings && nullNodeTrackingSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingSettings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,164 +58,164 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>An object allowing you to specify how to handle unsubscribes. With SendGrid, an unsubscribe is the action an email recipient takes when they opt-out of receiving your messages. A suppression is the action you take as a sender to filter or suppress an unsubscribed address from your email send. From the perspective of the recipient, your suppression is the result of their unsubscribe. See [**Suppression Groups**](https://www.twilio.com/docs/sendgrid/api-reference/suppressions-unsubscribe-groups/create-a-new-suppression-group) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAsm? Asm { get => _explicitNullValueAsm; set { _explicitNullValueAsm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asm"); else _explicitNullProperties?.Remove("asm"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAsm? Asm { get => _explicitNullValueAsm; set { _explicitNullValueAsm = value; AdditionalData?.Remove("asm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asm"); else _explicitNullProperties?.Remove("asm"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAsm? _explicitNullValueAsm = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAsm Asm { get => _explicitNullValueAsm; set { _explicitNullValueAsm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asm"); else _explicitNullProperties?.Remove("asm"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAsm Asm { get => _explicitNullValueAsm; set { _explicitNullValueAsm = value; AdditionalData?.Remove("asm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asm"); else _explicitNullProperties?.Remove("asm"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAsm _explicitNullValueAsm = default!;
 #endif
         /// <summary>An array of objects where you can define any attachments to be included with the message. Each object contains a `content` property, which must be a Base64 encoded string of the attachment itself, and `type`, `filename`, `disposition`, and `content_id` properties that tell SendGrid how to handle the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItem>? _explicitNullValueAttachments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItem> _explicitNullValueAttachments = default!;
 #endif
         /// <summary>An ID representing a batch of emails to be sent at the same time. Including a `batch_id` in your request allows you to include this email in that batch. It also enables you to cancel or pause the delivery of that batch. See the [Scheduled Sends API](https://sendgrid.com/docs/api-reference/) for more information about scheduling your email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
+        public string? BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; AdditionalData?.Remove("batch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
         private string? _explicitNullValueBatchId = default!;
 #nullable restore
 #else
-        public string BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
+        public string BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; AdditionalData?.Remove("batch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
         private string _explicitNullValueBatchId = default!;
 #endif
         /// <summary>An array of category names assigned to this message. Categories allow you to group messages by categories you define. Categories should be used sparingly to create general groups that are relevant to you. Categories are not meant to be used to track individual mail sends. For more granular categorization and tracking, use the `custom_args` property. A category name cannot exceed 255 characters. See [**Working with Categories**](https://docs.sendgrid.com/for-developers/sending-email/categories) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        public List<string>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
         private List<string>? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
         private List<string> _explicitNullValueCategories = default!;
 #endif
         /// <summary>An array of objects, each containing a message body&apos;s content and [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types). You must specify at least one MIME type and may include multiple. To include more than one MIME type, add an object for each type to the array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem>? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem>? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem>? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem> Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem> Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem> _explicitNullValueContent = default!;
 #endif
         /// <summary>Values that are specific to the entire send that will be carried along with the email and its activity data. Substitutions will not be made on custom arguments, so any string that is assigned to this property will be assumed to be the custom argument that you would like to be used. This parameter is overridden by `custom_args` set at the personalizations level. Total `custom_args` size may not exceed 10,000 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
+        public string? CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; AdditionalData?.Remove("custom_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
         private string? _explicitNullValueCustomArgs = default!;
 #nullable restore
 #else
-        public string CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
+        public string CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; AdditionalData?.Remove("custom_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
         private string _explicitNullValueCustomArgs = default!;
 #endif
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom? _explicitNullValueFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom _explicitNullValueFrom = default!;
 #endif
         /// <summary>A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: `x-sg-id`, `x-sg-eid`, `received`, `dkim-signature`, `Content-Type`, `Content-Transfer-Encoding`, `To`, `From`, `Subject`, `Reply-To`, `CC`, `BCC`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2 _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The IP Pool that you would like to send this email from. IP Pools allow you to group your dedicated Twilio SendGrid IP addresses in order to have more control over your deliverability. See [**IP Pools**](https://docs.sendgrid.com/ui/account-and-settings/ip-pools) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpPoolName { get => _explicitNullValueIpPoolName; set { _explicitNullValueIpPoolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_pool_name"); else _explicitNullProperties?.Remove("ip_pool_name"); } }
+        public string? IpPoolName { get => _explicitNullValueIpPoolName; set { _explicitNullValueIpPoolName = value; AdditionalData?.Remove("ip_pool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_pool_name"); else _explicitNullProperties?.Remove("ip_pool_name"); } }
         private string? _explicitNullValueIpPoolName = default!;
 #nullable restore
 #else
-        public string IpPoolName { get => _explicitNullValueIpPoolName; set { _explicitNullValueIpPoolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_pool_name"); else _explicitNullProperties?.Remove("ip_pool_name"); } }
+        public string IpPoolName { get => _explicitNullValueIpPoolName; set { _explicitNullValueIpPoolName = value; AdditionalData?.Remove("ip_pool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_pool_name"); else _explicitNullProperties?.Remove("ip_pool_name"); } }
         private string _explicitNullValueIpPoolName = default!;
 #endif
         /// <summary>A collection of different mail settings that you can use to specify how you would like this email to be handled. Mail settings provide extra functionality to your mail send. See [**Mail Settings**](https://docs.sendgrid.com/ui/account-and-settings/mail) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings? MailSettings { get => _explicitNullValueMailSettings; set { _explicitNullValueMailSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_settings"); else _explicitNullProperties?.Remove("mail_settings"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings? MailSettings { get => _explicitNullValueMailSettings; set { _explicitNullValueMailSettings = value; AdditionalData?.Remove("mail_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_settings"); else _explicitNullProperties?.Remove("mail_settings"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings? _explicitNullValueMailSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings MailSettings { get => _explicitNullValueMailSettings; set { _explicitNullValueMailSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_settings"); else _explicitNullProperties?.Remove("mail_settings"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings MailSettings { get => _explicitNullValueMailSettings; set { _explicitNullValueMailSettings = value; AdditionalData?.Remove("mail_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_settings"); else _explicitNullProperties?.Remove("mail_settings"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings _explicitNullValueMailSettings = default!;
 #endif
         /// <summary>An array of messages and their metadata. Each object within the `personalizations` array can be thought of as a mail envelope—it defines who should receive an individual message and how that message should be handled. See [**Personalizations**](https://sendgrid.com/docs/for-developers/sending-email/personalizations/) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem>? Personalizations { get => _explicitNullValuePersonalizations; set { _explicitNullValuePersonalizations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizations"); else _explicitNullProperties?.Remove("personalizations"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem>? Personalizations { get => _explicitNullValuePersonalizations; set { _explicitNullValuePersonalizations = value; AdditionalData?.Remove("personalizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizations"); else _explicitNullProperties?.Remove("personalizations"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem>? _explicitNullValuePersonalizations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem> Personalizations { get => _explicitNullValuePersonalizations; set { _explicitNullValuePersonalizations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizations"); else _explicitNullProperties?.Remove("personalizations"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem> Personalizations { get => _explicitNullValuePersonalizations; set { _explicitNullValuePersonalizations = value; AdditionalData?.Remove("personalizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizations"); else _explicitNullProperties?.Remove("personalizations"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem> _explicitNullValuePersonalizations = default!;
 #endif
         /// <summary>The reply_to property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.MailTo? ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MailTo? ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; AdditionalData?.Remove("reply_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.MailTo? _explicitNullValueReplyTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.MailTo ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.MailTo ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; AdditionalData?.Remove("reply_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.MailTo _explicitNullValueReplyTo = default!;
 #endif
         /// <summary>An array of recipients to whom replies will be sent. Each object in this array must contain a recipient&apos;s email address. Each object in the array may optionally contain a recipient&apos;s name. You can use either the `reply_to` property or `reply_to_list` property but not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>? ReplyToList { get => _explicitNullValueReplyToList; set { _explicitNullValueReplyToList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to_list"); else _explicitNullProperties?.Remove("reply_to_list"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>? ReplyToList { get => _explicitNullValueReplyToList; set { _explicitNullValueReplyToList = value; AdditionalData?.Remove("reply_to_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to_list"); else _explicitNullProperties?.Remove("reply_to_list"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo>? _explicitNullValueReplyToList = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo> ReplyToList { get => _explicitNullValueReplyToList; set { _explicitNullValueReplyToList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to_list"); else _explicitNullProperties?.Remove("reply_to_list"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo> ReplyToList { get => _explicitNullValueReplyToList; set { _explicitNullValueReplyToList = value; AdditionalData?.Remove("reply_to_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to_list"); else _explicitNullProperties?.Remove("reply_to_list"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.MailTo> _explicitNullValueReplyToList = default!;
 #endif
         /// <summary>A [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) allowing you to specify when your email should be sent. A send cannot be scheduled more than 72 hours in advance. This property may be overridden by the `send_at` property set at the personalizations level.</summary>
-        public int? SendAt { get => _explicitNullValueSendAt; set { _explicitNullValueSendAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_at"); else _explicitNullProperties?.Remove("send_at"); } }
+        public int? SendAt { get => _explicitNullValueSendAt; set { _explicitNullValueSendAt = value; AdditionalData?.Remove("send_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_at"); else _explicitNullProperties?.Remove("send_at"); } }
         private int? _explicitNullValueSendAt = default!;
         /// <summary>The global or _message level_ subject of your email. Subject lines set in personalizations objects will override this global subject line. See line length limits specified in [RFC 2822](https://www.rfc-editor.org/rfc/rfc2822#section-2.1.1) for guidance on subject line character limits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>An email template ID. A template that contains a subject and content—either text or html—will override any subject and content values specified at the `personalizations` or message level. If a template ID begins with `d-`, it is a dynamic template and will work with the `dynamic_template_data` property. If the template ID does not begin with `d-`, it is a standard SendGrid template and will work with the `substitutions` property. See [**How to Send an Email with Dynamic Templates**](https://docs.sendgrid.com/ui/sending-email/how-to-send-an-email-with-dynamic-templates) for more information about working with templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId { get => _explicitNullValueTemplateId; set { _explicitNullValueTemplateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_id"); else _explicitNullProperties?.Remove("template_id"); } }
+        public string? TemplateId { get => _explicitNullValueTemplateId; set { _explicitNullValueTemplateId = value; AdditionalData?.Remove("template_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_id"); else _explicitNullProperties?.Remove("template_id"); } }
         private string? _explicitNullValueTemplateId = default!;
 #nullable restore
 #else
-        public string TemplateId { get => _explicitNullValueTemplateId; set { _explicitNullValueTemplateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_id"); else _explicitNullProperties?.Remove("template_id"); } }
+        public string TemplateId { get => _explicitNullValueTemplateId; set { _explicitNullValueTemplateId = value; AdditionalData?.Remove("template_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_id"); else _explicitNullProperties?.Remove("template_id"); } }
         private string _explicitNullValueTemplateId = default!;
 #endif
         /// <summary>Settings to determine how you would like to track the metrics of how your recipients interact with your email. See [**Tracking Settings**](https://docs.sendgrid.com/ui/account-and-settings/tracking) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings? TrackingSettings { get => _explicitNullValueTrackingSettings; set { _explicitNullValueTrackingSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracking_settings"); else _explicitNullProperties?.Remove("tracking_settings"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings? TrackingSettings { get => _explicitNullValueTrackingSettings; set { _explicitNullValueTrackingSettings = value; AdditionalData?.Remove("tracking_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracking_settings"); else _explicitNullProperties?.Remove("tracking_settings"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings? _explicitNullValueTrackingSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings TrackingSettings { get => _explicitNullValueTrackingSettings; set { _explicitNullValueTrackingSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracking_settings"); else _explicitNullProperties?.Remove("tracking_settings"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings TrackingSettings { get => _explicitNullValueTrackingSettings; set { _explicitNullValueTrackingSettings = value; AdditionalData?.Remove("tracking_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracking_settings"); else _explicitNullProperties?.Remove("tracking_settings"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestTrackingSettings _explicitNullValueTrackingSettings = default!;
 #endif
         /// <summary>

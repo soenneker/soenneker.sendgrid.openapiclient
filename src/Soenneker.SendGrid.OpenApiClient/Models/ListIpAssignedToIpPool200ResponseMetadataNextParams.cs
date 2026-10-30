@@ -18,9 +18,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("after_key") is { } nullNodeAfterKey && nullNodeAfterKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AfterKey = null;
-            if (parseNode.GetChildNode("include_region") is { } nullNodeIncludeRegion && nullNodeIncludeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRegion = null;
-            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("after_key") is null) { _explicitNullValueAfterKey = default!; _explicitNullProperties?.Remove("after_key"); }
+            else if (parseNode.GetChildNode("after_key") is { } nullNodeAfterKey && nullNodeAfterKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AfterKey = null;
+            if (parseNode.GetChildNode("include_region") is null) { _explicitNullValueIncludeRegion = default!; _explicitNullProperties?.Remove("include_region"); }
+            else if (parseNode.GetChildNode("include_region") is { } nullNodeIncludeRegion && nullNodeIncludeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRegion = null;
+            if (parseNode.GetChildNode("limit") is null) { _explicitNullValueLimit = default!; _explicitNullProperties?.Remove("limit"); }
+            else if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
+        public string? AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; AdditionalData?.Remove("after_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
         private string? _explicitNullValueAfterKey = default!;
 #nullable restore
 #else
-        public string AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
+        public string AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; AdditionalData?.Remove("after_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
         private string _explicitNullValueAfterKey = default!;
 #endif
         /// <summary>Indicates whether or not to include the IP address&apos;s region. This property will only be returned if the `include_region` query parameter is included and set to `true` as part of the API request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
+        public string? IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; AdditionalData?.Remove("include_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
         private string? _explicitNullValueIncludeRegion = default!;
 #nullable restore
 #else
-        public string IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
+        public string IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; AdditionalData?.Remove("include_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
         private string _explicitNullValueIncludeRegion = default!;
 #endif
         /// <summary>The `limit` specified in the request. This parameter will be included only if it was specified in the request. This is not the default limit enforced by the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public string? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private string? _explicitNullValueLimit = default!;
 #nullable restore
 #else
-        public string Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public string Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private string _explicitNullValueLimit = default!;
 #endif
         /// <summary>

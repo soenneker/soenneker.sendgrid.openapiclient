@@ -36,18 +36,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Score
         /// <summary>
         /// **This operation allows you to retrieve your SendGrid Engagement Quality (SEQ) scores for a specified date range**.A successful request with this API operation will return either a `200` or `202` response.### 202This operation returns a `202` response when SendGrid does not yet have scores available for the specified date range. Scores are calculated asynchronously from requests to this endpoint. This means a score may be available for the specified date at a later time, but a score is not available at the time of your API request.### 200A 200 response will include all available scores beginning on the `from` and ending on the `to` dates specified. The `score` and `metrics` properties will be omitted from the response for any days in which the user is not eligible to receive a score.The `score` property represents a user&apos;s overall engagement quality. The `metrics` property provides additional scores for the input categories that contribute to that overall score. All scores range from `1` to `5` with a higher number representing better engagement quality.See [**SendGrid Engagement Quality Overview**](https://docs.sendgrid.com/api-reference/sendgrid-engagement-quality-api/overview) for more information
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response"/></returns>
+        /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Scores.ScoresRequestBuilder.ScoresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode?> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Scores.ScoresRequestBuilder.ScoresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Scores.ScoresRequestBuilder.ScoresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode> GetAsync(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Scores.ScoresRequestBuilder.ScoresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Score
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.SeqV1Scores200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This operation allows you to retrieve your SendGrid Engagement Quality (SEQ) scores for a specified date range**.A successful request with this API operation will return either a `200` or `202` response.### 202This operation returns a `202` response when SendGrid does not yet have scores available for the specified date range. Scores are calculated asynchronously from requests to this endpoint. This means a score may be available for the specified date at a later time, but a score is not available at the time of your API request.### 200A 200 response will include all available scores beginning on the `from` and ending on the `to` dates specified. The `score` and `metrics` properties will be omitted from the response for any days in which the user is not eligible to receive a score.The `score` property represents a user&apos;s overall engagement quality. The `metrics` property provides additional scores for the input categories that contribute to that overall score. All scores range from `1` to `5` with a higher number representing better engagement quality.See [**SendGrid Engagement Quality Overview**](https://docs.sendgrid.com/api-reference/sendgrid-engagement-quality-api/overview) for more information
@@ -74,7 +74,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Score
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_seq_v3.V3.Engagementquality.Scores.ScoresRequestBuilder.ScoresRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_seq_v3/v3/engagementquality/scores", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

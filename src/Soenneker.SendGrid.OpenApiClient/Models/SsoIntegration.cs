@@ -17,16 +17,26 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audience_url") is { } nullNodeAudienceUrl && nullNodeAudienceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceUrl = null;
-            if (parseNode.GetChildNode("completed_integration") is { } nullNodeCompletedIntegration && nullNodeCompletedIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedIntegration = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("last_updated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("signin_url") is { } nullNodeSigninUrl && nullNodeSigninUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigninUrl = null;
-            if (parseNode.GetChildNode("signout_url") is { } nullNodeSignoutUrl && nullNodeSignoutUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignoutUrl = null;
-            if (parseNode.GetChildNode("single_signon_url") is { } nullNodeSingleSignonUrl && nullNodeSingleSignonUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleSignonUrl = null;
+            if (parseNode.GetChildNode("audience_url") is null) { _explicitNullValueAudienceUrl = default!; _explicitNullProperties?.Remove("audience_url"); }
+            else if (parseNode.GetChildNode("audience_url") is { } nullNodeAudienceUrl && nullNodeAudienceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceUrl = null;
+            if (parseNode.GetChildNode("completed_integration") is null) { _explicitNullValueCompletedIntegration = default!; _explicitNullProperties?.Remove("completed_integration"); }
+            else if (parseNode.GetChildNode("completed_integration") is { } nullNodeCompletedIntegration && nullNodeCompletedIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedIntegration = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("entity_id") is null) { _explicitNullValueEntityId = default!; _explicitNullProperties?.Remove("entity_id"); }
+            else if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_updated") is null) { _explicitNullValueLastUpdated = default!; _explicitNullProperties?.Remove("last_updated"); }
+            else if (parseNode.GetChildNode("last_updated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("signin_url") is null) { _explicitNullValueSigninUrl = default!; _explicitNullProperties?.Remove("signin_url"); }
+            else if (parseNode.GetChildNode("signin_url") is { } nullNodeSigninUrl && nullNodeSigninUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigninUrl = null;
+            if (parseNode.GetChildNode("signout_url") is null) { _explicitNullValueSignoutUrl = default!; _explicitNullProperties?.Remove("signout_url"); }
+            else if (parseNode.GetChildNode("signout_url") is { } nullNodeSignoutUrl && nullNodeSignoutUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignoutUrl = null;
+            if (parseNode.GetChildNode("single_signon_url") is null) { _explicitNullValueSingleSignonUrl = default!; _explicitNullProperties?.Remove("single_signon_url"); }
+            else if (parseNode.GetChildNode("single_signon_url") is { } nullNodeSingleSignonUrl && nullNodeSingleSignonUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleSignonUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,80 +44,80 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The URL where your IdP should POST its SAML response. This is the Twilio SendGrid URL that is responsible for receiving and parsing a SAML assertion. This is the same URL as the Single Sign-On URL when using SendGrid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudienceUrl { get => _explicitNullValueAudienceUrl; set { _explicitNullValueAudienceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_url"); else _explicitNullProperties?.Remove("audience_url"); } }
+        public string? AudienceUrl { get => _explicitNullValueAudienceUrl; set { _explicitNullValueAudienceUrl = value; AdditionalData?.Remove("audience_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_url"); else _explicitNullProperties?.Remove("audience_url"); } }
         private string? _explicitNullValueAudienceUrl = default!;
 #nullable restore
 #else
-        public string AudienceUrl { get => _explicitNullValueAudienceUrl; set { _explicitNullValueAudienceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_url"); else _explicitNullProperties?.Remove("audience_url"); } }
+        public string AudienceUrl { get => _explicitNullValueAudienceUrl; set { _explicitNullValueAudienceUrl = value; AdditionalData?.Remove("audience_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_url"); else _explicitNullProperties?.Remove("audience_url"); } }
         private string _explicitNullValueAudienceUrl = default!;
 #endif
         /// <summary>Indicates if the integration is complete.</summary>
-        public bool? CompletedIntegration { get => _explicitNullValueCompletedIntegration; set { _explicitNullValueCompletedIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_integration"); else _explicitNullProperties?.Remove("completed_integration"); } }
+        public bool? CompletedIntegration { get => _explicitNullValueCompletedIntegration; set { _explicitNullValueCompletedIntegration = value; AdditionalData?.Remove("completed_integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_integration"); else _explicitNullProperties?.Remove("completed_integration"); } }
         private bool? _explicitNullValueCompletedIntegration = default!;
         /// <summary>Indicates if the integration is enabled.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>An identifier provided by your IdP to identify Twilio SendGrid in the SAML interaction. This is called the &quot;SAML Issuer ID&quot; in the Twilio SendGrid UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
         private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
         private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>A unique ID assigned to the configuration by SendGrid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>A timestamp representing the last time the configuration was modified.</summary>
-        public double? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated"); else _explicitNullProperties?.Remove("last_updated"); } }
+        public double? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; AdditionalData?.Remove("last_updated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated"); else _explicitNullProperties?.Remove("last_updated"); } }
         private double? _explicitNullValueLastUpdated = default!;
         /// <summary>The name of your integration. This name can be anything that makes sense for your organization (eg. Twilio SendGrid)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The IdP&apos;s SAML POST endpoint. This endpoint should receive requests and initiate an SSO login flow. This is called the &quot;Embed Link&quot; in the Twilio SendGrid UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigninUrl { get => _explicitNullValueSigninUrl; set { _explicitNullValueSigninUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signin_url"); else _explicitNullProperties?.Remove("signin_url"); } }
+        public string? SigninUrl { get => _explicitNullValueSigninUrl; set { _explicitNullValueSigninUrl = value; AdditionalData?.Remove("signin_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signin_url"); else _explicitNullProperties?.Remove("signin_url"); } }
         private string? _explicitNullValueSigninUrl = default!;
 #nullable restore
 #else
-        public string SigninUrl { get => _explicitNullValueSigninUrl; set { _explicitNullValueSigninUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signin_url"); else _explicitNullProperties?.Remove("signin_url"); } }
+        public string SigninUrl { get => _explicitNullValueSigninUrl; set { _explicitNullValueSigninUrl = value; AdditionalData?.Remove("signin_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signin_url"); else _explicitNullProperties?.Remove("signin_url"); } }
         private string _explicitNullValueSigninUrl = default!;
 #endif
         /// <summary>This URL is relevant only for an IdP-initiated authentication flow. If a user authenticates from their IdP, this URL will return them to their IdP when logging out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignoutUrl { get => _explicitNullValueSignoutUrl; set { _explicitNullValueSignoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signout_url"); else _explicitNullProperties?.Remove("signout_url"); } }
+        public string? SignoutUrl { get => _explicitNullValueSignoutUrl; set { _explicitNullValueSignoutUrl = value; AdditionalData?.Remove("signout_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signout_url"); else _explicitNullProperties?.Remove("signout_url"); } }
         private string? _explicitNullValueSignoutUrl = default!;
 #nullable restore
 #else
-        public string SignoutUrl { get => _explicitNullValueSignoutUrl; set { _explicitNullValueSignoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signout_url"); else _explicitNullProperties?.Remove("signout_url"); } }
+        public string SignoutUrl { get => _explicitNullValueSignoutUrl; set { _explicitNullValueSignoutUrl = value; AdditionalData?.Remove("signout_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signout_url"); else _explicitNullProperties?.Remove("signout_url"); } }
         private string _explicitNullValueSignoutUrl = default!;
 #endif
         /// <summary>The URL where your IdP should POST its SAML response. This is the Twilio SendGrid URL that is responsible for receiving and parsing a SAML assertion. This is the same URL as the Audience URL when using SendGrid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingleSignonUrl { get => _explicitNullValueSingleSignonUrl; set { _explicitNullValueSingleSignonUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_signon_url"); else _explicitNullProperties?.Remove("single_signon_url"); } }
+        public string? SingleSignonUrl { get => _explicitNullValueSingleSignonUrl; set { _explicitNullValueSingleSignonUrl = value; AdditionalData?.Remove("single_signon_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_signon_url"); else _explicitNullProperties?.Remove("single_signon_url"); } }
         private string? _explicitNullValueSingleSignonUrl = default!;
 #nullable restore
 #else
-        public string SingleSignonUrl { get => _explicitNullValueSingleSignonUrl; set { _explicitNullValueSingleSignonUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_signon_url"); else _explicitNullProperties?.Remove("single_signon_url"); } }
+        public string SingleSignonUrl { get => _explicitNullValueSingleSignonUrl; set { _explicitNullValueSingleSignonUrl = value; AdditionalData?.Remove("single_signon_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_signon_url"); else _explicitNullProperties?.Remove("single_signon_url"); } }
         private string _explicitNullValueSingleSignonUrl = default!;
 #endif
         /// <summary>

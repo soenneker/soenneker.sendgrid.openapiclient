@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
-            if (parseNode.GetChildNode("price_per_ip") is { } nullNodePricePerIp && nullNodePricePerIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerIp = null;
-            if (parseNode.GetChildNode("remaining") is { } nullNodeRemaining && nullNodeRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remaining = null;
+            if (parseNode.GetChildNode("period") is null) { _explicitNullValuePeriod = default!; _explicitNullProperties?.Remove("period"); }
+            else if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("price_per_ip") is null) { _explicitNullValuePricePerIp = default!; _explicitNullProperties?.Remove("price_per_ip"); }
+            else if (parseNode.GetChildNode("price_per_ip") is { } nullNodePricePerIp && nullNodePricePerIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerIp = null;
+            if (parseNode.GetChildNode("remaining") is null) { _explicitNullValueRemaining = default!; _explicitNullProperties?.Remove("remaining"); }
+            else if (parseNode.GetChildNode("remaining") is { } nullNodeRemaining && nullNodeRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remaining = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The length of time until user can add more IPs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        public string? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
         private string? _explicitNullValuePeriod = default!;
 #nullable restore
 #else
-        public string Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        public string Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
         private string _explicitNullValuePeriod = default!;
 #endif
         /// <summary>The current cost to add an IP.</summary>
-        public double? PricePerIp { get => _explicitNullValuePricePerIp; set { _explicitNullValuePricePerIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_ip"); else _explicitNullProperties?.Remove("price_per_ip"); } }
+        public double? PricePerIp { get => _explicitNullValuePricePerIp; set { _explicitNullValuePricePerIp = value; AdditionalData?.Remove("price_per_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_ip"); else _explicitNullProperties?.Remove("price_per_ip"); } }
         private double? _explicitNullValuePricePerIp = default!;
         /// <summary>The number of IPs that can still be added to the user.</summary>
-        public int? Remaining { get => _explicitNullValueRemaining; set { _explicitNullValueRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remaining"); else _explicitNullProperties?.Remove("remaining"); } }
+        public int? Remaining { get => _explicitNullValueRemaining; set { _explicitNullValueRemaining = value; AdditionalData?.Remove("remaining"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remaining"); else _explicitNullProperties?.Remove("remaining"); } }
         private int? _explicitNullValueRemaining = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListRemainingIpCount200ResponseResultsItem"/> and sets the default values.

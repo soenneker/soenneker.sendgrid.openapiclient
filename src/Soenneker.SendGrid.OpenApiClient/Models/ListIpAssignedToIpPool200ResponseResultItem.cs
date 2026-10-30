@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
-            if (parseNode.GetChildNode("pools") is { } nullNodePools && nullNodePools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pools = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("ip") is null) { _explicitNullValueIp = default!; _explicitNullProperties?.Remove("ip"); }
+            else if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("pools") is null) { _explicitNullValuePools = default!; _explicitNullProperties?.Remove("pools"); }
+            else if (parseNode.GetChildNode("pools") is { } nullNodePools && nullNodePools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pools = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>An IP address assigned to the IP Pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string _explicitNullValueIp = default!;
 #endif
         /// <summary>IP Pools the IP address is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem>? Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem>? Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; AdditionalData?.Remove("pools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem>? _explicitNullValuePools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem> Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem> Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; AdditionalData?.Remove("pools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem> _explicitNullValuePools = default!;
 #endif
         /// <summary>The region to which the IP address is assigned. This property will only be returned if the `include_region` query parameter is included and set to `true` as part of the API request.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemRegion? _explicitNullValueRegion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItem"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "pools", n => { Pools = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemPoolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListIpAssignedToIpPool200ResponseResultItemRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
             };
         }
         /// <summary>

@@ -17,42 +17,47 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ab_phase") is { } nullNodeAbPhase && nullNodeAbPhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbPhase = null;
-            if (parseNode.GetChildNode("ab_variation") is { } nullNodeAbVariation && nullNodeAbVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbVariation = null;
-            if (parseNode.GetChildNode("aggregation") is { } nullNodeAggregation && nullNodeAggregation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregation = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("stats") is { } nullNodeStats && nullNodeStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stats = null;
+            if (parseNode.GetChildNode("ab_phase") is null) { _explicitNullValueAbPhase = default!; _explicitNullProperties?.Remove("ab_phase"); }
+            else if (parseNode.GetChildNode("ab_phase") is { } nullNodeAbPhase && nullNodeAbPhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbPhase = null;
+            if (parseNode.GetChildNode("ab_variation") is null) { _explicitNullValueAbVariation = default!; _explicitNullProperties?.Remove("ab_variation"); }
+            else if (parseNode.GetChildNode("ab_variation") is { } nullNodeAbVariation && nullNodeAbVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbVariation = null;
+            if (parseNode.GetChildNode("aggregation") is null) { _explicitNullValueAggregation = default!; _explicitNullProperties?.Remove("aggregation"); }
+            else if (parseNode.GetChildNode("aggregation") is { } nullNodeAggregation && nullNodeAggregation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregation = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("stats") is null) { _explicitNullValueStats = default!; _explicitNullProperties?.Remove("stats"); }
+            else if (parseNode.GetChildNode("stats") is { } nullNodeStats && nullNodeStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stats = null;
         }
 
         /// <summary>This is the A/B phase of the Single Send stat returned. If the `group_by` parameter doesn&apos;t include `ab_phase` in the request, then the value is &quot;all&quot;.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase? AbPhase { get => _explicitNullValueAbPhase; set { _explicitNullValueAbPhase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_phase"); else _explicitNullProperties?.Remove("ab_phase"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase? AbPhase { get => _explicitNullValueAbPhase; set { _explicitNullValueAbPhase = value; AdditionalData?.Remove("ab_phase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_phase"); else _explicitNullProperties?.Remove("ab_phase"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase? _explicitNullValueAbPhase = default!;
         /// <summary>This is the A/B variation of the Single Send stat returned. If the `group_by` parameter doesn&apos;t include `ab_variation` in the request, then the value is &quot;all&quot;.</summary>
-        public Guid? AbVariation { get => _explicitNullValueAbVariation; set { _explicitNullValueAbVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_variation"); else _explicitNullProperties?.Remove("ab_variation"); } }
+        public Guid? AbVariation { get => _explicitNullValueAbVariation; set { _explicitNullValueAbVariation = value; AdditionalData?.Remove("ab_variation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ab_variation"); else _explicitNullProperties?.Remove("ab_variation"); } }
         private Guid? _explicitNullValueAbVariation = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This describes the time unit to which the stat is rolled up. It is based on the `aggregated_by` parameter included in the request. It can be &quot;total&quot; or the date (in YYYY-MM-DD format) the stats are for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
+        public string? Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; AdditionalData?.Remove("aggregation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
         private string? _explicitNullValueAggregation = default!;
 #nullable restore
 #else
-        public string Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
+        public string Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; AdditionalData?.Remove("aggregation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
         private string _explicitNullValueAggregation = default!;
 #endif
         /// <summary>This is the ID of the Single Send you require stats for.</summary>
-        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.Metrics? _explicitNullValueStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.Metrics Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.Metrics _explicitNullValueStats = default!;
 #endif
         /// <summary>
@@ -81,7 +86,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ab_phase", n => { AbPhase = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase>(); } },
+                { "ab_phase", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendsResponseResultsItemAbPhase>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAbPhase = default; _explicitNullProperties?.Remove("ab_phase"); AdditionalData["ab_phase"] = unknown; } else { AbPhase = parsed; AdditionalData.Remove("ab_phase"); } } },
                 { "ab_variation", n => { AbVariation = n.GetGuidValue(); } },
                 { "aggregation", n => { Aggregation = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },

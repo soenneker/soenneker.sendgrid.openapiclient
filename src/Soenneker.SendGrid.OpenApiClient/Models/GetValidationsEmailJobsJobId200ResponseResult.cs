@@ -17,14 +17,22 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
-            if (parseNode.GetChildNode("finished_at") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_download_available") is { } nullNodeIsDownloadAvailable && nullNodeIsDownloadAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDownloadAvailable = null;
-            if (parseNode.GetChildNode("segments") is { } nullNodeSegments && nullNodeSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segments = null;
-            if (parseNode.GetChildNode("segments_processed") is { } nullNodeSegmentsProcessed && nullNodeSegmentsProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentsProcessed = null;
-            if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
+            else if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("finished_at") is null) { _explicitNullValueFinishedAt = default!; _explicitNullProperties?.Remove("finished_at"); }
+            else if (parseNode.GetChildNode("finished_at") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_download_available") is null) { _explicitNullValueIsDownloadAvailable = default!; _explicitNullProperties?.Remove("is_download_available"); }
+            else if (parseNode.GetChildNode("is_download_available") is { } nullNodeIsDownloadAvailable && nullNodeIsDownloadAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDownloadAvailable = null;
+            if (parseNode.GetChildNode("segments") is null) { _explicitNullValueSegments = default!; _explicitNullProperties?.Remove("segments"); }
+            else if (parseNode.GetChildNode("segments") is { } nullNodeSegments && nullNodeSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segments = null;
+            if (parseNode.GetChildNode("segments_processed") is null) { _explicitNullValueSegmentsProcessed = default!; _explicitNullProperties?.Remove("segments_processed"); }
+            else if (parseNode.GetChildNode("segments_processed") is { } nullNodeSegmentsProcessed && nullNodeSegmentsProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentsProcessed = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,40 +40,40 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Array containing error messages related to the Bulk Email Address Validation Job. Array is empty if no errors ocurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultErrorsItem> _explicitNullValueErrors = default!;
 #endif
         /// <summary>The ISO8601 timestamp when the Job was finished.</summary>
-        public double? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
+        public double? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finished_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
         private double? _explicitNullValueFinishedAt = default!;
         /// <summary>The unique ID of the Bulk Email Address Validation Job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Boolean indicating whether the results CSV file is available for download.</summary>
-        public bool? IsDownloadAvailable { get => _explicitNullValueIsDownloadAvailable; set { _explicitNullValueIsDownloadAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_download_available"); else _explicitNullProperties?.Remove("is_download_available"); } }
+        public bool? IsDownloadAvailable { get => _explicitNullValueIsDownloadAvailable; set { _explicitNullValueIsDownloadAvailable = value; AdditionalData?.Remove("is_download_available"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_download_available"); else _explicitNullProperties?.Remove("is_download_available"); } }
         private bool? _explicitNullValueIsDownloadAvailable = default!;
         /// <summary>The total number of segments in the Bulk Email Address Validation Job. There are 1,500 email addresses per segment. The value is `0` until the Job `status` is `Processing`.</summary>
-        public double? Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
+        public double? Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; AdditionalData?.Remove("segments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
         private double? _explicitNullValueSegments = default!;
         /// <summary>The number of segments processed at the time of the request. 100 segments process in parallel at a time.</summary>
-        public double? SegmentsProcessed { get => _explicitNullValueSegmentsProcessed; set { _explicitNullValueSegmentsProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments_processed"); else _explicitNullProperties?.Remove("segments_processed"); } }
+        public double? SegmentsProcessed { get => _explicitNullValueSegmentsProcessed; set { _explicitNullValueSegmentsProcessed = value; AdditionalData?.Remove("segments_processed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments_processed"); else _explicitNullProperties?.Remove("segments_processed"); } }
         private double? _explicitNullValueSegmentsProcessed = default!;
         /// <summary>The ISO8601 timestamp when the Job was created. This is the time at which the upload request was sent to the `upload_uri`.</summary>
-        public double? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        public double? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
         private double? _explicitNullValueStartedAt = default!;
         /// <summary>The status of the Bulk Email Address Validation Job.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResult"/> and sets the default values.
@@ -99,7 +107,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "segments", n => { Segments = n.GetDoubleValue(); } },
                 { "segments_processed", n => { SegmentsProcessed = n.GetDoubleValue(); } },
                 { "started_at", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.GetValidationsEmailJobsJobId200ResponseResultStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

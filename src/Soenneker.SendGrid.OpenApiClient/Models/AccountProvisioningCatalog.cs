@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("catalog") is { } nullNodeCatalog && nullNodeCatalog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Catalog = null;
+            if (parseNode.GetChildNode("catalog") is null) { _explicitNullValueCatalog = default!; _explicitNullProperties?.Remove("catalog"); }
+            else if (parseNode.GetChildNode("catalog") is { } nullNodeCatalog && nullNodeCatalog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Catalog = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The catalog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem>? Catalog { get => _explicitNullValueCatalog; set { _explicitNullValueCatalog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catalog"); else _explicitNullProperties?.Remove("catalog"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem>? Catalog { get => _explicitNullValueCatalog; set { _explicitNullValueCatalog = value; AdditionalData?.Remove("catalog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catalog"); else _explicitNullProperties?.Remove("catalog"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem>? _explicitNullValueCatalog = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem> Catalog { get => _explicitNullValueCatalog; set { _explicitNullValueCatalog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catalog"); else _explicitNullProperties?.Remove("catalog"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem> Catalog { get => _explicitNullValueCatalog; set { _explicitNullValueCatalog = value; AdditionalData?.Remove("catalog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catalog"); else _explicitNullProperties?.Remove("catalog"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItem> _explicitNullValueCatalog = default!;
 #endif
         /// <summary>

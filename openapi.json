@@ -44495,6 +44495,10 @@
             {
               "value": "or",
               "name": "Or"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -44727,14 +44731,7 @@
           }
         }
       },
-      "DeleteContactDbList202Response": {
-        "anyOf": [
-          { },
-          {
-            "type": "null"
-          }
-        ]
-      },
+      "DeleteContactDbList202Response": { },
       "ListRecipientsFromContactDbList404Response": {
         "type": "object"
       },
@@ -44748,22 +44745,8 @@
           "ZW1haWwyQHRlc3QubmV0"
         ]
       },
-      "AddRecipientsToContactDbList201Response": {
-        "anyOf": [
-          { },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "AddRecipientToContactDbList201Response": {
-        "anyOf": [
-          { },
-          {
-            "type": "null"
-          }
-        ]
-      },
+      "AddRecipientsToContactDbList201Response": { },
+      "AddRecipientToContactDbList201Response": { },
       "AddRecipientRequest": {
         "type": "array",
         "items": {

@@ -17,23 +17,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("identifier_type") is { } nullNodeIdentifierType && nullNodeIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentifierType = null;
-            if (parseNode.GetChildNode("identifier_value") is { } nullNodeIdentifierValue && nullNodeIdentifierValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentifierValue = null;
+            if (parseNode.GetChildNode("identifier_type") is null) { _explicitNullValueIdentifierType = default!; _explicitNullProperties?.Remove("identifier_type"); }
+            else if (parseNode.GetChildNode("identifier_type") is { } nullNodeIdentifierType && nullNodeIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentifierType = null;
+            if (parseNode.GetChildNode("identifier_value") is null) { _explicitNullValueIdentifierValue = default!; _explicitNullProperties?.Remove("identifier_value"); }
+            else if (parseNode.GetChildNode("identifier_value") is { } nullNodeIdentifierValue && nullNodeIdentifierValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentifierValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of identifier you are removing from the contact.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DeleteContactIdentifierRequestIdentifierType? IdentifierType { get => _explicitNullValueIdentifierType; set { _explicitNullValueIdentifierType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier_type"); else _explicitNullProperties?.Remove("identifier_type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DeleteContactIdentifierRequestIdentifierType? IdentifierType { get => _explicitNullValueIdentifierType; set { _explicitNullValueIdentifierType = value; AdditionalData?.Remove("identifier_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier_type"); else _explicitNullProperties?.Remove("identifier_type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.DeleteContactIdentifierRequestIdentifierType? _explicitNullValueIdentifierType = default!;
         /// <summary>The value of the identifier you want to remove from the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentifierValue { get => _explicitNullValueIdentifierValue; set { _explicitNullValueIdentifierValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier_value"); else _explicitNullProperties?.Remove("identifier_value"); } }
+        public string? IdentifierValue { get => _explicitNullValueIdentifierValue; set { _explicitNullValueIdentifierValue = value; AdditionalData?.Remove("identifier_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier_value"); else _explicitNullProperties?.Remove("identifier_value"); } }
         private string? _explicitNullValueIdentifierValue = default!;
 #nullable restore
 #else
-        public string IdentifierValue { get => _explicitNullValueIdentifierValue; set { _explicitNullValueIdentifierValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier_value"); else _explicitNullProperties?.Remove("identifier_value"); } }
+        public string IdentifierValue { get => _explicitNullValueIdentifierValue; set { _explicitNullValueIdentifierValue = value; AdditionalData?.Remove("identifier_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier_value"); else _explicitNullProperties?.Remove("identifier_value"); } }
         private string _explicitNullValueIdentifierValue = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "identifier_type", n => { IdentifierType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeleteContactIdentifierRequestIdentifierType>(); } },
+                { "identifier_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DeleteContactIdentifierRequestIdentifierType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIdentifierType = default; _explicitNullProperties?.Remove("identifier_type"); AdditionalData["identifier_type"] = unknown; } else { IdentifierType = parsed; AdditionalData.Remove("identifier_type"); } } },
                 { "identifier_value", n => { IdentifierValue = n.GetStringValue(); } },
             };
         }

@@ -18,17 +18,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of IPs to add (maximum 10 per request)</summary>
-        public long? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public long? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private long? _explicitNullValueCount = default!;
         /// <summary>The region where the IPs should be provisioned (all IPs in a single request must be from the same region)</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequestRegion? _explicitNullValueRegion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequest"/> and sets the default values.
@@ -56,7 +58,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetLongValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequestRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AddAccountIpsRequestRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
             };
         }
         /// <summary>

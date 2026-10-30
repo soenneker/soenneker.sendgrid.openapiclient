@@ -17,18 +17,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
-            if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
+            if (parseNode.GetChildNode("accounts") is null) { _explicitNullValueAccounts = default!; _explicitNullProperties?.Remove("accounts"); }
+            else if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("pages") is null) { _explicitNullValuePages = default!; _explicitNullProperties?.Remove("pages"); }
+            else if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
         }
 
         /// <summary>List of account objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccount>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccount>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccount>? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccount> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccount> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningAccount> _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The pages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningPagination? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningPagination? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; AdditionalData?.Remove("pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningPagination? _explicitNullValuePages = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningPagination Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningPagination Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; AdditionalData?.Remove("pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningPagination _explicitNullValuePages = default!;
 #endif
         /// <summary>

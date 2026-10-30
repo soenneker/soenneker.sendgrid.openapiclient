@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lists") is { } nullNodeLists && nullNodeLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lists = null;
+            if (parseNode.GetChildNode("lists") is null) { _explicitNullValueLists = default!; _explicitNullProperties?.Remove("lists"); }
+            else if (parseNode.GetChildNode("lists") is { } nullNodeLists && nullNodeLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lists = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The lists property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbList2Xx>? Lists { get => _explicitNullValueLists; set { _explicitNullValueLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists"); else _explicitNullProperties?.Remove("lists"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbList2Xx>? Lists { get => _explicitNullValueLists; set { _explicitNullValueLists = value; AdditionalData?.Remove("lists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists"); else _explicitNullProperties?.Remove("lists"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbList2Xx>? _explicitNullValueLists = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbList2Xx> Lists { get => _explicitNullValueLists; set { _explicitNullValueLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists"); else _explicitNullProperties?.Remove("lists"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbList2Xx> Lists { get => _explicitNullValueLists; set { _explicitNullValueLists = value; AdditionalData?.Remove("lists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists"); else _explicitNullProperties?.Remove("lists"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbList2Xx> _explicitNullValueLists = default!;
 #endif
         /// <summary>

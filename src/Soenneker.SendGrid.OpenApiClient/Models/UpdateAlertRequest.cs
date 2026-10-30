@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email_to") is { } nullNodeEmailTo && nullNodeEmailTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailTo = null;
-            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
-            if (parseNode.GetChildNode("percentage") is { } nullNodePercentage && nullNodePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Percentage = null;
+            if (parseNode.GetChildNode("email_to") is null) { _explicitNullValueEmailTo = default!; _explicitNullProperties?.Remove("email_to"); }
+            else if (parseNode.GetChildNode("email_to") is { } nullNodeEmailTo && nullNodeEmailTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailTo = null;
+            if (parseNode.GetChildNode("frequency") is null) { _explicitNullValueFrequency = default!; _explicitNullProperties?.Remove("frequency"); }
+            else if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("percentage") is null) { _explicitNullValuePercentage = default!; _explicitNullProperties?.Remove("percentage"); }
+            else if (parseNode.GetChildNode("percentage") is { } nullNodePercentage && nullNodePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Percentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The new email address you want your alert to be sent to.Example: test@example.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailTo { get => _explicitNullValueEmailTo; set { _explicitNullValueEmailTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_to"); else _explicitNullProperties?.Remove("email_to"); } }
+        public string? EmailTo { get => _explicitNullValueEmailTo; set { _explicitNullValueEmailTo = value; AdditionalData?.Remove("email_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_to"); else _explicitNullProperties?.Remove("email_to"); } }
         private string? _explicitNullValueEmailTo = default!;
 #nullable restore
 #else
-        public string EmailTo { get => _explicitNullValueEmailTo; set { _explicitNullValueEmailTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_to"); else _explicitNullProperties?.Remove("email_to"); } }
+        public string EmailTo { get => _explicitNullValueEmailTo; set { _explicitNullValueEmailTo = value; AdditionalData?.Remove("email_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_to"); else _explicitNullProperties?.Remove("email_to"); } }
         private string _explicitNullValueEmailTo = default!;
 #endif
         /// <summary>The new frequency at which to send the stats_notification alert.Example: monthly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public string? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private string? _explicitNullValueFrequency = default!;
 #nullable restore
 #else
-        public string Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public string Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private string _explicitNullValueFrequency = default!;
 #endif
         /// <summary>The new percentage threshold at which the usage_limit alert will be sent.Example: 90</summary>
-        public int? Percentage { get => _explicitNullValuePercentage; set { _explicitNullValuePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage"); else _explicitNullProperties?.Remove("percentage"); } }
+        public int? Percentage { get => _explicitNullValuePercentage; set { _explicitNullValuePercentage = value; AdditionalData?.Remove("percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage"); else _explicitNullProperties?.Remove("percentage"); } }
         private int? _explicitNullValuePercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateAlertRequest"/> and sets the default values.

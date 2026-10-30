@@ -17,8 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("batch_id") is { } nullNodeBatchId && nullNodeBatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchId = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("batch_id") is null) { _explicitNullValueBatchId = default!; _explicitNullProperties?.Remove("batch_id"); }
+            else if (parseNode.GetChildNode("batch_id") is { } nullNodeBatchId && nullNodeBatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchId = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The batch ID is the identifier that your scheduled mail sends share.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
+        public string? BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; AdditionalData?.Remove("batch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
         private string? _explicitNullValueBatchId = default!;
 #nullable restore
 #else
-        public string BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
+        public string BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; AdditionalData?.Remove("batch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
         private string _explicitNullValueBatchId = default!;
 #endif
         /// <summary>The status of the send you would like to implement. This can be pause or cancel. To delete a pause or cancel status see DELETE /v3/user/scheduled_sends/{batch_id}</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.CreateScheduledSendRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.CreateScheduledSendRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.CreateScheduledSendRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.CreateScheduledSendRequest"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "batch_id", n => { BatchId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateScheduledSendRequestStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateScheduledSendRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

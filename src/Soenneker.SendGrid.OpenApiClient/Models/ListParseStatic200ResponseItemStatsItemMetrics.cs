@@ -17,13 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("received") is { } nullNodeReceived && nullNodeReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Received = null;
+            if (parseNode.GetChildNode("received") is null) { _explicitNullValueReceived = default!; _explicitNullProperties?.Remove("received"); }
+            else if (parseNode.GetChildNode("received") is { } nullNodeReceived && nullNodeReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Received = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of emails received and parsed by the Parse Webhook.</summary>
-        public double? Received { get => _explicitNullValueReceived; set { _explicitNullValueReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("received"); else _explicitNullProperties?.Remove("received"); } }
+        public double? Received { get => _explicitNullValueReceived; set { _explicitNullValueReceived = value; AdditionalData?.Remove("received"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("received"); else _explicitNullProperties?.Remove("received"); } }
         private double? _explicitNullValueReceived = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListParseStatic200ResponseItemStatsItemMetrics"/> and sets the default values.

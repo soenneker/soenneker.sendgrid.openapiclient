@@ -100,7 +100,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Sp
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_suppressions_v3/v3/suppression/spam_reports", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
@@ -119,7 +119,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Sp
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_suppressions_v3.V3.Suppression.Spam_reports.Spam_reportsRequestBuilder.Spam_reportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_suppressions_v3/v3/suppression/spam_reports", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

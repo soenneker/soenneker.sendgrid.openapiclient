@@ -17,29 +17,34 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remain") is { } nullNodeRemain && nullNodeRemain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remain = null;
-            if (parseNode.GetChildNode("reset_frequency") is { } nullNodeResetFrequency && nullNodeResetFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResetFrequency = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
+            if (parseNode.GetChildNode("remain") is null) { _explicitNullValueRemain = default!; _explicitNullProperties?.Remove("remain"); }
+            else if (parseNode.GetChildNode("remain") is { } nullNodeRemain && nullNodeRemain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remain = null;
+            if (parseNode.GetChildNode("reset_frequency") is null) { _explicitNullValueResetFrequency = default!; _explicitNullProperties?.Remove("reset_frequency"); }
+            else if (parseNode.GetChildNode("reset_frequency") is { } nullNodeResetFrequency && nullNodeResetFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResetFrequency = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("used") is null) { _explicitNullValueUsed = default!; _explicitNullProperties?.Remove("used"); }
+            else if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of remaining credits. `remain` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited`.</summary>
-        public int? Remain { get => _explicitNullValueRemain; set { _explicitNullValueRemain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remain"); else _explicitNullProperties?.Remove("remain"); } }
+        public int? Remain { get => _explicitNullValueRemain; set { _explicitNullValueRemain = value; AdditionalData?.Remove("remain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remain"); else _explicitNullProperties?.Remove("remain"); } }
         private int? _explicitNullValueRemain = default!;
         /// <summary>The frequency with which a Subuser&apos;s credits are reset if `type` is set to `recurring`, otherwise `null`.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency? ResetFrequency { get => _explicitNullValueResetFrequency; set { _explicitNullValueResetFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reset_frequency"); else _explicitNullProperties?.Remove("reset_frequency"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency? ResetFrequency { get => _explicitNullValueResetFrequency; set { _explicitNullValueResetFrequency = value; AdditionalData?.Remove("reset_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reset_frequency"); else _explicitNullProperties?.Remove("reset_frequency"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency? _explicitNullValueResetFrequency = default!;
         /// <summary>Total number of allowable credits. `total` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited` or `nonrecurring`.</summary>
-        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private int? _explicitNullValueTotal = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue? _explicitNullValueType = default!;
         /// <summary>Total number of used credits. `used` is `null` if the reset `type` for the Subuser&apos;s credits is set to `unlimited` or `nonrecurring`.</summary>
-        public int? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        public int? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; AdditionalData?.Remove("used"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
         private int? _explicitNullValueUsed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCredits"/> and sets the default values.
@@ -67,9 +72,9 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "remain", n => { Remain = n.GetIntValue(); } },
-                { "reset_frequency", n => { ResetFrequency = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency>(); } },
+                { "reset_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.SubuserCreditsResetFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResetFrequency = default; _explicitNullProperties?.Remove("reset_frequency"); AdditionalData["reset_frequency"] = unknown; } else { ResetFrequency = parsed; AdditionalData.Remove("reset_frequency"); } } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgSubusersV3TypeValue>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "used", n => { Used = n.GetIntValue(); } },
             };
         }

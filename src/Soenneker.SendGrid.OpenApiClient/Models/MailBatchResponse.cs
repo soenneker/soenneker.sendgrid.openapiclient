@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("batch_id") is { } nullNodeBatchId && nullNodeBatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchId = null;
+            if (parseNode.GetChildNode("batch_id") is null) { _explicitNullValueBatchId = default!; _explicitNullProperties?.Remove("batch_id"); }
+            else if (parseNode.GetChildNode("batch_id") is { } nullNodeBatchId && nullNodeBatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A mail batch ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
+        public string? BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; AdditionalData?.Remove("batch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
         private string? _explicitNullValueBatchId = default!;
 #nullable restore
 #else
-        public string BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
+        public string BatchId { get => _explicitNullValueBatchId; set { _explicitNullValueBatchId = value; AdditionalData?.Remove("batch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_id"); else _explicitNullProperties?.Remove("batch_id"); } }
         private string _explicitNullValueBatchId = default!;
 #endif
         /// <summary>

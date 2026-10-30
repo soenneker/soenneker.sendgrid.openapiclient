@@ -18,14 +18,22 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("first_name") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
-            if (parseNode.GetChildNode("has_restricted_subuser_access") is { } nullNodeHasRestrictedSubuserAccess && nullNodeHasRestrictedSubuserAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRestrictedSubuserAccess = null;
-            if (parseNode.GetChildNode("is_admin") is { } nullNodeIsAdmin && nullNodeIsAdmin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAdmin = null;
-            if (parseNode.GetChildNode("is_sso") is { } nullNodeIsSso && nullNodeIsSso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSso = null;
-            if (parseNode.GetChildNode("last_name") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
-            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
-            if (parseNode.GetChildNode("subuser_access") is { } nullNodeSubuserAccess && nullNodeSubuserAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubuserAccess = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("first_name") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("first_name"); }
+            else if (parseNode.GetChildNode("first_name") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("has_restricted_subuser_access") is null) { _explicitNullValueHasRestrictedSubuserAccess = default!; _explicitNullProperties?.Remove("has_restricted_subuser_access"); }
+            else if (parseNode.GetChildNode("has_restricted_subuser_access") is { } nullNodeHasRestrictedSubuserAccess && nullNodeHasRestrictedSubuserAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRestrictedSubuserAccess = null;
+            if (parseNode.GetChildNode("is_admin") is null) { _explicitNullValueIsAdmin = default!; _explicitNullProperties?.Remove("is_admin"); }
+            else if (parseNode.GetChildNode("is_admin") is { } nullNodeIsAdmin && nullNodeIsAdmin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAdmin = null;
+            if (parseNode.GetChildNode("is_sso") is null) { _explicitNullValueIsSso = default!; _explicitNullProperties?.Remove("is_sso"); }
+            else if (parseNode.GetChildNode("is_sso") is { } nullNodeIsSso && nullNodeIsSso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSso = null;
+            if (parseNode.GetChildNode("last_name") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("last_name"); }
+            else if (parseNode.GetChildNode("last_name") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
+            else if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("subuser_access") is null) { _explicitNullValueSubuserAccess = default!; _explicitNullProperties?.Remove("subuser_access"); }
+            else if (parseNode.GetChildNode("subuser_access") is { } nullNodeSubuserAccess && nullNodeSubuserAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubuserAccess = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,60 +41,60 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Teammate&apos;s email address. This email address also functions as the Teammate&apos;s username and must match the address assigned to the user in your IdP. This address cannot be changed after the Teammate is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The Teammate&apos;s first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("first_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
         private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("first_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
         private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>When this property is set to `true`, the Teammate has permissions to operate only on behalf of a Subuser. This property value is `true` when the `subuser_access` property is not empty. The `subuser_access` property determines which Subusers the Teammate may act on behalf of.</summary>
-        public bool? HasRestrictedSubuserAccess { get => _explicitNullValueHasRestrictedSubuserAccess; set { _explicitNullValueHasRestrictedSubuserAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_restricted_subuser_access"); else _explicitNullProperties?.Remove("has_restricted_subuser_access"); } }
+        public bool? HasRestrictedSubuserAccess { get => _explicitNullValueHasRestrictedSubuserAccess; set { _explicitNullValueHasRestrictedSubuserAccess = value; AdditionalData?.Remove("has_restricted_subuser_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_restricted_subuser_access"); else _explicitNullProperties?.Remove("has_restricted_subuser_access"); } }
         private bool? _explicitNullValueHasRestrictedSubuserAccess = default!;
         /// <summary>Indicates if the Teammate has administrator permissions. When set to `true`, the Teammate is an admin.</summary>
-        public bool? IsAdmin { get => _explicitNullValueIsAdmin; set { _explicitNullValueIsAdmin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_admin"); else _explicitNullProperties?.Remove("is_admin"); } }
+        public bool? IsAdmin { get => _explicitNullValueIsAdmin; set { _explicitNullValueIsAdmin = value; AdditionalData?.Remove("is_admin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_admin"); else _explicitNullProperties?.Remove("is_admin"); } }
         private bool? _explicitNullValueIsAdmin = default!;
         /// <summary>Indicates how the Teammate authenticates with SendGrid. When set to `true`, the Teammate will access SendGrid via SSO and their IdP. When set to `false`, the Teammate will authenticate directly with SendGrid via a username and password.</summary>
-        public bool? IsSso { get => _explicitNullValueIsSso; set { _explicitNullValueIsSso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_sso"); else _explicitNullProperties?.Remove("is_sso"); } }
+        public bool? IsSso { get => _explicitNullValueIsSso; set { _explicitNullValueIsSso = value; AdditionalData?.Remove("is_sso"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_sso"); else _explicitNullProperties?.Remove("is_sso"); } }
         private bool? _explicitNullValueIsSso = default!;
         /// <summary>The Teammate&apos;s last name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("last_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
         private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("last_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
         private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>The permissions or scopes currently assigned to the Teammate. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a complete list of available scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>Specifies which Subusers the Teammate may access and act on behalf of. If this property is populated, the `has_restricted_subuser_access` property will be `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem>? SubuserAccess { get => _explicitNullValueSubuserAccess; set { _explicitNullValueSubuserAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subuser_access"); else _explicitNullProperties?.Remove("subuser_access"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem>? SubuserAccess { get => _explicitNullValueSubuserAccess; set { _explicitNullValueSubuserAccess = value; AdditionalData?.Remove("subuser_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subuser_access"); else _explicitNullProperties?.Remove("subuser_access"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem>? _explicitNullValueSubuserAccess = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem> SubuserAccess { get => _explicitNullValueSubuserAccess; set { _explicitNullValueSubuserAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subuser_access"); else _explicitNullProperties?.Remove("subuser_access"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem> SubuserAccess { get => _explicitNullValueSubuserAccess; set { _explicitNullValueSubuserAccess = value; AdditionalData?.Remove("subuser_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subuser_access"); else _explicitNullProperties?.Remove("subuser_access"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammates201SubuserAccessItem> _explicitNullValueSubuserAccess = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("after_key") is { } nullNodeAfterKey && nullNodeAfterKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AfterKey = null;
+            if (parseNode.GetChildNode("after_key") is null) { _explicitNullValueAfterKey = default!; _explicitNullProperties?.Remove("after_key"); }
+            else if (parseNode.GetChildNode("after_key") is { } nullNodeAfterKey && nullNodeAfterKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AfterKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The `after_key` property represents the last processed key. If the `after_key` property is `null`, there are no more entries available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
+        public string? AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; AdditionalData?.Remove("after_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
         private string? _explicitNullValueAfterKey = default!;
 #nullable restore
 #else
-        public string AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
+        public string AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; AdditionalData?.Remove("after_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
         private string _explicitNullValueAfterKey = default!;
 #endif
         /// <summary>

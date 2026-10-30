@@ -18,7 +18,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email_events") is { } nullNodeEmailEvents && nullNodeEmailEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailEvents = null;
+            if (parseNode.GetChildNode("email_events") is null) { _explicitNullValueEmailEvents = default!; _explicitNullProperties?.Remove("email_events"); }
+            else if (parseNode.GetChildNode("email_events") is { } nullNodeEmailEvents && nullNodeEmailEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailEvents = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The possible SendGrid email event types for event forwarding. Specify all the email event types that you would like to forward to the Integration&apos;s destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFiltersEmailEventsItem?>? EmailEvents { get => _explicitNullValueEmailEvents; set { _explicitNullValueEmailEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_events"); else _explicitNullProperties?.Remove("email_events"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFiltersEmailEventsItem?>? EmailEvents { get => _explicitNullValueEmailEvents; set { _explicitNullValueEmailEvents = value; AdditionalData?.Remove("email_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_events"); else _explicitNullProperties?.Remove("email_events"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFiltersEmailEventsItem?>? _explicitNullValueEmailEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFiltersEmailEventsItem?> EmailEvents { get => _explicitNullValueEmailEvents; set { _explicitNullValueEmailEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_events"); else _explicitNullProperties?.Remove("email_events"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFiltersEmailEventsItem?> EmailEvents { get => _explicitNullValueEmailEvents; set { _explicitNullValueEmailEvents = value; AdditionalData?.Remove("email_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_events"); else _explicitNullProperties?.Remove("email_events"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationFiltersEmailEventsItem?> _explicitNullValueEmailEvents = default!;
 #endif
         /// <summary>

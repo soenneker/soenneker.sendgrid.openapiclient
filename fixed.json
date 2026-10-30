@@ -10872,7 +10872,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteContactDbList202Response"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3DeleteContactDbList202Response"
                 }
               }
             }
@@ -11171,7 +11171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddRecipientsToContactDbList201Response"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientsToContactDbList201Response"
                 }
               }
             }
@@ -11310,7 +11310,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddRecipientToContactDbList201Response"
+                  "$ref": "#/components/schemas/TsgLmcContactdbV3AddRecipientToContactDbList201Response"
                 }
               }
             }
@@ -44446,6 +44446,10 @@
             {
               "value": "or",
               "name": "Or"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -44678,14 +44682,7 @@
           }
         }
       },
-      "DeleteContactDbList202Response": {
-        "anyOf": [
-          {},
-          {
-            "type": "null"
-          }
-        ]
-      },
+      "DeleteContactDbList202Response": {},
       "ListRecipientsFromContactDbList404Response": {
         "type": "object"
       },
@@ -44699,22 +44696,8 @@
           "ZW1haWwyQHRlc3QubmV0"
         ]
       },
-      "AddRecipientsToContactDbList201Response": {
-        "anyOf": [
-          {},
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "AddRecipientToContactDbList201Response": {
-        "anyOf": [
-          {},
-          {
-            "type": "null"
-          }
-        ]
-      },
+      "AddRecipientsToContactDbList201Response": {},
+      "AddRecipientToContactDbList201Response": {},
       "AddRecipientRequest": {
         "type": "array",
         "items": {
@@ -56268,14 +56251,7 @@
         "description": "Placeholder schema for path example refs"
       },
       "ListEngagementQualityScoreSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SeqV1Scores200Response"
-          },
-          {
-            "description": "Fallback media schema"
-          }
-        ]
+        "description": "Fallback media schema"
       },
       "SsoCertificateBody": {
         "title": "Single Sign-On Certificate Body",
@@ -65218,6 +65194,10 @@
             {
               "value": "or",
               "name": "Or"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -67325,6 +67305,7 @@
           4
         ]
       },
+      "TsgLmcContactdbV3DeleteContactDbList202Response": {},
       "TsgLmcContactdbV3ListRecipientsFromContactDbList404Response": {
         "type": "object"
       },
@@ -67338,6 +67319,8 @@
           "ZW1haWwyQHRlc3QubmV0"
         ]
       },
+      "TsgLmcContactdbV3AddRecipientsToContactDbList201Response": {},
+      "TsgLmcContactdbV3AddRecipientToContactDbList201Response": {},
       "TsgLmcContactdbV3AddRecipientRequest": {
         "type": "array",
         "items": {

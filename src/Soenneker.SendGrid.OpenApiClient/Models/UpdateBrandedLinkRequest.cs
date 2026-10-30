@@ -17,13 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the branded link is set as the default. When setting a new default, the existing default link branding will have its default status removed automatically.</summary>
-        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private bool? _explicitNullValueDefault = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateBrandedLinkRequest"/> and sets the default values.

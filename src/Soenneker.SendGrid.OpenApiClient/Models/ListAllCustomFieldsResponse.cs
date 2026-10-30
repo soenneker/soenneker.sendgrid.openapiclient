@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_fields") is { } nullNodeCustomFields && nullNodeCustomFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFields = null;
+            if (parseNode.GetChildNode("custom_fields") is null) { _explicitNullValueCustomFields = default!; _explicitNullProperties?.Remove("custom_fields"); }
+            else if (parseNode.GetChildNode("custom_fields") is { } nullNodeCustomFields && nullNodeCustomFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbCustomFieldId2Xx>? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_fields"); else _explicitNullProperties?.Remove("custom_fields"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbCustomFieldId2Xx>? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("custom_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_fields"); else _explicitNullProperties?.Remove("custom_fields"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbCustomFieldId2Xx>? _explicitNullValueCustomFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbCustomFieldId2Xx> CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_fields"); else _explicitNullProperties?.Remove("custom_fields"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbCustomFieldId2Xx> CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("custom_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_fields"); else _explicitNullProperties?.Remove("custom_fields"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbCustomFieldId2Xx> _explicitNullValueCustomFields = default!;
 #endif
         /// <summary>

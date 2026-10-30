@@ -17,32 +17,36 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
-            if (parseNode.GetChildNode("step_id") is { } nullNodeStepId && nullNodeStepId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StepId = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
-            if (parseNode.GetChildNode("url_location") is { } nullNodeUrlLocation && nullNodeUrlLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlLocation = null;
+            if (parseNode.GetChildNode("clicks") is null) { _explicitNullValueClicks = default!; _explicitNullProperties?.Remove("clicks"); }
+            else if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("step_id") is null) { _explicitNullValueStepId = default!; _explicitNullProperties?.Remove("step_id"); }
+            else if (parseNode.GetChildNode("step_id") is { } nullNodeStepId && nullNodeStepId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StepId = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("url_location") is null) { _explicitNullValueUrlLocation = default!; _explicitNullProperties?.Remove("url_location"); }
+            else if (parseNode.GetChildNode("url_location") is { } nullNodeUrlLocation && nullNodeUrlLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlLocation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of clicks on this particular link.</summary>
-        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
+        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; AdditionalData?.Remove("clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
         private int? _explicitNullValueClicks = default!;
         /// <summary>This is the ID of the step if the stats were requested to be grouped by `step_id`.</summary>
-        public Guid? StepId { get => _explicitNullValueStepId; set { _explicitNullValueStepId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_id"); else _explicitNullProperties?.Remove("step_id"); } }
+        public Guid? StepId { get => _explicitNullValueStepId; set { _explicitNullValueStepId = value; AdditionalData?.Remove("step_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_id"); else _explicitNullProperties?.Remove("step_id"); } }
         private Guid? _explicitNullValueStepId = default!;
         /// <summary>This is the URL of the link clicked. If `{{custom_fields}}` are part of the URL, they will be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>This is the location of the link clicked in each Automation step. Links are located according to their position within the message; the topmost link has index `0`.</summary>
-        public int? UrlLocation { get => _explicitNullValueUrlLocation; set { _explicitNullValueUrlLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_location"); else _explicitNullProperties?.Remove("url_location"); } }
+        public int? UrlLocation { get => _explicitNullValueUrlLocation; set { _explicitNullValueUrlLocation = value; AdditionalData?.Remove("url_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_location"); else _explicitNullProperties?.Remove("url_location"); } }
         private int? _explicitNullValueUrlLocation = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.AutmoationsLinkStatsResponseResultsItem"/> and sets the default values.

@@ -17,28 +17,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("subusers") is { } nullNodeSubusers && nullNodeSubusers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subusers = null;
-            if (parseNode.GetChildNode("warmup") is { } nullNodeWarmup && nullNodeWarmup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warmup = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("subusers") is null) { _explicitNullValueSubusers = default!; _explicitNullProperties?.Remove("subusers"); }
+            else if (parseNode.GetChildNode("subusers") is { } nullNodeSubusers && nullNodeSubusers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subusers = null;
+            if (parseNode.GetChildNode("warmup") is null) { _explicitNullValueWarmup = default!; _explicitNullProperties?.Remove("warmup"); }
+            else if (parseNode.GetChildNode("warmup") is { } nullNodeWarmup && nullNodeWarmup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warmup = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of IPs to add to the account.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>Array of usernames to be assigned a send IP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
+        public List<string>? Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; AdditionalData?.Remove("subusers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
         private List<string>? _explicitNullValueSubusers = default!;
 #nullable restore
 #else
-        public List<string> Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
+        public List<string> Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; AdditionalData?.Remove("subusers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
         private List<string> _explicitNullValueSubusers = default!;
 #endif
         /// <summary>Whether or not to warmup the IPs being added.</summary>
-        public bool? Warmup { get => _explicitNullValueWarmup; set { _explicitNullValueWarmup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warmup"); else _explicitNullProperties?.Remove("warmup"); } }
+        public bool? Warmup { get => _explicitNullValueWarmup; set { _explicitNullValueWarmup = value; AdditionalData?.Remove("warmup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warmup"); else _explicitNullProperties?.Remove("warmup"); } }
         private bool? _explicitNullValueWarmup = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIpRequest"/> and sets the default values.

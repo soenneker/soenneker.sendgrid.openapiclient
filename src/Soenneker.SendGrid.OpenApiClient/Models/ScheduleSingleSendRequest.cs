@@ -17,13 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("send_at") is { } nullNodeSendAt && nullNodeSendAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAt = null;
+            if (parseNode.GetChildNode("send_at") is null) { _explicitNullValueSendAt = default!; _explicitNullProperties?.Remove("send_at"); }
+            else if (parseNode.GetChildNode("send_at") is { } nullNodeSendAt && nullNodeSendAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ISO 8601 time at which to send the Single Send. This must be in future or the string `now`. SendGrid [Mail Send](https://docs.sendgrid.com/api-reference/mail-send/mail-send) emails can be scheduled up to 72 hours in advance. However, this scheduling constraint does not apply to emails sent via [Marketing Campaigns](https://docs.sendgrid.com/ui/sending-email/how-to-send-email-with-marketing-campaigns/).</summary>
-        public DateTimeOffset? SendAt { get => _explicitNullValueSendAt; set { _explicitNullValueSendAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_at"); else _explicitNullProperties?.Remove("send_at"); } }
+        public DateTimeOffset? SendAt { get => _explicitNullValueSendAt; set { _explicitNullValueSendAt = value; AdditionalData?.Remove("send_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_at"); else _explicitNullProperties?.Remove("send_at"); } }
         private DateTimeOffset? _explicitNullValueSendAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ScheduleSingleSendRequest"/> and sets the default values.

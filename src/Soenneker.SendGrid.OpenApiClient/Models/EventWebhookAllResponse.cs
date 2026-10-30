@@ -17,23 +17,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_allowed") is { } nullNodeMaxAllowed && nullNodeMaxAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAllowed = null;
-            if (parseNode.GetChildNode("webhooks") is { } nullNodeWebhooks && nullNodeWebhooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhooks = null;
+            if (parseNode.GetChildNode("max_allowed") is null) { _explicitNullValueMaxAllowed = default!; _explicitNullProperties?.Remove("max_allowed"); }
+            else if (parseNode.GetChildNode("max_allowed") is { } nullNodeMaxAllowed && nullNodeMaxAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAllowed = null;
+            if (parseNode.GetChildNode("webhooks") is null) { _explicitNullValueWebhooks = default!; _explicitNullProperties?.Remove("webhooks"); }
+            else if (parseNode.GetChildNode("webhooks") is { } nullNodeWebhooks && nullNodeWebhooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhooks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of Event Webhooks you can have enabled under your current Twilio SendGrid plan. See the [Twilio SendGrid pricing page](https://sendgrid.com/pricing) for more information about the features available with each plan.</summary>
-        public double? MaxAllowed { get => _explicitNullValueMaxAllowed; set { _explicitNullValueMaxAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_allowed"); else _explicitNullProperties?.Remove("max_allowed"); } }
+        public double? MaxAllowed { get => _explicitNullValueMaxAllowed; set { _explicitNullValueMaxAllowed = value; AdditionalData?.Remove("max_allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_allowed"); else _explicitNullProperties?.Remove("max_allowed"); } }
         private double? _explicitNullValueMaxAllowed = default!;
         /// <summary>An array of Event Webhook objects. Each object represents one of your webhooks and contains its configuration settings, including which events it is set to send in the POST request, the URL where it will send those events, and the webhook&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookSignedResponse>? Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookSignedResponse>? Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; AdditionalData?.Remove("webhooks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookSignedResponse>? _explicitNullValueWebhooks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookSignedResponse> Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookSignedResponse> Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; AdditionalData?.Remove("webhooks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.EventWebhookSignedResponse> _explicitNullValueWebhooks = default!;
 #endif
         /// <summary>

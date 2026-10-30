@@ -17,18 +17,30 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("after_key") is { } nullNodeAfterKey && nullNodeAfterKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AfterKey = null;
-            if (parseNode.GetChildNode("before_key") is { } nullNodeBeforeKey && nullNodeBeforeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeforeKey = null;
-            if (parseNode.GetChildNode("end_added_at") is { } nullNodeEndAddedAt && nullNodeEndAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAddedAt = null;
-            if (parseNode.GetChildNode("include_region") is { } nullNodeIncludeRegion && nullNodeIncludeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRegion = null;
-            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
-            if (parseNode.GetChildNode("is_enabled") is { } nullNodeIsEnabled && nullNodeIsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnabled = null;
-            if (parseNode.GetChildNode("is_leased") is { } nullNodeIsLeased && nullNodeIsLeased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLeased = null;
-            if (parseNode.GetChildNode("is_parent_assigned") is { } nullNodeIsParentAssigned && nullNodeIsParentAssigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParentAssigned = null;
-            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
-            if (parseNode.GetChildNode("pool") is { } nullNodePool && nullNodePool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pool = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("start_added_at") is { } nullNodeStartAddedAt && nullNodeStartAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAddedAt = null;
+            if (parseNode.GetChildNode("after_key") is null) { _explicitNullValueAfterKey = default!; _explicitNullProperties?.Remove("after_key"); }
+            else if (parseNode.GetChildNode("after_key") is { } nullNodeAfterKey && nullNodeAfterKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AfterKey = null;
+            if (parseNode.GetChildNode("before_key") is null) { _explicitNullValueBeforeKey = default!; _explicitNullProperties?.Remove("before_key"); }
+            else if (parseNode.GetChildNode("before_key") is { } nullNodeBeforeKey && nullNodeBeforeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeforeKey = null;
+            if (parseNode.GetChildNode("end_added_at") is null) { _explicitNullValueEndAddedAt = default!; _explicitNullProperties?.Remove("end_added_at"); }
+            else if (parseNode.GetChildNode("end_added_at") is { } nullNodeEndAddedAt && nullNodeEndAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAddedAt = null;
+            if (parseNode.GetChildNode("include_region") is null) { _explicitNullValueIncludeRegion = default!; _explicitNullProperties?.Remove("include_region"); }
+            else if (parseNode.GetChildNode("include_region") is { } nullNodeIncludeRegion && nullNodeIncludeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRegion = null;
+            if (parseNode.GetChildNode("ip") is null) { _explicitNullValueIp = default!; _explicitNullProperties?.Remove("ip"); }
+            else if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("is_enabled") is null) { _explicitNullValueIsEnabled = default!; _explicitNullProperties?.Remove("is_enabled"); }
+            else if (parseNode.GetChildNode("is_enabled") is { } nullNodeIsEnabled && nullNodeIsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnabled = null;
+            if (parseNode.GetChildNode("is_leased") is null) { _explicitNullValueIsLeased = default!; _explicitNullProperties?.Remove("is_leased"); }
+            else if (parseNode.GetChildNode("is_leased") is { } nullNodeIsLeased && nullNodeIsLeased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLeased = null;
+            if (parseNode.GetChildNode("is_parent_assigned") is null) { _explicitNullValueIsParentAssigned = default!; _explicitNullProperties?.Remove("is_parent_assigned"); }
+            else if (parseNode.GetChildNode("is_parent_assigned") is { } nullNodeIsParentAssigned && nullNodeIsParentAssigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParentAssigned = null;
+            if (parseNode.GetChildNode("limit") is null) { _explicitNullValueLimit = default!; _explicitNullProperties?.Remove("limit"); }
+            else if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("pool") is null) { _explicitNullValuePool = default!; _explicitNullProperties?.Remove("pool"); }
+            else if (parseNode.GetChildNode("pool") is { } nullNodePool && nullNodePool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pool = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("start_added_at") is null) { _explicitNullValueStartAddedAt = default!; _explicitNullProperties?.Remove("start_added_at"); }
+            else if (parseNode.GetChildNode("start_added_at") is { } nullNodeStartAddedAt && nullNodeStartAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAddedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,93 +48,93 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Specifies which items to be returned by the API. When the `after_key` is specified, the API will return items beginning from the first item after the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `after_key` cannot be used in combination with the `before_key` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
+        public string? AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; AdditionalData?.Remove("after_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
         private string? _explicitNullValueAfterKey = default!;
 #nullable restore
 #else
-        public string AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
+        public string AfterKey { get => _explicitNullValueAfterKey; set { _explicitNullValueAfterKey = value; AdditionalData?.Remove("after_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after_key"); else _explicitNullProperties?.Remove("after_key"); } }
         private string _explicitNullValueAfterKey = default!;
 #endif
         /// <summary>Specifies which items to be returned by the API. When the `before_key` is specified, the API will return items beginning from the first item before the item specified. This parameter can be used in combination with `limit` to iterate through paginated results. The `before_key` cannot be used in combination with the `after_key` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BeforeKey { get => _explicitNullValueBeforeKey; set { _explicitNullValueBeforeKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before_key"); else _explicitNullProperties?.Remove("before_key"); } }
+        public string? BeforeKey { get => _explicitNullValueBeforeKey; set { _explicitNullValueBeforeKey = value; AdditionalData?.Remove("before_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before_key"); else _explicitNullProperties?.Remove("before_key"); } }
         private string? _explicitNullValueBeforeKey = default!;
 #nullable restore
 #else
-        public string BeforeKey { get => _explicitNullValueBeforeKey; set { _explicitNullValueBeforeKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before_key"); else _explicitNullProperties?.Remove("before_key"); } }
+        public string BeforeKey { get => _explicitNullValueBeforeKey; set { _explicitNullValueBeforeKey = value; AdditionalData?.Remove("before_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before_key"); else _explicitNullProperties?.Remove("before_key"); } }
         private string _explicitNullValueBeforeKey = default!;
 #endif
         /// <summary>The end of the time window specified in the request with the `end_added_at` query parameter. This parameter is returned only when the `end_added_at` parameter is included in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndAddedAt { get => _explicitNullValueEndAddedAt; set { _explicitNullValueEndAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_added_at"); else _explicitNullProperties?.Remove("end_added_at"); } }
+        public string? EndAddedAt { get => _explicitNullValueEndAddedAt; set { _explicitNullValueEndAddedAt = value; AdditionalData?.Remove("end_added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_added_at"); else _explicitNullProperties?.Remove("end_added_at"); } }
         private string? _explicitNullValueEndAddedAt = default!;
 #nullable restore
 #else
-        public string EndAddedAt { get => _explicitNullValueEndAddedAt; set { _explicitNullValueEndAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_added_at"); else _explicitNullProperties?.Remove("end_added_at"); } }
+        public string EndAddedAt { get => _explicitNullValueEndAddedAt; set { _explicitNullValueEndAddedAt = value; AdditionalData?.Remove("end_added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_added_at"); else _explicitNullProperties?.Remove("end_added_at"); } }
         private string _explicitNullValueEndAddedAt = default!;
 #endif
         /// <summary>Indicates whether or not to include the IP address&apos;s region. This property will only be returned if the `include_region` query parameter is included and set to `true` as part of the API request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
+        public string? IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; AdditionalData?.Remove("include_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
         private string? _explicitNullValueIncludeRegion = default!;
 #nullable restore
 #else
-        public string IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
+        public string IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; AdditionalData?.Remove("include_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
         private string _explicitNullValueIncludeRegion = default!;
 #endif
         /// <summary>The IP address specified in the request with the `ip` query parameter. This parameter is returned only when an IP is included in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string _explicitNullValueIp = default!;
 #endif
         /// <summary>Indicates if the IP address is billed and able to send email. This parameter applies to non-Twilio SendGrid APIs that been added to your Twilio SendGrid account. This parameter&apos;s value is `null` for Twilio SendGrid IP addresses. This parameter is returned only if the IP address is enabled.</summary>
-        public bool? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_enabled"); else _explicitNullProperties?.Remove("is_enabled"); } }
+        public bool? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; AdditionalData?.Remove("is_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_enabled"); else _explicitNullProperties?.Remove("is_enabled"); } }
         private bool? _explicitNullValueIsEnabled = default!;
         /// <summary>Indicates whether an IP address is leased from Twilio SendGrid. If `false`, the IP address is not a Twilio SendGrid IP; it is a customer&apos;s own IP that has been added to their Twilio SendGrid account. This parameter is returned only if the IP address is leased.</summary>
-        public bool? IsLeased { get => _explicitNullValueIsLeased; set { _explicitNullValueIsLeased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_leased"); else _explicitNullProperties?.Remove("is_leased"); } }
+        public bool? IsLeased { get => _explicitNullValueIsLeased; set { _explicitNullValueIsLeased = value; AdditionalData?.Remove("is_leased"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_leased"); else _explicitNullProperties?.Remove("is_leased"); } }
         private bool? _explicitNullValueIsLeased = default!;
         /// <summary>Indicates if a parent on the account is able to send email from the IP address. This parameter is returned only if the IP address is parent assigned.</summary>
-        public bool? IsParentAssigned { get => _explicitNullValueIsParentAssigned; set { _explicitNullValueIsParentAssigned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parent_assigned"); else _explicitNullProperties?.Remove("is_parent_assigned"); } }
+        public bool? IsParentAssigned { get => _explicitNullValueIsParentAssigned; set { _explicitNullValueIsParentAssigned = value; AdditionalData?.Remove("is_parent_assigned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parent_assigned"); else _explicitNullProperties?.Remove("is_parent_assigned"); } }
         private bool? _explicitNullValueIsParentAssigned = default!;
         /// <summary>The number of items returned in the request. This parameter is returned only when a `limit` is set using the `limit` query parameter in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public string? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private string? _explicitNullValueLimit = default!;
 #nullable restore
 #else
-        public string Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public string Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private string _explicitNullValueLimit = default!;
 #endif
         /// <summary>The IP Pool ID specified in the request with the `pool` query parameter. This parameter is returned only when an IP Pool is included in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pool { get => _explicitNullValuePool; set { _explicitNullValuePool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool"); else _explicitNullProperties?.Remove("pool"); } }
+        public string? Pool { get => _explicitNullValuePool; set { _explicitNullValuePool = value; AdditionalData?.Remove("pool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool"); else _explicitNullProperties?.Remove("pool"); } }
         private string? _explicitNullValuePool = default!;
 #nullable restore
 #else
-        public string Pool { get => _explicitNullValuePool; set { _explicitNullValuePool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool"); else _explicitNullProperties?.Remove("pool"); } }
+        public string Pool { get => _explicitNullValuePool; set { _explicitNullValuePool = value; AdditionalData?.Remove("pool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool"); else _explicitNullProperties?.Remove("pool"); } }
         private string _explicitNullValuePool = default!;
 #endif
         /// <summary>The region to which the IP address is assigned. This property will only be returned if the `include_region` query parameter is included and set to `true` as part of the API request,</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListIp200ResponseMetadataNextParamsRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListIp200ResponseMetadataNextParamsRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListIp200ResponseMetadataNextParamsRegion? _explicitNullValueRegion = default!;
         /// <summary>The beginning of the time window specified in the request with the `start_added_at` query parameter. This parameter is returned only when the `start_added_at` parameter is included in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartAddedAt { get => _explicitNullValueStartAddedAt; set { _explicitNullValueStartAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_added_at"); else _explicitNullProperties?.Remove("start_added_at"); } }
+        public string? StartAddedAt { get => _explicitNullValueStartAddedAt; set { _explicitNullValueStartAddedAt = value; AdditionalData?.Remove("start_added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_added_at"); else _explicitNullProperties?.Remove("start_added_at"); } }
         private string? _explicitNullValueStartAddedAt = default!;
 #nullable restore
 #else
-        public string StartAddedAt { get => _explicitNullValueStartAddedAt; set { _explicitNullValueStartAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_added_at"); else _explicitNullProperties?.Remove("start_added_at"); } }
+        public string StartAddedAt { get => _explicitNullValueStartAddedAt; set { _explicitNullValueStartAddedAt = value; AdditionalData?.Remove("start_added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_added_at"); else _explicitNullProperties?.Remove("start_added_at"); } }
         private string _explicitNullValueStartAddedAt = default!;
 #endif
         /// <summary>
@@ -160,7 +172,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "is_parent_assigned", n => { IsParentAssigned = n.GetBoolValue(); } },
                 { "limit", n => { Limit = n.GetStringValue(); } },
                 { "pool", n => { Pool = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListIp200ResponseMetadataNextParamsRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListIp200ResponseMetadataNextParamsRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
                 { "start_added_at", n => { StartAddedAt = n.GetStringValue(); } },
             };
         }

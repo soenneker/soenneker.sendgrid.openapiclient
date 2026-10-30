@@ -18,7 +18,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("a_record") is { } nullNodeARecord && nullNodeARecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ARecord = null;
+            if (parseNode.GetChildNode("a_record") is null) { _explicitNullValueARecord = default!; _explicitNullProperties?.Remove("a_record"); }
+            else if (parseNode.GetChildNode("a_record") is { } nullNodeARecord && nullNodeARecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ARecord = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The a_record property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResultsARecord? ARecord { get => _explicitNullValueARecord; set { _explicitNullValueARecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a_record"); else _explicitNullProperties?.Remove("a_record"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResultsARecord? ARecord { get => _explicitNullValueARecord; set { _explicitNullValueARecord = value; AdditionalData?.Remove("a_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a_record"); else _explicitNullProperties?.Remove("a_record"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResultsARecord? _explicitNullValueARecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResultsARecord ARecord { get => _explicitNullValueARecord; set { _explicitNullValueARecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a_record"); else _explicitNullProperties?.Remove("a_record"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResultsARecord ARecord { get => _explicitNullValueARecord; set { _explicitNullValueARecord = value; AdditionalData?.Remove("a_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a_record"); else _explicitNullProperties?.Remove("a_record"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResultsARecord _explicitNullValueARecord = default!;
 #endif
         /// <summary>

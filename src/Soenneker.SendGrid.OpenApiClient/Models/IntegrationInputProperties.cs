@@ -18,23 +18,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destination_region") is { } nullNodeDestinationRegion && nullNodeDestinationRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationRegion = null;
-            if (parseNode.GetChildNode("write_key") is { } nullNodeWriteKey && nullNodeWriteKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WriteKey = null;
+            if (parseNode.GetChildNode("destination_region") is null) { _explicitNullValueDestinationRegion = default!; _explicitNullProperties?.Remove("destination_region"); }
+            else if (parseNode.GetChildNode("destination_region") is { } nullNodeDestinationRegion && nullNodeDestinationRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationRegion = null;
+            if (parseNode.GetChildNode("write_key") is null) { _explicitNullValueWriteKey = default!; _explicitNullProperties?.Remove("write_key"); }
+            else if (parseNode.GetChildNode("write_key") is { } nullNodeWriteKey && nullNodeWriteKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WriteKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The workspace region where the Segment Source write key lives.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputPropertiesDestinationRegion? DestinationRegion { get => _explicitNullValueDestinationRegion; set { _explicitNullValueDestinationRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_region"); else _explicitNullProperties?.Remove("destination_region"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputPropertiesDestinationRegion? DestinationRegion { get => _explicitNullValueDestinationRegion; set { _explicitNullValueDestinationRegion = value; AdditionalData?.Remove("destination_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_region"); else _explicitNullProperties?.Remove("destination_region"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputPropertiesDestinationRegion? _explicitNullValueDestinationRegion = default!;
         /// <summary>The write key provided by the Segment Source you&apos;d like to have events forwarded to. Must be between 6 and 51 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WriteKey { get => _explicitNullValueWriteKey; set { _explicitNullValueWriteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("write_key"); else _explicitNullProperties?.Remove("write_key"); } }
+        public string? WriteKey { get => _explicitNullValueWriteKey; set { _explicitNullValueWriteKey = value; AdditionalData?.Remove("write_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("write_key"); else _explicitNullProperties?.Remove("write_key"); } }
         private string? _explicitNullValueWriteKey = default!;
 #nullable restore
 #else
-        public string WriteKey { get => _explicitNullValueWriteKey; set { _explicitNullValueWriteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("write_key"); else _explicitNullProperties?.Remove("write_key"); } }
+        public string WriteKey { get => _explicitNullValueWriteKey; set { _explicitNullValueWriteKey = value; AdditionalData?.Remove("write_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("write_key"); else _explicitNullProperties?.Remove("write_key"); } }
         private string _explicitNullValueWriteKey = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination_region", n => { DestinationRegion = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputPropertiesDestinationRegion>(); } },
+                { "destination_region", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputPropertiesDestinationRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDestinationRegion = default; _explicitNullProperties?.Remove("destination_region"); AdditionalData["destination_region"] = unknown; } else { DestinationRegion = parsed; AdditionalData.Remove("destination_region"); } } },
                 { "write_key", n => { WriteKey = n.GetStringValue(); } },
             };
         }

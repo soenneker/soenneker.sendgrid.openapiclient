@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
-            if (parseNode.GetChildNode("token_url") is { } nullNodeTokenUrl && nullNodeTokenUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenUrl = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
+            else if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("token_url") is null) { _explicitNullValueTokenUrl = default!; _explicitNullProperties?.Remove("token_url"); }
+            else if (parseNode.GetChildNode("token_url") is { } nullNodeTokenUrl && nullNodeTokenUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The client_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>The token_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
+        public string? TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; AdditionalData?.Remove("token_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
         private string? _explicitNullValueTokenUrl = default!;
 #nullable restore
 #else
-        public string TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
+        public string TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; AdditionalData?.Remove("token_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
         private string _explicitNullValueTokenUrl = default!;
 #endif
         /// <summary>

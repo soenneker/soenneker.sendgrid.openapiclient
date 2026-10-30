@@ -17,8 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
-            if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
+            if (parseNode.GetChildNode("contacts") is null) { _explicitNullValueContacts = default!; _explicitNullProperties?.Remove("contacts"); }
+            else if (parseNode.GetChildNode("contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("list_ids") is null) { _explicitNullValueListIds = default!; _explicitNullProperties?.Remove("list_ids"); }
+            else if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>One or more contacts objects that you intend to upsert. Each contact needs to include at least one of `email`, `phone_number_id`, `external_id`, or `anonymous_id` as an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest>? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest>? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; AdditionalData?.Remove("contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest>? _explicitNullValueContacts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest> Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest> Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; AdditionalData?.Remove("contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.ContactRequest> _explicitNullValueContacts = default!;
 #endif
         /// <summary>An array of List ID strings that this contact will be added to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<Guid?>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<Guid?>? _explicitNullValueListIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<Guid?> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<Guid?> _explicitNullValueListIds = default!;
 #endif
         /// <summary>

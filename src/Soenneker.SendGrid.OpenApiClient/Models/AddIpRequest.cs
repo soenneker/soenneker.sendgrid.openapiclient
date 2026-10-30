@@ -17,35 +17,40 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("include_region") is { } nullNodeIncludeRegion && nullNodeIncludeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRegion = null;
-            if (parseNode.GetChildNode("is_auto_warmup") is { } nullNodeIsAutoWarmup && nullNodeIsAutoWarmup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAutoWarmup = null;
-            if (parseNode.GetChildNode("is_parent_assigned") is { } nullNodeIsParentAssigned && nullNodeIsParentAssigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParentAssigned = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("subusers") is { } nullNodeSubusers && nullNodeSubusers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subusers = null;
+            if (parseNode.GetChildNode("include_region") is null) { _explicitNullValueIncludeRegion = default!; _explicitNullProperties?.Remove("include_region"); }
+            else if (parseNode.GetChildNode("include_region") is { } nullNodeIncludeRegion && nullNodeIncludeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRegion = null;
+            if (parseNode.GetChildNode("is_auto_warmup") is null) { _explicitNullValueIsAutoWarmup = default!; _explicitNullProperties?.Remove("is_auto_warmup"); }
+            else if (parseNode.GetChildNode("is_auto_warmup") is { } nullNodeIsAutoWarmup && nullNodeIsAutoWarmup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAutoWarmup = null;
+            if (parseNode.GetChildNode("is_parent_assigned") is null) { _explicitNullValueIsParentAssigned = default!; _explicitNullProperties?.Remove("is_parent_assigned"); }
+            else if (parseNode.GetChildNode("is_parent_assigned") is { } nullNodeIsParentAssigned && nullNodeIsParentAssigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParentAssigned = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("subusers") is null) { _explicitNullValueSubusers = default!; _explicitNullProperties?.Remove("subusers"); }
+            else if (parseNode.GetChildNode("subusers") is { } nullNodeSubusers && nullNodeSubusers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subusers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Boolean indicating whether or not to return the IP address&apos;s region information in the response.</summary>
-        public bool? IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
+        public bool? IncludeRegion { get => _explicitNullValueIncludeRegion; set { _explicitNullValueIncludeRegion = value; AdditionalData?.Remove("include_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_region"); else _explicitNullProperties?.Remove("include_region"); } }
         private bool? _explicitNullValueIncludeRegion = default!;
         /// <summary>Indicates if the IP address is set to automatically [warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address).</summary>
-        public bool? IsAutoWarmup { get => _explicitNullValueIsAutoWarmup; set { _explicitNullValueIsAutoWarmup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_auto_warmup"); else _explicitNullProperties?.Remove("is_auto_warmup"); } }
+        public bool? IsAutoWarmup { get => _explicitNullValueIsAutoWarmup; set { _explicitNullValueIsAutoWarmup = value; AdditionalData?.Remove("is_auto_warmup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_auto_warmup"); else _explicitNullProperties?.Remove("is_auto_warmup"); } }
         private bool? _explicitNullValueIsAutoWarmup = default!;
         /// <summary>Indicates if a parent on the account is able to send email from the IP address.</summary>
-        public bool? IsParentAssigned { get => _explicitNullValueIsParentAssigned; set { _explicitNullValueIsParentAssigned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parent_assigned"); else _explicitNullProperties?.Remove("is_parent_assigned"); } }
+        public bool? IsParentAssigned { get => _explicitNullValueIsParentAssigned; set { _explicitNullValueIsParentAssigned = value; AdditionalData?.Remove("is_parent_assigned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parent_assigned"); else _explicitNullProperties?.Remove("is_parent_assigned"); } }
         private bool? _explicitNullValueIsParentAssigned = default!;
         /// <summary>The region to which the IP address is assigned. This property will only be returned if the `include_region` query parameter is included and set to `true` as part of the API request.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AddIpRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AddIpRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AddIpRequestRegion? _explicitNullValueRegion = default!;
         /// <summary>An array of Subuser IDs the IP address will be assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
+        public List<string>? Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; AdditionalData?.Remove("subusers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
         private List<string>? _explicitNullValueSubusers = default!;
 #nullable restore
 #else
-        public List<string> Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
+        public List<string> Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; AdditionalData?.Remove("subusers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
         private List<string> _explicitNullValueSubusers = default!;
 #endif
         /// <summary>
@@ -77,7 +82,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "include_region", n => { IncludeRegion = n.GetBoolValue(); } },
                 { "is_auto_warmup", n => { IsAutoWarmup = n.GetBoolValue(); } },
                 { "is_parent_assigned", n => { IsParentAssigned = n.GetBoolValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AddIpRequestRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AddIpRequestRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
                 { "subusers", n => { Subusers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

@@ -17,21 +17,24 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("hard_bounces") is { } nullNodeHardBounces && nullNodeHardBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardBounces = null;
-            if (parseNode.GetChildNode("soft_bounces") is { } nullNodeSoftBounces && nullNodeSoftBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftBounces = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("hard_bounces") is null) { _explicitNullValueHardBounces = default!; _explicitNullProperties?.Remove("hard_bounces"); }
+            else if (parseNode.GetChildNode("hard_bounces") is { } nullNodeHardBounces && nullNodeHardBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardBounces = null;
+            if (parseNode.GetChildNode("soft_bounces") is null) { _explicitNullValueSoftBounces = default!; _explicitNullProperties?.Remove("soft_bounces"); }
+            else if (parseNode.GetChildNode("soft_bounces") is { } nullNodeSoftBounces && nullNodeSoftBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftBounces = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the Bounce Purge mail setting is enabled.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The number of days after which SendGrid will purge all contacts from your hard bounces suppression lists.</summary>
-        public int? HardBounces { get => _explicitNullValueHardBounces; set { _explicitNullValueHardBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_bounces"); else _explicitNullProperties?.Remove("hard_bounces"); } }
+        public int? HardBounces { get => _explicitNullValueHardBounces; set { _explicitNullValueHardBounces = value; AdditionalData?.Remove("hard_bounces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_bounces"); else _explicitNullProperties?.Remove("hard_bounces"); } }
         private int? _explicitNullValueHardBounces = default!;
         /// <summary>The number of days after which SendGrid will purge all contacts from your soft bounces suppression lists.</summary>
-        public int? SoftBounces { get => _explicitNullValueSoftBounces; set { _explicitNullValueSoftBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_bounces"); else _explicitNullProperties?.Remove("soft_bounces"); } }
+        public int? SoftBounces { get => _explicitNullValueSoftBounces; set { _explicitNullValueSoftBounces = value; AdditionalData?.Remove("soft_bounces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_bounces"); else _explicitNullProperties?.Remove("soft_bounces"); } }
         private int? _explicitNullValueSoftBounces = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.MailSettingsBouncePurge"/> and sets the default values.

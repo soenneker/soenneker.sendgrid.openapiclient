@@ -17,49 +17,54 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
-            if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
-            if (parseNode.GetChildNode("max_file_size") is { } nullNodeMaxFileSize && nullNodeMaxFileSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFileSize = null;
-            if (parseNode.GetChildNode("notifications") is { } nullNodeNotifications && nullNodeNotifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notifications = null;
-            if (parseNode.GetChildNode("segment_ids") is { } nullNodeSegmentIds && nullNodeSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIds = null;
+            if (parseNode.GetChildNode("file_type") is null) { _explicitNullValueFileType = default!; _explicitNullProperties?.Remove("file_type"); }
+            else if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
+            if (parseNode.GetChildNode("list_ids") is null) { _explicitNullValueListIds = default!; _explicitNullProperties?.Remove("list_ids"); }
+            else if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
+            if (parseNode.GetChildNode("max_file_size") is null) { _explicitNullValueMaxFileSize = default!; _explicitNullProperties?.Remove("max_file_size"); }
+            else if (parseNode.GetChildNode("max_file_size") is { } nullNodeMaxFileSize && nullNodeMaxFileSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFileSize = null;
+            if (parseNode.GetChildNode("notifications") is null) { _explicitNullValueNotifications = default!; _explicitNullProperties?.Remove("notifications"); }
+            else if (parseNode.GetChildNode("notifications") is { } nullNodeNotifications && nullNodeNotifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notifications = null;
+            if (parseNode.GetChildNode("segment_ids") is null) { _explicitNullValueSegmentIds = default!; _explicitNullProperties?.Remove("segment_ids"); }
+            else if (parseNode.GetChildNode("segment_ids") is { } nullNodeSegmentIds && nullNodeSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>File type for export file. Choose from `json` or `csv`.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; AdditionalData?.Remove("file_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestFileType? _explicitNullValueFileType = default!;
         /// <summary>IDs of the recipient lists you want to export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<int?>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<int?>? _explicitNullValueListIds = default!;
 #nullable restore
 #else
-        public List<int?> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<int?> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<int?> _explicitNullValueListIds = default!;
 #endif
         /// <summary>The maximum size of an export file in MB. Note that when this option is specified, multiple output files may be returned from the export.</summary>
-        public int? MaxFileSize { get => _explicitNullValueMaxFileSize; set { _explicitNullValueMaxFileSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_file_size"); else _explicitNullProperties?.Remove("max_file_size"); } }
+        public int? MaxFileSize { get => _explicitNullValueMaxFileSize; set { _explicitNullValueMaxFileSize = value; AdditionalData?.Remove("max_file_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_file_size"); else _explicitNullProperties?.Remove("max_file_size"); } }
         private int? _explicitNullValueMaxFileSize = default!;
         /// <summary>The notifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications? Notifications { get => _explicitNullValueNotifications; set { _explicitNullValueNotifications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifications"); else _explicitNullProperties?.Remove("notifications"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications? Notifications { get => _explicitNullValueNotifications; set { _explicitNullValueNotifications = value; AdditionalData?.Remove("notifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifications"); else _explicitNullProperties?.Remove("notifications"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications? _explicitNullValueNotifications = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications Notifications { get => _explicitNullValueNotifications; set { _explicitNullValueNotifications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifications"); else _explicitNullProperties?.Remove("notifications"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications Notifications { get => _explicitNullValueNotifications; set { _explicitNullValueNotifications = value; AdditionalData?.Remove("notifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifications"); else _explicitNullProperties?.Remove("notifications"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications _explicitNullValueNotifications = default!;
 #endif
         /// <summary>IDs of the recipient segments you want to export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
+        public List<int?>? SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; AdditionalData?.Remove("segment_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
         private List<int?>? _explicitNullValueSegmentIds = default!;
 #nullable restore
 #else
-        public List<int?> SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
+        public List<int?> SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; AdditionalData?.Remove("segment_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
         private List<int?> _explicitNullValueSegmentIds = default!;
 #endif
         /// <summary>
@@ -88,7 +93,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file_type", n => { FileType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestFileType>(); } },
+                { "file_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestFileType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFileType = default; _explicitNullProperties?.Remove("file_type"); AdditionalData["file_type"] = unknown; } else { FileType = parsed; AdditionalData.Remove("file_type"); } } },
                 { "list_ids", n => { ListIds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "max_file_size", n => { MaxFileSize = n.GetIntValue(); } },
                 { "notifications", n => { Notifications = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications>(global::Soenneker.SendGrid.OpenApiClient.Models.ExportRecipientRequestNotifications.CreateFromDiscriminatorValue); } },

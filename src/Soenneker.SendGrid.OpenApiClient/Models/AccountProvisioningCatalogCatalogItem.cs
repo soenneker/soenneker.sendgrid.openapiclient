@@ -17,8 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entitlements") is { } nullNodeEntitlements && nullNodeEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entitlements = null;
-            if (parseNode.GetChildNode("offering") is { } nullNodeOffering && nullNodeOffering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offering = null;
+            if (parseNode.GetChildNode("entitlements") is null) { _explicitNullValueEntitlements = default!; _explicitNullProperties?.Remove("entitlements"); }
+            else if (parseNode.GetChildNode("entitlements") is { } nullNodeEntitlements && nullNodeEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entitlements = null;
+            if (parseNode.GetChildNode("offering") is null) { _explicitNullValueOffering = default!; _explicitNullProperties?.Remove("offering"); }
+            else if (parseNode.GetChildNode("offering") is { } nullNodeOffering && nullNodeOffering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offering = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Set of entitlements the specified offering comes with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements? Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements? Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; AdditionalData?.Remove("entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements? _explicitNullValueEntitlements = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; AdditionalData?.Remove("entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemEntitlements _explicitNullValueEntitlements = default!;
 #endif
         /// <summary>An offering is a package (email infrastructure) or add-on (marketing campaigns, dedicated IP addresses, EASE) that an account can acquire. Each offering has a list of entitlements that indicate the benefits the account receives from the acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? Offering { get => _explicitNullValueOffering; set { _explicitNullValueOffering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offering"); else _explicitNullProperties?.Remove("offering"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? Offering { get => _explicitNullValueOffering; set { _explicitNullValueOffering = value; AdditionalData?.Remove("offering"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offering"); else _explicitNullProperties?.Remove("offering"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering? _explicitNullValueOffering = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering Offering { get => _explicitNullValueOffering; set { _explicitNullValueOffering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offering"); else _explicitNullProperties?.Remove("offering"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering Offering { get => _explicitNullValueOffering; set { _explicitNullValueOffering = value; AdditionalData?.Remove("offering"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offering"); else _explicitNullProperties?.Remove("offering"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningCatalogCatalogItemOffering _explicitNullValueOffering = default!;
 #endif
         /// <summary>

@@ -68,7 +68,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_subusers_v3.V3.Subusers.Item.Webs
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_subusers_v3/v3/subusers/{subuserName}/website_access", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;

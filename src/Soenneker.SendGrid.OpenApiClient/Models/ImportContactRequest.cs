@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
-            if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
-            if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
+            if (parseNode.GetChildNode("field_mappings") is null) { _explicitNullValueFieldMappings = default!; _explicitNullProperties?.Remove("field_mappings"); }
+            else if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
+            if (parseNode.GetChildNode("file_type") is null) { _explicitNullValueFileType = default!; _explicitNullProperties?.Remove("file_type"); }
+            else if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
+            if (parseNode.GetChildNode("list_ids") is null) { _explicitNullValueListIds = default!; _explicitNullProperties?.Remove("list_ids"); }
+            else if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Import file header to reserved/custom field mapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<string>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<string>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<string> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<string> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<string> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Upload file type.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ImportContactRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ImportContactRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; AdditionalData?.Remove("file_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ImportContactRequestFileType? _explicitNullValueFileType = default!;
         /// <summary>All contacts will be added to each of the specified lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<string>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<string>? _explicitNullValueListIds = default!;
 #nullable restore
 #else
-        public List<string> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<string> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<string> _explicitNullValueListIds = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field_mappings", n => { FieldMappings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "file_type", n => { FileType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContactRequestFileType>(); } },
+                { "file_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ImportContactRequestFileType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFileType = default; _explicitNullProperties?.Remove("file_type"); AdditionalData["file_type"] = unknown; } else { FileType = parsed; AdditionalData.Remove("file_type"); } } },
                 { "list_ids", n => { ListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

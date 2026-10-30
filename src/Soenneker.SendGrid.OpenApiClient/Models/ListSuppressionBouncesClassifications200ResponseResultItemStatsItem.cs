@@ -17,17 +17,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("classification") is null) { _explicitNullValueClassification = default!; _explicitNullProperties?.Remove("classification"); }
+            else if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The classification property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListSuppressionBouncesClassifications200ResponseResultItemStatsItemClassification? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListSuppressionBouncesClassifications200ResponseResultItemStatsItemClassification? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListSuppressionBouncesClassifications200ResponseResultItemStatsItemClassification? _explicitNullValueClassification = default!;
         /// <summary>The count property</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListSuppressionBouncesClassifications200ResponseResultItemStatsItem"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classification", n => { Classification = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListSuppressionBouncesClassifications200ResponseResultItemStatsItemClassification>(); } },
+                { "classification", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListSuppressionBouncesClassifications200ResponseResultItemStatsItemClassification>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClassification = default; _explicitNullProperties?.Remove("classification"); AdditionalData["classification"] = unknown; } else { Classification = parsed; AdditionalData.Remove("classification"); } } },
                 { "count", n => { Count = n.GetIntValue(); } },
             };
         }

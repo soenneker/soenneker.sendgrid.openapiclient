@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
-            if (parseNode.GetChildNode("remaining_ips") is { } nullNodeRemainingIps && nullNodeRemainingIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingIps = null;
-            if (parseNode.GetChildNode("warmup") is { } nullNodeWarmup && nullNodeWarmup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warmup = null;
+            if (parseNode.GetChildNode("ips") is null) { _explicitNullValueIps = default!; _explicitNullProperties?.Remove("ips"); }
+            else if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
+            if (parseNode.GetChildNode("remaining_ips") is null) { _explicitNullValueRemainingIps = default!; _explicitNullProperties?.Remove("remaining_ips"); }
+            else if (parseNode.GetChildNode("remaining_ips") is { } nullNodeRemainingIps && nullNodeRemainingIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingIps = null;
+            if (parseNode.GetChildNode("warmup") is null) { _explicitNullValueWarmup = default!; _explicitNullProperties?.Remove("warmup"); }
+            else if (parseNode.GetChildNode("warmup") is { } nullNodeWarmup && nullNodeWarmup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warmup = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>List of IP objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem>? Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem>? Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; AdditionalData?.Remove("ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem>? _explicitNullValueIps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem> Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem> Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; AdditionalData?.Remove("ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AddIp201ResponseIpsItem> _explicitNullValueIps = default!;
 #endif
         /// <summary>The number of IPs that can still be added to the user.</summary>
-        public int? RemainingIps { get => _explicitNullValueRemainingIps; set { _explicitNullValueRemainingIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remaining_ips"); else _explicitNullProperties?.Remove("remaining_ips"); } }
+        public int? RemainingIps { get => _explicitNullValueRemainingIps; set { _explicitNullValueRemainingIps = value; AdditionalData?.Remove("remaining_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remaining_ips"); else _explicitNullProperties?.Remove("remaining_ips"); } }
         private int? _explicitNullValueRemainingIps = default!;
         /// <summary>Whether or not the IPs are being warmed up.</summary>
-        public bool? Warmup { get => _explicitNullValueWarmup; set { _explicitNullValueWarmup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warmup"); else _explicitNullProperties?.Remove("warmup"); } }
+        public bool? Warmup { get => _explicitNullValueWarmup; set { _explicitNullValueWarmup = value; AdditionalData?.Remove("warmup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warmup"); else _explicitNullProperties?.Remove("warmup"); } }
         private bool? _explicitNullValueWarmup = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgIpsV3AddIp201Response"/> and sets the default values.

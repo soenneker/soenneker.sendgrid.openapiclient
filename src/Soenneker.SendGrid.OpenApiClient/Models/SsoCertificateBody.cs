@@ -17,42 +17,47 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("intergration_id") is { } nullNodeIntergrationId && nullNodeIntergrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntergrationId = null;
-            if (parseNode.GetChildNode("not_after") is { } nullNodeNotAfter && nullNodeNotAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAfter = null;
-            if (parseNode.GetChildNode("not_before") is { } nullNodeNotBefore && nullNodeNotBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotBefore = null;
-            if (parseNode.GetChildNode("public_certificate") is { } nullNodePublicCertificate && nullNodePublicCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicCertificate = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("intergration_id") is null) { _explicitNullValueIntergrationId = default!; _explicitNullProperties?.Remove("intergration_id"); }
+            else if (parseNode.GetChildNode("intergration_id") is { } nullNodeIntergrationId && nullNodeIntergrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntergrationId = null;
+            if (parseNode.GetChildNode("not_after") is null) { _explicitNullValueNotAfter = default!; _explicitNullProperties?.Remove("not_after"); }
+            else if (parseNode.GetChildNode("not_after") is { } nullNodeNotAfter && nullNodeNotAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAfter = null;
+            if (parseNode.GetChildNode("not_before") is null) { _explicitNullValueNotBefore = default!; _explicitNullProperties?.Remove("not_before"); }
+            else if (parseNode.GetChildNode("not_before") is { } nullNodeNotBefore && nullNodeNotBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotBefore = null;
+            if (parseNode.GetChildNode("public_certificate") is null) { _explicitNullValuePublicCertificate = default!; _explicitNullProperties?.Remove("public_certificate"); }
+            else if (parseNode.GetChildNode("public_certificate") is { } nullNodePublicCertificate && nullNodePublicCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicCertificate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique ID assigned to the certificate by SendGrid.</summary>
-        public double? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public double? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private double? _explicitNullValueId = default!;
         /// <summary>An ID that matches a certificate to a specific IdP integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntergrationId { get => _explicitNullValueIntergrationId; set { _explicitNullValueIntergrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intergration_id"); else _explicitNullProperties?.Remove("intergration_id"); } }
+        public string? IntergrationId { get => _explicitNullValueIntergrationId; set { _explicitNullValueIntergrationId = value; AdditionalData?.Remove("intergration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intergration_id"); else _explicitNullProperties?.Remove("intergration_id"); } }
         private string? _explicitNullValueIntergrationId = default!;
 #nullable restore
 #else
-        public string IntergrationId { get => _explicitNullValueIntergrationId; set { _explicitNullValueIntergrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intergration_id"); else _explicitNullProperties?.Remove("intergration_id"); } }
+        public string IntergrationId { get => _explicitNullValueIntergrationId; set { _explicitNullValueIntergrationId = value; AdditionalData?.Remove("intergration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intergration_id"); else _explicitNullProperties?.Remove("intergration_id"); } }
         private string _explicitNullValueIntergrationId = default!;
 #endif
         /// <summary>A unix timestamp (e.g., 1603915954) that indicates the time after which the certificate is no longer valid.</summary>
-        public double? NotAfter { get => _explicitNullValueNotAfter; set { _explicitNullValueNotAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_after"); else _explicitNullProperties?.Remove("not_after"); } }
+        public double? NotAfter { get => _explicitNullValueNotAfter; set { _explicitNullValueNotAfter = value; AdditionalData?.Remove("not_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_after"); else _explicitNullProperties?.Remove("not_after"); } }
         private double? _explicitNullValueNotAfter = default!;
         /// <summary>A unix timestamp (e.g., 1603915954) that indicates the time before which the certificate is not valid.</summary>
-        public double? NotBefore { get => _explicitNullValueNotBefore; set { _explicitNullValueNotBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_before"); else _explicitNullProperties?.Remove("not_before"); } }
+        public double? NotBefore { get => _explicitNullValueNotBefore; set { _explicitNullValueNotBefore = value; AdditionalData?.Remove("not_before"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_before"); else _explicitNullProperties?.Remove("not_before"); } }
         private double? _explicitNullValueNotBefore = default!;
         /// <summary>This certificate is used by Twilio SendGrid to verify that SAML requests are coming from Okta. This is called the X509 certificate in the Twilio SendGrid UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicCertificate { get => _explicitNullValuePublicCertificate; set { _explicitNullValuePublicCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_certificate"); else _explicitNullProperties?.Remove("public_certificate"); } }
+        public string? PublicCertificate { get => _explicitNullValuePublicCertificate; set { _explicitNullValuePublicCertificate = value; AdditionalData?.Remove("public_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_certificate"); else _explicitNullProperties?.Remove("public_certificate"); } }
         private string? _explicitNullValuePublicCertificate = default!;
 #nullable restore
 #else
-        public string PublicCertificate { get => _explicitNullValuePublicCertificate; set { _explicitNullValuePublicCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_certificate"); else _explicitNullProperties?.Remove("public_certificate"); } }
+        public string PublicCertificate { get => _explicitNullValuePublicCertificate; set { _explicitNullValuePublicCertificate = value; AdditionalData?.Remove("public_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_certificate"); else _explicitNullProperties?.Remove("public_certificate"); } }
         private string _explicitNullValuePublicCertificate = default!;
 #endif
         /// <summary>

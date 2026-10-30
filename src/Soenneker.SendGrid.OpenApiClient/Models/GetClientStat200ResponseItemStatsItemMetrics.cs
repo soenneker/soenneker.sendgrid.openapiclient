@@ -18,17 +18,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("opens") is { } nullNodeOpens && nullNodeOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opens = null;
-            if (parseNode.GetChildNode("unique_opens") is { } nullNodeUniqueOpens && nullNodeUniqueOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueOpens = null;
+            if (parseNode.GetChildNode("opens") is null) { _explicitNullValueOpens = default!; _explicitNullProperties?.Remove("opens"); }
+            else if (parseNode.GetChildNode("opens") is { } nullNodeOpens && nullNodeOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opens = null;
+            if (parseNode.GetChildNode("unique_opens") is null) { _explicitNullValueUniqueOpens = default!; _explicitNullProperties?.Remove("unique_opens"); }
+            else if (parseNode.GetChildNode("unique_opens") is { } nullNodeUniqueOpens && nullNodeUniqueOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueOpens = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of times your emails were opened by recipients.</summary>
-        public int? Opens { get => _explicitNullValueOpens; set { _explicitNullValueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens"); else _explicitNullProperties?.Remove("opens"); } }
+        public int? Opens { get => _explicitNullValueOpens; set { _explicitNullValueOpens = value; AdditionalData?.Remove("opens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens"); else _explicitNullProperties?.Remove("opens"); } }
         private int? _explicitNullValueOpens = default!;
         /// <summary>The number of unique recipients who opened your emails.</summary>
-        public int? UniqueOpens { get => _explicitNullValueUniqueOpens; set { _explicitNullValueUniqueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_opens"); else _explicitNullProperties?.Remove("unique_opens"); } }
+        public int? UniqueOpens { get => _explicitNullValueUniqueOpens; set { _explicitNullValueUniqueOpens = value; AdditionalData?.Remove("unique_opens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_opens"); else _explicitNullProperties?.Remove("unique_opens"); } }
         private int? _explicitNullValueUniqueOpens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.GetClientStat200ResponseItemStatsItemMetrics"/> and sets the default values.

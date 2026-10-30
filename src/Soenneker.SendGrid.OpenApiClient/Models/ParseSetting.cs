@@ -17,10 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
-            if (parseNode.GetChildNode("send_raw") is { } nullNodeSendRaw && nullNodeSendRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendRaw = null;
-            if (parseNode.GetChildNode("spam_check") is { } nullNodeSpamCheck && nullNodeSpamCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamCheck = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("hostname") is null) { _explicitNullValueHostname = default!; _explicitNullProperties?.Remove("hostname"); }
+            else if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("send_raw") is null) { _explicitNullValueSendRaw = default!; _explicitNullProperties?.Remove("send_raw"); }
+            else if (parseNode.GetChildNode("send_raw") is { } nullNodeSendRaw && nullNodeSendRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendRaw = null;
+            if (parseNode.GetChildNode("spam_check") is null) { _explicitNullValueSpamCheck = default!; _explicitNullProperties?.Remove("spam_check"); }
+            else if (parseNode.GetChildNode("spam_check") is { } nullNodeSpamCheck && nullNodeSpamCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamCheck = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,27 +32,27 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A specific and unique domain or subdomain that you have created to use exclusively to parse your incoming email. For example, `parse.yourdomain.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>Indicates if you would like SendGrid to post the original MIME-type content of your parsed email. When this parameter is set to `true`, SendGrid will send a JSON payload of the content of your email.</summary>
-        public bool? SendRaw { get => _explicitNullValueSendRaw; set { _explicitNullValueSendRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_raw"); else _explicitNullProperties?.Remove("send_raw"); } }
+        public bool? SendRaw { get => _explicitNullValueSendRaw; set { _explicitNullValueSendRaw = value; AdditionalData?.Remove("send_raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_raw"); else _explicitNullProperties?.Remove("send_raw"); } }
         private bool? _explicitNullValueSendRaw = default!;
         /// <summary>Indicates if you would like SendGrid to check the content parsed from your emails for spam before POSTing them to your domain.</summary>
-        public bool? SpamCheck { get => _explicitNullValueSpamCheck; set { _explicitNullValueSpamCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_check"); else _explicitNullProperties?.Remove("spam_check"); } }
+        public bool? SpamCheck { get => _explicitNullValueSpamCheck; set { _explicitNullValueSpamCheck = value; AdditionalData?.Remove("spam_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_check"); else _explicitNullProperties?.Remove("spam_check"); } }
         private bool? _explicitNullValueSpamCheck = default!;
         /// <summary>The public URL where you would like SendGrid to POST the data parsed from your email. Any emails sent with the given hostname provided (whose MX records have been updated to point to SendGrid) will be parsed and POSTed to this URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

@@ -17,28 +17,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_type") is { } nullNodeFieldType && nullNodeFieldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldType = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("read_only") is { } nullNodeReadOnly && nullNodeReadOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadOnly = null;
+            if (parseNode.GetChildNode("field_type") is null) { _explicitNullValueFieldType = default!; _explicitNullProperties?.Remove("field_type"); }
+            else if (parseNode.GetChildNode("field_type") is { } nullNodeFieldType && nullNodeFieldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldType = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("read_only") is null) { _explicitNullValueReadOnly = default!; _explicitNullProperties?.Remove("read_only"); }
+            else if (parseNode.GetChildNode("read_only") is { } nullNodeReadOnly && nullNodeReadOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadOnly = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The field_type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ReservedFieldDefinitionsResponseItemFieldType? FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_type"); else _explicitNullProperties?.Remove("field_type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ReservedFieldDefinitionsResponseItemFieldType? FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; AdditionalData?.Remove("field_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_type"); else _explicitNullProperties?.Remove("field_type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ReservedFieldDefinitionsResponseItemFieldType? _explicitNullValueFieldType = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>When `true` this means API consumers are unable to set the value of this field on contacts.</summary>
-        public bool? ReadOnly { get => _explicitNullValueReadOnly; set { _explicitNullValueReadOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_only"); else _explicitNullProperties?.Remove("read_only"); } }
+        public bool? ReadOnly { get => _explicitNullValueReadOnly; set { _explicitNullValueReadOnly = value; AdditionalData?.Remove("read_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_only"); else _explicitNullProperties?.Remove("read_only"); } }
         private bool? _explicitNullValueReadOnly = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ReservedFieldDefinitionsResponseItem"/> and sets the default values.
@@ -66,7 +69,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "field_type", n => { FieldType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReservedFieldDefinitionsResponseItemFieldType>(); } },
+                { "field_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ReservedFieldDefinitionsResponseItemFieldType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFieldType = default; _explicitNullProperties?.Remove("field_type"); AdditionalData["field_type"] = unknown; } else { FieldType = parsed; AdditionalData.Remove("field_type"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
             };

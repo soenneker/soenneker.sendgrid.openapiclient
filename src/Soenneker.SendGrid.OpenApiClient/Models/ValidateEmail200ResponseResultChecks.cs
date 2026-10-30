@@ -18,19 +18,22 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additional") is { } nullNodeAdditional && nullNodeAdditional.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Additional = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("local_part") is { } nullNodeLocalPart && nullNodeLocalPart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalPart = null;
+            if (parseNode.GetChildNode("additional") is null) { _explicitNullValueAdditional = default!; _explicitNullProperties?.Remove("additional"); }
+            else if (parseNode.GetChildNode("additional") is { } nullNodeAdditional && nullNodeAdditional.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Additional = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("local_part") is null) { _explicitNullValueLocalPart = default!; _explicitNullProperties?.Remove("local_part"); }
+            else if (parseNode.GetChildNode("local_part") is { } nullNodeLocalPart && nullNodeLocalPart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalPart = null;
         }
 
         /// <summary>Additional checks on the email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional? Additional { get => _explicitNullValueAdditional; set { _explicitNullValueAdditional = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional"); else _explicitNullProperties?.Remove("additional"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional? Additional { get => _explicitNullValueAdditional; set { _explicitNullValueAdditional = value; AdditionalData?.Remove("additional"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional"); else _explicitNullProperties?.Remove("additional"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional? _explicitNullValueAdditional = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional Additional { get => _explicitNullValueAdditional; set { _explicitNullValueAdditional = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional"); else _explicitNullProperties?.Remove("additional"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional Additional { get => _explicitNullValueAdditional; set { _explicitNullValueAdditional = value; AdditionalData?.Remove("additional"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional"); else _explicitNullProperties?.Remove("additional"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional _explicitNullValueAdditional = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Checks on the domain portion of the email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksDomain _explicitNullValueDomain = default!;
 #endif
         /// <summary>Checks on the local part of the email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksLocalPart? LocalPart { get => _explicitNullValueLocalPart; set { _explicitNullValueLocalPart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_part"); else _explicitNullProperties?.Remove("local_part"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksLocalPart? LocalPart { get => _explicitNullValueLocalPart; set { _explicitNullValueLocalPart = value; AdditionalData?.Remove("local_part"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_part"); else _explicitNullProperties?.Remove("local_part"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksLocalPart? _explicitNullValueLocalPart = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksLocalPart LocalPart { get => _explicitNullValueLocalPart; set { _explicitNullValueLocalPart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_part"); else _explicitNullProperties?.Remove("local_part"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksLocalPart LocalPart { get => _explicitNullValueLocalPart; set { _explicitNullValueLocalPart = value; AdditionalData?.Remove("local_part"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_part"); else _explicitNullProperties?.Remove("local_part"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksLocalPart _explicitNullValueLocalPart = default!;
 #endif
         /// <summary>

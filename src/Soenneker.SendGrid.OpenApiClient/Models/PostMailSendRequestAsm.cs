@@ -18,23 +18,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
-            if (parseNode.GetChildNode("groups_to_display") is { } nullNodeGroupsToDisplay && nullNodeGroupsToDisplay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupsToDisplay = null;
+            if (parseNode.GetChildNode("group_id") is null) { _explicitNullValueGroupId = default!; _explicitNullProperties?.Remove("group_id"); }
+            else if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
+            if (parseNode.GetChildNode("groups_to_display") is null) { _explicitNullValueGroupsToDisplay = default!; _explicitNullProperties?.Remove("groups_to_display"); }
+            else if (parseNode.GetChildNode("groups_to_display") is { } nullNodeGroupsToDisplay && nullNodeGroupsToDisplay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupsToDisplay = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unsubscribe group to associate with this email. See the [Suppressions API](https://docs.sendgrid.com/api-reference/suppressions/) to manage unsubscribe group IDs.</summary>
-        public int? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        public int? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; AdditionalData?.Remove("group_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
         private int? _explicitNullValueGroupId = default!;
         /// <summary>An array containing the unsubscribe groups that you would like to be displayed to a recipient on the unsubscribe preferences page. This page is displayed in the recipient&apos;s browser when they click the unsubscribe link in your message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? GroupsToDisplay { get => _explicitNullValueGroupsToDisplay; set { _explicitNullValueGroupsToDisplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups_to_display"); else _explicitNullProperties?.Remove("groups_to_display"); } }
+        public List<int?>? GroupsToDisplay { get => _explicitNullValueGroupsToDisplay; set { _explicitNullValueGroupsToDisplay = value; AdditionalData?.Remove("groups_to_display"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups_to_display"); else _explicitNullProperties?.Remove("groups_to_display"); } }
         private List<int?>? _explicitNullValueGroupsToDisplay = default!;
 #nullable restore
 #else
-        public List<int?> GroupsToDisplay { get => _explicitNullValueGroupsToDisplay; set { _explicitNullValueGroupsToDisplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups_to_display"); else _explicitNullProperties?.Remove("groups_to_display"); } }
+        public List<int?> GroupsToDisplay { get => _explicitNullValueGroupsToDisplay; set { _explicitNullValueGroupsToDisplay = value; AdditionalData?.Remove("groups_to_display"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups_to_display"); else _explicitNullProperties?.Remove("groups_to_display"); } }
         private List<int?> _explicitNullValueGroupsToDisplay = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_time_zone") is { } nullNodeUserTimeZone && nullNodeUserTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserTimeZone = null;
+            if (parseNode.GetChildNode("user_time_zone") is null) { _explicitNullValueUserTimeZone = default!; _explicitNullProperties?.Remove("user_time_zone"); }
+            else if (parseNode.GetChildNode("user_time_zone") is { } nullNodeUserTimeZone && nullNodeUserTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserTimeZone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The user&apos;s timezone. The timezone is used to reset the refresh count at midnight in the user&apos;s local time. Only [IANA time zone format](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserTimeZone { get => _explicitNullValueUserTimeZone; set { _explicitNullValueUserTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_time_zone"); else _explicitNullProperties?.Remove("user_time_zone"); } }
+        public string? UserTimeZone { get => _explicitNullValueUserTimeZone; set { _explicitNullValueUserTimeZone = value; AdditionalData?.Remove("user_time_zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_time_zone"); else _explicitNullProperties?.Remove("user_time_zone"); } }
         private string? _explicitNullValueUserTimeZone = default!;
 #nullable restore
 #else
-        public string UserTimeZone { get => _explicitNullValueUserTimeZone; set { _explicitNullValueUserTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_time_zone"); else _explicitNullProperties?.Remove("user_time_zone"); } }
+        public string UserTimeZone { get => _explicitNullValueUserTimeZone; set { _explicitNullValueUserTimeZone = value; AdditionalData?.Remove("user_time_zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_time_zone"); else _explicitNullProperties?.Remove("user_time_zone"); } }
         private string _explicitNullValueUserTimeZone = default!;
 #endif
         /// <summary>

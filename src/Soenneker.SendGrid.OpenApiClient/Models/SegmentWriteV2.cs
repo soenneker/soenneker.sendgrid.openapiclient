@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("parent_list_ids") is { } nullNodeParentListIds && nullNodeParentListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentListIds = null;
-            if (parseNode.GetChildNode("query_dsl") is { } nullNodeQueryDsl && nullNodeQueryDsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDsl = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parent_list_ids") is null) { _explicitNullValueParentListIds = default!; _explicitNullProperties?.Remove("parent_list_ids"); }
+            else if (parseNode.GetChildNode("parent_list_ids") is { } nullNodeParentListIds && nullNodeParentListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentListIds = null;
+            if (parseNode.GetChildNode("query_dsl") is null) { _explicitNullValueQueryDsl = default!; _explicitNullProperties?.Remove("query_dsl"); }
+            else if (parseNode.GetChildNode("query_dsl") is { } nullNodeQueryDsl && nullNodeQueryDsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDsl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Name of the segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The array of list ids to filter contacts on when building this segment. It allows only one such list id for now. We will support more in future</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ParentListIds { get => _explicitNullValueParentListIds; set { _explicitNullValueParentListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_list_ids"); else _explicitNullProperties?.Remove("parent_list_ids"); } }
+        public List<string>? ParentListIds { get => _explicitNullValueParentListIds; set { _explicitNullValueParentListIds = value; AdditionalData?.Remove("parent_list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_list_ids"); else _explicitNullProperties?.Remove("parent_list_ids"); } }
         private List<string>? _explicitNullValueParentListIds = default!;
 #nullable restore
 #else
-        public List<string> ParentListIds { get => _explicitNullValueParentListIds; set { _explicitNullValueParentListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_list_ids"); else _explicitNullProperties?.Remove("parent_list_ids"); } }
+        public List<string> ParentListIds { get => _explicitNullValueParentListIds; set { _explicitNullValueParentListIds = value; AdditionalData?.Remove("parent_list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_list_ids"); else _explicitNullProperties?.Remove("parent_list_ids"); } }
         private List<string> _explicitNullValueParentListIds = default!;
 #endif
         /// <summary>SQL query which will filter contacts based on the conditions provided</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryDsl { get => _explicitNullValueQueryDsl; set { _explicitNullValueQueryDsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_dsl"); else _explicitNullProperties?.Remove("query_dsl"); } }
+        public string? QueryDsl { get => _explicitNullValueQueryDsl; set { _explicitNullValueQueryDsl = value; AdditionalData?.Remove("query_dsl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_dsl"); else _explicitNullProperties?.Remove("query_dsl"); } }
         private string? _explicitNullValueQueryDsl = default!;
 #nullable restore
 #else
-        public string QueryDsl { get => _explicitNullValueQueryDsl; set { _explicitNullValueQueryDsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_dsl"); else _explicitNullProperties?.Remove("query_dsl"); } }
+        public string QueryDsl { get => _explicitNullValueQueryDsl; set { _explicitNullValueQueryDsl = value; AdditionalData?.Remove("query_dsl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_dsl"); else _explicitNullProperties?.Remove("query_dsl"); } }
         private string _explicitNullValueQueryDsl = default!;
 #endif
         /// <summary>

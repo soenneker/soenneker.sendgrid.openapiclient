@@ -18,23 +18,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enable") is { } nullNodeEnable && nullNodeEnable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enable = null;
-            if (parseNode.GetChildNode("substitution_tag") is { } nullNodeSubstitutionTag && nullNodeSubstitutionTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubstitutionTag = null;
+            if (parseNode.GetChildNode("enable") is null) { _explicitNullValueEnable = default!; _explicitNullProperties?.Remove("enable"); }
+            else if (parseNode.GetChildNode("enable") is { } nullNodeEnable && nullNodeEnable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enable = null;
+            if (parseNode.GetChildNode("substitution_tag") is null) { _explicitNullValueSubstitutionTag = default!; _explicitNullProperties?.Remove("substitution_tag"); }
+            else if (parseNode.GetChildNode("substitution_tag") is { } nullNodeSubstitutionTag && nullNodeSubstitutionTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubstitutionTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this setting is enabled.</summary>
-        public bool? Enable { get => _explicitNullValueEnable; set { _explicitNullValueEnable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable"); else _explicitNullProperties?.Remove("enable"); } }
+        public bool? Enable { get => _explicitNullValueEnable; set { _explicitNullValueEnable = value; AdditionalData?.Remove("enable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable"); else _explicitNullProperties?.Remove("enable"); } }
         private bool? _explicitNullValueEnable = default!;
         /// <summary>Allows you to specify a substitution tag that you can insert in the body of your email at a location that you desire. This tag will be replaced by the open tracking pixel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubstitutionTag { get => _explicitNullValueSubstitutionTag; set { _explicitNullValueSubstitutionTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substitution_tag"); else _explicitNullProperties?.Remove("substitution_tag"); } }
+        public string? SubstitutionTag { get => _explicitNullValueSubstitutionTag; set { _explicitNullValueSubstitutionTag = value; AdditionalData?.Remove("substitution_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substitution_tag"); else _explicitNullProperties?.Remove("substitution_tag"); } }
         private string? _explicitNullValueSubstitutionTag = default!;
 #nullable restore
 #else
-        public string SubstitutionTag { get => _explicitNullValueSubstitutionTag; set { _explicitNullValueSubstitutionTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substitution_tag"); else _explicitNullProperties?.Remove("substitution_tag"); } }
+        public string SubstitutionTag { get => _explicitNullValueSubstitutionTag; set { _explicitNullValueSubstitutionTag = value; AdditionalData?.Remove("substitution_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substitution_tag"); else _explicitNullProperties?.Remove("substitution_tag"); } }
         private string _explicitNullValueSubstitutionTag = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hard_failures") is { } nullNodeHardFailures && nullNodeHardFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardFailures = null;
-            if (parseNode.GetChildNode("soft_failures") is { } nullNodeSoftFailures && nullNodeSoftFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftFailures = null;
+            if (parseNode.GetChildNode("hard_failures") is null) { _explicitNullValueHardFailures = default!; _explicitNullProperties?.Remove("hard_failures"); }
+            else if (parseNode.GetChildNode("hard_failures") is { } nullNodeHardFailures && nullNodeHardFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardFailures = null;
+            if (parseNode.GetChildNode("soft_failures") is null) { _explicitNullValueSoftFailures = default!; _explicitNullProperties?.Remove("soft_failures"); }
+            else if (parseNode.GetChildNode("soft_failures") is { } nullNodeSoftFailures && nullNodeSoftFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftFailures = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The hard_failures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HardFailures { get => _explicitNullValueHardFailures; set { _explicitNullValueHardFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_failures"); else _explicitNullProperties?.Remove("hard_failures"); } }
+        public List<string>? HardFailures { get => _explicitNullValueHardFailures; set { _explicitNullValueHardFailures = value; AdditionalData?.Remove("hard_failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_failures"); else _explicitNullProperties?.Remove("hard_failures"); } }
         private List<string>? _explicitNullValueHardFailures = default!;
 #nullable restore
 #else
-        public List<string> HardFailures { get => _explicitNullValueHardFailures; set { _explicitNullValueHardFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_failures"); else _explicitNullProperties?.Remove("hard_failures"); } }
+        public List<string> HardFailures { get => _explicitNullValueHardFailures; set { _explicitNullValueHardFailures = value; AdditionalData?.Remove("hard_failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_failures"); else _explicitNullProperties?.Remove("hard_failures"); } }
         private List<string> _explicitNullValueHardFailures = default!;
 #endif
         /// <summary>The soft_failures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SoftFailures { get => _explicitNullValueSoftFailures; set { _explicitNullValueSoftFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_failures"); else _explicitNullProperties?.Remove("soft_failures"); } }
+        public List<string>? SoftFailures { get => _explicitNullValueSoftFailures; set { _explicitNullValueSoftFailures = value; AdditionalData?.Remove("soft_failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_failures"); else _explicitNullProperties?.Remove("soft_failures"); } }
         private List<string>? _explicitNullValueSoftFailures = default!;
 #nullable restore
 #else
-        public List<string> SoftFailures { get => _explicitNullValueSoftFailures; set { _explicitNullValueSoftFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_failures"); else _explicitNullProperties?.Remove("soft_failures"); } }
+        public List<string> SoftFailures { get => _explicitNullValueSoftFailures; set { _explicitNullValueSoftFailures = value; AdditionalData?.Remove("soft_failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_failures"); else _explicitNullProperties?.Remove("soft_failures"); } }
         private List<string> _explicitNullValueSoftFailures = default!;
 #endif
         /// <summary>

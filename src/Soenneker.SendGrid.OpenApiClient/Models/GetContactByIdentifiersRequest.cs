@@ -17,7 +17,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("identifiers") is { } nullNodeIdentifiers && nullNodeIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifiers = null;
+            if (parseNode.GetChildNode("identifiers") is null) { _explicitNullValueIdentifiers = default!; _explicitNullProperties?.Remove("identifiers"); }
+            else if (parseNode.GetChildNode("identifiers") is { } nullNodeIdentifiers && nullNodeIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifiers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>One or more more identifier values of the given identifier type to search for in your Marketing Campaigns contacts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
+        public List<string>? Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; AdditionalData?.Remove("identifiers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
         private List<string>? _explicitNullValueIdentifiers = default!;
 #nullable restore
 #else
-        public List<string> Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
+        public List<string> Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; AdditionalData?.Remove("identifiers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
         private List<string> _explicitNullValueIdentifiers = default!;
 #endif
         /// <summary>

@@ -17,27 +17,30 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("valid") is { } nullNodeValid && nullNodeValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Valid = null;
-            if (parseNode.GetChildNode("validation_results") is { } nullNodeValidationResults && nullNodeValidationResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationResults = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("valid") is null) { _explicitNullValueValid = default!; _explicitNullProperties?.Remove("valid"); }
+            else if (parseNode.GetChildNode("valid") is { } nullNodeValid && nullNodeValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Valid = null;
+            if (parseNode.GetChildNode("validation_results") is null) { _explicitNullValueValidationResults = default!; _explicitNullProperties?.Remove("validation_results"); }
+            else if (parseNode.GetChildNode("validation_results") is { } nullNodeValidationResults && nullNodeValidationResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationResults = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the reverse DNS record.</summary>
-        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>Indicates if the reverse DNS record is valid.</summary>
-        public bool? Valid { get => _explicitNullValueValid; set { _explicitNullValueValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid"); else _explicitNullProperties?.Remove("valid"); } }
+        public bool? Valid { get => _explicitNullValueValid; set { _explicitNullValueValid = value; AdditionalData?.Remove("valid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid"); else _explicitNullProperties?.Remove("valid"); } }
         private bool? _explicitNullValueValid = default!;
         /// <summary>The specific results of the validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResults? ValidationResults { get => _explicitNullValueValidationResults; set { _explicitNullValueValidationResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_results"); else _explicitNullProperties?.Remove("validation_results"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResults? ValidationResults { get => _explicitNullValueValidationResults; set { _explicitNullValueValidationResults = value; AdditionalData?.Remove("validation_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_results"); else _explicitNullProperties?.Remove("validation_results"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResults? _explicitNullValueValidationResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResults ValidationResults { get => _explicitNullValueValidationResults; set { _explicitNullValueValidationResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_results"); else _explicitNullProperties?.Remove("validation_results"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResults ValidationResults { get => _explicitNullValueValidationResults; set { _explicitNullValueValidationResults = value; AdditionalData?.Remove("validation_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_results"); else _explicitNullProperties?.Remove("validation_results"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ValidateReverseDns200ResponseValidationResults _explicitNullValueValidationResults = default!;
 #endif
         /// <summary>

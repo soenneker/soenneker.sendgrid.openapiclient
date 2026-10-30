@@ -17,11 +17,16 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("content_id") is { } nullNodeContentId && nullNodeContentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentId = null;
-            if (parseNode.GetChildNode("disposition") is { } nullNodeDisposition && nullNodeDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disposition = null;
-            if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("content_id") is null) { _explicitNullValueContentId = default!; _explicitNullProperties?.Remove("content_id"); }
+            else if (parseNode.GetChildNode("content_id") is { } nullNodeContentId && nullNodeContentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentId = null;
+            if (parseNode.GetChildNode("disposition") is null) { _explicitNullValueDisposition = default!; _explicitNullProperties?.Remove("disposition"); }
+            else if (parseNode.GetChildNode("disposition") is { } nullNodeDisposition && nullNodeDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disposition = null;
+            if (parseNode.GetChildNode("filename") is null) { _explicitNullValueFilename = default!; _explicitNullProperties?.Remove("filename"); }
+            else if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The Base64 encoded content of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The attachment&apos;s content ID. The `content_id` is used when the `disposition` is set to `inline` and the attachment is an image, allowing the file to be displayed within the body of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentId { get => _explicitNullValueContentId; set { _explicitNullValueContentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_id"); else _explicitNullProperties?.Remove("content_id"); } }
+        public string? ContentId { get => _explicitNullValueContentId; set { _explicitNullValueContentId = value; AdditionalData?.Remove("content_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_id"); else _explicitNullProperties?.Remove("content_id"); } }
         private string? _explicitNullValueContentId = default!;
 #nullable restore
 #else
-        public string ContentId { get => _explicitNullValueContentId; set { _explicitNullValueContentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_id"); else _explicitNullProperties?.Remove("content_id"); } }
+        public string ContentId { get => _explicitNullValueContentId; set { _explicitNullValueContentId = value; AdditionalData?.Remove("content_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_id"); else _explicitNullProperties?.Remove("content_id"); } }
         private string _explicitNullValueContentId = default!;
 #endif
         /// <summary>The attachment&apos;s content-disposition specifies how you would like the attachment to be displayed. For example, `inline` results in the attached file being displayed automatically within the message while `attachment` results in the attached file requiring some action to be taken before it is displayed such as opening or downloading the file.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition? Disposition { get => _explicitNullValueDisposition; set { _explicitNullValueDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disposition"); else _explicitNullProperties?.Remove("disposition"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition? Disposition { get => _explicitNullValueDisposition; set { _explicitNullValueDisposition = value; AdditionalData?.Remove("disposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disposition"); else _explicitNullProperties?.Remove("disposition"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition? _explicitNullValueDisposition = default!;
         /// <summary>The attachment&apos;s filename, including the file extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; AdditionalData?.Remove("filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
         private string? _explicitNullValueFilename = default!;
 #nullable restore
 #else
-        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; AdditionalData?.Remove("filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
         private string _explicitNullValueFilename = default!;
 #endif
         /// <summary>The MIME type of the content you are attaching (e.g., `image/jpeg` or `application/pdf`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>
@@ -96,7 +101,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "content_id", n => { ContentId = n.GetStringValue(); } },
-                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition>(); } },
+                { "disposition", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestAttachmentsItemDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisposition = default; _explicitNullProperties?.Remove("disposition"); AdditionalData["disposition"] = unknown; } else { Disposition = parsed; AdditionalData.Remove("disposition"); } } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };

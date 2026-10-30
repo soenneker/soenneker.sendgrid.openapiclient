@@ -17,34 +17,37 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("all") is { } nullNodeAll && nullNodeAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) All = null;
-            if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
-            if (parseNode.GetChildNode("segment_ids") is { } nullNodeSegmentIds && nullNodeSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIds = null;
+            if (parseNode.GetChildNode("all") is null) { _explicitNullValueAll = default!; _explicitNullProperties?.Remove("all"); }
+            else if (parseNode.GetChildNode("all") is { } nullNodeAll && nullNodeAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) All = null;
+            if (parseNode.GetChildNode("list_ids") is null) { _explicitNullValueListIds = default!; _explicitNullProperties?.Remove("list_ids"); }
+            else if (parseNode.GetChildNode("list_ids") is { } nullNodeListIds && nullNodeListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListIds = null;
+            if (parseNode.GetChildNode("segment_ids") is null) { _explicitNullValueSegmentIds = default!; _explicitNullProperties?.Remove("segment_ids"); }
+            else if (parseNode.GetChildNode("segment_ids") is { } nullNodeSegmentIds && nullNodeSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If this property is set to `true`, the Single Send will be sent to all of your contacts. If it&apos;s set to `false`, at least one `list_ids` or `segment_ids` value must be provided before the Single Send is scheduled to be sent.</summary>
-        public bool? All { get => _explicitNullValueAll; set { _explicitNullValueAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all"); else _explicitNullProperties?.Remove("all"); } }
+        public bool? All { get => _explicitNullValueAll; set { _explicitNullValueAll = value; AdditionalData?.Remove("all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all"); else _explicitNullProperties?.Remove("all"); } }
         private bool? _explicitNullValueAll = default!;
         /// <summary>The IDs of each contact list to which the Single Send will be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<Guid?>? ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<Guid?>? _explicitNullValueListIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
+        public List<Guid?> ListIds { get => _explicitNullValueListIds; set { _explicitNullValueListIds = value; AdditionalData?.Remove("list_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_ids"); else _explicitNullProperties?.Remove("list_ids"); } }
         private List<Guid?> _explicitNullValueListIds = default!;
 #endif
         /// <summary>The IDs of each segment to which the Single Send will be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
+        public List<Guid?>? SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; AdditionalData?.Remove("segment_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
         private List<Guid?>? _explicitNullValueSegmentIds = default!;
 #nullable restore
 #else
-        public List<Guid?> SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
+        public List<Guid?> SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; AdditionalData?.Remove("segment_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
         private List<Guid?> _explicitNullValueSegmentIds = default!;
 #endif
         /// <summary>

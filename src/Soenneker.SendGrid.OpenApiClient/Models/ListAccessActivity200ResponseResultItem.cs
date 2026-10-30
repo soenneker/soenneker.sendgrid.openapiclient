@@ -17,53 +17,59 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed") is { } nullNodeAllowed && nullNodeAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowed = null;
-            if (parseNode.GetChildNode("auth_method") is { } nullNodeAuthMethod && nullNodeAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMethod = null;
-            if (parseNode.GetChildNode("first_at") is { } nullNodeFirstAt && nullNodeFirstAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstAt = null;
-            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
-            if (parseNode.GetChildNode("last_at") is { } nullNodeLastAt && nullNodeLastAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastAt = null;
-            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("allowed") is null) { _explicitNullValueAllowed = default!; _explicitNullProperties?.Remove("allowed"); }
+            else if (parseNode.GetChildNode("allowed") is { } nullNodeAllowed && nullNodeAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowed = null;
+            if (parseNode.GetChildNode("auth_method") is null) { _explicitNullValueAuthMethod = default!; _explicitNullProperties?.Remove("auth_method"); }
+            else if (parseNode.GetChildNode("auth_method") is { } nullNodeAuthMethod && nullNodeAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMethod = null;
+            if (parseNode.GetChildNode("first_at") is null) { _explicitNullValueFirstAt = default!; _explicitNullProperties?.Remove("first_at"); }
+            else if (parseNode.GetChildNode("first_at") is { } nullNodeFirstAt && nullNodeFirstAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstAt = null;
+            if (parseNode.GetChildNode("ip") is null) { _explicitNullValueIp = default!; _explicitNullProperties?.Remove("ip"); }
+            else if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("last_at") is null) { _explicitNullValueLastAt = default!; _explicitNullProperties?.Remove("last_at"); }
+            else if (parseNode.GetChildNode("last_at") is { } nullNodeLastAt && nullNodeLastAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastAt = null;
+            if (parseNode.GetChildNode("location") is null) { _explicitNullValueLocation = default!; _explicitNullProperties?.Remove("location"); }
+            else if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the IP address was granted access to the account.</summary>
-        public bool? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
+        public bool? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; AdditionalData?.Remove("allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
         private bool? _explicitNullValueAllowed = default!;
         /// <summary>The authentication method used when attempting access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
+        public string? AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; AdditionalData?.Remove("auth_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
         private string? _explicitNullValueAuthMethod = default!;
 #nullable restore
 #else
-        public string AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
+        public string AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; AdditionalData?.Remove("auth_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
         private string _explicitNullValueAuthMethod = default!;
 #endif
         /// <summary>A Unix timestamp indicating when the first access attempt was made.</summary>
-        public int? FirstAt { get => _explicitNullValueFirstAt; set { _explicitNullValueFirstAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_at"); else _explicitNullProperties?.Remove("first_at"); } }
+        public int? FirstAt { get => _explicitNullValueFirstAt; set { _explicitNullValueFirstAt = value; AdditionalData?.Remove("first_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_at"); else _explicitNullProperties?.Remove("first_at"); } }
         private int? _explicitNullValueFirstAt = default!;
         /// <summary>The IP addressed used during the access attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string _explicitNullValueIp = default!;
 #endif
         /// <summary>A Unix timestamp indicating when the most recent access attempt was made</summary>
-        public int? LastAt { get => _explicitNullValueLastAt; set { _explicitNullValueLastAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_at"); else _explicitNullProperties?.Remove("last_at"); } }
+        public int? LastAt { get => _explicitNullValueLastAt; set { _explicitNullValueLastAt = value; AdditionalData?.Remove("last_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_at"); else _explicitNullProperties?.Remove("last_at"); } }
         private int? _explicitNullValueLastAt = default!;
         /// <summary>The geographic location from which the access attempt originated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        public string? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
         private string? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public string Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        public string Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
         private string _explicitNullValueLocation = default!;
 #endif
         /// <summary>

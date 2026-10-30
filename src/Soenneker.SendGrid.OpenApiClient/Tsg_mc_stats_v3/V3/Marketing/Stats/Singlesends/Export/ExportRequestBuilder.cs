@@ -64,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Si
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_stats_v3.V3.Marketing.Stats.Singlesends.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_mc_stats_v3/v3/marketing/stats/singlesends/export", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

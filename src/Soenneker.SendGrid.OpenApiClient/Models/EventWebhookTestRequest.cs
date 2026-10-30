@@ -17,11 +17,16 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("oauth_client_id") is { } nullNodeOauthClientId && nullNodeOauthClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthClientId = null;
-            if (parseNode.GetChildNode("oauth_client_secret") is { } nullNodeOauthClientSecret && nullNodeOauthClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthClientSecret = null;
-            if (parseNode.GetChildNode("oauth_token_url") is { } nullNodeOauthTokenUrl && nullNodeOauthTokenUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthTokenUrl = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("oauth_client_id") is null) { _explicitNullValueOauthClientId = default!; _explicitNullProperties?.Remove("oauth_client_id"); }
+            else if (parseNode.GetChildNode("oauth_client_id") is { } nullNodeOauthClientId && nullNodeOauthClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthClientId = null;
+            if (parseNode.GetChildNode("oauth_client_secret") is null) { _explicitNullValueOauthClientSecret = default!; _explicitNullProperties?.Remove("oauth_client_secret"); }
+            else if (parseNode.GetChildNode("oauth_client_secret") is { } nullNodeOauthClientSecret && nullNodeOauthClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthClientSecret = null;
+            if (parseNode.GetChildNode("oauth_token_url") is null) { _explicitNullValueOauthTokenUrl = default!; _explicitNullProperties?.Remove("oauth_token_url"); }
+            else if (parseNode.GetChildNode("oauth_token_url") is { } nullNodeOauthTokenUrl && nullNodeOauthTokenUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthTokenUrl = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The ID of the Event Webhook you want to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The client ID Twilio SendGrid sends to your OAuth server or service provider to generate an OAuth access token. When passing data in this property, you must also include the `oauth_token_url` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OauthClientId { get => _explicitNullValueOauthClientId; set { _explicitNullValueOauthClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_id"); else _explicitNullProperties?.Remove("oauth_client_id"); } }
+        public string? OauthClientId { get => _explicitNullValueOauthClientId; set { _explicitNullValueOauthClientId = value; AdditionalData?.Remove("oauth_client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_id"); else _explicitNullProperties?.Remove("oauth_client_id"); } }
         private string? _explicitNullValueOauthClientId = default!;
 #nullable restore
 #else
-        public string OauthClientId { get => _explicitNullValueOauthClientId; set { _explicitNullValueOauthClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_id"); else _explicitNullProperties?.Remove("oauth_client_id"); } }
+        public string OauthClientId { get => _explicitNullValueOauthClientId; set { _explicitNullValueOauthClientId = value; AdditionalData?.Remove("oauth_client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_id"); else _explicitNullProperties?.Remove("oauth_client_id"); } }
         private string _explicitNullValueOauthClientId = default!;
 #endif
         /// <summary>The `oauth_client_secret` is needed only once to create an access token. SendGrid will store this secret, allowing you to update your Client ID and Token URL without passing the secret to SendGrid again. When passing data in this field, you must also include the `oauth_client_id` and `oauth_token_url` properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OauthClientSecret { get => _explicitNullValueOauthClientSecret; set { _explicitNullValueOauthClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_secret"); else _explicitNullProperties?.Remove("oauth_client_secret"); } }
+        public string? OauthClientSecret { get => _explicitNullValueOauthClientSecret; set { _explicitNullValueOauthClientSecret = value; AdditionalData?.Remove("oauth_client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_secret"); else _explicitNullProperties?.Remove("oauth_client_secret"); } }
         private string? _explicitNullValueOauthClientSecret = default!;
 #nullable restore
 #else
-        public string OauthClientSecret { get => _explicitNullValueOauthClientSecret; set { _explicitNullValueOauthClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_secret"); else _explicitNullProperties?.Remove("oauth_client_secret"); } }
+        public string OauthClientSecret { get => _explicitNullValueOauthClientSecret; set { _explicitNullValueOauthClientSecret = value; AdditionalData?.Remove("oauth_client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_client_secret"); else _explicitNullProperties?.Remove("oauth_client_secret"); } }
         private string _explicitNullValueOauthClientSecret = default!;
 #endif
         /// <summary>The URL where Twilio SendGrid sends the Client ID and Client Secret to generate an access token. This should be your OAuth server or service provider. When passing data in this field, you must also include the `oauth_client_id` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OauthTokenUrl { get => _explicitNullValueOauthTokenUrl; set { _explicitNullValueOauthTokenUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_token_url"); else _explicitNullProperties?.Remove("oauth_token_url"); } }
+        public string? OauthTokenUrl { get => _explicitNullValueOauthTokenUrl; set { _explicitNullValueOauthTokenUrl = value; AdditionalData?.Remove("oauth_token_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_token_url"); else _explicitNullProperties?.Remove("oauth_token_url"); } }
         private string? _explicitNullValueOauthTokenUrl = default!;
 #nullable restore
 #else
-        public string OauthTokenUrl { get => _explicitNullValueOauthTokenUrl; set { _explicitNullValueOauthTokenUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_token_url"); else _explicitNullProperties?.Remove("oauth_token_url"); } }
+        public string OauthTokenUrl { get => _explicitNullValueOauthTokenUrl; set { _explicitNullValueOauthTokenUrl = value; AdditionalData?.Remove("oauth_token_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_token_url"); else _explicitNullProperties?.Remove("oauth_token_url"); } }
         private string _explicitNullValueOauthTokenUrl = default!;
 #endif
         /// <summary>The URL where you would like the test notification to be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

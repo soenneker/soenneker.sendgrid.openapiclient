@@ -17,13 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
+            if (parseNode.GetChildNode("file_type") is null) { _explicitNullValueFileType = default!; _explicitNullProperties?.Remove("file_type"); }
+            else if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The format of the file you wish to upload.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListEmailJobForVerificationRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListEmailJobForVerificationRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; AdditionalData?.Remove("file_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListEmailJobForVerificationRequestFileType? _explicitNullValueFileType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListEmailJobForVerificationRequest"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file_type", n => { FileType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListEmailJobForVerificationRequestFileType>(); } },
+                { "file_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListEmailJobForVerificationRequestFileType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFileType = default; _explicitNullProperties?.Remove("file_type"); AdditionalData["file_type"] = unknown; } else { FileType = parsed; AdditionalData.Remove("file_type"); } } },
             };
         }
         /// <summary>

@@ -17,23 +17,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("editor") is { } nullNodeEditor && nullNodeEditor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Editor = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("editor") is null) { _explicitNullValueEditor = default!; _explicitNullProperties?.Remove("editor"); }
+            else if (parseNode.GetChildNode("editor") is { } nullNodeEditor && nullNodeEditor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Editor = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The editor used in the UI.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DesignDuplicateInputEditor? Editor { get => _explicitNullValueEditor; set { _explicitNullValueEditor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editor"); else _explicitNullProperties?.Remove("editor"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DesignDuplicateInputEditor? Editor { get => _explicitNullValueEditor; set { _explicitNullValueEditor = value; AdditionalData?.Remove("editor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editor"); else _explicitNullProperties?.Remove("editor"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.DesignDuplicateInputEditor? _explicitNullValueEditor = default!;
         /// <summary>The name of the new design.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "editor", n => { Editor = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DesignDuplicateInputEditor>(); } },
+                { "editor", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.DesignDuplicateInputEditor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEditor = default; _explicitNullProperties?.Remove("editor"); AdditionalData["editor"] = unknown; } else { Editor = parsed; AdditionalData.Remove("editor"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }

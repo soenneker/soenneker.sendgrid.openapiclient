@@ -17,13 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allocation_update") is { } nullNodeAllocationUpdate && nullNodeAllocationUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllocationUpdate = null;
+            if (parseNode.GetChildNode("allocation_update") is null) { _explicitNullValueAllocationUpdate = default!; _explicitNullProperties?.Remove("allocation_update"); }
+            else if (parseNode.GetChildNode("allocation_update") is { } nullNodeAllocationUpdate && nullNodeAllocationUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllocationUpdate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of credits to add to or subtract from the current remaining credits for the Subuser. Use a positive number to increase the remaining credits or a negative number to reduce the remaining credits.</summary>
-        public int? AllocationUpdate { get => _explicitNullValueAllocationUpdate; set { _explicitNullValueAllocationUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation_update"); else _explicitNullProperties?.Remove("allocation_update"); } }
+        public int? AllocationUpdate { get => _explicitNullValueAllocationUpdate; set { _explicitNullValueAllocationUpdate = value; AdditionalData?.Remove("allocation_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation_update"); else _explicitNullProperties?.Remove("allocation_update"); } }
         private int? _explicitNullValueAllocationUpdate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.UpdateSubuserRemainingCreditRequest"/> and sets the default values.

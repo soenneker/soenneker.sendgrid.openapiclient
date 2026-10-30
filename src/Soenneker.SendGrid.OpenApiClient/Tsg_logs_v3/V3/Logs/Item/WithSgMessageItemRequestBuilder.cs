@@ -78,7 +78,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_logs_v3.V3.Logs.Item.WithSgMessageItemRequestBuilder.WithSgMessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_logs_v3/v3/logs/{sgMessageId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -17,23 +17,25 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("generation") is { } nullNodeGeneration && nullNodeGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generation = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("generation") is null) { _explicitNullValueGeneration = default!; _explicitNullProperties?.Remove("generation"); }
+            else if (parseNode.GetChildNode("generation") is { } nullNodeGeneration && nullNodeGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generation = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines whether the template supports dynamic replacement.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequestGeneration? Generation { get => _explicitNullValueGeneration; set { _explicitNullValueGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation"); else _explicitNullProperties?.Remove("generation"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequestGeneration? Generation { get => _explicitNullValueGeneration; set { _explicitNullValueGeneration = value; AdditionalData?.Remove("generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation"); else _explicitNullProperties?.Remove("generation"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequestGeneration? _explicitNullValueGeneration = default!;
         /// <summary>The name for the new transactional template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "generation", n => { Generation = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequestGeneration>(); } },
+                { "generation", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateTemplateRequestGeneration>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGeneration = default; _explicitNullProperties?.Remove("generation"); AdditionalData["generation"] = unknown; } else { Generation = parsed; AdditionalData.Remove("generation"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }

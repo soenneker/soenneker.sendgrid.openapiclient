@@ -18,27 +18,30 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("permission_type") is { } nullNodePermissionType && nullNodePermissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionType = null;
-            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("permission_type") is null) { _explicitNullValuePermissionType = default!; _explicitNullProperties?.Remove("permission_type"); }
+            else if (parseNode.GetChildNode("permission_type") is { } nullNodePermissionType && nullNodePermissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionType = null;
+            if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
+            else if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set this property to the ID of a Subuser to which the Teammate should have access. You can retrieve Subuser IDs from the [Subusers API](https://docs.sendgrid.com/api-reference/subusers-api/).</summary>
-        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>Grant the level of access the Teammate should have to the specified Subuser with this property. This property value may be either `admin` or `restricted`. When set to `restricted`, the Teammate has only the permissions assigned in the `scopes` property.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItemPermissionType? PermissionType { get => _explicitNullValuePermissionType; set { _explicitNullValuePermissionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_type"); else _explicitNullProperties?.Remove("permission_type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItemPermissionType? PermissionType { get => _explicitNullValuePermissionType; set { _explicitNullValuePermissionType = value; AdditionalData?.Remove("permission_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_type"); else _explicitNullProperties?.Remove("permission_type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItemPermissionType? _explicitNullValuePermissionType = default!;
         /// <summary>Add or remove permissions that the Teammate can access on behalf of the Subuser. See [**Teammate Permissions**](https://docs.sendgrid.com/ui/account-and-settings/teammate-permissions) for a complete list of available scopes. You should not include this property in the request when the `permission_type` property is set to `admin`—administrators have full access to the specified Subuser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>
@@ -67,7 +70,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItemPermissionType>(); } },
+                { "permission_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostSsoTeammatesRequestSubuserAccessItemPermissionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionType = default; _explicitNullProperties?.Remove("permission_type"); AdditionalData["permission_type"] = unknown; } else { PermissionType = parsed; AdditionalData.Remove("permission_type"); } } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

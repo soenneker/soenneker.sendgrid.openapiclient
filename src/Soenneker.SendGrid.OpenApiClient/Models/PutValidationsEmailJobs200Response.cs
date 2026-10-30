@@ -17,9 +17,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
-            if (parseNode.GetChildNode("upload_headers") is { } nullNodeUploadHeaders && nullNodeUploadHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadHeaders = null;
-            if (parseNode.GetChildNode("upload_uri") is { } nullNodeUploadUri && nullNodeUploadUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUri = null;
+            if (parseNode.GetChildNode("job_id") is null) { _explicitNullValueJobId = default!; _explicitNullProperties?.Remove("job_id"); }
+            else if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("upload_headers") is null) { _explicitNullValueUploadHeaders = default!; _explicitNullProperties?.Remove("upload_headers"); }
+            else if (parseNode.GetChildNode("upload_headers") is { } nullNodeUploadHeaders && nullNodeUploadHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadHeaders = null;
+            if (parseNode.GetChildNode("upload_uri") is null) { _explicitNullValueUploadUri = default!; _explicitNullProperties?.Remove("upload_uri"); }
+            else if (parseNode.GetChildNode("upload_uri") is { } nullNodeUploadUri && nullNodeUploadUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The unique ID of the Bulk Email Address Validation Job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; AdditionalData?.Remove("job_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
         private string? _explicitNullValueJobId = default!;
 #nullable restore
 #else
-        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; AdditionalData?.Remove("job_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
         private string _explicitNullValueJobId = default!;
 #endif
         /// <summary>Array containing headers and header values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem>? UploadHeaders { get => _explicitNullValueUploadHeaders; set { _explicitNullValueUploadHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_headers"); else _explicitNullProperties?.Remove("upload_headers"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem>? UploadHeaders { get => _explicitNullValueUploadHeaders; set { _explicitNullValueUploadHeaders = value; AdditionalData?.Remove("upload_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_headers"); else _explicitNullProperties?.Remove("upload_headers"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem>? _explicitNullValueUploadHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem> UploadHeaders { get => _explicitNullValueUploadHeaders; set { _explicitNullValueUploadHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_headers"); else _explicitNullProperties?.Remove("upload_headers"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem> UploadHeaders { get => _explicitNullValueUploadHeaders; set { _explicitNullValueUploadHeaders = value; AdditionalData?.Remove("upload_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_headers"); else _explicitNullProperties?.Remove("upload_headers"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.PutValidationsEmailJobs200ResponseUploadHeadersItem> _explicitNullValueUploadHeaders = default!;
 #endif
         /// <summary>The URI to use for the request to upload your list of email addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadUri { get => _explicitNullValueUploadUri; set { _explicitNullValueUploadUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_uri"); else _explicitNullProperties?.Remove("upload_uri"); } }
+        public string? UploadUri { get => _explicitNullValueUploadUri; set { _explicitNullValueUploadUri = value; AdditionalData?.Remove("upload_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_uri"); else _explicitNullProperties?.Remove("upload_uri"); } }
         private string? _explicitNullValueUploadUri = default!;
 #nullable restore
 #else
-        public string UploadUri { get => _explicitNullValueUploadUri; set { _explicitNullValueUploadUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_uri"); else _explicitNullProperties?.Remove("upload_uri"); } }
+        public string UploadUri { get => _explicitNullValueUploadUri; set { _explicitNullValueUploadUri = value; AdditionalData?.Remove("upload_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_uri"); else _explicitNullProperties?.Remove("upload_uri"); } }
         private string _explicitNullValueUploadUri = default!;
 #endif
         /// <summary>

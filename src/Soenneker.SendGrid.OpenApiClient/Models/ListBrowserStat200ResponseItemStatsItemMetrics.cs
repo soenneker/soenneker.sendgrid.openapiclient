@@ -18,17 +18,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
-            if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
+            if (parseNode.GetChildNode("clicks") is null) { _explicitNullValueClicks = default!; _explicitNullProperties?.Remove("clicks"); }
+            else if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("unique_clicks") is null) { _explicitNullValueUniqueClicks = default!; _explicitNullProperties?.Remove("unique_clicks"); }
+            else if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of links that were clicked in your emails.</summary>
-        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
+        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; AdditionalData?.Remove("clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
         private int? _explicitNullValueClicks = default!;
         /// <summary>The number of unique recipients who clicked links in your emails.</summary>
-        public int? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
+        public int? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; AdditionalData?.Remove("unique_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
         private int? _explicitNullValueUniqueClicks = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListBrowserStat200ResponseItemStatsItemMetrics"/> and sets the default values.

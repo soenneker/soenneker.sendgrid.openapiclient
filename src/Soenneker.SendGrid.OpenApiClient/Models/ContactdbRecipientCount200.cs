@@ -17,13 +17,14 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("recipient_count") is { } nullNodeRecipientCount && nullNodeRecipientCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientCount = null;
+            if (parseNode.GetChildNode("recipient_count") is null) { _explicitNullValueRecipientCount = default!; _explicitNullProperties?.Remove("recipient_count"); }
+            else if (parseNode.GetChildNode("recipient_count") is { } nullNodeRecipientCount && nullNodeRecipientCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count of recipients.</summary>
-        public double? RecipientCount { get => _explicitNullValueRecipientCount; set { _explicitNullValueRecipientCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_count"); else _explicitNullProperties?.Remove("recipient_count"); } }
+        public double? RecipientCount { get => _explicitNullValueRecipientCount; set { _explicitNullValueRecipientCount = value; AdditionalData?.Remove("recipient_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_count"); else _explicitNullProperties?.Remove("recipient_count"); } }
         private double? _explicitNullValueRecipientCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbRecipientCount200"/> and sets the default values.

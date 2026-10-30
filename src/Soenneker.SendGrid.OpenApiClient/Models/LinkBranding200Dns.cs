@@ -18,8 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain_cname") is { } nullNodeDomainCname && nullNodeDomainCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCname = null;
-            if (parseNode.GetChildNode("owner_cname") is { } nullNodeOwnerCname && nullNodeOwnerCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerCname = null;
+            if (parseNode.GetChildNode("domain_cname") is null) { _explicitNullValueDomainCname = default!; _explicitNullProperties?.Remove("domain_cname"); }
+            else if (parseNode.GetChildNode("domain_cname") is { } nullNodeDomainCname && nullNodeDomainCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCname = null;
+            if (parseNode.GetChildNode("owner_cname") is null) { _explicitNullValueOwnerCname = default!; _explicitNullProperties?.Remove("owner_cname"); }
+            else if (parseNode.GetChildNode("owner_cname") is { } nullNodeOwnerCname && nullNodeOwnerCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerCname = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The DNS record generated to point to your link branding subdomain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname? DomainCname { get => _explicitNullValueDomainCname; set { _explicitNullValueDomainCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_cname"); else _explicitNullProperties?.Remove("domain_cname"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname? DomainCname { get => _explicitNullValueDomainCname; set { _explicitNullValueDomainCname = value; AdditionalData?.Remove("domain_cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_cname"); else _explicitNullProperties?.Remove("domain_cname"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname? _explicitNullValueDomainCname = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname DomainCname { get => _explicitNullValueDomainCname; set { _explicitNullValueDomainCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_cname"); else _explicitNullProperties?.Remove("domain_cname"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname DomainCname { get => _explicitNullValueDomainCname; set { _explicitNullValueDomainCname = value; AdditionalData?.Remove("domain_cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_cname"); else _explicitNullProperties?.Remove("domain_cname"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsDomainCname _explicitNullValueDomainCname = default!;
 #endif
         /// <summary>The DNS record generated to verify who created the link branding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsOwnerCname? OwnerCname { get => _explicitNullValueOwnerCname; set { _explicitNullValueOwnerCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_cname"); else _explicitNullProperties?.Remove("owner_cname"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsOwnerCname? OwnerCname { get => _explicitNullValueOwnerCname; set { _explicitNullValueOwnerCname = value; AdditionalData?.Remove("owner_cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_cname"); else _explicitNullProperties?.Remove("owner_cname"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsOwnerCname? _explicitNullValueOwnerCname = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsOwnerCname OwnerCname { get => _explicitNullValueOwnerCname; set { _explicitNullValueOwnerCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_cname"); else _explicitNullProperties?.Remove("owner_cname"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsOwnerCname OwnerCname { get => _explicitNullValueOwnerCname; set { _explicitNullValueOwnerCname = value; AdditionalData?.Remove("owner_cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_cname"); else _explicitNullProperties?.Remove("owner_cname"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.LinkBranding200DnsOwnerCname _explicitNullValueOwnerCname = default!;
 #endif
         /// <summary>

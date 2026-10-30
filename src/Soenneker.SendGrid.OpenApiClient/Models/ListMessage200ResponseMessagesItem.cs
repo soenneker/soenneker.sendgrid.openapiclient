@@ -17,75 +17,83 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clicks_count") is { } nullNodeClicksCount && nullNodeClicksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClicksCount = null;
-            if (parseNode.GetChildNode("from_email") is { } nullNodeFromEmail && nullNodeFromEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromEmail = null;
-            if (parseNode.GetChildNode("last_event_time") is { } nullNodeLastEventTime && nullNodeLastEventTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEventTime = null;
-            if (parseNode.GetChildNode("msg_id") is { } nullNodeMsgId && nullNodeMsgId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MsgId = null;
-            if (parseNode.GetChildNode("opens_count") is { } nullNodeOpensCount && nullNodeOpensCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpensCount = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("to_email") is { } nullNodeToEmail && nullNodeToEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToEmail = null;
+            if (parseNode.GetChildNode("clicks_count") is null) { _explicitNullValueClicksCount = default!; _explicitNullProperties?.Remove("clicks_count"); }
+            else if (parseNode.GetChildNode("clicks_count") is { } nullNodeClicksCount && nullNodeClicksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClicksCount = null;
+            if (parseNode.GetChildNode("from_email") is null) { _explicitNullValueFromEmail = default!; _explicitNullProperties?.Remove("from_email"); }
+            else if (parseNode.GetChildNode("from_email") is { } nullNodeFromEmail && nullNodeFromEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromEmail = null;
+            if (parseNode.GetChildNode("last_event_time") is null) { _explicitNullValueLastEventTime = default!; _explicitNullProperties?.Remove("last_event_time"); }
+            else if (parseNode.GetChildNode("last_event_time") is { } nullNodeLastEventTime && nullNodeLastEventTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEventTime = null;
+            if (parseNode.GetChildNode("msg_id") is null) { _explicitNullValueMsgId = default!; _explicitNullProperties?.Remove("msg_id"); }
+            else if (parseNode.GetChildNode("msg_id") is { } nullNodeMsgId && nullNodeMsgId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MsgId = null;
+            if (parseNode.GetChildNode("opens_count") is null) { _explicitNullValueOpensCount = default!; _explicitNullProperties?.Remove("opens_count"); }
+            else if (parseNode.GetChildNode("opens_count") is { } nullNodeOpensCount && nullNodeOpensCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpensCount = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("to_email") is null) { _explicitNullValueToEmail = default!; _explicitNullProperties?.Remove("to_email"); }
+            else if (parseNode.GetChildNode("to_email") is { } nullNodeToEmail && nullNodeToEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToEmail = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clicks_count property</summary>
-        public int? ClicksCount { get => _explicitNullValueClicksCount; set { _explicitNullValueClicksCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks_count"); else _explicitNullProperties?.Remove("clicks_count"); } }
+        public int? ClicksCount { get => _explicitNullValueClicksCount; set { _explicitNullValueClicksCount = value; AdditionalData?.Remove("clicks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks_count"); else _explicitNullProperties?.Remove("clicks_count"); } }
         private int? _explicitNullValueClicksCount = default!;
         /// <summary>The from_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromEmail { get => _explicitNullValueFromEmail; set { _explicitNullValueFromEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_email"); else _explicitNullProperties?.Remove("from_email"); } }
+        public string? FromEmail { get => _explicitNullValueFromEmail; set { _explicitNullValueFromEmail = value; AdditionalData?.Remove("from_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_email"); else _explicitNullProperties?.Remove("from_email"); } }
         private string? _explicitNullValueFromEmail = default!;
 #nullable restore
 #else
-        public string FromEmail { get => _explicitNullValueFromEmail; set { _explicitNullValueFromEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_email"); else _explicitNullProperties?.Remove("from_email"); } }
+        public string FromEmail { get => _explicitNullValueFromEmail; set { _explicitNullValueFromEmail = value; AdditionalData?.Remove("from_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_email"); else _explicitNullProperties?.Remove("from_email"); } }
         private string _explicitNullValueFromEmail = default!;
 #endif
         /// <summary>iso 8601 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastEventTime { get => _explicitNullValueLastEventTime; set { _explicitNullValueLastEventTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_event_time"); else _explicitNullProperties?.Remove("last_event_time"); } }
+        public string? LastEventTime { get => _explicitNullValueLastEventTime; set { _explicitNullValueLastEventTime = value; AdditionalData?.Remove("last_event_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_event_time"); else _explicitNullProperties?.Remove("last_event_time"); } }
         private string? _explicitNullValueLastEventTime = default!;
 #nullable restore
 #else
-        public string LastEventTime { get => _explicitNullValueLastEventTime; set { _explicitNullValueLastEventTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_event_time"); else _explicitNullProperties?.Remove("last_event_time"); } }
+        public string LastEventTime { get => _explicitNullValueLastEventTime; set { _explicitNullValueLastEventTime = value; AdditionalData?.Remove("last_event_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_event_time"); else _explicitNullProperties?.Remove("last_event_time"); } }
         private string _explicitNullValueLastEventTime = default!;
 #endif
         /// <summary>The msg_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MsgId { get => _explicitNullValueMsgId; set { _explicitNullValueMsgId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg_id"); else _explicitNullProperties?.Remove("msg_id"); } }
+        public string? MsgId { get => _explicitNullValueMsgId; set { _explicitNullValueMsgId = value; AdditionalData?.Remove("msg_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg_id"); else _explicitNullProperties?.Remove("msg_id"); } }
         private string? _explicitNullValueMsgId = default!;
 #nullable restore
 #else
-        public string MsgId { get => _explicitNullValueMsgId; set { _explicitNullValueMsgId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg_id"); else _explicitNullProperties?.Remove("msg_id"); } }
+        public string MsgId { get => _explicitNullValueMsgId; set { _explicitNullValueMsgId = value; AdditionalData?.Remove("msg_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg_id"); else _explicitNullProperties?.Remove("msg_id"); } }
         private string _explicitNullValueMsgId = default!;
 #endif
         /// <summary>The opens_count property</summary>
-        public int? OpensCount { get => _explicitNullValueOpensCount; set { _explicitNullValueOpensCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens_count"); else _explicitNullProperties?.Remove("opens_count"); } }
+        public int? OpensCount { get => _explicitNullValueOpensCount; set { _explicitNullValueOpensCount = value; AdditionalData?.Remove("opens_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens_count"); else _explicitNullProperties?.Remove("opens_count"); } }
         private int? _explicitNullValueOpensCount = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListMessage200ResponseMessagesItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListMessage200ResponseMessagesItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListMessage200ResponseMessagesItemStatus? _explicitNullValueStatus = default!;
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>The to_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToEmail { get => _explicitNullValueToEmail; set { _explicitNullValueToEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_email"); else _explicitNullProperties?.Remove("to_email"); } }
+        public string? ToEmail { get => _explicitNullValueToEmail; set { _explicitNullValueToEmail = value; AdditionalData?.Remove("to_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_email"); else _explicitNullProperties?.Remove("to_email"); } }
         private string? _explicitNullValueToEmail = default!;
 #nullable restore
 #else
-        public string ToEmail { get => _explicitNullValueToEmail; set { _explicitNullValueToEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_email"); else _explicitNullProperties?.Remove("to_email"); } }
+        public string ToEmail { get => _explicitNullValueToEmail; set { _explicitNullValueToEmail = value; AdditionalData?.Remove("to_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_email"); else _explicitNullProperties?.Remove("to_email"); } }
         private string _explicitNullValueToEmail = default!;
 #endif
         /// <summary>
@@ -118,7 +126,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "last_event_time", n => { LastEventTime = n.GetStringValue(); } },
                 { "msg_id", n => { MsgId = n.GetStringValue(); } },
                 { "opens_count", n => { OpensCount = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListMessage200ResponseMessagesItemStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ListMessage200ResponseMessagesItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "to_email", n => { ToEmail = n.GetStringValue(); } },
             };

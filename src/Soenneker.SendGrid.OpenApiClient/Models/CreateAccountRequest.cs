@@ -17,8 +17,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("offerings") is { } nullNodeOfferings && nullNodeOfferings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offerings = null;
-            if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
+            if (parseNode.GetChildNode("offerings") is null) { _explicitNullValueOfferings = default!; _explicitNullProperties?.Remove("offerings"); }
+            else if (parseNode.GetChildNode("offerings") is { } nullNodeOfferings && nullNodeOfferings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offerings = null;
+            if (parseNode.GetChildNode("profile") is null) { _explicitNullValueProfile = default!; _explicitNullProperties?.Remove("profile"); }
+            else if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>List of offering names to assign to account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1>? Offerings { get => _explicitNullValueOfferings; set { _explicitNullValueOfferings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offerings"); else _explicitNullProperties?.Remove("offerings"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1>? Offerings { get => _explicitNullValueOfferings; set { _explicitNullValueOfferings = value; AdditionalData?.Remove("offerings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offerings"); else _explicitNullProperties?.Remove("offerings"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1>? _explicitNullValueOfferings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1> Offerings { get => _explicitNullValueOfferings; set { _explicitNullValueOfferings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offerings"); else _explicitNullProperties?.Remove("offerings"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1> Offerings { get => _explicitNullValueOfferings; set { _explicitNullValueOfferings = value; AdditionalData?.Remove("offerings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offerings"); else _explicitNullProperties?.Remove("offerings"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningOfferingV1> _explicitNullValueOfferings = default!;
 #endif
         /// <summary>The profile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningProfile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningProfile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; AdditionalData?.Remove("profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningProfile? _explicitNullValueProfile = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningProfile Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningProfile Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; AdditionalData?.Remove("profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AccountProvisioningProfile _explicitNullValueProfile = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("w1") is { } nullNodeW1 && nullNodeW1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W1 = null;
+            if (parseNode.GetChildNode("w1") is null) { _explicitNullValueW1 = default!; _explicitNullProperties?.Remove("w1"); }
+            else if (parseNode.GetChildNode("w1") is { } nullNodeW1 && nullNodeW1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W1 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The properties in this object are made up of a key (the custom field ID) and value you want associated with that custom field. For example `{&quot;w1&quot;: &quot;coffee&quot;}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? W1 { get => _explicitNullValueW1; set { _explicitNullValueW1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("w1"); else _explicitNullProperties?.Remove("w1"); } }
+        public string? W1 { get => _explicitNullValueW1; set { _explicitNullValueW1 = value; AdditionalData?.Remove("w1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("w1"); else _explicitNullProperties?.Remove("w1"); } }
         private string? _explicitNullValueW1 = default!;
 #nullable restore
 #else
-        public string W1 { get => _explicitNullValueW1; set { _explicitNullValueW1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("w1"); else _explicitNullProperties?.Remove("w1"); } }
+        public string W1 { get => _explicitNullValueW1; set { _explicitNullValueW1 = value; AdditionalData?.Remove("w1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("w1"); else _explicitNullProperties?.Remove("w1"); } }
         private string _explicitNullValueW1 = default!;
 #endif
         /// <summary>

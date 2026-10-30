@@ -17,45 +17,49 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
-            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
-            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("destination") is null) { _explicitNullValueDestination = default!; _explicitNullProperties?.Remove("destination"); }
+            else if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
+            if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
+            else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The third-party application you would like to forward your events to.</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; AdditionalData?.Remove("destination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination? _explicitNullValueDestination = default!;
         /// <summary>The configurable filters for SendGrid to destination email event forwarding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters _explicitNullValueFilters = default!;
 #endif
         /// <summary>The nickname for the Integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>The properties of an Integration required to send events to a specific third-party application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties _explicitNullValueProperties = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination>(); } },
+                { "destination", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputDestination>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDestination = default; _explicitNullProperties?.Remove("destination"); AdditionalData["destination"] = unknown; } else { Destination = parsed; AdditionalData.Remove("destination"); } } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputFilters.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties>(global::Soenneker.SendGrid.OpenApiClient.Models.IntegrationInputProperties.CreateFromDiscriminatorValue); } },

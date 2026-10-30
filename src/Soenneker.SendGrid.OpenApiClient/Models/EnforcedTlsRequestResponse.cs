@@ -17,21 +17,24 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("require_tls") is { } nullNodeRequireTls && nullNodeRequireTls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireTls = null;
-            if (parseNode.GetChildNode("require_valid_cert") is { } nullNodeRequireValidCert && nullNodeRequireValidCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireValidCert = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("require_tls") is null) { _explicitNullValueRequireTls = default!; _explicitNullProperties?.Remove("require_tls"); }
+            else if (parseNode.GetChildNode("require_tls") is { } nullNodeRequireTls && nullNodeRequireTls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireTls = null;
+            if (parseNode.GetChildNode("require_valid_cert") is null) { _explicitNullValueRequireValidCert = default!; _explicitNullProperties?.Remove("require_valid_cert"); }
+            else if (parseNode.GetChildNode("require_valid_cert") is { } nullNodeRequireValidCert && nullNodeRequireValidCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireValidCert = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if you want to require your recipients to support TLS. </summary>
-        public bool? RequireTls { get => _explicitNullValueRequireTls; set { _explicitNullValueRequireTls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_tls"); else _explicitNullProperties?.Remove("require_tls"); } }
+        public bool? RequireTls { get => _explicitNullValueRequireTls; set { _explicitNullValueRequireTls = value; AdditionalData?.Remove("require_tls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_tls"); else _explicitNullProperties?.Remove("require_tls"); } }
         private bool? _explicitNullValueRequireTls = default!;
         /// <summary>Indicates if you want to require your recipients to have a valid certificate.</summary>
-        public bool? RequireValidCert { get => _explicitNullValueRequireValidCert; set { _explicitNullValueRequireValidCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_valid_cert"); else _explicitNullProperties?.Remove("require_valid_cert"); } }
+        public bool? RequireValidCert { get => _explicitNullValueRequireValidCert; set { _explicitNullValueRequireValidCert = value; AdditionalData?.Remove("require_valid_cert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_valid_cert"); else _explicitNullProperties?.Remove("require_valid_cert"); } }
         private bool? _explicitNullValueRequireValidCert = default!;
         /// <summary>The minimum required TLS certificate version.</summary>
-        public float? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public float? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private float? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.EnforcedTlsRequestResponse"/> and sets the default values.

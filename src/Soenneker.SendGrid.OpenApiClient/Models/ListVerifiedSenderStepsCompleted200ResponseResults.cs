@@ -17,17 +17,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain_verified") is { } nullNodeDomainVerified && nullNodeDomainVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainVerified = null;
-            if (parseNode.GetChildNode("sender_verified") is { } nullNodeSenderVerified && nullNodeSenderVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderVerified = null;
+            if (parseNode.GetChildNode("domain_verified") is null) { _explicitNullValueDomainVerified = default!; _explicitNullProperties?.Remove("domain_verified"); }
+            else if (parseNode.GetChildNode("domain_verified") is { } nullNodeDomainVerified && nullNodeDomainVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainVerified = null;
+            if (parseNode.GetChildNode("sender_verified") is null) { _explicitNullValueSenderVerified = default!; _explicitNullProperties?.Remove("sender_verified"); }
+            else if (parseNode.GetChildNode("sender_verified") is { } nullNodeSenderVerified && nullNodeSenderVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderVerified = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domain_verified property</summary>
-        public bool? DomainVerified { get => _explicitNullValueDomainVerified; set { _explicitNullValueDomainVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_verified"); else _explicitNullProperties?.Remove("domain_verified"); } }
+        public bool? DomainVerified { get => _explicitNullValueDomainVerified; set { _explicitNullValueDomainVerified = value; AdditionalData?.Remove("domain_verified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_verified"); else _explicitNullProperties?.Remove("domain_verified"); } }
         private bool? _explicitNullValueDomainVerified = default!;
         /// <summary>The sender_verified property</summary>
-        public bool? SenderVerified { get => _explicitNullValueSenderVerified; set { _explicitNullValueSenderVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender_verified"); else _explicitNullProperties?.Remove("sender_verified"); } }
+        public bool? SenderVerified { get => _explicitNullValueSenderVerified; set { _explicitNullValueSenderVerified = value; AdditionalData?.Remove("sender_verified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender_verified"); else _explicitNullProperties?.Remove("sender_verified"); } }
         private bool? _explicitNullValueSenderVerified = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListVerifiedSenderStepsCompleted200ResponseResults"/> and sets the default values.

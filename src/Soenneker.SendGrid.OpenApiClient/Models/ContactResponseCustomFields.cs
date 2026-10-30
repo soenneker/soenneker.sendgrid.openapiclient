@@ -18,8 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_field_name1") is { } nullNodeCustomFieldName1 && nullNodeCustomFieldName1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFieldName1 = null;
-            if (parseNode.GetChildNode("custom_field_name2") is { } nullNodeCustomFieldName2 && nullNodeCustomFieldName2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFieldName2 = null;
+            if (parseNode.GetChildNode("custom_field_name1") is null) { _explicitNullValueCustomFieldName1 = default!; _explicitNullProperties?.Remove("custom_field_name1"); }
+            else if (parseNode.GetChildNode("custom_field_name1") is { } nullNodeCustomFieldName1 && nullNodeCustomFieldName1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFieldName1 = null;
+            if (parseNode.GetChildNode("custom_field_name2") is null) { _explicitNullValueCustomFieldName2 = default!; _explicitNullProperties?.Remove("custom_field_name2"); }
+            else if (parseNode.GetChildNode("custom_field_name2") is { } nullNodeCustomFieldName2 && nullNodeCustomFieldName2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFieldName2 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>The custom_field_name1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomFieldName1 { get => _explicitNullValueCustomFieldName1; set { _explicitNullValueCustomFieldName1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name1"); else _explicitNullProperties?.Remove("custom_field_name1"); } }
+        public string? CustomFieldName1 { get => _explicitNullValueCustomFieldName1; set { _explicitNullValueCustomFieldName1 = value; AdditionalData?.Remove("custom_field_name1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name1"); else _explicitNullProperties?.Remove("custom_field_name1"); } }
         private string? _explicitNullValueCustomFieldName1 = default!;
 #nullable restore
 #else
-        public string CustomFieldName1 { get => _explicitNullValueCustomFieldName1; set { _explicitNullValueCustomFieldName1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name1"); else _explicitNullProperties?.Remove("custom_field_name1"); } }
+        public string CustomFieldName1 { get => _explicitNullValueCustomFieldName1; set { _explicitNullValueCustomFieldName1 = value; AdditionalData?.Remove("custom_field_name1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name1"); else _explicitNullProperties?.Remove("custom_field_name1"); } }
         private string _explicitNullValueCustomFieldName1 = default!;
 #endif
         /// <summary>The custom_field_name2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomFieldName2 { get => _explicitNullValueCustomFieldName2; set { _explicitNullValueCustomFieldName2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name2"); else _explicitNullProperties?.Remove("custom_field_name2"); } }
+        public string? CustomFieldName2 { get => _explicitNullValueCustomFieldName2; set { _explicitNullValueCustomFieldName2 = value; AdditionalData?.Remove("custom_field_name2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name2"); else _explicitNullProperties?.Remove("custom_field_name2"); } }
         private string? _explicitNullValueCustomFieldName2 = default!;
 #nullable restore
 #else
-        public string CustomFieldName2 { get => _explicitNullValueCustomFieldName2; set { _explicitNullValueCustomFieldName2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name2"); else _explicitNullProperties?.Remove("custom_field_name2"); } }
+        public string CustomFieldName2 { get => _explicitNullValueCustomFieldName2; set { _explicitNullValueCustomFieldName2 = value; AdditionalData?.Remove("custom_field_name2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_field_name2"); else _explicitNullProperties?.Remove("custom_field_name2"); } }
         private string _explicitNullValueCustomFieldName2 = default!;
 #endif
         /// <summary>

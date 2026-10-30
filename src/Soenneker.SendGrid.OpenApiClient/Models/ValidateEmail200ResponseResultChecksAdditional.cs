@@ -18,17 +18,19 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("has_known_bounces") is { } nullNodeHasKnownBounces && nullNodeHasKnownBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasKnownBounces = null;
-            if (parseNode.GetChildNode("has_suspected_bounces") is { } nullNodeHasSuspectedBounces && nullNodeHasSuspectedBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasSuspectedBounces = null;
+            if (parseNode.GetChildNode("has_known_bounces") is null) { _explicitNullValueHasKnownBounces = default!; _explicitNullProperties?.Remove("has_known_bounces"); }
+            else if (parseNode.GetChildNode("has_known_bounces") is { } nullNodeHasKnownBounces && nullNodeHasKnownBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasKnownBounces = null;
+            if (parseNode.GetChildNode("has_suspected_bounces") is null) { _explicitNullValueHasSuspectedBounces = default!; _explicitNullProperties?.Remove("has_suspected_bounces"); }
+            else if (parseNode.GetChildNode("has_suspected_bounces") is { } nullNodeHasSuspectedBounces && nullNodeHasSuspectedBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasSuspectedBounces = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether email sent to this address from your account has bounced.</summary>
-        public bool? HasKnownBounces { get => _explicitNullValueHasKnownBounces; set { _explicitNullValueHasKnownBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_known_bounces"); else _explicitNullProperties?.Remove("has_known_bounces"); } }
+        public bool? HasKnownBounces { get => _explicitNullValueHasKnownBounces; set { _explicitNullValueHasKnownBounces = value; AdditionalData?.Remove("has_known_bounces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_known_bounces"); else _explicitNullProperties?.Remove("has_known_bounces"); } }
         private bool? _explicitNullValueHasKnownBounces = default!;
         /// <summary>Whether our model predicts that the email address might bounce.</summary>
-        public bool? HasSuspectedBounces { get => _explicitNullValueHasSuspectedBounces; set { _explicitNullValueHasSuspectedBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_suspected_bounces"); else _explicitNullProperties?.Remove("has_suspected_bounces"); } }
+        public bool? HasSuspectedBounces { get => _explicitNullValueHasSuspectedBounces; set { _explicitNullValueHasSuspectedBounces = value; AdditionalData?.Remove("has_suspected_bounces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_suspected_bounces"); else _explicitNullProperties?.Remove("has_suspected_bounces"); } }
         private bool? _explicitNullValueHasSuspectedBounces = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ValidateEmail200ResponseResultChecksAdditional"/> and sets the default values.

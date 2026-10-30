@@ -18,8 +18,10 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("breakdown") is { } nullNodeBreakdown && nullNodeBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdown = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("breakdown") is null) { _explicitNullValueBreakdown = default!; _explicitNullProperties?.Remove("breakdown"); }
+            else if (parseNode.GetChildNode("breakdown") is { } nullNodeBreakdown && nullNodeBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdown = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A map of each subuser&apos;s billable contact usage. Each key is the subuser&apos;s ID and each value is the usage thus far this month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdownBreakdownProperty? Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdownBreakdownProperty? Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; AdditionalData?.Remove("breakdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdownBreakdownProperty? _explicitNullValueBreakdown = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdownBreakdownProperty Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdownBreakdownProperty Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; AdditionalData?.Remove("breakdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdownBreakdownProperty _explicitNullValueBreakdown = default!;
 #endif
         /// <summary>The sum of all the subuser&apos;s billable contacts</summary>
-        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private int? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.ListContactCount200ResponseBillableBreakdown"/> and sets the default values.

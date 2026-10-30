@@ -17,13 +17,20 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
-            if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
-            if (parseNode.GetChildNode("test_percentage") is { } nullNodeTestPercentage && nullNodeTestPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestPercentage = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("winner_criteria") is { } nullNodeWinnerCriteria && nullNodeWinnerCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerCriteria = null;
-            if (parseNode.GetChildNode("winner_selected_at") is { } nullNodeWinnerSelectedAt && nullNodeWinnerSelectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerSelectedAt = null;
-            if (parseNode.GetChildNode("winning_template_id") is { } nullNodeWinningTemplateId && nullNodeWinningTemplateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinningTemplateId = null;
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("expiration_date") is null) { _explicitNullValueExpirationDate = default!; _explicitNullProperties?.Remove("expiration_date"); }
+            else if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
+            if (parseNode.GetChildNode("test_percentage") is null) { _explicitNullValueTestPercentage = default!; _explicitNullProperties?.Remove("test_percentage"); }
+            else if (parseNode.GetChildNode("test_percentage") is { } nullNodeTestPercentage && nullNodeTestPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestPercentage = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("winner_criteria") is null) { _explicitNullValueWinnerCriteria = default!; _explicitNullProperties?.Remove("winner_criteria"); }
+            else if (parseNode.GetChildNode("winner_criteria") is { } nullNodeWinnerCriteria && nullNodeWinnerCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerCriteria = null;
+            if (parseNode.GetChildNode("winner_selected_at") is null) { _explicitNullValueWinnerSelectedAt = default!; _explicitNullProperties?.Remove("winner_selected_at"); }
+            else if (parseNode.GetChildNode("winner_selected_at") is { } nullNodeWinnerSelectedAt && nullNodeWinnerSelectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerSelectedAt = null;
+            if (parseNode.GetChildNode("winning_template_id") is null) { _explicitNullValueWinningTemplateId = default!; _explicitNullProperties?.Remove("winning_template_id"); }
+            else if (parseNode.GetChildNode("winning_template_id") is { } nullNodeWinningTemplateId && nullNodeWinningTemplateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinningTemplateId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,50 +38,50 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>How long the A/B Testing will last</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        public string? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
         private string? _explicitNullValueDuration = default!;
 #nullable restore
 #else
-        public string Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        public string Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
         private string _explicitNullValueDuration = default!;
 #endif
         /// <summary>Last day to select an A/B Test Winner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        public string? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; AdditionalData?.Remove("expiration_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
         private string? _explicitNullValueExpirationDate = default!;
 #nullable restore
 #else
-        public string ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        public string ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; AdditionalData?.Remove("expiration_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
         private string _explicitNullValueExpirationDate = default!;
 #endif
         /// <summary>What percentage of your recipient will be included in your A/B testing</summary>
-        public int? TestPercentage { get => _explicitNullValueTestPercentage; set { _explicitNullValueTestPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_percentage"); else _explicitNullProperties?.Remove("test_percentage"); } }
+        public int? TestPercentage { get => _explicitNullValueTestPercentage; set { _explicitNullValueTestPercentage = value; AdditionalData?.Remove("test_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_percentage"); else _explicitNullProperties?.Remove("test_percentage"); } }
         private int? _explicitNullValueTestPercentage = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue? _explicitNullValueType = default!;
         /// <summary>How the winner will be decided</summary>
-        public global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria? WinnerCriteria { get => _explicitNullValueWinnerCriteria; set { _explicitNullValueWinnerCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_criteria"); else _explicitNullProperties?.Remove("winner_criteria"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria? WinnerCriteria { get => _explicitNullValueWinnerCriteria; set { _explicitNullValueWinnerCriteria = value; AdditionalData?.Remove("winner_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_criteria"); else _explicitNullProperties?.Remove("winner_criteria"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria? _explicitNullValueWinnerCriteria = default!;
         /// <summary>When the winner was selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WinnerSelectedAt { get => _explicitNullValueWinnerSelectedAt; set { _explicitNullValueWinnerSelectedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_selected_at"); else _explicitNullProperties?.Remove("winner_selected_at"); } }
+        public string? WinnerSelectedAt { get => _explicitNullValueWinnerSelectedAt; set { _explicitNullValueWinnerSelectedAt = value; AdditionalData?.Remove("winner_selected_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_selected_at"); else _explicitNullProperties?.Remove("winner_selected_at"); } }
         private string? _explicitNullValueWinnerSelectedAt = default!;
 #nullable restore
 #else
-        public string WinnerSelectedAt { get => _explicitNullValueWinnerSelectedAt; set { _explicitNullValueWinnerSelectedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_selected_at"); else _explicitNullProperties?.Remove("winner_selected_at"); } }
+        public string WinnerSelectedAt { get => _explicitNullValueWinnerSelectedAt; set { _explicitNullValueWinnerSelectedAt = value; AdditionalData?.Remove("winner_selected_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winner_selected_at"); else _explicitNullProperties?.Remove("winner_selected_at"); } }
         private string _explicitNullValueWinnerSelectedAt = default!;
 #endif
         /// <summary>Winner of the A/B Test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WinningTemplateId { get => _explicitNullValueWinningTemplateId; set { _explicitNullValueWinningTemplateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winning_template_id"); else _explicitNullProperties?.Remove("winning_template_id"); } }
+        public string? WinningTemplateId { get => _explicitNullValueWinningTemplateId; set { _explicitNullValueWinningTemplateId = value; AdditionalData?.Remove("winning_template_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winning_template_id"); else _explicitNullProperties?.Remove("winning_template_id"); } }
         private string? _explicitNullValueWinningTemplateId = default!;
 #nullable restore
 #else
-        public string WinningTemplateId { get => _explicitNullValueWinningTemplateId; set { _explicitNullValueWinningTemplateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winning_template_id"); else _explicitNullProperties?.Remove("winning_template_id"); } }
+        public string WinningTemplateId { get => _explicitNullValueWinningTemplateId; set { _explicitNullValueWinningTemplateId = value; AdditionalData?.Remove("winning_template_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winning_template_id"); else _explicitNullProperties?.Remove("winning_template_id"); } }
         private string _explicitNullValueWinningTemplateId = default!;
 #endif
         /// <summary>
@@ -107,8 +114,8 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "duration", n => { Duration = n.GetStringValue(); } },
                 { "expiration_date", n => { ExpirationDate = n.GetStringValue(); } },
                 { "test_percentage", n => { TestPercentage = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue>(); } },
-                { "winner_criteria", n => { WinnerCriteria = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSinglesendsV3TypeValue>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "winner_criteria", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.AbTestSummaryWinnerCriteria>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWinnerCriteria = default; _explicitNullProperties?.Remove("winner_criteria"); AdditionalData["winner_criteria"] = unknown; } else { WinnerCriteria = parsed; AdditionalData.Remove("winner_criteria"); } } },
                 { "winner_selected_at", n => { WinnerSelectedAt = n.GetStringValue(); } },
                 { "winning_template_id", n => { WinningTemplateId = n.GetStringValue(); } },
             };

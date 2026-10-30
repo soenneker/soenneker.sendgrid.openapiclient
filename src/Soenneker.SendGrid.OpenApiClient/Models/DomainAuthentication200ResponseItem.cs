@@ -17,107 +17,121 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("automatic_security") is { } nullNodeAutomaticSecurity && nullNodeAutomaticSecurity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticSecurity = null;
-            if (parseNode.GetChildNode("custom_spf") is { } nullNodeCustomSpf && nullNodeCustomSpf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomSpf = null;
-            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
-            if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
-            if (parseNode.GetChildNode("last_validation_attempt_at") is { } nullNodeLastValidationAttemptAt && nullNodeLastValidationAttemptAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastValidationAttemptAt = null;
-            if (parseNode.GetChildNode("legacy") is { } nullNodeLegacy && nullNodeLegacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legacy = null;
-            if (parseNode.GetChildNode("subdomain") is { } nullNodeSubdomain && nullNodeSubdomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subdomain = null;
-            if (parseNode.GetChildNode("subusers") is { } nullNodeSubusers && nullNodeSubusers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subusers = null;
-            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
-            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
-            if (parseNode.GetChildNode("valid") is { } nullNodeValid && nullNodeValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Valid = null;
+            if (parseNode.GetChildNode("automatic_security") is null) { _explicitNullValueAutomaticSecurity = default!; _explicitNullProperties?.Remove("automatic_security"); }
+            else if (parseNode.GetChildNode("automatic_security") is { } nullNodeAutomaticSecurity && nullNodeAutomaticSecurity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticSecurity = null;
+            if (parseNode.GetChildNode("custom_spf") is null) { _explicitNullValueCustomSpf = default!; _explicitNullProperties?.Remove("custom_spf"); }
+            else if (parseNode.GetChildNode("custom_spf") is { } nullNodeCustomSpf && nullNodeCustomSpf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomSpf = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("dns") is null) { _explicitNullValueDns = default!; _explicitNullProperties?.Remove("dns"); }
+            else if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("ips") is null) { _explicitNullValueIps = default!; _explicitNullProperties?.Remove("ips"); }
+            else if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
+            if (parseNode.GetChildNode("last_validation_attempt_at") is null) { _explicitNullValueLastValidationAttemptAt = default!; _explicitNullProperties?.Remove("last_validation_attempt_at"); }
+            else if (parseNode.GetChildNode("last_validation_attempt_at") is { } nullNodeLastValidationAttemptAt && nullNodeLastValidationAttemptAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastValidationAttemptAt = null;
+            if (parseNode.GetChildNode("legacy") is null) { _explicitNullValueLegacy = default!; _explicitNullProperties?.Remove("legacy"); }
+            else if (parseNode.GetChildNode("legacy") is { } nullNodeLegacy && nullNodeLegacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legacy = null;
+            if (parseNode.GetChildNode("subdomain") is null) { _explicitNullValueSubdomain = default!; _explicitNullProperties?.Remove("subdomain"); }
+            else if (parseNode.GetChildNode("subdomain") is { } nullNodeSubdomain && nullNodeSubdomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subdomain = null;
+            if (parseNode.GetChildNode("subusers") is null) { _explicitNullValueSubusers = default!; _explicitNullProperties?.Remove("subusers"); }
+            else if (parseNode.GetChildNode("subusers") is { } nullNodeSubusers && nullNodeSubusers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subusers = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("username") is null) { _explicitNullValueUsername = default!; _explicitNullProperties?.Remove("username"); }
+            else if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+            if (parseNode.GetChildNode("valid") is null) { _explicitNullValueValid = default!; _explicitNullProperties?.Remove("valid"); }
+            else if (parseNode.GetChildNode("valid") is { } nullNodeValid && nullNodeValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Valid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this authenticated domain uses automated security.</summary>
-        public bool? AutomaticSecurity { get => _explicitNullValueAutomaticSecurity; set { _explicitNullValueAutomaticSecurity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_security"); else _explicitNullProperties?.Remove("automatic_security"); } }
+        public bool? AutomaticSecurity { get => _explicitNullValueAutomaticSecurity; set { _explicitNullValueAutomaticSecurity = value; AdditionalData?.Remove("automatic_security"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_security"); else _explicitNullProperties?.Remove("automatic_security"); } }
         private bool? _explicitNullValueAutomaticSecurity = default!;
         /// <summary>Indicates whether this authenticated domain uses custom SPF.</summary>
-        public bool? CustomSpf { get => _explicitNullValueCustomSpf; set { _explicitNullValueCustomSpf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_spf"); else _explicitNullProperties?.Remove("custom_spf"); } }
+        public bool? CustomSpf { get => _explicitNullValueCustomSpf; set { _explicitNullValueCustomSpf = value; AdditionalData?.Remove("custom_spf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_spf"); else _explicitNullProperties?.Remove("custom_spf"); } }
         private bool? _explicitNullValueCustomSpf = default!;
         /// <summary>Indicates if this is the default authenticated domain.</summary>
-        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private bool? _explicitNullValueDefault = default!;
         /// <summary>The DNS records used to authenticate the sending domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns? _explicitNullValueDns = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        public global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemDns _explicitNullValueDns = default!;
 #endif
         /// <summary>The domain to be authenticated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The ID of the authenticated domain.</summary>
-        public double? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public double? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private double? _explicitNullValueId = default!;
         /// <summary>The IPs to be included in the custom SPF record for this authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
+        public List<string>? Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; AdditionalData?.Remove("ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
         private List<string>? _explicitNullValueIps = default!;
 #nullable restore
 #else
-        public List<string> Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
+        public List<string> Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; AdditionalData?.Remove("ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
         private List<string> _explicitNullValueIps = default!;
 #endif
         /// <summary>A Unix epoch timestamp representing the last time of a validation attempt.</summary>
-        public int? LastValidationAttemptAt { get => _explicitNullValueLastValidationAttemptAt; set { _explicitNullValueLastValidationAttemptAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_validation_attempt_at"); else _explicitNullProperties?.Remove("last_validation_attempt_at"); } }
+        public int? LastValidationAttemptAt { get => _explicitNullValueLastValidationAttemptAt; set { _explicitNullValueLastValidationAttemptAt = value; AdditionalData?.Remove("last_validation_attempt_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_validation_attempt_at"); else _explicitNullProperties?.Remove("last_validation_attempt_at"); } }
         private int? _explicitNullValueLastValidationAttemptAt = default!;
         /// <summary>Indicates if this authenticated domain was created using the legacy whitelabel tool. If it is a legacy whitelabel, it will still function, but you&apos;ll need to create a new authenticated domain if you need to update it.</summary>
-        public bool? Legacy { get => _explicitNullValueLegacy; set { _explicitNullValueLegacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy"); else _explicitNullProperties?.Remove("legacy"); } }
+        public bool? Legacy { get => _explicitNullValueLegacy; set { _explicitNullValueLegacy = value; AdditionalData?.Remove("legacy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy"); else _explicitNullProperties?.Remove("legacy"); } }
         private bool? _explicitNullValueLegacy = default!;
         /// <summary>The subdomain or custom return-path to use for this authenticated domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
+        public string? Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; AdditionalData?.Remove("subdomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
         private string? _explicitNullValueSubdomain = default!;
 #nullable restore
 #else
-        public string Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
+        public string Subdomain { get => _explicitNullValueSubdomain; set { _explicitNullValueSubdomain = value; AdditionalData?.Remove("subdomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdomain"); else _explicitNullProperties?.Remove("subdomain"); } }
         private string _explicitNullValueSubdomain = default!;
 #endif
         /// <summary>The subusers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemSubusersItem>? Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemSubusersItem>? Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; AdditionalData?.Remove("subusers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemSubusersItem>? _explicitNullValueSubusers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemSubusersItem> Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
+        public List<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemSubusersItem> Subusers { get => _explicitNullValueSubusers; set { _explicitNullValueSubusers = value; AdditionalData?.Remove("subusers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subusers"); else _explicitNullProperties?.Remove("subusers"); } }
         private List<global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItemSubusersItem> _explicitNullValueSubusers = default!;
 #endif
         /// <summary>The ID of the user that this domain is associated with.</summary>
-        public double? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public double? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private double? _explicitNullValueUserId = default!;
         /// <summary>The username that this domain will be associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
         private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
         private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>Indicates if this is a valid authenticated domain.</summary>
-        public bool? Valid { get => _explicitNullValueValid; set { _explicitNullValueValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid"); else _explicitNullProperties?.Remove("valid"); } }
+        public bool? Valid { get => _explicitNullValueValid; set { _explicitNullValueValid = value; AdditionalData?.Remove("valid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid"); else _explicitNullProperties?.Remove("valid"); } }
         private bool? _explicitNullValueValid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.DomainAuthentication200ResponseItem"/> and sets the default values.
