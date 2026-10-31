@@ -180,6 +180,17 @@
           "504": {
             "description": "Endpoint request timed out",
             "$ref": "#/components/responses/AccountProvisioningErrorResponse504"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountProvisioningAccountId"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -801,6 +812,29 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAlert201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "created_at": 1451520930,
+                      "email_to": "test@example.com",
+                      "frequency": "daily",
+                      "id": 48,
+                      "type": "stats_notification",
+                      "updated_at": 1451520930
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1131,6 +1165,31 @@
           },
           "500": {
             "$ref": "#/components/responses/GlobalError500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateApiKey201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "api_key": "SG.xxxxxxxx.yyyyyyyy",
+                      "api_key_id": "xxxxxxxx",
+                      "name": "My API Key",
+                      "scopes": [
+                        "mail.send",
+                        "alerts.create",
+                        "alerts.read"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1725,6 +1784,54 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticatedDomain"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 302183,
+                      "user_id": 1446226,
+                      "subdomain": "example",
+                      "domain": "example.com",
+                      "username": "mbernier",
+                      "ips": [ ],
+                      "custom_spf": false,
+                      "default": true,
+                      "legacy": false,
+                      "automatic_security": true,
+                      "valid": false,
+                      "dns": {
+                        "mail_cname": {
+                          "valid": false,
+                          "type": "cname",
+                          "host": "example.example.com",
+                          "data": "u1446226.wl.sendgrid.net"
+                        },
+                        "dkim1": {
+                          "valid": false,
+                          "type": "cname",
+                          "host": "s1._domainkey.example.com",
+                          "data": "s1.domainkey.u1446226.wl.sendgrid.net"
+                        },
+                        "dkim2": {
+                          "valid": false,
+                          "type": "cname",
+                          "host": "s2._domainkey.example.com",
+                          "data": "s2.domainkey.u1446226.wl.sendgrid.net"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -2009,6 +2116,60 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticatedDomainSpf"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "domain": "example.com",
+                      "subdomain": "mail",
+                      "username": "jdoe",
+                      "user_id": 7,
+                      "ips": [ ],
+                      "custom_spf": true,
+                      "default": false,
+                      "legacy": false,
+                      "automatic_security": false,
+                      "valid": false,
+                      "dns": {
+                        "mail_server": {
+                          "host": "mail.example.com",
+                          "type": "mx",
+                          "data": "sendgrid.net",
+                          "valid": false
+                        },
+                        "subdomain_spf": {
+                          "host": "mail.example.com",
+                          "type": "txt",
+                          "data": "v=spf1 ip4:192.168.1.1 ip4:192.168.0.1 -all",
+                          "valid": false
+                        },
+                        "domain_spf": {
+                          "host": "example.com",
+                          "type": "txt",
+                          "data": "v=spf1 include:mail.example.com -all",
+                          "valid": false
+                        },
+                        "dkim": {
+                          "host": "s1._domainkey.example.com",
+                          "type": "txt",
+                          "data": "k=rsa; t=s; p=publicKey",
+                          "valid": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -2156,6 +2317,60 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticatedDomainSpf"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "domain": "example.com",
+                      "subdomain": "mail",
+                      "username": "jdoe",
+                      "user_id": 7,
+                      "ips": [ ],
+                      "custom_spf": true,
+                      "default": false,
+                      "legacy": false,
+                      "automatic_security": false,
+                      "valid": false,
+                      "dns": {
+                        "mail_server": {
+                          "host": "mail.example.com",
+                          "type": "mx",
+                          "data": "sendgrid.net",
+                          "valid": false
+                        },
+                        "subdomain_spf": {
+                          "host": "mail.example.com",
+                          "type": "txt",
+                          "data": "v=spf1 ip4:192.168.1.1 ip4:192.168.0.1 -all",
+                          "valid": false
+                        },
+                        "domain_spf": {
+                          "host": "example.com",
+                          "type": "txt",
+                          "data": "v=spf1 include:mail.example.com -all",
+                          "valid": false
+                        },
+                        "dkim": {
+                          "host": "s1._domainkey.example.com",
+                          "type": "txt",
+                          "data": "k=rsa; t=s; p=publicKey",
+                          "valid": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -3166,6 +3381,25 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestCsv202Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "status": "pending",
+                      "message": "An email will be sent to jane_doe@example.com when the CSV is ready to download."
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -3917,6 +4151,36 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Successful Operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                },
+                "example": {
+                  "user_id": "12345",
+                  "integration_id": "5a1234",
+                  "filters": {
+                    "email_events": [
+                      "click",
+                      "drop",
+                      "open",
+                      "processed",
+                      "delivered"
+                    ]
+                  },
+                  "destination": "Segment",
+                  "label": "optional label",
+                  "properties": {
+                    "destination_region": "US",
+                    "write_key": "a123456"
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -4397,6 +4661,43 @@
           },
           "500": {
             "$ref": "#/components/responses/IpAccessManagement500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpAccessManagement2Xx"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "result": [
+                        {
+                          "id": 1,
+                          "ip": "192.168.1.1/32",
+                          "created_at": 1441824715,
+                          "updated_at": 1441824715
+                        },
+                        {
+                          "id": 2,
+                          "ip": "192.0.0.0/8",
+                          "created_at": 1441824715,
+                          "updated_at": 1441824715
+                        },
+                        {
+                          "id": 3,
+                          "ip": "192.168.1.3/32",
+                          "created_at": 1441824715,
+                          "updated_at": 1441824715
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -4939,6 +5240,29 @@
           "500": {
             "description": "Internal Server Error",
             "$ref": "#/components/responses/IpAddressManagement500"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddIp201Response"
+                },
+                "examples": {
+                  "201": {
+                    "value": {
+                      "ip": "127.0.0.1",
+                      "is_auto_warmup": true,
+                      "is_parent_assigned": true,
+                      "subusers": [
+                        "12345"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -5497,8 +5821,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/ListIpPool200Response"
                 },
                 "examples": {
                   "200": {
@@ -5531,17 +5854,12 @@
                       }
                     }
                   }
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/ListIpPool200Response"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/xml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ListIpPool200XmlResponseSchema"
                 }
               }
@@ -5694,6 +6012,29 @@
           "500": {
             "description": "Internal Server Error",
             "$ref": "#/components/responses/IpAddressManagement500"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateIpPool201Response"
+                },
+                "examples": {
+                  "201": {
+                    "value": {
+                      "name": "transactional_pool",
+                      "id": "12345",
+                      "ips": [
+                        "127.0.0.1",
+                        "127.0.0.2"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6518,6 +6859,24 @@
           "504": {
             "description": "Endpoint request timed out",
             "$ref": "#/components/responses/IpProvisioningErrorResponse504"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddAccountIPsResponse"
+                },
+                "example": {
+                  "ips": [
+                    "192.168.1.1",
+                    "192.168.1.2"
+                  ],
+                  "region": "us"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6962,6 +7321,41 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tsg_ips_v3_AddIp201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "ips": [
+                        {
+                          "ip": "1.2.3.4",
+                          "subusers": [
+                            "user",
+                            "subuser1"
+                          ]
+                        },
+                        {
+                          "ip": "1.2.3.5",
+                          "subusers": [
+                            "user",
+                            "subuser1"
+                          ]
+                        }
+                      ],
+                      "remaining_ips": 1,
+                      "warmup": true
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -7598,6 +7992,29 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddIpToIpPool201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "ip": "000.00.00.0",
+                      "pools": [
+                        "test1"
+                      ],
+                      "start_date": 1409616000,
+                      "warmup": true
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -7795,6 +8212,45 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkBranding200"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "domain": "example.com",
+                      "subdomain": "mail",
+                      "username": "john@example.com",
+                      "user_id": 7,
+                      "default": false,
+                      "valid": true,
+                      "legacy": false,
+                      "dns": {
+                        "domain_cname": {
+                          "valid": true,
+                          "type": "cname",
+                          "host": "mail.example.com",
+                          "data": "sendgrid.net"
+                        },
+                        "owner_cname": {
+                          "valid": true,
+                          "type": "cname",
+                          "host": "7.example.com",
+                          "data": "sendgrid.net"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -8640,6 +9096,43 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaigns2Xx"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 986724,
+                      "title": "March Newsletter",
+                      "subject": "New Products for Spring!",
+                      "sender_id": 124451,
+                      "list_ids": [
+                        110,
+                        124
+                      ],
+                      "segment_ids": [
+                        110
+                      ],
+                      "categories": [
+                        "spring line"
+                      ],
+                      "suppression_group_id": 42,
+                      "custom_unsubscribe_url": "",
+                      "ip_pool": "marketing",
+                      "html_content": "<html><head><title></title></head><body><p>Check out our spring line!</p></body></html>",
+                      "plain_content": "Check out our spring line!",
+                      "status": "Draft"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -9325,6 +9818,26 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleACampaignResponse"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1234,
+                      "send_at": 1489771528,
+                      "status": "Scheduled"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -9788,6 +10301,25 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendACampaignResponse"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1234,
+                      "status": "Scheduled"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -9896,6 +10428,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendATestCampaignRequest"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -9983,6 +10526,26 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactdbCustomFieldId2Xx"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "name": "pet",
+                      "type": "text"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10321,6 +10884,24 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tsg_lmc_contactdb_v3_ErrorResponse"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "message": "Custom Field delete is processing."
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -10430,6 +11011,26 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactdbList2Xx"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "name": "your list name",
+                      "recipient_count": 0
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10916,6 +11517,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteContactDbList202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -11228,6 +11840,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddRecipientsToContactDbList201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -11359,6 +11982,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddRecipientToContactDbList201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -11597,6 +12231,41 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactdbRecipientResponse201"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "error_count": 1,
+                      "error_indices": [
+                        2
+                      ],
+                      "new_count": 2,
+                      "persisted_recipients": [
+                        "YUBh",
+                        "bWlsbGVyQG1pbGxlci50ZXN0"
+                      ],
+                      "updated_count": 0,
+                      "errors": [
+                        {
+                          "message": "Invalid email.",
+                          "error_indices": [
+                            2
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -11687,6 +12356,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactdbRecipientResponse201"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -13557,6 +14237,17 @@
           },
           "500": {
             "$ref": "#/components/responses/MarketingRecipients500"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportRecipient202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -13815,6 +14506,43 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SenderId"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1,
+                      "nickname": "My Sender ID",
+                      "from": {
+                        "email": "from@example.com",
+                        "name": "Example INC"
+                      },
+                      "reply_to": {
+                        "email": "replyto@example.com",
+                        "name": "Example INC"
+                      },
+                      "address": "123 Elm St.",
+                      "address_2": "Apt. 456",
+                      "city": "Denver",
+                      "state": "Colorado",
+                      "zip": "80202",
+                      "country": "United States",
+                      "verified": true,
+                      "updated_at": 1449872165,
+                      "created_at": 1449872165,
+                      "locked": false
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -15560,6 +16288,22 @@
           "500": {
             "description": "Get batch ID internal server error response.",
             "$ref": "#/components/responses/MailBatch500"
+          },
+          "200": {
+            "description": "Batch ID success response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailBatchResponse"
+                },
+                "examples": {
+                  "Success": {
+                    "$ref": "#/components/examples/MailBatch2xx"
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -15761,6 +16505,17 @@
           },
           "500": {
             "$ref": "#/components/responses/MarketingContacts500"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateContact202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -15832,6 +16587,17 @@
           },
           "500": {
             "$ref": "#/components/responses/MarketingContacts500"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteContact202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -16083,6 +16849,17 @@
           },
           "500": {
             "$ref": "#/components/responses/MarketingContacts500"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteContactIdentifier202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -16192,6 +16969,17 @@
           },
           "500": {
             "$ref": "#/components/responses/MarketingContacts500"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportContact202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -17205,6 +17993,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DesignOutput"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "3247eaea-c912-42a3-b0bc-60bdaf210396",
+                      "name": "Ahoy, World!",
+                      "html_content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html data-editor-version=\"2\" class=\"sg-campaigns\" xmlns=\"http://www.w3.org/1999/xhtml\">\n    <head>\n      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">\n      <!--[if !mso]><!-->\n      <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\n      <!--<![endif]-->\n      <!--[if (gte mso 9)|(IE)]>\n      <xml>\n        <o:OfficeDocumentSettings>\n          <o:AllowPNG/>\n          <o:PixelsPerInch>96</o:PixelsPerInch>\n        </o:OfficeDocumentSettings>\n      </xml>\n      <![endif]-->\n      <!--[if (gte mso 9)|(IE)]>\n  <style type=\"text/css\">\n    body {width: 600px;margin: 0 auto;}\n    table {border-collapse: collapse;}\n    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}\n    img {-ms-interpolation-mode: bicubic;}\n  </style>\n<![endif]-->\n      <style type=\"text/css\">\n    body, p, div {\n      font-family: arial,helvetica,sans-serif;\n      font-size: 14px;\n    }\n    body {\n      color: #000000;\n    }\n    body a {\n      color: #1188E6;\n      text-decoration: none;\n    }\n    p { margin: 0; padding: 0; }\n    table.wrapper {\n      width:100% !important;\n      table-layout: fixed;\n      -webkit-font-smoothing: antialiased;\n      -webkit-text-size-adjust: 100%;\n      -moz-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n    }\n    img.max-width {\n      max-width: 100% !important;\n    }\n    .column.of-2 {\n      width: 50%;\n    }\n    .column.of-3 {\n      width: 33.333%;\n    }\n    .column.of-4 {\n      width: 25%;\n    }\n    ul ul ul ul  {\n      list-style-type: disc !important;\n    }\n    ol ol {\n      list-style-type: lower-roman !important;\n    }\n    ol ol ol {\n      list-style-type: lower-latin !important;\n    }\n    ol ol ol ol {\n      list-style-type: decimal !important;\n    }\n    @media screen and (max-width:480px) {\n      .preheader .rightColumnContent,\n      .footer .rightColumnContent {\n        text-align: left !important;\n      }\n      .preheader .rightColumnContent div,\n      .preheader .rightColumnContent span,\n      .footer .rightColumnContent div,\n      .footer .rightColumnContent span {\n        text-align: left !important;\n      }\n      .preheader .rightColumnContent,\n      .preheader .leftColumnContent {\n        font-size: 80% !important;\n        padding: 5px 0;\n      }\n      table.wrapper-mobile {\n        width: 100% !important;\n        table-layout: fixed;\n      }\n      img.max-width {\n        height: auto !important;\n        max-width: 100% !important;\n      }\n      a.bulletproof-button {\n        display: block !important;\n        width: auto !important;\n        font-size: 80%;\n        padding-left: 0 !important;\n        padding-right: 0 !important;\n      }\n      .columns {\n        width: 100% !important;\n      }\n      .column {\n        display: block !important;\n        width: 100% !important;\n        padding-left: 0 !important;\n        padding-right: 0 !important;\n        margin-left: 0 !important;\n        margin-right: 0 !important;\n      }\n      .social-icon-column {\n        display: inline-block !important;\n      }\n    }\n  </style>\n      <!--user entered Head Start--><!--End Head user entered-->\n    </head>\n    <body>\n      <center class=\"wrapper\" data-link-color=\"#1188E6\" data-body-style=\"font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#FFFFFF;\">\n        <div class=\"webkit\">\n          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"wrapper\" bgcolor=\"#FFFFFF\">\n            <tr>\n              <td valign=\"top\" bgcolor=\"#FFFFFF\" width=\"100%\">\n                <table width=\"100%\" role=\"content-container\" class=\"outer\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                  <tr>\n                    <td width=\"100%\">\n                      <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                        <tr>\n                          <td>\n                            <!--[if mso]>\n    <center>\n    <table><tr><td width=\"600\">\n  <![endif]-->\n                                    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%; max-width:600px;\" align=\"center\">\n                                      <tr>\n                                        <td role=\"modules-container\" style=\"padding:0px 0px 0px 0px; color:#000000; text-align:left;\" bgcolor=\"#FFFFFF\" width=\"100%\" align=\"left\"><table class=\"module preheader preheader-hide\" role=\"module\" data-type=\"preheader\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;\">\n    <tr>\n      <td role=\"module-content\">\n        <p></p>\n      </td>\n    </tr>\n  </table><table class=\"module\" role=\"module\" data-type=\"text\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"table-layout: fixed;\" data-muid=\"41f90842-501c-4f08-96c9-17c0f74cb841\" data-mc-module-version=\"2019-10-22\">\n    <tbody>\n      <tr>\n        <td style=\"padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;\" height=\"100%\" valign=\"top\" bgcolor=\"\" role=\"module-content\"><div><div style=\"font-family: inherit; text-align: inherit\">Ahoy, World!</div><div></div></div></td>\n      </tr>\n    </tbody>\n  </table><div data-role=\"module-unsubscribe\" class=\"module\" role=\"module\" data-type=\"unsubscribe\" style=\"color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;\" data-muid=\"4e838cf3-9892-4a6d-94d6-170e474d21e5\"><div class=\"Unsubscribe--addressLine\"><p class=\"Unsubscribe--senderName\" style=\"font-size:12px; line-height:20px;\">{{Sender_Name}}</p><p style=\"font-size:12px; line-height:20px;\"><span class=\"Unsubscribe--senderAddress\">{{Sender_Address}}</span>, <span class=\"Unsubscribe--senderCity\">{{Sender_City}}</span>, <span class=\"Unsubscribe--senderState\">{{Sender_State}}</span> <span class=\"Unsubscribe--senderZip\">{{Sender_Zip}}</span></p></div><p style=\"font-size:12px; line-height:20px;\"><a class=\"Unsubscribe--unsubscribeLink\" href=\"{{{unsubscribe}}}\" target=\"_blank\" style=\"\">Unsubscribe</a> - <a href=\"{{{unsubscribe_preferences}}}\" target=\"_blank\" class=\"Unsubscribe--unsubscribePreferences\" style=\"\">Unsubscribe Preferences</a></p></div></td>\n                                      </tr>\n                                    </table>\n                                    <!--[if mso]>\n                                  </td>\n                                </tr>\n                              </table>\n                            </center>\n                            <![endif]-->\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                  </tr>\n                </table>\n              </td>\n            </tr>\n          </table>\n        </div>\n      </center>\n    </body>\n  </html>",
+                      "plain_content": "Ahoy, World!\n\n{{Sender_Name}}\n\n{{Sender_Address}} , {{Sender_City}} , {{Sender_State}} {{Sender_Zip}}\n\nUnsubscribe ( {{{unsubscribe}}} ) - Unsubscribe Preferences ( {{{unsubscribe_preferences}}} )",
+                      "generate_plain_content": false,
+                      "thumbnail_url": "//us-east-2-production-thumbnail-bucket.s3.amazonaws.com/kjlrmded0qnrscv8zqr39npoimrpdwgiax59q8iq6ovj7yoks2fzxoxpfjpwph6o.png",
+                      "subject": "Getting Started",
+                      "created_at": "2021-04-30T18:51:20Z",
+                      "updated_at": "2021-04-30T18:51:20Z",
+                      "editor": "design",
+                      "categories": [ ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -17394,6 +18210,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DesignOutput"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "15b85720-ce48-48ef-8a07-672b0d3455da",
+                      "name": "Ahoy, Cake or Pie Cafe!",
+                      "html_content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html data-editor-version=\"2\" class=\"sg-campaigns\" xmlns=\"http://www.w3.org/1999/xhtml\">\n    <head>\n      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">\n      <!--[if !mso]><!-->\n      <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\n      <!--<![endif]-->\n      <!--[if (gte mso 9)|(IE)]>\n      <xml>\n        <o:OfficeDocumentSettings>\n          <o:AllowPNG/>\n          <o:PixelsPerInch>96</o:PixelsPerInch>\n        </o:OfficeDocumentSettings>\n      </xml>\n      <![endif]-->\n      <!--[if (gte mso 9)|(IE)]>\n  <style type=\"text/css\">\n    body {width: 600px;margin: 0 auto;}\n    table {border-collapse: collapse;}\n    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}\n    img {-ms-interpolation-mode: bicubic;}\n  </style>\n<![endif]-->\n      <style type=\"text/css\">\n    body, p, div {\n      font-family: arial,helvetica,sans-serif;\n      font-size: 14px;\n    }\n    body {\n      color: #000000;\n    }\n    body a {\n      color: #1188E6;\n      text-decoration: none;\n    }\n    p { margin: 0; padding: 0; }\n    table.wrapper {\n      width:100% !important;\n      table-layout: fixed;\n      -webkit-font-smoothing: antialiased;\n      -webkit-text-size-adjust: 100%;\n      -moz-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n    }\n    img.max-width {\n      max-width: 100% !important;\n    }\n    .column.of-2 {\n      width: 50%;\n    }\n    .column.of-3 {\n      width: 33.333%;\n    }\n    .column.of-4 {\n      width: 25%;\n    }\n    ul ul ul ul  {\n      list-style-type: disc !important;\n    }\n    ol ol {\n      list-style-type: lower-roman !important;\n    }\n    ol ol ol {\n      list-style-type: lower-latin !important;\n    }\n    ol ol ol ol {\n      list-style-type: decimal !important;\n    }\n    @media screen and (max-width:480px) {\n      .preheader .rightColumnContent,\n      .footer .rightColumnContent {\n        text-align: left !important;\n      }\n      .preheader .rightColumnContent div,\n      .preheader .rightColumnContent span,\n      .footer .rightColumnContent div,\n      .footer .rightColumnContent span {\n        text-align: left !important;\n      }\n      .preheader .rightColumnContent,\n      .preheader .leftColumnContent {\n        font-size: 80% !important;\n        padding: 5px 0;\n      }\n      table.wrapper-mobile {\n        width: 100% !important;\n        table-layout: fixed;\n      }\n      img.max-width {\n        height: auto !important;\n        max-width: 100% !important;\n      }\n      a.bulletproof-button {\n        display: block !important;\n        width: auto !important;\n        font-size: 80%;\n        padding-left: 0 !important;\n        padding-right: 0 !important;\n      }\n      .columns {\n        width: 100% !important;\n      }\n      .column {\n        display: block !important;\n        width: 100% !important;\n        padding-left: 0 !important;\n        padding-right: 0 !important;\n        margin-left: 0 !important;\n        margin-right: 0 !important;\n      }\n      .social-icon-column {\n        display: inline-block !important;\n      }\n    }\n  </style>\n      <!--user entered Head Start--><!--End Head user entered-->\n    </head>\n    <body>\n      <center class=\"wrapper\" data-link-color=\"#1188E6\" data-body-style=\"font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#FFFFFF;\">\n        <div class=\"webkit\">\n          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"wrapper\" bgcolor=\"#FFFFFF\">\n            <tr>\n              <td valign=\"top\" bgcolor=\"#FFFFFF\" width=\"100%\">\n                <table width=\"100%\" role=\"content-container\" class=\"outer\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                  <tr>\n                    <td width=\"100%\">\n                      <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                        <tr>\n                          <td>\n                            <!--[if mso]>\n    <center>\n    <table><tr><td width=\"600\">\n  <![endif]-->\n                                    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%; max-width:600px;\" align=\"center\">\n                                      <tr>\n                                        <td role=\"modules-container\" style=\"padding:0px 0px 0px 0px; color:#000000; text-align:left;\" bgcolor=\"#FFFFFF\" width=\"100%\" align=\"left\"><table class=\"module preheader preheader-hide\" role=\"module\" data-type=\"preheader\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;\">\n    <tr>\n      <td role=\"module-content\">\n        <p></p>\n      </td>\n    </tr>\n  </table><table class=\"module\" role=\"module\" data-type=\"text\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"table-layout: fixed;\" data-muid=\"41f90842-501c-4f08-96c9-17c0f74cb841\" data-mc-module-version=\"2019-10-22\">\n    <tbody>\n      <tr>\n        <td style=\"padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;\" height=\"100%\" valign=\"top\" bgcolor=\"\" role=\"module-content\"><div><div style=\"font-family: inherit; text-align: inherit\">Ahoy, World!</div><div></div></div></td>\n      </tr>\n    </tbody>\n  </table><div data-role=\"module-unsubscribe\" class=\"module\" role=\"module\" data-type=\"unsubscribe\" style=\"color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;\" data-muid=\"4e838cf3-9892-4a6d-94d6-170e474d21e5\"><div class=\"Unsubscribe--addressLine\"><p class=\"Unsubscribe--senderName\" style=\"font-size:12px; line-height:20px;\">{{Sender_Name}}</p><p style=\"font-size:12px; line-height:20px;\"><span class=\"Unsubscribe--senderAddress\">{{Sender_Address}}</span>, <span class=\"Unsubscribe--senderCity\">{{Sender_City}}</span>, <span class=\"Unsubscribe--senderState\">{{Sender_State}}</span> <span class=\"Unsubscribe--senderZip\">{{Sender_Zip}}</span></p></div><p style=\"font-size:12px; line-height:20px;\"><a class=\"Unsubscribe--unsubscribeLink\" href=\"{{{unsubscribe}}}\" target=\"_blank\" style=\"\">Unsubscribe</a> - <a href=\"{{{unsubscribe_preferences}}}\" target=\"_blank\" class=\"Unsubscribe--unsubscribePreferences\" style=\"\">Unsubscribe Preferences</a></p></div></td>\n                                      </tr>\n                                    </table>\n                                    <!--[if mso]>\n                                  </td>\n                                </tr>\n                              </table>\n                            </center>\n                            <![endif]-->\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                  </tr>\n                </table>\n              </td>\n            </tr>\n          </table>\n        </div>\n      </center>\n    </body>\n  </html>",
+                      "plain_content": "Ahoy, World!\n\n{{Sender_Name}}\n\n{{Sender_Address}} , {{Sender_City}} , {{Sender_State}} {{Sender_Zip}}\n\nUnsubscribe ( {{{unsubscribe}}} ) - Unsubscribe Preferences ( {{{unsubscribe_preferences}}} )",
+                      "generate_plain_content": false,
+                      "thumbnail_url": "//us-east-2-production-thumbnail-bucket.s3.amazonaws.com/79bb769ae6464960a307040120ad6f9921896fe9825e845ad1f24d12285ea068.png",
+                      "subject": "Getting Started",
+                      "created_at": "2021-04-30T19:00:16Z",
+                      "updated_at": "2021-04-30T19:00:16Z",
+                      "editor": "design",
+                      "categories": [ ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -18002,6 +18846,29 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/List"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "ca7a3796-e8a8-4029-9ccb-df8937940562",
+                      "name": "list-name",
+                      "contact_count": 0,
+                      "_metadata": {
+                        "self": "https://api.sendgrid.com/v3/marketing/lists/ca7a3796-e8a8-4029-9ccb-df8937940562"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -18406,6 +19273,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tsg_mc_lists_v3_DeleteContact202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -18529,6 +19407,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Segment2Xx"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -18898,6 +19787,20 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The refresh was accepted and a request was sent to process.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentRefresh202"
+                },
+                "example": {
+                  "job_id": "1588e03b-50aa-454a-97d1-e1530345a5ec"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -19225,6 +20128,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteSegment202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -19284,6 +20198,17 @@
           },
           "500": {
             "$ref": "#/components/responses/Senders500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sender"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -19611,6 +20536,46 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SinglesendResponse"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "name": "Example API Created Single Send",
+                      "id": "27c21bbf-a12c-440b-b8bf-c526975328ca",
+                      "status": "scheduled",
+                      "created_at": "2020-05-18T17:28:27.272Z",
+                      "categories": [
+                        "unique opens"
+                      ],
+                      "email_config": {
+                        "subject": "",
+                        "html_content": "",
+                        "plain_content": "",
+                        "generate_plain_content": true,
+                        "editor": "code",
+                        "suppression_group_id": null,
+                        "custom_unsubscribe_url": null,
+                        "sender_id": null,
+                        "ip_pool": null
+                      },
+                      "send_to": {
+                        "list_ids": [
+                          "f2fe66a1-43f3-4e3a-87b1-c6a600d805f0"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -19800,6 +20765,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SinglesendResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -19874,6 +20850,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SinglesendResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -20086,6 +21073,25 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleSingleSend201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "send_at": "3752-01-28T23:21:52.575Z",
+                      "status": "scheduled"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -20899,6 +21905,17 @@
           },
           "400": {
             "$ref": "#/components/responses/TestSend400"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendTestMarketingEmail202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -21047,6 +22064,17 @@
           "500": {
             "description": "Internal Server Error",
             "$ref": "#/components/responses/RecipientsDataErasure500"
+          },
+          "200": {
+            "description": "The request was accepted for processing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipientsDataErasureJobId"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -21119,6 +22147,37 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReverseDns"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 123,
+                      "ip": "192.168.1.2",
+                      "rdns": "o1.email.example.com",
+                      "users": [ ],
+                      "subdomain": "email",
+                      "domain": "example.com",
+                      "valid": true,
+                      "legacy": false,
+                      "a_record": {
+                        "valid": true,
+                        "type": "a",
+                        "host": "o1.email.example.com",
+                        "data": "192.168.1.2"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -21531,6 +22590,17 @@
           },
           "500": {
             "$ref": "#/components/responses/ScheduledSends500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduledSendStatus"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -23218,6 +24288,309 @@
           },
           "500": {
             "$ref": "#/components/responses/Sso500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostSsoTeammates201"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "first_name": "Jane",
+                      "last_name": "Doe",
+                      "email": "jane_doe@example.com",
+                      "is_admin": true,
+                      "is_sso": true,
+                      "scopes": [
+                        "alerts.create",
+                        "alerts.read",
+                        "alerts.update",
+                        "alerts.delete",
+                        "asm.groups.create",
+                        "asm.groups.read",
+                        "asm.groups.update",
+                        "asm.groups.delete",
+                        "asm.groups.suppressions.create",
+                        "asm.groups.suppressions.read",
+                        "asm.groups.suppressions.update",
+                        "asm.groups.suppressions.delete",
+                        "asm.suppressions.global.create",
+                        "asm.suppressions.global.read",
+                        "asm.suppressions.global.update",
+                        "asm.suppressions.global.delete",
+                        "billing.create",
+                        "billing.read",
+                        "billing.update",
+                        "billing.delete",
+                        "ui.confirm_email",
+                        "signup.trigger_confirmation",
+                        "ui.provision",
+                        "ips.warmup.create",
+                        "ips.warmup.read",
+                        "ips.warmup.update",
+                        "ips.warmup.delete",
+                        "ips.pools.create",
+                        "ips.pools.read",
+                        "ips.pools.update",
+                        "ips.pools.delete",
+                        "ips.pools.ips.create",
+                        "ips.pools.ips.read",
+                        "ips.pools.ips.update",
+                        "ips.pools.ips.delete",
+                        "ips.assigned.read",
+                        "ips.create",
+                        "ips.read",
+                        "ips.update",
+                        "ips.delete",
+                        "mail.send",
+                        "mail_settings.read",
+                        "mail_settings.bcc.create",
+                        "mail_settings.bcc.read",
+                        "mail_settings.bcc.update",
+                        "mail_settings.bcc.delete",
+                        "mail_settings.address_whitelist.create",
+                        "mail_settings.address_whitelist.read",
+                        "mail_settings.address_whitelist.update",
+                        "mail_settings.address_whitelist.delete",
+                        "mail_settings.footer.create",
+                        "mail_settings.footer.read",
+                        "mail_settings.footer.update",
+                        "mail_settings.footer.delete",
+                        "mail_settings.forward_spam.create",
+                        "mail_settings.forward_spam.read",
+                        "mail_settings.forward_spam.update",
+                        "mail_settings.forward_spam.delete",
+                        "mail_settings.plain_content.create",
+                        "mail_settings.plain_content.read",
+                        "mail_settings.plain_content.update",
+                        "mail_settings.plain_content.delete",
+                        "mail_settings.spam_check.create",
+                        "mail_settings.spam_check.read",
+                        "mail_settings.spam_check.update",
+                        "mail_settings.spam_check.delete",
+                        "mail_settings.bounce_purge.create",
+                        "mail_settings.bounce_purge.read",
+                        "mail_settings.bounce_purge.update",
+                        "mail_settings.bounce_purge.delete",
+                        "mail_settings.forward_bounce.create",
+                        "mail_settings.forward_bounce.read",
+                        "mail_settings.forward_bounce.update",
+                        "mail_settings.forward_bounce.delete",
+                        "partner_settings.read",
+                        "partner_settings.new_relic.create",
+                        "partner_settings.new_relic.read",
+                        "partner_settings.new_relic.update",
+                        "partner_settings.new_relic.delete",
+                        "partner_settings.sendwithus.create",
+                        "partner_settings.sendwithus.read",
+                        "partner_settings.sendwithus.update",
+                        "partner_settings.sendwithus.delete",
+                        "tracking_settings.read",
+                        "tracking_settings.click.create",
+                        "tracking_settings.click.read",
+                        "tracking_settings.click.update",
+                        "tracking_settings.click.delete",
+                        "tracking_settings.subscription.create",
+                        "tracking_settings.subscription.read",
+                        "tracking_settings.subscription.update",
+                        "tracking_settings.subscription.delete",
+                        "tracking_settings.open.create",
+                        "tracking_settings.open.read",
+                        "tracking_settings.open.update",
+                        "tracking_settings.open.delete",
+                        "tracking_settings.google_analytics.create",
+                        "tracking_settings.google_analytics.read",
+                        "tracking_settings.google_analytics.update",
+                        "tracking_settings.google_analytics.delete",
+                        "user.webhooks.event.settings.create",
+                        "user.webhooks.event.settings.read",
+                        "user.webhooks.event.settings.update",
+                        "user.webhooks.event.settings.delete",
+                        "user.webhooks.event.test.create",
+                        "user.webhooks.event.test.read",
+                        "user.webhooks.event.test.update",
+                        "user.webhooks.event.test.delete",
+                        "user.webhooks.parse.settings.create",
+                        "user.webhooks.parse.settings.read",
+                        "user.webhooks.parse.settings.update",
+                        "user.webhooks.parse.settings.delete",
+                        "stats.read",
+                        "stats.global.read",
+                        "categories.stats.read",
+                        "categories.stats.sums.read",
+                        "devices.stats.read",
+                        "clients.stats.read",
+                        "clients.phone.stats.read",
+                        "clients.tablet.stats.read",
+                        "clients.webmail.stats.read",
+                        "clients.desktop.stats.read",
+                        "geo.stats.read",
+                        "mailbox_providers.stats.read",
+                        "browsers.stats.read",
+                        "subusers.stats.read",
+                        "subusers.stats.sums.read",
+                        "subusers.stats.monthly.read",
+                        "user.webhooks.parse.stats.read",
+                        "subusers.create",
+                        "subusers.read",
+                        "subusers.update",
+                        "subusers.delete",
+                        "subusers.monitor.create",
+                        "subusers.monitor.read",
+                        "subusers.monitor.update",
+                        "subusers.monitor.delete",
+                        "subusers.credits.create",
+                        "subusers.credits.read",
+                        "subusers.credits.update",
+                        "subusers.credits.delete",
+                        "subusers.credits.remaining.create",
+                        "subusers.credits.remaining.read",
+                        "subusers.credits.remaining.update",
+                        "subusers.credits.remaining.delete",
+                        "subusers.reputations.read",
+                        "subusers.summary.read",
+                        "suppression.bounces.create",
+                        "suppression.bounces.read",
+                        "suppression.bounces.update",
+                        "suppression.bounces.delete",
+                        "suppression.blocks.create",
+                        "suppression.blocks.read",
+                        "suppression.blocks.update",
+                        "suppression.blocks.delete",
+                        "suppression.invalid_emails.create",
+                        "suppression.invalid_emails.read",
+                        "suppression.invalid_emails.update",
+                        "suppression.invalid_emails.delete",
+                        "suppression.spam_reports.create",
+                        "suppression.spam_reports.read",
+                        "suppression.spam_reports.update",
+                        "suppression.spam_reports.delete",
+                        "suppression.unsubscribes.create",
+                        "suppression.unsubscribes.read",
+                        "suppression.unsubscribes.update",
+                        "suppression.unsubscribes.delete",
+                        "templates.create",
+                        "templates.read",
+                        "templates.update",
+                        "templates.delete",
+                        "templates.versions.create",
+                        "templates.versions.read",
+                        "templates.versions.update",
+                        "templates.versions.delete",
+                        "templates.versions.activate.create",
+                        "templates.versions.activate.read",
+                        "templates.versions.activate.update",
+                        "templates.versions.activate.delete",
+                        "user.account.read",
+                        "user.credits.read",
+                        "user.email.create",
+                        "user.email.read",
+                        "user.email.update",
+                        "user.email.delete",
+                        "user.profile.create",
+                        "user.profile.read",
+                        "user.profile.update",
+                        "user.profile.delete",
+                        "user.password.create",
+                        "user.password.read",
+                        "user.password.update",
+                        "user.password.delete",
+                        "user.timezone.create",
+                        "user.timezone.read",
+                        "user.timezone.update",
+                        "user.timezone.delete",
+                        "user.username.create",
+                        "user.username.read",
+                        "user.username.update",
+                        "user.username.delete",
+                        "user.settings.enforced_tls.read",
+                        "user.settings.enforced_tls.update",
+                        "api_keys.create",
+                        "api_keys.read",
+                        "api_keys.update",
+                        "api_keys.delete",
+                        "credentials.create",
+                        "credentials.read",
+                        "credentials.update",
+                        "credentials.delete",
+                        "categories.create",
+                        "categories.read",
+                        "categories.update",
+                        "categories.delete",
+                        "mail_settings.template.create",
+                        "mail_settings.template.read",
+                        "mail_settings.template.update",
+                        "mail_settings.template.delete",
+                        "user.multifactor_authentication.create",
+                        "user.multifactor_authentication.read",
+                        "user.multifactor_authentication.update",
+                        "user.multifactor_authentication.delete",
+                        "newsletter.create",
+                        "newsletter.read",
+                        "newsletter.update",
+                        "newsletter.delete",
+                        "marketing_campaigns.create",
+                        "marketing_campaigns.read",
+                        "marketing_campaigns.update",
+                        "marketing_campaigns.delete",
+                        "ui.signup_complete",
+                        "mail.batch.create",
+                        "mail.batch.read",
+                        "mail.batch.update",
+                        "mail.batch.delete",
+                        "user.scheduled_sends.create",
+                        "user.scheduled_sends.read",
+                        "user.scheduled_sends.update",
+                        "user.scheduled_sends.delete",
+                        "access_settings.whitelist.create",
+                        "access_settings.whitelist.read",
+                        "access_settings.whitelist.update",
+                        "access_settings.whitelist.delete",
+                        "access_settings.activity.read",
+                        "whitelabel.create",
+                        "whitelabel.read",
+                        "whitelabel.update",
+                        "whitelabel.delete",
+                        "suppression.create",
+                        "suppression.read",
+                        "suppression.update",
+                        "suppression.delete",
+                        "teammates.create",
+                        "teammates.read",
+                        "teammates.update",
+                        "teammates.delete",
+                        "messages.read",
+                        "validations.email.read",
+                        "validations.email.create",
+                        "marketing.read",
+                        "marketing.automation.read",
+                        "design_library.read",
+                        "design_library.create",
+                        "design_library.update",
+                        "design_library.delete",
+                        "email_testing.read",
+                        "email_testing.write",
+                        "sender_verification_eligible",
+                        "sso.settings.create",
+                        "sso.settings.read",
+                        "sso.settings.update",
+                        "sso.settings.delete",
+                        "sender_verification_legacy",
+                        "sso.teammates.create",
+                        "sso.teammates.update",
+                        "2fa_required",
+                        "di.bounce_block_classification.read"
+                      ],
+                      "has_restricted_subuser_access": false
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -28231,6 +29604,27 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatAsmGroup201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 103,
+                      "name": "Product Suggestions",
+                      "description": "Suggestions for products our users might like.",
+                      "is_default": false
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -28431,6 +29825,26 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuppressionGroup"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 103,
+                      "name": "Item Suggestions",
+                      "description": "Suggestions for items our users might like."
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -28539,6 +29953,27 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddSuppressionToAsmGroup201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "recipient_emails": [
+                        "test1@example.com",
+                        "test2@example.com"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -29703,6 +31138,27 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateGlobalSuppression201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "recipient_emails": [
+                        "test1@example.com",
+                        "test2@example.com"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -30442,6 +31898,29 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteTeammate201Response"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "email": "teammate1@example.com",
+                      "scopes": [
+                        "user.profile.read",
+                        "user.profile.update"
+                      ],
+                      "is_admin": false
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31246,6 +32725,28 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionalTemplate"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "733ba07f-ead1-41fc-933a-3976baa23716",
+                      "name": "example_name",
+                      "generation": "legacy",
+                      "updated_at": "2021-04-28 13:12:46",
+                      "versions": [ ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31420,6 +32921,28 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionalTemplate"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "733ba07f-ead1-41fc-933a-3976baa23716",
+                      "name": "example_name",
+                      "generation": "dynamic",
+                      "updated_at": "2020-12-12 58:26:65",
+                      "versions": [ ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31662,6 +33185,33 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionalTemplateVersionOutput"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "8aefe0ee-f12b-4575-b5b7-c97e21cb36f3",
+                      "template_id": "ddb96bbc-9b92-425e-8979-99464621b543",
+                      "active": 1,
+                      "name": "example_version_name",
+                      "html_content": "<%body%>",
+                      "plain_content": "<%body%>",
+                      "generate_plain_content": true,
+                      "subject": "<%subject%>",
+                      "updated_at": "2019-03-13 18:56:33",
+                      "editor": "code"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -33066,6 +34616,37 @@
           },
           "500": {
             "$ref": "#/components/responses/VerifiedSenders500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifiedSenderResponse"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": 1234,
+                      "nickname": "Example Orders",
+                      "from_email": "orders@example.com",
+                      "from_name": "Example Orders",
+                      "reply_to": "orders@example.com",
+                      "reply_to_name": "Example Orders",
+                      "address": "1234 Fake St.",
+                      "address2": "PO Box 1234",
+                      "state": "CA",
+                      "city": "San Francisco",
+                      "country": "USA",
+                      "zip": "94105",
+                      "verified": true,
+                      "locked": false
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -33761,6 +35342,43 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventWebhookUnsignedResponse"
+                },
+                "examples": {
+                  "Success With OAuth Configured": {
+                    "summary": "Success response body for a webhook with OAuth configured.",
+                    "value": {
+                      "enabled": true,
+                      "url": "https://example.com/webhook-endpoint",
+                      "group_resubscribe": true,
+                      "delivered": false,
+                      "group_unsubscribe": true,
+                      "spam_report": true,
+                      "bounce": true,
+                      "deferred": true,
+                      "unsubscribe": true,
+                      "processed": false,
+                      "open": true,
+                      "click": true,
+                      "dropped": true,
+                      "friendly_name": "Engagement Webhook",
+                      "oauth_client_id": "a835e7210bbb47edbfa71bdfc909b2d7",
+                      "oauth_token_url": "https://oauthservice.example.com",
+                      "id": "77d4a5da-7015-11ed-a1eb-0242ac120002",
+                      "created_date": "2023-01-01T12:00:00Z",
+                      "updated_date": "2023-02-15T10:00:00Z"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -34591,6 +36209,27 @@
           },
           "500": {
             "$ref": "#/components/responses/Webhook500"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseSetting"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "url": "http://email.myhostname.com",
+                      "hostname": "myhostname.com",
+                      "spam_check": false,
+                      "send_raw": true
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -35253,6 +36892,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSecurityPolicy201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [

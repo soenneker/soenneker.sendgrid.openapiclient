@@ -8,7 +8,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
     public enum ContactdbSegmentsConditionsAndOr
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "")]
+        [global::System.Runtime.Serialization.EnumMember(Value = "")]
         EmptyString,
 
         [EnumMember(Value = "and")]

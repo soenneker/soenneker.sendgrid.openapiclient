@@ -36,7 +36,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
         /// <summary>
         /// **This endpoint allows you to delete a segment by `segment_id`.**Note that deleting a segment does not delete the contacts associated with the segment by default. Contacts associated with a deleted segment will remain in your list of all contacts and any other segments they belong to.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegment202Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegmentSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3SegmentDeleteConflict">When receiving a 400 status code</exception>
@@ -46,11 +46,11 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
         /// <exception cref="global::Soenneker.SendGrid.OpenApiClient.Models.DeleteSegment500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegment202Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegmentSuccessResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegment202Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegmentSuccessResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -64,7 +64,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_segments_v3.V3.Marketing.Segme
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegment202Response>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegment202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegmentSuccessResponse>(requestInfo, global::Soenneker.SendGrid.OpenApiClient.Models.TsgMcSegmentsV3DeleteSegmentSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **This endpoint allows you to retrieve a single segment by ID.**
