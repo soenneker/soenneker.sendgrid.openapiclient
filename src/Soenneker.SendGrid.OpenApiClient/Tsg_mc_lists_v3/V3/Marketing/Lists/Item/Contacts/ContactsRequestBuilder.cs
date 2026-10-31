@@ -78,7 +78,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.It
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.SendGrid.OpenApiClient.Tsg_mc_lists_v3.V3.Marketing.Lists.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.sendgrid.com", "/tsg_mc_lists_v3/v3/marketing/lists/{id}/contacts", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
