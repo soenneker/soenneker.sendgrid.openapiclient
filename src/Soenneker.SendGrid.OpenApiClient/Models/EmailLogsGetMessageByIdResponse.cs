@@ -96,12 +96,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>Custom key-value pairs associated with the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2? CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; AdditionalData?.Remove("custom_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
-        private global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2? _explicitNullValueCustomArgs = default!;
+        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs? CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; AdditionalData?.Remove("custom_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs? _explicitNullValueCustomArgs = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2 CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; AdditionalData?.Remove("custom_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
-        private global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2 _explicitNullValueCustomArgs = default!;
+        public global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs CustomArgs { get => _explicitNullValueCustomArgs; set { _explicitNullValueCustomArgs = value; AdditionalData?.Remove("custom_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_args"); else _explicitNullProperties?.Remove("custom_args"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs _explicitNullValueCustomArgs = default!;
 #endif
         /// <summary>All events recorded for this message. Most recent events will be returned upto the maximum of 100 events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -251,7 +251,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "asm_group_id", n => { AsmGroupId = n.GetIntValue(); } },
                 { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "client_ip", n => { ClientIp = n.GetStringValue(); } },
-                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2.CreateFromDiscriminatorValue); } },
+                { "custom_args", n => { CustomArgs = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs>(global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsEvent>(global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from_email", n => { FromEmail = n.GetStringValue(); } },
                 { "marketing_campaign_id", n => { MarketingCampaignId = n.GetIntValue(); } },
@@ -279,7 +279,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteIntValue("asm_group_id", AsmGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
             writer.WriteStringValue("client_ip", ClientIp);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgsProperty2>("custom_args", CustomArgs);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsGetMessageByIdResponseCustomArgs>("custom_args", CustomArgs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.EmailLogsEvent>("events", Events);
             writer.WriteStringValue("from_email", FromEmail);
             writer.WriteIntValue("marketing_campaign_id", MarketingCampaignId);

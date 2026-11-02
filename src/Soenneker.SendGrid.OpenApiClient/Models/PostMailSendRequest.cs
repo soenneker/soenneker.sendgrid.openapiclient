@@ -128,12 +128,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>A collection of JSON property name and property value pairs allowing you to specify handling instructions for your email. You may not override the following headers: `x-sg-id`, `x-sg-eid`, `received`, `dkim-signature`, `Content-Type`, `Content-Transfer-Encoding`, `To`, `From`, `Subject`, `Reply-To`, `CC`, `BCC`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
-        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2? _explicitNullValueHeaders = default!;
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
-        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2 _explicitNullValueHeaders = default!;
+        public global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The IP Pool that you would like to send this email from. IP Pools allow you to group your dedicated Twilio SendGrid IP addresses in order to have more control over your deliverability. See [**IP Pools**](https://docs.sendgrid.com/ui/account-and-settings/ip-pools) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -250,7 +250,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "custom_args", n => { CustomArgs = n.GetStringValue(); } },
                 { "from", n => { From = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom>(global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom.CreateFromDiscriminatorValue); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders.CreateFromDiscriminatorValue); } },
                 { "ip_pool_name", n => { IpPoolName = n.GetStringValue(); } },
                 { "mail_settings", n => { MailSettings = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings.CreateFromDiscriminatorValue); } },
                 { "personalizations", n => { Personalizations = n.GetCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem>(global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -276,7 +276,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestContentItem>("content", Content);
             writer.WriteStringValue("custom_args", CustomArgs);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.MailFrom>("from", From);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeadersProperty2>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestHeaders>("headers", Headers);
             writer.WriteStringValue("ip_pool_name", IpPoolName);
             writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestMailSettings>("mail_settings", MailSettings);
             writer.WriteCollectionOfObjectValues<global::Soenneker.SendGrid.OpenApiClient.Models.PostMailSendRequestPersonalizationsItem>("personalizations", Personalizations);

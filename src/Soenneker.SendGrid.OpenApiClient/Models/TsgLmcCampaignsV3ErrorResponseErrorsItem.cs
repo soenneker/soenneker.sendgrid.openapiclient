@@ -40,12 +40,12 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <summary>When applicable, this property value will be helper text or a link to documentation to help you troubleshoot the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2? Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
-        private global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2? _explicitNullValueHelp = default!;
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp? Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp? _explicitNullValueHelp = default!;
 #nullable restore
 #else
-        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2 Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
-        private global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2 _explicitNullValueHelp = default!;
+        public global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
+        private global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp _explicitNullValueHelp = default!;
 #endif
         /// <summary>An error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "help", n => { Help = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2.CreateFromDiscriminatorValue); } },
+                { "help", n => { Help = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp>(global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("field", Field);
-            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelpProperty2>("help", Help);
+            writer.WriteObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.TsgLmcCampaignsV3ErrorResponseErrorsItemHelp>("help", Help);
             writer.WriteStringValue("message", Message);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
