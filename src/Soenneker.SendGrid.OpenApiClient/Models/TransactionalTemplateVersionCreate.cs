@@ -121,7 +121,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "active", n => { Active = n.GetIntValue(); } },
                 { "editor", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplateVersionCreateEditor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEditor = default; _explicitNullProperties?.Remove("editor"); AdditionalData["editor"] = unknown; } else { Editor = parsed; AdditionalData.Remove("editor"); } } },

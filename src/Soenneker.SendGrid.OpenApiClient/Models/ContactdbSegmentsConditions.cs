@@ -79,7 +79,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "and_or", n => { var parsed = (n.GetStringValue() == "" ? global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsConditionsAndOr.EmptyString : n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.ContactdbSegmentsConditionsAndOr>()); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAndOr = default; _explicitNullProperties?.Remove("and_or"); AdditionalData["and_or"] = unknown; } else { AndOr = parsed; AdditionalData.Remove("and_or"); } } },
                 { "field", n => { Field = n.GetStringValue(); } },

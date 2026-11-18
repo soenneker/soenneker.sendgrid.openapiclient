@@ -119,7 +119,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "attempt_num", n => { AttemptNum = n.GetIntValue(); } },
                 { "bounce_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.MessageEventsItemBounceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBounceType = default; _explicitNullProperties?.Remove("bounce_type"); AdditionalData["bounce_type"] = unknown; } else { BounceType = parsed; AdditionalData.Remove("bounce_type"); } } },

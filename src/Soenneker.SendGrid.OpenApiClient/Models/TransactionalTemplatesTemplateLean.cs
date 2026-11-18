@@ -90,7 +90,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "generation", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.TransactionalTemplatesTemplateLeanGeneration>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGeneration = default; _explicitNullProperties?.Remove("generation"); AdditionalData["generation"] = unknown; } else { Generation = parsed; AdditionalData.Remove("generation"); } } },
                 { "id", n => { Id = n.GetGuidValue(); } },

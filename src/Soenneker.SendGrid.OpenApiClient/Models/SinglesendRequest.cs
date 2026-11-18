@@ -97,7 +97,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "email_config", n => { EmailConfig = n.GetObjectValue<global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig>(global::Soenneker.SendGrid.OpenApiClient.Models.SinglesendRequestEmailConfig.CreateFromDiscriminatorValue); } },

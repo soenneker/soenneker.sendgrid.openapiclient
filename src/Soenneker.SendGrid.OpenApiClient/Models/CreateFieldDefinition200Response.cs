@@ -85,7 +85,7 @@ namespace Soenneker.SendGrid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "field_type", n => { var parsed = n.GetEnumValue<global::Soenneker.SendGrid.OpenApiClient.Models.CreateFieldDefinition200ResponseFieldType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFieldType = default; _explicitNullProperties?.Remove("field_type"); AdditionalData["field_type"] = unknown; } else { FieldType = parsed; AdditionalData.Remove("field_type"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
